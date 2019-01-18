@@ -1,67 +1,49 @@
 package vista;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import java.awt.BorderLayout;
-import javax.swing.ImageIcon;
-import java.awt.Color;
 import java.awt.Font;
-import javax.swing.JButton;
-import javax.swing.SwingConstants;
-import java.awt.CardLayout;
-import com.jgoodies.forms.factories.DefaultComponentFactory;
+
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
-public class PanelSaludo {
+import com.jgoodies.forms.factories.DefaultComponentFactory;
+import java.awt.Color;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
+import java.awt.SystemColor;
+import javax.swing.UIManager;
 
-	private JFrame frame;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					PanelSaludo window = new PanelSaludo();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the application.
-	 */
+public class PanelSaludo extends JPanel {
 	public PanelSaludo() {
-		initialize();
 	}
-
+	JPanel panelSaludo = new JPanel();
 	/**
-	 * Initialize the contents of the frame.
+	 * @wbp.parser.entryPoint
 	 */
-	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 1000, 700);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+	public void crearPanelSaludo() {
+		panelSaludo.setForeground(Color.WHITE);
+		panelSaludo.setBorder(new LineBorder(Color.BLACK, 4));
+		panelSaludo.setBackground(Color.WHITE);
+		panelSaludo.setLayout(null);
 		
-		JPanel panel = new JPanel();
-		panel.setBounds(291, 0, 633, 338);
-		frame.getContentPane().add(panel);
-		panel.setLayout(null);
+		JLabel lblNewJgoodiesLabel = DefaultComponentFactory.getInstance().createLabel("(PULSE PARA CONTINUAR)");
+		lblNewJgoodiesLabel.setBackground(Color.WHITE);
+		lblNewJgoodiesLabel.setFont(new Font("Tahoma", Font.ITALIC, 30));
+		lblNewJgoodiesLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewJgoodiesLabel.setBounds(0, 420, 1084, 78);
+		panelSaludo.add(lblNewJgoodiesLabel);
 		
-		JButton btnNewButton = new JButton("New button");
-		btnNewButton.setBounds(0, 0, 633, 338);
-		panel.add(btnNewButton);
-		btnNewButton.setBackground(Color.WHITE);
+		JLabel lblNewJgoodiesLabel_3 = DefaultComponentFactory.getInstance().createLabel("New JGoodies label");
+		lblNewJgoodiesLabel_3.setBackground(Color.WHITE);
+		lblNewJgoodiesLabel_3.setIcon(new ImageIcon(Panel.class.getResource("/Imagenes/bienvenido.gif")));
+		lblNewJgoodiesLabel_3.setBounds(20, 79, 1064, 347);
+		panelSaludo.add(lblNewJgoodiesLabel_3);
 		
-		JLabel lblGjuj = DefaultComponentFactory.getInstance().createLabel("gjujjbgggggggggg");
-		lblGjuj.setBounds(54, 279, 123, 14);
-		panel.add(lblGjuj);
+		JLabel lblNewJgoodiesLabel_1 = DefaultComponentFactory.getInstance().createLabel("New JGoodies label");
+		lblNewJgoodiesLabel_1.setIcon(new ImageIcon(PanelSaludo.class.getResource("/Imagenes/logo-termibus.png")));
+		lblNewJgoodiesLabel_1.setBounds(730, 541, 302, 111);
+		panelSaludo.add(lblNewJgoodiesLabel_1);
 	}
 }
