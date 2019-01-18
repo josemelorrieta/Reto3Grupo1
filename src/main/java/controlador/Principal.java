@@ -1,7 +1,5 @@
 package controlador;
 
-import javax.swing.JButton;
-
 import modelo.Modelo;
 import vista.Vista;
 
@@ -26,8 +24,6 @@ public class Principal {
 		miControlador = new Controlador(miVentana, miModelo);
 		
 		// Asociaciones entre clases
-//		miControlador.setMiModelo(miModelo);
-//		miControlador.setMiVentana(miVentana);
 		miVentana.setControlador(miControlador);
 		miModelo.setControlador(miControlador);
 		
