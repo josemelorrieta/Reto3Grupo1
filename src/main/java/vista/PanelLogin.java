@@ -15,13 +15,14 @@ import javax.swing.UIManager;
 import javax.swing.border.TitledBorder;
 import javax.swing.JButton;
 import javax.swing.JTextField;
+import javax.swing.JPasswordField;
 
 public class PanelLogin extends JPanel {
 	public PanelLogin() {
 	}
 	JPanel panelLogin = new JPanel();
 	private JTextField TextDni;
-	private JTextField textField;
+	private JPasswordField passwordField;
 	/**
 	 * @wbp.parser.entryPoint
 	 */
@@ -56,11 +57,6 @@ public class PanelLogin extends JPanel {
 		panelLogin.add(panel);
 		panel.setLayout(null);
 		
-		JLabel lblNewJgoodiesLabel_2 = DefaultComponentFactory.getInstance().createLabel("");
-		lblNewJgoodiesLabel_2.setBounds(6, 16, 639, 432);
-		panel.add(lblNewJgoodiesLabel_2);
-		lblNewJgoodiesLabel_2.setBackground(Color.LIGHT_GRAY);
-		
 		JLabel lblNewJgoodiesLabel_3 = DefaultComponentFactory.getInstance().createLabel("DNI:");
 		lblNewJgoodiesLabel_3.setBounds(6, 116, 645, 33);
 		lblNewJgoodiesLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 20));
@@ -84,10 +80,9 @@ public class PanelLogin extends JPanel {
 		panel.add(TextDni);
 		TextDni.setColumns(10);
 		
-		textField = new JTextField();
-		textField.setBounds(180, 267, 298, 33);
-		panel.add(textField);
-		textField.setColumns(10);
+		passwordField = new JPasswordField();
+		passwordField.setBounds(180, 267, 298, 33);
+		panel.add(passwordField);
 		
 		
 	}
