@@ -1,7 +1,6 @@
-/kk.class
-/modelo/
-/vista/
 /controlador/
+/modelo/
+/testsControlador/
 /testsModelo/
 /testsVista/
-/testsControlador/
+/vista/
