@@ -12,6 +12,9 @@ import javax.swing.JCheckBox;
 import javax.swing.JTextField;
 
 public class PanelRegistro extends JPanel {
+	
+	JPanel panelRegistro = new JPanel();
+	
 	private JTextField textFieldContraseña;
 	private JTextField textFieldApellidos;
 	private JTextField textFieldNombre;
@@ -20,6 +23,7 @@ public class PanelRegistro extends JPanel {
 	/**
 	 * Create the panel.
 	 */
+
 	public PanelRegistro() {
 		setBorder(new LineBorder(new Color(0, 0, 0), 4));
 		setBackground(Color.CYAN);
@@ -39,7 +43,7 @@ public class PanelRegistro extends JPanel {
 		lblNewJgoodiesLabel_1.setBounds(10, 192, 351, 35);
 		add(lblNewJgoodiesLabel_1);
 		
-		JButton btnAtras = new JButton("ATRAS");
+		JButton btnAtras = new JButton("CANCELAR");
 		btnAtras.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnAtras.setBounds(49, 599, 194, 68);
 		add(btnAtras);
