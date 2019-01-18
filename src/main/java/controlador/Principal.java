@@ -1,24 +1,39 @@
 package controlador;
 
-import java.sql.Connection;
+import javax.swing.JButton;
 
 import modelo.Modelo;
+import vista.Vista;
 
 public class Principal {
-
+	Modelo miModelo;
+	Vista miVentana;
+	Controlador miControlador;
+	
 	public static void main(String[] args) {
-		//Definición e inicialización de variables
-		Modelo miModelo = new Modelo();
-		Connection conexion = null;
+		// Declaración e inicialización de variables
+		Principal miPrincipal = new Principal();		
 		
-		//Inico del programa
-//		conexion = miModelo.conectarBD();
-//		
-//		if (conexion != null)
-//			System.out.println("Conexión DB Ok");
-//		else
-//			System.out.println("Error al conectar a la base de datos");
+		//Inicio del programa
+		miPrincipal.inicar();
 		
+	}
+	
+	public void inicar() {
+		// Instanciar clases
+		miVentana = new Vista();
+		miModelo = new Modelo();
+		miControlador = new Controlador(miVentana, miModelo);
+		
+		// Asociaciones entre clases
+//		miControlador.setMiModelo(miModelo);
+//		miControlador.setMiVentana(miVentana);
+		miVentana.setControlador(miControlador);
+		miModelo.setControlador(miControlador);
+		
+		
+		//Iniciar la ventana
+		miVentana.setVisible(true);
 		
 	}
 

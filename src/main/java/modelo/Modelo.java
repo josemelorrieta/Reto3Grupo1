@@ -3,7 +3,20 @@ package modelo;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
+import controlador.Controlador;
+import vista.Vista;
+
 public class Modelo {
+	private Controlador miControlador;
+
+	public Controlador getControlador() {
+		return miControlador;
+	}
+
+	public void setControlador(Controlador miControlador) {
+		this.miControlador = miControlador;
+	}
+
 	public Connection conectarBD(String url, String database, String user, String password) {
 		// Definición e inicialización de variables
 		Connection conexion = null;
