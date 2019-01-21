@@ -17,12 +17,16 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 
+
 public class PanelLogin extends JPanel {
-	public PanelLogin() {
-	}
+	
 	JPanel panelLogin = new JPanel();
-	private JTextField TextDni;
-	private JPasswordField passwordField;
+	public JTextField TextDni;
+	public JPasswordField passwordField;
+	public JButton btnLogin = new JButton("LOGIN");
+	public JButton btnAtras = new JButton("ATRAS");
+	public JButton btnRegistrarse = new JButton("REGISTRARSE");
+	
 	/**
 	 * @wbp.parser.entryPoint
 	 */
@@ -40,12 +44,12 @@ public class PanelLogin extends JPanel {
 		lblLogin.setFont(new Font("Tahoma", Font.BOLD, 50));
 		panelLogin.add(lblLogin);
 		
-		JButton btnRegistrarse = new JButton("REGISTRARSE");
+		
 		btnRegistrarse.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnRegistrarse.setBounds(867, 619, 194, 54);
 		panelLogin.add(btnRegistrarse);
 		
-		JButton btnAtras = new JButton("ATRAS");
+	
 		btnAtras.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnAtras.setBounds(50, 612, 194, 54);
 		panelLogin.add(btnAtras);
@@ -69,7 +73,7 @@ public class PanelLogin extends JPanel {
 		lblNewJgoodiesLabel.setBounds(6, 223, 639, 33);
 		panel.add(lblNewJgoodiesLabel);
 		
-		JButton btnLogin = new JButton("LOGIN");
+	
 		btnLogin.setFont(new Font("Tahoma", Font.ITALIC, 15));
 		btnLogin.setBackground(Color.PINK);
 		btnLogin.setBounds(227, 359, 213, 57);

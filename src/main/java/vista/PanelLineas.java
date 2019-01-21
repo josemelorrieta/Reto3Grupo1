@@ -12,6 +12,10 @@ import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 
 public class PanelLineas extends JPanel {
+	
+	public JButton btnCerrarSesion = new JButton("CERRAR SESION");
+	public JButton btnComprarBillete = new JButton("COMPRAR BILLETE");
+	public JComboBox SeleccionarLinea = new JComboBox();
 
 	/**
 	 * Create the panel.
@@ -28,23 +32,23 @@ public class PanelLineas extends JPanel {
 		lblNewJgoodiesLabel.setBounds(10, 45, 1080, 49);
 		add(lblNewJgoodiesLabel);
 		
-		JButton btnCerrarSesion = new JButton("CERRAR SESION");
+		
 		btnCerrarSesion.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnCerrarSesion.setBounds(40, 612, 211, 60);
 		add(btnCerrarSesion);
 		
-		JButton btnComprarBillete = new JButton("COMPRAR BILLETE");
+		
 		btnComprarBillete.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnComprarBillete.setBounds(849, 612, 223, 60);
 		add(btnComprarBillete);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBackground(Color.PINK);
-		comboBox.setForeground(Color.BLACK);
-		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 28));
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"\u25CF\tBilbao-Mungia", "\u25CF\tBilbao-Gernika", "\u25CF\tBilbao-Donostia"}));
-		comboBox.setBounds(315, 287, 484, 82);
-		add(comboBox);
+		
+		SeleccionarLinea.setBackground(Color.PINK);
+		SeleccionarLinea.setForeground(Color.BLACK);
+		SeleccionarLinea.setFont(new Font("Tahoma", Font.PLAIN, 28));
+		SeleccionarLinea.setModel(new DefaultComboBoxModel(new String[] {"\u25CF\tTermibus-Plentzia", "\u25CF\tTermibus-Muskiz", "\u25CF\tTermibus-Balmaseda", "\u25CF\tTermibus-Durango"}));
+		SeleccionarLinea.setBounds(315, 287, 484, 82);
+		add(SeleccionarLinea);
 
 	}
 }

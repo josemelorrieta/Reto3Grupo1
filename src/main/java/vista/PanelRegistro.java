@@ -15,10 +15,14 @@ public class PanelRegistro extends JPanel {
 	
 	JPanel panelRegistro = new JPanel();
 	
-	private JTextField textFieldContraseña;
-	private JTextField textFieldApellidos;
-	private JTextField textFieldNombre;
-	private JTextField textFieldDni;
+	public JTextField textFieldContraseña;
+	public JTextField textFieldApellidos;
+	public JTextField textFieldNombre;
+	public JTextField textFieldDni;
+	public JButton btnCancelar = new JButton("CANCELAR");
+	public JButton btnNewButton = new JButton("REGISTRARSE");
+	public JCheckBox ElegirHombre = new JCheckBox("Hombre");
+	public JCheckBox ElegirMujer = new JCheckBox("Mujer");
 
 	/**
 	 * Create the panel.
@@ -43,12 +47,12 @@ public class PanelRegistro extends JPanel {
 		lblNewJgoodiesLabel_1.setBounds(10, 192, 351, 35);
 		add(lblNewJgoodiesLabel_1);
 		
-		JButton btnAtras = new JButton("CANCELAR");
-		btnAtras.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnAtras.setBounds(49, 599, 194, 68);
-		add(btnAtras);
 		
-		JButton btnNewButton = new JButton("REGISTRARSE");
+		btnCancelar.setFont(new Font("Tahoma", Font.BOLD, 20));
+		btnCancelar.setBounds(49, 599, 194, 68);
+		add(btnCancelar);
+		
+		
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnNewButton.setBounds(875, 599, 188, 68);
 		add(btnNewButton);
@@ -77,15 +81,15 @@ public class PanelRegistro extends JPanel {
 		lblContrasea.setBounds(10, 447, 351, 25);
 		add(lblContrasea);
 		
-		JCheckBox chckbxHombre = new JCheckBox("Hombre");
-		chckbxHombre.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		chckbxHombre.setBounds(388, 385, 97, 23);
-		add(chckbxHombre);
 		
-		JCheckBox chckbxMujer = new JCheckBox("Mujer");
-		chckbxMujer.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		chckbxMujer.setBounds(514, 385, 97, 23);
-		add(chckbxMujer);
+		ElegirHombre.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		ElegirHombre.setBounds(388, 385, 97, 23);
+		add(ElegirHombre);
+		
+		
+		ElegirMujer.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		ElegirMujer.setBounds(514, 385, 97, 23);
+		add(ElegirMujer);
 		
 		textFieldContraseña = new JTextField();
 		textFieldContraseña.setBounds(388, 447, 277, 26);

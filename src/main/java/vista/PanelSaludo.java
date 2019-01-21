@@ -16,8 +16,7 @@ import java.awt.SystemColor;
 import javax.swing.UIManager;
 
 public class PanelSaludo extends JPanel {
-	public PanelSaludo() {
-	}
+
 	JPanel panelSaludo = new JPanel();
 	/**
 	 * @wbp.parser.entryPoint
