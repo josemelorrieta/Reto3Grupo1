@@ -2,6 +2,7 @@ package vista;
 
 import java.awt.Font;
 
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -16,77 +17,81 @@ import javax.swing.border.TitledBorder;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
+import javax.swing.border.SoftBevelBorder;
+import javax.swing.border.BevelBorder;
 
 
 public class PanelLogin extends JPanel {
 	
-	JPanel panelLogin = new JPanel();
 	public JTextField TextDni;
 	public JPasswordField passwordField;
 	public JButton btnLogin;
-	public JButton btnAtras = new JButton("ATRAS");
-	public JButton btnRegistrarse = new JButton("REGISTRARSE");
+	public JButton btnAtras;
+	public JButton btnRegistrarse;
 	
 	/**
-	 * @wbp.parser.entryPoint
+	 *
 	 */
 	public PanelLogin() {
-		panelLogin.setBackground(Color.CYAN);
-		panelLogin.setBorder(new LineBorder(new Color(0, 0, 0), 4));
-		panelLogin.setLayout(null);
-		
-		JLabel lblLogin = DefaultComponentFactory.getInstance().createLabel("LOGIN");
-		lblLogin.setBounds(0, 53, 1100, 61);
-		lblLogin.setBackground(Color.DARK_GRAY);
-		lblLogin.setForeground(Color.PINK);
-		lblLogin.setLabelFor(lblLogin);
-		lblLogin.setHorizontalAlignment(SwingConstants.CENTER);
-		lblLogin.setFont(new Font("Tahoma", Font.BOLD, 50));
-		panelLogin.add(lblLogin);
+		setBackground(Color.CYAN);
+		setBorder(new LineBorder(new Color(0, 0, 0), 4));
+		setBounds(0, 0, 1090, 690);
+		setLayout(null);
 		
 		
+		
+		JLabel lblNewJgoodiesLabel_1 = DefaultComponentFactory.getInstance().createLabel("");
+		lblNewJgoodiesLabel_1.setBackground(Color.GREEN);
+		lblNewJgoodiesLabel_1.setBounds(305, 142, 441, 359);
+		lblNewJgoodiesLabel_1.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		add(lblNewJgoodiesLabel_1);
+		
+		btnRegistrarse = new JButton("REGISTRARSE");
 		btnRegistrarse.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnRegistrarse.setBounds(867, 619, 194, 54);
-		panelLogin.add(btnRegistrarse);
+		btnRegistrarse.setBounds(820, 583, 194, 54);
+		add(btnRegistrarse);
 		
-	
+		btnAtras = new JButton("ATRAS");
 		btnAtras.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnAtras.setBounds(50, 612, 194, 54);
-		panelLogin.add(btnAtras);
-		
-		JPanel panel = new JPanel();
-		panel.setBackground(Color.LIGHT_GRAY);
-		panel.setBounds(229, 123, 651, 455);
-		panel.setBorder(new LineBorder(new Color(255, 175, 175), 3, true));
-		panelLogin.add(panel);
-		panel.setLayout(null);
+		btnAtras.setBounds(54, 583, 194, 54);
+		add(btnAtras);
 		
 		JLabel lblNewJgoodiesLabel_3 = DefaultComponentFactory.getInstance().createLabel("DNI:");
-		lblNewJgoodiesLabel_3.setBounds(6, 116, 645, 33);
+		lblNewJgoodiesLabel_3.setBounds(202, 159, 645, 33);
+		add(lblNewJgoodiesLabel_3);
 		lblNewJgoodiesLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewJgoodiesLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
-		panel.add(lblNewJgoodiesLabel_3);
 		
 		JLabel lblNewJgoodiesLabel = DefaultComponentFactory.getInstance().createLabel("CONTRASE\u00D1A:");
+		lblNewJgoodiesLabel.setBounds(208, 277, 639, 33);
+		add(lblNewJgoodiesLabel);
 		lblNewJgoodiesLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewJgoodiesLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewJgoodiesLabel.setBounds(6, 223, 639, 33);
-		panel.add(lblNewJgoodiesLabel);
-		
-		btnLogin = new JButton("LOGIN");
-		btnLogin.setFont(new Font("Tahoma", Font.ITALIC, 15));
-		btnLogin.setBackground(Color.PINK);
-		btnLogin.setBounds(227, 359, 213, 57);
-		panel.add(btnLogin);
 		
 		TextDni = new JTextField();
-		TextDni.setBounds(180, 157, 298, 33);
-		panel.add(TextDni);
+		TextDni.setBounds(372, 203, 298, 33);
+		add(TextDni);
 		TextDni.setColumns(10);
 		
 		passwordField = new JPasswordField();
-		passwordField.setBounds(180, 267, 298, 33);
-		panel.add(passwordField);
+		passwordField.setBounds(372, 316, 298, 33);
+		add(passwordField);
+		
+		btnLogin = new JButton ("Login");
+		btnLogin.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnLogin.setBounds(412, 397, 213, 57);
+		add(btnLogin);
+		
+		JLabel lblLogin= DefaultComponentFactory.getInstance().createLabel("LOGIN");
+		lblLogin.setForeground(Color.PINK);
+		lblLogin.setFont(new Font("Tahoma", Font.BOLD, 50));
+		lblLogin.setHorizontalAlignment(SwingConstants.CENTER);
+		lblLogin.setBounds(-21, 73, 1070, 48);
+		add(lblLogin);
+		
+		
+		
+		
 		
 		
 	}

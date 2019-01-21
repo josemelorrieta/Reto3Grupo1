@@ -8,6 +8,7 @@ import com.jgoodies.forms.factories.DefaultComponentFactory;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
+import javax.swing.JList;
 
 public class PanelDevolucion extends JPanel {
 
@@ -23,7 +24,7 @@ public class PanelDevolucion extends JPanel {
 		lblNewJgoodiesLabel.setForeground(Color.ORANGE);
 		lblNewJgoodiesLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewJgoodiesLabel.setFont(new Font("Tahoma", Font.PLAIN, 50));
-		lblNewJgoodiesLabel.setBounds(10, 21, 1080, 48);
+		lblNewJgoodiesLabel.setBounds(10, 43, 1080, 48);
 		add(lblNewJgoodiesLabel);
 		
 		JButton btnNewButton = new JButton("Imprimir Ticket");
@@ -35,6 +36,10 @@ public class PanelDevolucion extends JPanel {
 		btnSiguiente.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnSiguiente.setBounds(892, 608, 171, 65);
 		add(btnSiguiente);
+		
+		JList Devolucion = new JList();
+		Devolucion.setBounds(226, 130, 631, 422);
+		add(Devolucion);
 
 	}
 

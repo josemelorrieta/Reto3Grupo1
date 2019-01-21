@@ -16,6 +16,7 @@ public class Ventana extends JFrame {
 	 * Create the frame.
 	 */
 	public Ventana() {
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -25,6 +26,7 @@ public class Ventana extends JFrame {
 		
 		login = new PanelLogin();
 		contentPane.add(login);
+		login.setLayout(null);
 	}
 
 }
