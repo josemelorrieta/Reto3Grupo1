@@ -11,7 +11,7 @@ public class Billete {
 	private double precioTrayecto;
 	private int dni;
 	
-	public Billete(int numBillete,String fecha, String codLinea, String origen, String destino, int codAutobus, double precioTrayecto, int dni) {
+	public Billete(int numBillete, String fecha, String codLinea, String origen, String destino, int codAutobus, double precioTrayecto, int dni) {
 		this.numBillete = numBillete;
 		this.fecha = fecha;
 		this.codLinea = codLinea;
