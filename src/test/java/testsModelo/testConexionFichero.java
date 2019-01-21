@@ -22,8 +22,7 @@ public class testConexionFichero {
 		assertEquals(resultado[3], datoTest[3]);
 		
 		String[] resultadoError = leerDatosFichero.cogerDatosDeFichero(ficheroErrorTest);
-		assertEquals(resultadoError[0], null);
-		
+		assertEquals(resultadoError[0], null);		
 	}
 
 }
