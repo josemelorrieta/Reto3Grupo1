@@ -1,4 +1,4 @@
-Url: localhost
-Base de datos: termibus
-Usuario: hr
-Password: PepeJeans 
+url: localhost
+database: termibus
+user: hr
+password: PepeJeans
