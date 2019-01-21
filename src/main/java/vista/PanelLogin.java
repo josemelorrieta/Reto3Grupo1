@@ -23,14 +23,14 @@ public class PanelLogin extends JPanel {
 	JPanel panelLogin = new JPanel();
 	public JTextField TextDni;
 	public JPasswordField passwordField;
-	public JButton btnLogin = new JButton("LOGIN");
+	public JButton btnLogin;
 	public JButton btnAtras = new JButton("ATRAS");
 	public JButton btnRegistrarse = new JButton("REGISTRARSE");
 	
 	/**
 	 * @wbp.parser.entryPoint
 	 */
-	public void crearPanelLogin() {
+	public PanelLogin() {
 		panelLogin.setBackground(Color.CYAN);
 		panelLogin.setBorder(new LineBorder(new Color(0, 0, 0), 4));
 		panelLogin.setLayout(null);
@@ -73,7 +73,7 @@ public class PanelLogin extends JPanel {
 		lblNewJgoodiesLabel.setBounds(6, 223, 639, 33);
 		panel.add(lblNewJgoodiesLabel);
 		
-	
+		btnLogin = new JButton("LOGIN");
 		btnLogin.setFont(new Font("Tahoma", Font.ITALIC, 15));
 		btnLogin.setBackground(Color.PINK);
 		btnLogin.setBounds(227, 359, 213, 57);

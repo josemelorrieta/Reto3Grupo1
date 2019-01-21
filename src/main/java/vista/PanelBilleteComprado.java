@@ -52,8 +52,9 @@ public class PanelBilleteComprado extends JPanel {
 		MostrarBillete.setBounds(166, 192, 643, 351);
 		add(MostrarBillete);
 		
-		JLabel lblNewJgoodiesLabel = DefaultComponentFactory.getInstance().createLabel("Compruebe El Billete");
-		lblNewJgoodiesLabel.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		JLabel lblNewJgoodiesLabel = DefaultComponentFactory.getInstance().createLabel("COMPRUEBE EL BILLETE");
+		lblNewJgoodiesLabel.setForeground(Color.ORANGE);
+		lblNewJgoodiesLabel.setFont(new Font("Tahoma", Font.PLAIN, 50));
 		lblNewJgoodiesLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewJgoodiesLabel.setBounds(10, 43, 1080, 47);
 		add(lblNewJgoodiesLabel);

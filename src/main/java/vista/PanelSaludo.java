@@ -36,7 +36,7 @@ public class PanelSaludo extends JPanel {
 		
 		JLabel lblNewJgoodiesLabel_3 = DefaultComponentFactory.getInstance().createLabel("New JGoodies label");
 		lblNewJgoodiesLabel_3.setBackground(Color.WHITE);
-		lblNewJgoodiesLabel_3.setIcon(new ImageIcon(Panel.class.getResource("/Imagenes/bienvenido.gif")));
+		lblNewJgoodiesLabel_3.setIcon(new ImageIcon(Ventana1.class.getResource("/Imagenes/bienvenido.gif")));
 		lblNewJgoodiesLabel_3.setBounds(20, 79, 1064, 347);
 		panelSaludo.add(lblNewJgoodiesLabel_3);
 		

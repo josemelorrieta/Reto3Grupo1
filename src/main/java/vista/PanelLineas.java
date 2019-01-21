@@ -25,10 +25,10 @@ public class PanelLineas extends JPanel {
 		setBorder(new LineBorder(new Color(0, 0, 0), 4));
 		setLayout(null);
 		
-		JLabel lblNewJgoodiesLabel = DefaultComponentFactory.getInstance().createLabel("Seleccione la Linea");
+		JLabel lblNewJgoodiesLabel = DefaultComponentFactory.getInstance().createLabel("SELECCIONE LA LINEA");
 		lblNewJgoodiesLabel.setForeground(Color.ORANGE);
 		lblNewJgoodiesLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewJgoodiesLabel.setFont(new Font("Tahoma", Font.PLAIN, 40));
+		lblNewJgoodiesLabel.setFont(new Font("Tahoma", Font.PLAIN, 50));
 		lblNewJgoodiesLabel.setBounds(10, 45, 1080, 49);
 		add(lblNewJgoodiesLabel);
 		

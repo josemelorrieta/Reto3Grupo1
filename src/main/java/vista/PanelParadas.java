@@ -30,11 +30,11 @@ public class PanelParadas extends JPanel {
 		setLayout(null);
 
 		btnCancelar.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnCancelar.setBounds(36, 640, 121, 33);
+		btnCancelar.setBounds(36, 624, 139, 49);
 		add(btnCancelar);
 		
 		btnSiguiente.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnSiguiente.setBounds(939, 640, 129, 33);
+		btnSiguiente.setBounds(929, 624, 139, 49);
 		add(btnSiguiente);
 
 		JLabel lblParadaDeOrigen = DefaultComponentFactory.getInstance().createLabel("Parada de Origen:");

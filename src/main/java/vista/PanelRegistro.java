@@ -15,7 +15,7 @@ public class PanelRegistro extends JPanel {
 	
 	JPanel panelRegistro = new JPanel();
 	
-	public JTextField textFieldContraseña;
+	private JTextField textFieldContraseña;
 	public JTextField textFieldApellidos;
 	public JTextField textFieldNombre;
 	public JTextField textFieldDni;
@@ -37,7 +37,7 @@ public class PanelRegistro extends JPanel {
 		lblNewJgoodiesLabel.setForeground(Color.PINK);
 		lblNewJgoodiesLabel.setBackground(Color.MAGENTA);
 		lblNewJgoodiesLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewJgoodiesLabel.setFont(new Font("Tahoma", Font.BOLD, 40));
+		lblNewJgoodiesLabel.setFont(new Font("Tahoma", Font.BOLD, 50));
 		lblNewJgoodiesLabel.setBounds(10, 49, 1080, 49);
 		add(lblNewJgoodiesLabel);
 		
