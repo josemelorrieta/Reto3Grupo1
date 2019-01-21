@@ -1,12 +1,5 @@
 package controlador;
 
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
-import java.util.ArrayList;
-import java.util.Locale;
-
-import javax.swing.DefaultListModel;
-
 public class FuncionesPago {
 
 	static DatosPrecio datos = new DatosPrecio();
@@ -16,7 +9,6 @@ public class FuncionesPago {
 		
 		return precio = (distancia * datos.precioGasolina * datos.beneficio * datos.IVA);
 	}
-	
 	
 	public int[] Cambios(float dinero) {
 		int euros = (int) dinero;

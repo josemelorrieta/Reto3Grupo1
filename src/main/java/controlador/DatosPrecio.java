@@ -1,7 +1,5 @@
 package controlador;
 
-import java.text.DecimalFormat;
-
 public class DatosPrecio {
 
 	public final float IVA = 1.21f;
