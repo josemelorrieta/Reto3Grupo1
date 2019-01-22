@@ -32,16 +32,16 @@ public class PanelBilletes extends JPanel {
 		add(lblNewJgoodiesLabel);
 		
 	
-		MostrarBilletes.setBounds(206, 124, 698, 429);
+		MostrarBilletes.setBounds(211, 125, 668, 403);
 		add(MostrarBilletes);
 
 		btnCerrarSesion.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnCerrarSesion.setBounds(29, 627, 169, 49);
+		btnCerrarSesion.setBounds(29, 578, 169, 49);
 		add(btnCerrarSesion);
 		
 		
 		btnComprarBillete.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnComprarBillete.setBounds(867, 627, 198, 49);
+		btnComprarBillete.setBounds(868, 578, 198, 49);
 		add(btnComprarBillete);
 
 	}

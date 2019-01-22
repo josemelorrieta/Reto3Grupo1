@@ -29,17 +29,17 @@ public class PanelBilleteComprado extends JPanel {
 		
 	
 		btnCancelar.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnCancelar.setBounds(36, 627, 122, 47);
+		btnCancelar.setBounds(37, 584, 122, 47);
 		add(btnCancelar);
 		
 		
 		btnAtras.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnAtras.setBounds(726, 627, 122, 47);
+		btnAtras.setBounds(728, 584, 122, 47);
 		add(btnAtras);
 		
 		
 		btnSiguiente.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnSiguiente.setBounds(913, 627, 145, 47);
+		btnSiguiente.setBounds(909, 584, 145, 47);
 		add(btnSiguiente);
 		
 		JLabel lblSusBilletes = DefaultComponentFactory.getInstance().createLabel("Su Billete");

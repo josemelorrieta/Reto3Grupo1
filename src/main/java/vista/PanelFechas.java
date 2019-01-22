@@ -32,12 +32,12 @@ public class PanelFechas extends JPanel {
 		
 		
 		btnCancelar.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnCancelar.setBounds(29, 627, 130, 49);
+		btnCancelar.setBounds(58, 555, 156, 72);
 		add(btnCancelar);
 		
 		
 		btnSiguiente.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnSiguiente.setBounds(935, 627, 130, 49);
+		btnSiguiente.setBounds(904, 555, 149, 72);
 		add(btnSiguiente);
 		
 		JLabel lblFechaDeIda = DefaultComponentFactory.getInstance().createLabel("Fecha de Ida:");

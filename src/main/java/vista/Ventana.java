@@ -11,6 +11,11 @@ public class Ventana extends JFrame {
 	private JPanel contentPane;
 
 	public PanelLogin login;
+	public PanelRegistro registro;
+	public PanelLineas lineas;
+	public PanelBilletes billetes;
+	public PanelBilleteComprado billeteComprado;
+	public PanelFechas fechas;
 	
 	/**
 	 * Create the frame.
@@ -24,9 +29,29 @@ public class Ventana extends JFrame {
 		setBounds(100, 100, 1100, 700);
 		getContentPane().setLayout(new CardLayout(0, 0));
 		
+		
 		login = new PanelLogin();
 		contentPane.add(login);
 		login.setLayout(null);
+		
+		registro = new PanelRegistro();
+		contentPane.add(registro);
+		registro.setLayout(null);
+		
+		billeteComprado = new PanelBilleteComprado();
+		contentPane.add(billeteComprado);
+		billeteComprado.setLayout(null);
+		
+		lineas = new PanelLineas();
+		contentPane.add(lineas);
+		lineas.setLayout(null);
+		
+		billetes = new PanelBilletes();
+		contentPane.add(billetes);
+		billetes.setLayout(null);
+		
+		fechas = new PanelFechas();
+		contentPane.add(fechas);
+		fechas.setLayout(null);
 	}
-
 }

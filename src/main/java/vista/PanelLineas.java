@@ -34,12 +34,12 @@ public class PanelLineas extends JPanel {
 		
 		
 		btnCerrarSesion.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnCerrarSesion.setBounds(40, 612, 211, 60);
+		btnCerrarSesion.setBounds(55, 549, 211, 68);
 		add(btnCerrarSesion);
 		
 		
 		btnComprarBillete.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnComprarBillete.setBounds(849, 612, 223, 60);
+		btnComprarBillete.setBounds(790, 549, 223, 68);
 		add(btnComprarBillete);
 		
 		
