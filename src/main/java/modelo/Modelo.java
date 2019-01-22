@@ -20,7 +20,8 @@ public class Modelo {
 	}
 	
 	public void inicializarDatosBD() {
-		ConexionFichero datosFichero = new ConexionFichero();
+		ConexionBD con = new ConexionBD();
+		
 		
 	}
 	

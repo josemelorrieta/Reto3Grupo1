@@ -1,5 +1,8 @@
 package modelo;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+
 public class Cliente {
 
 	private int dni;
@@ -64,6 +67,21 @@ public class Cliente {
 
 	public void setContraseña(String contraseña) {
 		this.contraseña = contraseña;
+	}
+	
+	public boolean existeCliente(String dni) {
+		ConexionBD conexion = new ConexionBD();
+		ConsultaBD consulta = new ConsultaBD();
+		
+		String query = "SELECT * FROM cliente WHERE DNI='" + dni + "'"; 
+		
+		Connection con = conexion.conectarBD();
+		ResultSet resultado = consulta.hacerConsultaBD(con, query);
+		
+		if (resultado != null)
+			return true;
+		else 
+			return false;
 	}
 	
 }

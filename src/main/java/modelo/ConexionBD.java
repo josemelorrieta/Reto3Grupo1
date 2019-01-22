@@ -5,17 +5,20 @@ import java.sql.DriverManager;
 
 public class ConexionBD {
 	
-	public Connection conectarBD(String url, String database, String user, String password) {
+	public Connection conectarBD() {
 		// Definición e inicialización de variables
 		Connection conexion = null;
-		final String NombreFichero = ""; //Falta definir el fichero de datos
+		ConexionFichero datosFichero = new ConexionFichero();
+		
+		final String NombreFichero = "src/main/java/modelo/datosBD.txt";
+		String[] datos = datosFichero.cogerDatosDeFichero(NombreFichero);
 		
 		// Inicio del programa
-		url = "jdbc:mysql://" + url + "/" + database;
+		String url = "jdbc:mysql://" + datos[0] + "/" + datos[1];
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			conexion = DriverManager.getConnection(url, user, password);
+			conexion = DriverManager.getConnection(url, datos[2], datos[3]);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
