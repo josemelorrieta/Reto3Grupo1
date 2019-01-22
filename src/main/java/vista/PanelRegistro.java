@@ -24,7 +24,7 @@ public class PanelRegistro extends JPanel {
 	public JTextField textFieldNombre;
 	public JTextField textFieldDni;
 	public JButton btnCancelar = new JButton("CANCELAR");
-	public JButton btnNewButton = new JButton("REGISTRARSE");
+	public JButton btnRegistrarse = new JButton("REGISTRARSE");
 	public JCheckBox ElegirHombre = new JCheckBox("Hombre");
 	public JCheckBox ElegirMujer = new JCheckBox("Mujer");
 
@@ -57,9 +57,9 @@ public class PanelRegistro extends JPanel {
 		add(btnCancelar);
 		
 		
-		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnNewButton.setBounds(858, 575, 194, 68);
-		add(btnNewButton);
+		btnRegistrarse.setFont(new Font("Tahoma", Font.BOLD, 20));
+		btnRegistrarse.setBounds(858, 575, 194, 68);
+		add(btnRegistrarse);
 		
 		JLabel lblNombre = DefaultComponentFactory.getInstance().createLabel("NOMBRE:");
 		lblNombre.setHorizontalAlignment(SwingConstants.RIGHT);

@@ -29,17 +29,17 @@ public class PanelBilleteComprado extends JPanel {
 		
 	
 		btnCancelar.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnCancelar.setBounds(37, 584, 122, 47);
+		btnCancelar.setBounds(37, 570, 145, 61);
 		add(btnCancelar);
 		
 		
 		btnAtras.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnAtras.setBounds(728, 584, 122, 47);
+		btnAtras.setBounds(705, 570, 145, 61);
 		add(btnAtras);
 		
 		
 		btnSiguiente.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnSiguiente.setBounds(909, 584, 145, 47);
+		btnSiguiente.setBounds(901, 570, 153, 61);
 		add(btnSiguiente);
 		
 		JLabel lblSusBilletes = DefaultComponentFactory.getInstance().createLabel("Su Billete");
@@ -54,9 +54,9 @@ public class PanelBilleteComprado extends JPanel {
 		
 		JLabel lblNewJgoodiesLabel = DefaultComponentFactory.getInstance().createLabel("COMPRUEBE EL BILLETE");
 		lblNewJgoodiesLabel.setForeground(Color.ORANGE);
-		lblNewJgoodiesLabel.setFont(new Font("Tahoma", Font.PLAIN, 50));
+		lblNewJgoodiesLabel.setFont(new Font("Sylfaen", Font.PLAIN, 50));
 		lblNewJgoodiesLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewJgoodiesLabel.setBounds(10, 43, 1080, 47);
+		lblNewJgoodiesLabel.setBounds(10, 51, 1080, 47);
 		add(lblNewJgoodiesLabel);
 		btnBilleteDeIda.setFont(new Font("Tahoma", Font.ITALIC, 15));
 		btnBilleteDeIda.setBounds(874, 207, 145, 102);
