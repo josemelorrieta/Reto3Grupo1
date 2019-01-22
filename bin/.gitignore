@@ -1,5 +1,14 @@
+<<<<<<< HEAD
 /controlador/
 /modelo/
 /testsControlador/
 /testsModelo/
 /testsVista/
+=======
+/modelo/
+/controlador/
+/testsControlador/
+/testsVista/
+/vista/
+/testsModelo/
+>>>>>>> Modelo
