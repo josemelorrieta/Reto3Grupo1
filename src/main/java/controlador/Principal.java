@@ -1,11 +1,11 @@
 package controlador;
 
 import modelo.Modelo;
-import vista.Vista;
+import vista.Ventana;
 
 public class Principal {
 	Modelo miModelo;
-	Vista miVentana;
+	Ventana miVentana;
 	Controlador miControlador;
 	
 	public static void main(String[] args) {
@@ -19,12 +19,11 @@ public class Principal {
 	
 	public void inicar() {
 		// Instanciar clases
-		miVentana = new Vista();
+		miVentana = new Ventana();
 		miModelo = new Modelo();
 		miControlador = new Controlador(miVentana, miModelo);
 		
 		// Asociaciones entre clases
-		miVentana.setControlador(miControlador);
 		miModelo.setControlador(miControlador);
 		
 		
