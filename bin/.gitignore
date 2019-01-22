@@ -1,5 +1,10 @@
 /Imagenes/
-/controlador/
+/testsVista/
 /vista/
+<<<<<<< HEAD
 /modelo/
 /testsModelo/
+=======
+/controlador/
+/testsControlador/
+>>>>>>> 63a243e66b0b8e2921823e6c4031900d1b87be42

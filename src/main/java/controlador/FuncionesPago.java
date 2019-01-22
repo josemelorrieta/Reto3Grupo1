@@ -16,11 +16,11 @@ public class FuncionesPago {
 		int[] billetesMonedas = {500, 200, 100, 50, 20, 10, 5, 2, 1};
 		int[] cambios = new int[15];
 		
-		for (int i=0, f=0, fake=1; i<billetesMonedas.length+fake; i++, f++) {
+		for (int i = 0, f = 0, fake = 1; i < billetesMonedas.length + fake; i++, f++) {
 			//Mira si tiene que pasar a calcular los decimales
-			if (f==9) {
-				i=3;
-				fake=0;
+			if (f == 9) {
+				i = 3;
+				fake = 0;
 			}
 			//Calcula los euros
 			if (euros >= billetesMonedas[i] && f < 9) {

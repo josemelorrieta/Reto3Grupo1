@@ -8,7 +8,7 @@ import javax.swing.JButton;
 import modelo.Modelo;
 import vista.Ventana;
 
-public class Controlador  implements ActionListener {
+public class Controlador implements ActionListener {
 	//Declaración e inicialización de variables;
 	private Modelo miModelo;
 	private Ventana miVentana;
@@ -17,6 +17,7 @@ public class Controlador  implements ActionListener {
 	public Controlador(Ventana miVentana, Modelo miModelo) {
 		this.miVentana = miVentana;
 		this.miModelo = miModelo;
+		//miVentana.panelx.miboton.addActionlinstener(this);
 		
 	}
 	

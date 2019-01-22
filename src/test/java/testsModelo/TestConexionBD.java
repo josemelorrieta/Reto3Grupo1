@@ -17,8 +17,8 @@ public class TestConexionBD {
 		String passwordTest = "PepeJeans";
 		String wrongPassword = "Levis";
 		
-		assertNotEquals(conexionBDTest.conectarBD(urlTest, databaseTest, userTest, passwordTest), null);
-		assertEquals(conexionBDTest.conectarBD(urlTest, databaseTest, userTest, wrongPassword), null);
+		assertNotEquals(conexionBDTest.conectarBD(), null);
+		assertEquals(conexionBDTest.conectarBD(), null);
 	}
 
 }
