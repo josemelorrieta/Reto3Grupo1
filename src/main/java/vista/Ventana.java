@@ -35,6 +35,10 @@ public class Ventana extends JFrame {
 		setBounds(100, 100, 1100, 700);
 		getContentPane().setLayout(new CardLayout(0, 0));
 		
+		saludo = new PanelSaludo();
+		contentPane.add(saludo);
+		saludo.setLayout(null);
+		
 		
 		login = new PanelLogin();
 		contentPane.add(login);
@@ -72,10 +76,6 @@ public class Ventana extends JFrame {
 		despedida = new PanelDespedida();
 		contentPane.add(despedida);
 		despedida.setLayout(null);
-		
-		saludo = new PanelSaludo();
-		contentPane.add(saludo);
-		saludo.setLayout(null);
 		
 		pago = new PanelPago();
 		contentPane.add(pago);

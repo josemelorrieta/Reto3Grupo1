@@ -52,6 +52,7 @@ public class PanelLogin extends JPanel {
 		add(btnRegistrarse);
 		
 		btnAtras = new JButton("ATRAS");
+		btnAtras.setName("btnAtrasLogin");
 		btnAtras.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnAtras.setBounds(48, 575, 194, 68);
 		add(btnAtras);

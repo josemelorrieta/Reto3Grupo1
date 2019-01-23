@@ -12,23 +12,24 @@ public class Controlador implements ActionListener {
 	//Declaración e inicialización de variables;
 	private Modelo miModelo;
 	private Ventana miVentana;
-
+	private ControladorSaludo miControladorSaludo;
 	//Constructor
 	public Controlador(Ventana miVentana, Modelo miModelo) {
 		this.miVentana = miVentana;
 		this.miModelo = miModelo;
-		//miVentana.panelx.miboton.addActionlinstener(this);
+		
+		this.miControladorSaludo = new ControladorSaludo(miVentana);
+	
 		
 	}
+	
 	
 	//Inicio del programa
 
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-//		if (e.getSource()==miVentana.btnPincha) {
-//			miVentana.textField.setText("Hola");
-//		}
+		
 	}
 	
 }
