@@ -48,12 +48,12 @@ public class PanelLogin extends JPanel {
 		
 		btnRegistrarse = new JButton("REGISTRARSE");
 		btnRegistrarse.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnRegistrarse.setBounds(820, 583, 194, 54);
+		btnRegistrarse.setBounds(858, 575, 194, 68);
 		add(btnRegistrarse);
 		
 		btnAtras = new JButton("ATRAS");
 		btnAtras.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnAtras.setBounds(54, 583, 194, 54);
+		btnAtras.setBounds(48, 575, 194, 68);
 		add(btnAtras);
 		
 		JLabel lblNewJgoodiesLabel_3 = DefaultComponentFactory.getInstance().createLabel("DNI:");
@@ -88,9 +88,6 @@ public class PanelLogin extends JPanel {
 		lblLogin.setHorizontalAlignment(SwingConstants.CENTER);
 		lblLogin.setBounds(-21, 73, 1070, 48);
 		add(lblLogin);
-		
-		
-		
 		
 		
 		

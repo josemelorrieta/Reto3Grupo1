@@ -26,9 +26,9 @@ public class PanelBilletes extends JPanel {
 		
 		JLabel lblNewJgoodiesLabel = DefaultComponentFactory.getInstance().createLabel("TODOS SUS BILLETES");
 		lblNewJgoodiesLabel.setForeground(Color.ORANGE);
-		lblNewJgoodiesLabel.setFont(new Font("Tahoma", Font.PLAIN, 50));
+		lblNewJgoodiesLabel.setFont(new Font("Sylfaen", Font.PLAIN, 50));
 		lblNewJgoodiesLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewJgoodiesLabel.setBounds(10, 26, 1080, 71);
+		lblNewJgoodiesLabel.setBounds(10, 43, 1080, 71);
 		add(lblNewJgoodiesLabel);
 		
 	
@@ -36,12 +36,12 @@ public class PanelBilletes extends JPanel {
 		add(MostrarBilletes);
 
 		btnCerrarSesion.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnCerrarSesion.setBounds(29, 578, 169, 49);
+		btnCerrarSesion.setBounds(48, 575, 194, 68);
 		add(btnCerrarSesion);
 		
 		
 		btnComprarBillete.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnComprarBillete.setBounds(868, 578, 198, 49);
+		btnComprarBillete.setBounds(857, 578, 199, 65);
 		add(btnComprarBillete);
 
 	}

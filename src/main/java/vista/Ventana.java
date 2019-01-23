@@ -17,6 +17,11 @@ public class Ventana extends JFrame {
 	public PanelBilletes billetes;
 	public PanelBilleteComprado billeteComprado;
 	public PanelFechas fechas;
+	public PanelParadas paradas;
+	public PanelDevolucion devolucion;
+	public PanelDespedida despedida;
+	public PanelSaludo saludo;
+	public PanelPago pago;
 	
 	/**
 	 * Create the frame.
@@ -39,20 +44,41 @@ public class Ventana extends JFrame {
 		contentPane.add(registro);
 		registro.setLayout(null);
 		
-		billeteComprado = new PanelBilleteComprado();
-		contentPane.add(billeteComprado);
-		billeteComprado.setLayout(null);
+		billetes = new PanelBilletes();
+		contentPane.add(billetes);
+		billetes.setLayout(null);
 		
 		lineas = new PanelLineas();
 		contentPane.add(lineas);
 		lineas.setLayout(null);
 		
-		billetes = new PanelBilletes();
-		contentPane.add(billetes);
-		billetes.setLayout(null);
+		paradas = new PanelParadas();
+		contentPane.add(paradas);
+		paradas.setLayout(null);
 		
 		fechas = new PanelFechas();
 		contentPane.add(fechas);
 		fechas.setLayout(null);
+		
+		billeteComprado = new PanelBilleteComprado();
+		contentPane.add(billeteComprado);
+		billeteComprado.setLayout(null);
+		
+
+		devolucion = new PanelDevolucion();
+		contentPane.add(devolucion);
+		devolucion.setLayout(null);
+		
+		despedida = new PanelDespedida();
+		contentPane.add(despedida);
+		despedida.setLayout(null);
+		
+		saludo = new PanelSaludo();
+		contentPane.add(saludo);
+		saludo.setLayout(null);
+		
+		pago = new PanelPago();
+		contentPane.add(pago);
+		pago.setLayout(null);
 	}
 }
