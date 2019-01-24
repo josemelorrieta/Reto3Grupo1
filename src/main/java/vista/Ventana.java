@@ -82,5 +82,6 @@ public class Ventana extends JFrame {
 		pago = new PanelPago();
 		contentPane.add(pago);
 		pago.setLayout(null);
+		
 	}
 }

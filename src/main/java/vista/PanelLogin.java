@@ -89,8 +89,5 @@ public class PanelLogin extends JPanel {
 		lblLogin.setBounds(-21, 73, 1070, 48);
 		add(lblLogin);
 		
-		
-		
-		
 	}
 }

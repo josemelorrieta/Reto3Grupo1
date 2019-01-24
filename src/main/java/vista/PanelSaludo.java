@@ -54,6 +54,5 @@ public class PanelSaludo extends JPanel {
 		btnSaludo.setContentAreaFilled(false);
 		add(btnSaludo);
 		
-		
 	}
 }
