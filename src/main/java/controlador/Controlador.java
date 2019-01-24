@@ -33,7 +33,7 @@ public class Controlador implements ActionListener {
 		
 	}
 	
-	
+
 	//Inicio del programa
 
 

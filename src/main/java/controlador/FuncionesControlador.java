@@ -2,18 +2,22 @@ package controlador;
 
 import javax.swing.JPanel;
 
+import vista.Ventana;
+
 public class FuncionesControlador {
 	
-	public  void irDesdeSaludoALogin(JPanel panelSaludo, JPanel panelLogin) {
+	public void irDesdeSaludoALogin(Ventana miVentana) {
 		
-		panelLogin.setVisible(true);
-		panelSaludo.setVisible(false);
+		miVentana.saludo.setVisible(false);
+		miVentana.login.setVisible(true);
+		
 		
 		
 	}
 	
-	public void irDesdeLoginASaludo() {
-		
+	public void irDesdeLoginASaludo(Ventana miVentana) {
+		miVentana.saludo.setVisible(true);
+		miVentana.login.setVisible(false);
 		
 	}
 
