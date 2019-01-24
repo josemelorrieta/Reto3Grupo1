@@ -8,9 +8,9 @@ import modelo.ConsultaBD;
 
 public class FuncionesVarias {
 
-	public double DistanciaEuclidea(int coorXOrigen, int coordXDestino, int coorYOrigen, int coordYDestino) {
-		return Math.sqrt(Math.abs((Math.pow((coordXDestino-coorXOrigen), 2))) + Math.abs((Math.pow((coordYDestino-coorYOrigen), 2))));
-	}
+//	public double DistanciaEuclidea(int coorXOrigen, int coordXDestino, int coorYOrigen, int coordYDestino) {
+//		return Math.sqrt(Math.abs((Math.pow((coordXDestino-coorXOrigen), 2))) + Math.abs((Math.pow((coordYDestino-coorYOrigen), 2))));
+//	}
 	
 	public boolean comprobarDBI(String DNI) throws Exception {
 		ConexionBD miConexion = new ConexionBD();
