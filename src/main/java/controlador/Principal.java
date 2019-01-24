@@ -10,7 +10,7 @@ public class Principal {
 	
 	public static void main(String[] args) {
 		// Declaración e inicialización de variables
-		Principal miPrincipal = new Principal();		
+		Principal miPrincipal = new Principal();
 		
 		//Inicio del programa
 		miPrincipal.inicar();
