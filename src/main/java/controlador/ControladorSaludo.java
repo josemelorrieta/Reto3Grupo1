@@ -9,8 +9,8 @@ import vista.Ventana;
 
 public class ControladorSaludo implements ActionListener {
 	
-	public JPanel panelSaludo;
-	public JPanel panelLogin;
+	FuncionesControlador funciones = new FuncionesControlador();
+	
 	
 	//private Controlador miControlador;
 	private Ventana miVentana;
@@ -21,6 +21,7 @@ public class ControladorSaludo implements ActionListener {
 			this.miVentana = miVentana;
 			
 			miVentana.saludo.btnSaludo.addActionListener(this);
+			miVentana.login.btnAtras.addActionListener(this);
 		
 			
 		}
@@ -28,7 +29,7 @@ public class ControladorSaludo implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			switch (miVentana.saludo.btnSaludo.getName()) {
-			case "btnSaludo":  FuncionesControlador.irDesdeSaludoALogin(panelSaludo, panelLogin);  break;
+			case "btnSaludo":  funciones.irDesdeSaludoALogin(miVentana);  break;
 		
 		}
 			

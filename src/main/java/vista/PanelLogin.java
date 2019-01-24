@@ -34,7 +34,6 @@ public class PanelLogin extends JPanel {
 	 */
 	public PanelLogin() {
 		setBackground(Color.CYAN);
-		setBorder(new LineBorder(new Color(0, 0, 0), 4));
 		setBounds(0, 0, 1090, 690);
 		setLayout(null);
 		
@@ -89,6 +88,7 @@ public class PanelLogin extends JPanel {
 		lblLogin.setHorizontalAlignment(SwingConstants.CENTER);
 		lblLogin.setBounds(-21, 73, 1070, 48);
 		add(lblLogin);
+		
 		
 		
 		
