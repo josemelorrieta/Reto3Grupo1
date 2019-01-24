@@ -9,15 +9,14 @@ import controlador.FuncionesVarias;
 public class FuncionesVariasTest {
 
 	private FuncionesVarias funcionesTest = new FuncionesVarias();
-	
-	@Test
-	public void testDistanciaEuclidea() {
-		int coorXOrigen = 7;
-		int coordXDestino = 4;
-		int coorYOrigen = 2;
-		int coordYDestino = 9;
 
-		assertEquals(funcionesTest.DistanciaEuclidea(coorXOrigen, coordXDestino, coorYOrigen, coordYDestino), 0, 0);
+	@Test
+	public void testDistanciaEuclidea() throws Exception {
+		String DNI = "45899844Y";
+		String DNI2 = "45894Y";
+		
+		assertEquals(funcionesTest.comprobarDNI(DNI), true);
+		assertEquals(funcionesTest.comprobarDNI(DNI2), false);
 	}
 
 }
