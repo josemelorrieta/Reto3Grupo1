@@ -65,10 +65,13 @@ public class Ventana extends JFrame {
 		lineas.setLayout(null);
 		
 		paradas = new PanelParadas();
+		paradas.btnAtras.setLocation(654, 575);
 		contentPane.add(paradas);
 		paradas.setLayout(null);
 		
 		fechas = new PanelFechas();
+		fechas.btnSiguiente.setBounds(858, 575, 186, 68);
+		fechas.btnAtras.setLocation(662, 575);
 		fechas.FechaDeVuelta.setBackground(Color.WHITE);
 		fechas.FechaDeIda.setBackground(Color.WHITE);
 		fechas.rdbtnNewRadioButton.setBackground(Color.CYAN);
@@ -76,6 +79,8 @@ public class Ventana extends JFrame {
 		fechas.setLayout(null);
 		
 		billeteComprado = new PanelBilleteComprado();
+		billeteComprado.btnSiguiente.setBounds(889, 570, 165, 61);
+		billeteComprado.btnAtras.setBounds(691, 570, 171, 61);
 		contentPane.add(billeteComprado);
 		billeteComprado.setLayout(null);
 		

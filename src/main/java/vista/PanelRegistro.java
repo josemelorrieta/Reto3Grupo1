@@ -23,8 +23,8 @@ public class PanelRegistro extends JPanel {
 	public JTextField textFieldApellidos;
 	public JTextField textFieldNombre;
 	public JTextField textFieldDni;
-	public JButton btnCancelar = new JButton("CANCELAR");
-	public JButton btnRegistrarse = new JButton("CONFIRMAR");
+	public JButton btnCancelar = new JButton("Cancelar");
+	public JButton btnRegistrarse = new JButton("Confirmar");
 	public JCheckBox ElegirHombre = new JCheckBox("Hombre");
 	public JCheckBox ElegirMujer = new JCheckBox("Mujer");
 

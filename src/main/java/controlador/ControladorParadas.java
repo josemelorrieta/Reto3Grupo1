@@ -20,16 +20,18 @@ public class ControladorParadas implements ActionListener {
 			
 			this.miVentana = miVentana;
 			
-			miVentana.paradas.btnCancelar.addActionListener(this);
+			miVentana.paradas.btnAtras.addActionListener(this);
 			miVentana.paradas.btnSiguiente.addActionListener(this);
+			miVentana.paradas.btnCancelar.addActionListener(this);
 			
 		}
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			switch (((JButton) e.getSource()).getName()) {
-				case "btnCancelarParadas": funciones.irDesdeParadasALineas(miVentana);  break;
+				case "btnAtrasParadas": funciones.irDesdeParadasALineas(miVentana);  break;
 				case "btnSiguienteParadas": funciones.irDesdeParadasAFechas(miVentana);  break;
+				case "btnCancelarParadas": funciones.irDesdeParadasABilletes(miVentana);  break;
 	
 			}
 			

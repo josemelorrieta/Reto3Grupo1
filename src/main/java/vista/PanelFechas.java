@@ -11,15 +11,19 @@ import javax.swing.JButton;
 import javax.swing.JRadioButton;
 import javax.swing.JComboBox;
 import javax.swing.JTextArea;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class PanelFechas extends JPanel {
 	
-	public JButton btnCancelar = new JButton("Cancelar");
+	public JButton btnAtras = new JButton("Atras");
 	public JButton btnSiguiente = new JButton("Siguiente");
+	public JButton btnCancelar = new JButton("Cancelar");
 	public JComboBox FechaDeIda = new JComboBox();
 	public JComboBox FechaDeVuelta = new JComboBox();
 	public JRadioButton rdbtnNewRadioButton = new JRadioButton("Comprar billete de vuelta");
-	JTextArea textPrecio = new JTextArea();
+	public JTextArea textPrecio = new JTextArea();
+
 
 	/**
 	 * Create the panel.
@@ -28,12 +32,12 @@ public class PanelFechas extends JPanel {
 		setBorder(new LineBorder(new Color(0, 0, 0), 4));
 		setBackground(Color.CYAN);
 		setLayout(null);
-		btnCancelar.setName("btnCancelarFechas");
+		btnAtras.setName("btnAtrasFechas");
 		
 		
-		btnCancelar.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnCancelar.setBounds(48, 575, 194, 68);
-		add(btnCancelar);
+		btnAtras.setFont(new Font("Tahoma", Font.BOLD, 20));
+		btnAtras.setBounds(287, 575, 186, 68);
+		add(btnAtras);
 		btnSiguiente.setName("btnSiguienteFechas");
 		
 		
@@ -50,11 +54,12 @@ public class PanelFechas extends JPanel {
 		lblNewJgoodiesLabel.setFont(new Font("Tahoma", Font.PLAIN, 40));
 		lblNewJgoodiesLabel.setBounds(646, 261, 314, 37);
 		add(lblNewJgoodiesLabel);
+		rdbtnNewRadioButton.setBackground(Color.CYAN);
 		
 		
 		rdbtnNewRadioButton.setHorizontalAlignment(SwingConstants.CENTER);
-		rdbtnNewRadioButton.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		rdbtnNewRadioButton.setBounds(409, 196, 224, 48);
+		rdbtnNewRadioButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		rdbtnNewRadioButton.setBounds(367, 196, 284, 48);
 		add(rdbtnNewRadioButton);
 		
 		
@@ -67,19 +72,25 @@ public class PanelFechas extends JPanel {
 		
 		JLabel lblPrecio = DefaultComponentFactory.getInstance().createLabel("Precio:");
 		lblPrecio.setFont(new Font("Tahoma", Font.PLAIN, 40));
-		lblPrecio.setBounds(299, 470, 138, 37);
+		lblPrecio.setBounds(316, 452, 138, 37);
 		add(lblPrecio);
 		
 		
-		textPrecio.setBounds(431, 470, 199, 37);
+		textPrecio.setBounds(452, 452, 199, 37);
 		add(textPrecio);
 		
 		JLabel lblNewJgoodiesLabel_1 = DefaultComponentFactory.getInstance().createLabel("SELECCIONE FECHA");
 		lblNewJgoodiesLabel_1.setForeground(Color.ORANGE);
 		lblNewJgoodiesLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewJgoodiesLabel_1.setFont(new Font("Sylfaen", Font.PLAIN, 50));
-		lblNewJgoodiesLabel_1.setBounds(10, 29, 1080, 68);
+		lblNewJgoodiesLabel_1.setBounds(-36, 29, 1080, 68);
 		add(lblNewJgoodiesLabel_1);
+		
+		btnCancelar.setName("btnCancelarFechas");
+		btnCancelar.setFont(new Font("Tahoma", Font.BOLD, 20));
+		btnCancelar.setBounds(53, 575, 186, 68);
+		
+		add(btnCancelar);
 
 	}
 }

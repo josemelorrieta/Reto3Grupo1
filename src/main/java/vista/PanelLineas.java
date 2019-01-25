@@ -13,8 +13,8 @@ import javax.swing.DefaultComboBoxModel;
 
 public class PanelLineas extends JPanel {
 	
-	public JButton btnCancelar = new JButton("CANCELAR");
-	public JButton btnSiguiente = new JButton("SIGUIENTE");
+	public JButton btnCancelar = new JButton("Cancelar");
+	public JButton btnSiguiente = new JButton("Siguiente");
 	public JComboBox SeleccionarLinea = new JComboBox();
 
 	/**

@@ -45,13 +45,13 @@ public class PanelLogin extends JPanel {
 		lblNewJgoodiesLabel_1.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		add(lblNewJgoodiesLabel_1);
 		
-		btnRegistrarse = new JButton("REGISTRARSE");
+		btnRegistrarse = new JButton("Registrarse");
 		btnRegistrarse.setName("btnRegistrarseLogin");
 		btnRegistrarse.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnRegistrarse.setBounds(858, 575, 194, 68);
+		btnRegistrarse.setBounds(846, 575, 194, 68);
 		add(btnRegistrarse);
 		
-		btnAtras = new JButton("ATRAS");
+		btnAtras = new JButton("Atras");
 		btnAtras.setName("btnAtrasLogin");
 		btnAtras.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnAtras.setBounds(48, 575, 194, 68);

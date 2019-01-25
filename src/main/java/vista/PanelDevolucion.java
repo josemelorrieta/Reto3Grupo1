@@ -35,6 +35,7 @@ public class PanelDevolucion extends JPanel {
 		btnImprimirTicket.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnImprimirTicket.setBounds(39, 577, 213, 65);
 		add(btnImprimirTicket);
+		btnSiguiente.setName("btnSiguienteDevolucion");
 		
 		
 		btnSiguiente.setFont(new Font("Tahoma", Font.BOLD, 20));

@@ -53,16 +53,19 @@ public class PanelPago extends JPanel {
 		lblNewJgoodiesLabel.setFont(new Font("Sylfaen", Font.PLAIN, 50));
 		lblNewJgoodiesLabel.setBounds(10, 36, 1080, 47);
 		add(lblNewJgoodiesLabel);
+		btnCancelar.setName("btnCancelarPago");
 		
 		
 		btnCancelar.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnCancelar.setBounds(51, 553, 156, 70);
 		add(btnCancelar);
+		btnAtras.setName("btnAtrasPago");
 		
 		
 		btnAtras.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnAtras.setBounds(658, 553, 156, 70);
 		add(btnAtras);
+		btnSiguiente.setName("btnSiguientePago");
 		
 		
 		btnSiguiente.setFont(new Font("Tahoma", Font.BOLD, 20));
