@@ -16,7 +16,7 @@ public class ControladorLogin implements ActionListener {
 	private Ventana miVentana;
 	
 	//Constructor
-		public ControladorLogin (Ventana miVentana) {
+		public ControladorLogin(Ventana miVentana) {
 			
 			this.miVentana = miVentana;
 			
@@ -29,8 +29,15 @@ public class ControladorLogin implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			switch (((JButton) e.getSource()).getName()) {
-				case "btnAtrasLogin":  funciones.irDesdeLoginASaludo(miVentana);  break;
-				case "btnRegistrarseLogin": funciones.irDesdeLoginARegistro(miVentana);  break;	
+				case "btnAtrasLogin":   funciones.irDesdeLoginASaludo(miVentana); 
+										miVentana.login.TextDni.setText(""); 
+										miVentana.login.passwordField.setText("");
+										break;
+
+				case "btnRegistrarseLogin": funciones.irDesdeLoginARegistro(miVentana); 
+											miVentana.login.TextDni.setText(""); 
+											miVentana.login.passwordField.setText("");
+											break;
 
 			}
 			

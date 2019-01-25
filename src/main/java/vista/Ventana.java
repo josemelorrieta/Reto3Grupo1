@@ -39,23 +39,25 @@ public class Ventana extends JFrame {
 		setBounds(100, 100, 1100, 700);
 		getContentPane().setLayout(new CardLayout(0, 0));
 		
-		billetes = new PanelBilletes();
-		contentPane.add(billetes);
-		billetes.setLayout(null);
-		
 		saludo = new PanelSaludo();
 		contentPane.add(saludo);
 		saludo.setLayout(null);
 		
 		
 		login = new PanelLogin();
+		login.setBackground(Color.CYAN);
 		login.setBorder(new LineBorder(new Color(0, 0, 0), 4));
 		contentPane.add(login);
 		login.setLayout(null);
 		
 		registro = new PanelRegistro();
+		registro.setBackground(Color.CYAN);
 		contentPane.add(registro);
 		registro.setLayout(null);
+		
+		billetes = new PanelBilletes();
+		contentPane.add(billetes);
+		billetes.setLayout(null);
 		
 		lineas = new PanelLineas();
 		lineas.btnSiguiente.setSize(234, 68);

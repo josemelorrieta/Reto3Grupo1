@@ -9,8 +9,11 @@ import java.util.ArrayList;
 
 import modelo.ConexionBD;
 import modelo.ConsultaBD;
+import vista.Ventana;
 
 public class FuncionesVarias {
+	
+	
 
 	public boolean comprobarDNI(String DNI) throws Exception {
 		ConexionBD miConexion = new ConexionBD();
@@ -55,5 +58,10 @@ public class FuncionesVarias {
             return null;
         }
     }
+
+
+   
+	
+
 	
 }

@@ -9,13 +9,7 @@ public class FuncionesControlador {
 	public void irDesdeSaludoALogin(Ventana miVentana) {
 		
 		miVentana.saludo.setVisible(false);
-
-		miVentana.login.setVisible(true);	
-
-	
-		
-		 
-
+		miVentana.login.setVisible(true);		 
 		
 	}
 	
@@ -37,6 +31,7 @@ public class FuncionesControlador {
 		
 		miVentana.registro.setVisible(false);
 		miVentana.login.setVisible(true);
+		
 		
 	}
 	
@@ -151,6 +146,8 @@ public class FuncionesControlador {
 		miVentana.despedida.setVisible(true);
 		
 	}
+	
+	
 	
 	
 	

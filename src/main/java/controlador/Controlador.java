@@ -6,15 +6,11 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
-import controlador.Controlador.ControladorLogin;
 import modelo.Modelo;
 import vista.Ventana;
 
 public class Controlador implements ActionListener {
-	public class ControladorLogin {
-
-	} 
-
+	
 
 	//Declaración e inicialización de variables;
 	private Modelo miModelo;
@@ -40,11 +36,10 @@ public class Controlador implements ActionListener {
 		this.miVentana = miVentana;
 		this.miModelo = miModelo;
 
-		miVentana.login.btnLogin.addActionListener(this);
+		//miVentana.login.btnLogin.addActionListener(this);
 
 		
 		this.miControladorSaludo = new ControladorSaludo(miVentana);
-		this.miControladorLogin = new ControladorLogin();
 		this.miControladorRegistro = new ControladorRegistro(miVentana);
 		this.miControladorBilletes = new ControladorBilletes(miVentana);
 		this.miControladorLineas = new ControladorLineas(miVentana);
@@ -52,7 +47,8 @@ public class Controlador implements ActionListener {
 		this.miControladorFechas = new ControladorFechas(miVentana);
 		this.miControladorBilleteComprado = new ControladorBilleteComprado(miVentana);
 		this.miControladorPago = new ControladorPago(miVentana);
-		this.miControladorDevolucion = new ControladorDevolucion(miVentana);
+		this.miControladorDevolucion = new ControladorDevolucion(miVentana);	
+		this.miControladorLogin = new ControladorLogin(miVentana);
 	
 
 		

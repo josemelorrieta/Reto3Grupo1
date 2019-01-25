@@ -21,6 +21,7 @@ public class ControladorRegistro implements ActionListener {
 			this.miVentana = miVentana;
 			
 			miVentana.registro.btnCancelar.addActionListener(this);
+	
 			
 			
 		}
@@ -28,8 +29,16 @@ public class ControladorRegistro implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			switch (((JButton) e.getSource()).getName()) {
-				case "btnAtrasRegistro": funciones.irDesdeRegistroALogin(miVentana);  break;
+				case "btnAtrasRegistro": funciones.irDesdeRegistroALogin(miVentana);
+										 miVentana.registro.textFieldDni.setText(""); 
+										 miVentana.registro.textFieldNombre.setText("");
+										 miVentana.registro.textFieldApellidos.setText("");
+										 miVentana.registro.textFieldNombre.setText(""); 
+										 break;
+										
 	
+										 
+									//	 
 			}
 			
 		}
