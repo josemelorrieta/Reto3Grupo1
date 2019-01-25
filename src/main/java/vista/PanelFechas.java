@@ -12,7 +12,7 @@ import javax.swing.JRadioButton;
 import javax.swing.JComboBox;
 import javax.swing.JTextArea;
 
-public class PanelFechas extends JPanel {
+public class PanelFechas extends JPanel { 
 	
 	public JButton btnCancelar = new JButton("Cancelar");
 	public JButton btnSiguiente = new JButton("Siguiente");
@@ -28,11 +28,13 @@ public class PanelFechas extends JPanel {
 		setBorder(new LineBorder(new Color(0, 0, 0), 4));
 		setBackground(Color.CYAN);
 		setLayout(null);
+		btnCancelar.setName("btnCancelarFechas");
 		
 		
 		btnCancelar.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnCancelar.setBounds(48, 575, 194, 68);
 		add(btnCancelar);
+		btnSiguiente.setName("btnSiguienteFechas");
 		
 		
 		btnSiguiente.setFont(new Font("Tahoma", Font.BOLD, 20));

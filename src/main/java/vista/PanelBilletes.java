@@ -16,7 +16,7 @@ public class PanelBilletes extends JPanel {
 	public JButton btnComprarBillete = new JButton("Comprar Billete");
 	public JList MostrarBilletes = new JList();
 
-	/**
+	/** 
 	 * Create the panel.
 	 */
 	public PanelBilletes() {
@@ -38,6 +38,7 @@ public class PanelBilletes extends JPanel {
 		btnCerrarSesion.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnCerrarSesion.setBounds(48, 575, 194, 68);
 		add(btnCerrarSesion);
+		btnComprarBillete.setName("btnComprarBilleteBilletes");
 		
 		
 		btnComprarBillete.setFont(new Font("Tahoma", Font.BOLD, 20));

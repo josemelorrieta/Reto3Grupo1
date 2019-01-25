@@ -15,7 +15,7 @@ import javax.swing.JList;
 
 public class PanelParadas extends JPanel {
 	
-	public JButton btnCancelar = new JButton("Cancelar");
+	public JButton btnCancelar = new JButton("Cancelar"); 
 	public JButton btnSiguiente = new JButton("Siguiente");
 	public JComboBox ParadaDeOrigen = new JComboBox();
 	public JComboBox ParadaDeDestino = new JComboBox();
@@ -28,10 +28,12 @@ public class PanelParadas extends JPanel {
 		setBorder(new LineBorder(new Color(0, 0, 0), 4));
 		setBackground(Color.CYAN);
 		setLayout(null);
+		btnCancelar.setName("btnCancelarParadas");
 
 		btnCancelar.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnCancelar.setBounds(48, 575, 194, 68);
 		add(btnCancelar);
+		btnSiguiente.setName("btnSiguienteParadas");
 		
 		btnSiguiente.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnSiguiente.setBounds(858, 575, 194, 68);

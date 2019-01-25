@@ -18,13 +18,13 @@ import javax.swing.JTextField;
 public class PanelRegistro extends JPanel {
 	
 	JPanel panelRegistro = new JPanel();
-	
+	 
 	private JTextField textFieldContraseña;
 	public JTextField textFieldApellidos;
 	public JTextField textFieldNombre;
 	public JTextField textFieldDni;
 	public JButton btnCancelar = new JButton("CANCELAR");
-	public JButton btnRegistrarse = new JButton("REGISTRARSE");
+	public JButton btnRegistrarse = new JButton("CONFIRMAR");
 	public JCheckBox ElegirHombre = new JCheckBox("Hombre");
 	public JCheckBox ElegirMujer = new JCheckBox("Mujer");
 
@@ -50,6 +50,7 @@ public class PanelRegistro extends JPanel {
 		lblNewJgoodiesLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewJgoodiesLabel_1.setBounds(48, 184, 351, 35);
 		add(lblNewJgoodiesLabel_1);
+		btnCancelar.setName("btnAtrasRegistro");
 		
 		
 		btnCancelar.setFont(new Font("Tahoma", Font.BOLD, 20));
