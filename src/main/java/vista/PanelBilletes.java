@@ -38,6 +38,7 @@ public class PanelBilletes extends JPanel {
 		btnCerrarSesion.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnCerrarSesion.setBounds(48, 575, 194, 68);
 		add(btnCerrarSesion);
+		btnComprarBillete.setName("btnComprarBilleteBilletes");
 		
 		
 		btnComprarBillete.setFont(new Font("Tahoma", Font.BOLD, 20));

@@ -13,8 +13,8 @@ import javax.swing.DefaultComboBoxModel;
 
 public class PanelLineas extends JPanel {
 	
-	public JButton btnCerrarSesion = new JButton("CERRAR SESION");
-	public JButton btnComprarBillete = new JButton("COMPRAR BILLETE");
+	public JButton btnCancelar = new JButton("CANCELAR");
+	public JButton btnSiguiente = new JButton("SIGUIENTE");
 	public JComboBox SeleccionarLinea = new JComboBox();
 
 	/**
@@ -31,16 +31,18 @@ public class PanelLineas extends JPanel {
 		lblNewJgoodiesLabel.setFont(new Font("Sylfaen", Font.PLAIN, 50));
 		lblNewJgoodiesLabel.setBounds(10, 56, 1080, 49);
 		add(lblNewJgoodiesLabel);
+		btnCancelar.setName("btnCancelarLineas");
 		
 		
-		btnCerrarSesion.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnCerrarSesion.setBounds(55, 549, 211, 68);
-		add(btnCerrarSesion);
+		btnCancelar.setFont(new Font("Tahoma", Font.BOLD, 20));
+		btnCancelar.setBounds(55, 549, 211, 68);
+		add(btnCancelar);
+		btnSiguiente.setName("btnSiguienteLineas");
 		
 		
-		btnComprarBillete.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnComprarBillete.setBounds(790, 549, 223, 68);
-		add(btnComprarBillete);
+		btnSiguiente.setFont(new Font("Tahoma", Font.BOLD, 20));
+		btnSiguiente.setBounds(790, 549, 223, 68);
+		add(btnSiguiente);
 		
 		
 		SeleccionarLinea.setBackground(Color.PINK);

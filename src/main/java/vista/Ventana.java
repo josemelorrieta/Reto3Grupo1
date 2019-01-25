@@ -7,6 +7,8 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import com.jgoodies.forms.factories.DefaultComponentFactory;
+import javax.swing.border.LineBorder;
+import java.awt.Color;
 
 
 public class Ventana extends JFrame {
@@ -37,12 +39,17 @@ public class Ventana extends JFrame {
 		setBounds(100, 100, 1100, 700);
 		getContentPane().setLayout(new CardLayout(0, 0));
 		
+		billetes = new PanelBilletes();
+		contentPane.add(billetes);
+		billetes.setLayout(null);
+		
 		saludo = new PanelSaludo();
 		contentPane.add(saludo);
 		saludo.setLayout(null);
 		
 		
 		login = new PanelLogin();
+		login.setBorder(new LineBorder(new Color(0, 0, 0), 4));
 		contentPane.add(login);
 		login.setLayout(null);
 		
@@ -50,11 +57,10 @@ public class Ventana extends JFrame {
 		contentPane.add(registro);
 		registro.setLayout(null);
 		
-		billetes = new PanelBilletes();
-		contentPane.add(billetes);
-		billetes.setLayout(null);
-		
 		lineas = new PanelLineas();
+		lineas.btnSiguiente.setSize(234, 68);
+		lineas.btnSiguiente.setLocation(780, 549);
+		lineas.SeleccionarLinea.setBackground(Color.WHITE);
 		contentPane.add(lineas);
 		lineas.setLayout(null);
 		
@@ -63,6 +69,9 @@ public class Ventana extends JFrame {
 		paradas.setLayout(null);
 		
 		fechas = new PanelFechas();
+		fechas.FechaDeVuelta.setBackground(Color.WHITE);
+		fechas.FechaDeIda.setBackground(Color.WHITE);
+		fechas.rdbtnNewRadioButton.setBackground(Color.CYAN);
 		contentPane.add(fechas);
 		fechas.setLayout(null);
 		

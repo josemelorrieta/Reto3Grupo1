@@ -4,31 +4,32 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
-import javax.swing.JPanel;
 
 import vista.Ventana;
 
-public class ControladorSaludo implements ActionListener {
+public class ControladorBilletes implements ActionListener {
 	
 	FuncionesControlador funciones = new FuncionesControlador();
 	
 	
+	//private Controlador miControlador;
 	private Ventana miVentana;
 	
 	//Constructor
-		public ControladorSaludo( Ventana miVentana) {
+		public ControladorBilletes (Ventana miVentana) {
 			
 			this.miVentana = miVentana;
 			
-			miVentana.saludo.btnSaludo.addActionListener(this);
+			miVentana.billetes.btnComprarBillete.addActionListener(this);
+			
 			
 		}
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			switch (((JButton) e.getSource()).getName()) {
-				case "btnSaludo":  funciones.irDesdeSaludoALogin(miVentana);  break;
-			
+				case "btnComprarBilleteBilletes": funciones.irDesdeBilletesALineas(miVentana);  break;
+	
 			}
 			
 		}

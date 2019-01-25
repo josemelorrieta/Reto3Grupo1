@@ -46,6 +46,7 @@ public class PanelLogin extends JPanel {
 		add(lblNewJgoodiesLabel_1);
 		
 		btnRegistrarse = new JButton("REGISTRARSE");
+		btnRegistrarse.setName("btnRegistrarseLogin");
 		btnRegistrarse.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnRegistrarse.setBounds(858, 575, 194, 68);
 		add(btnRegistrarse);
