@@ -21,7 +21,7 @@ public class Ventana extends JFrame {
 	public PanelBilletes billetes;
 	public PanelBilleteComprado billeteComprado;
 	public PanelFechas fechas;
-	public PanelParadas paradas;
+	public PanelParadas paradas; 
 	public PanelDevolucion devolucion;
 	public PanelDespedida despedida;
 	public PanelSaludo saludo;

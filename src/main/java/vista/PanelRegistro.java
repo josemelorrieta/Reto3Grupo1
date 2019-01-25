@@ -18,7 +18,7 @@ import javax.swing.JTextField;
 public class PanelRegistro extends JPanel {
 	
 	JPanel panelRegistro = new JPanel();
-	
+	 
 	private JTextField textFieldContraseña;
 	public JTextField textFieldApellidos;
 	public JTextField textFieldNombre;

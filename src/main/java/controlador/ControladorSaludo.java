@@ -21,8 +21,8 @@ public class ControladorSaludo implements ActionListener {
 			this.miVentana = miVentana;
 			
 			miVentana.saludo.btnSaludo.addActionListener(this);
-			
-		}
+			 
+		} 
 
 		@Override
 		public void actionPerformed(ActionEvent e) {

@@ -14,7 +14,7 @@ import javax.swing.JTextArea;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class PanelFechas extends JPanel {
+public class PanelFechas extends JPanel { 
 	
 	public JButton btnAtras = new JButton("Atras");
 	public JButton btnSiguiente = new JButton("Siguiente");

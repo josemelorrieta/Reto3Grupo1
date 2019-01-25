@@ -16,7 +16,7 @@ public class PanelBilletes extends JPanel {
 	public JButton btnComprarBillete = new JButton("Comprar Billete");
 	public JList MostrarBilletes = new JList();
 
-	/**
+	/** 
 	 * Create the panel.
 	 */
 	public PanelBilletes() {

@@ -11,7 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 
-public class PanelLineas extends JPanel {
+public class PanelLineas extends JPanel { 
 	
 	public JButton btnCancelar = new JButton("Cancelar");
 	public JButton btnSiguiente = new JButton("Siguiente");
