@@ -14,12 +14,8 @@ import javax.swing.JTextArea;
 import javax.swing.JList;
 
 public class PanelParadas extends JPanel {
-	
-<<<<<<< HEAD
+
 	public JButton btnAtras = new JButton("Atras");
-=======
-	public JButton btnCancelar = new JButton("Cancelar"); 
->>>>>>> 3f0ada699d312fcdef20daebde66b57744b99786
 	public JButton btnSiguiente = new JButton("Siguiente");
 	public JButton btnCancelar = new JButton("Cancelar");
 	public JComboBox ParadaDeOrigen = new JComboBox();
