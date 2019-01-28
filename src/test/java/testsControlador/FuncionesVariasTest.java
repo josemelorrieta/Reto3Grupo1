@@ -36,6 +36,9 @@ public class FuncionesVariasTest {
 	@Test
 	public void testCargarLineas() throws Exception {
 		System.out.println(funcionesTest.CargarLineas());
+		Connection con = conexionTest.conectarBD();
+		ResultSet rs = consultaTest.hacerConsultaBD(con, "select parada.Nombre from parada, linea, `linea-parada` where linea.Cod_Linea = `linea-parada`.Cod_Linea and `linea-parada`.Cod_Parada=parada.Cod_Parada and linea.Cod_Linea = 'L1' order BY sqrt(power(latitud - (SELECT latitud FROM parada WHERE cod_parada = 1), 2)+power(longitud - (SELECT longitud FROM parada WHERE cod_parada = 1), 2));");
+		System.out.println(rs.getRow());
 		assertEquals(funcionesTest.CargarLineas(), "Termibus-Bilbao - Asilo Barrika");
 	}
 	
