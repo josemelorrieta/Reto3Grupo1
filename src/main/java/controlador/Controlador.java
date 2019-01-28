@@ -2,11 +2,15 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
+import modelo.Cliente;
+import modelo.LineaAutobus;
 import modelo.Modelo;
+import modelo.Parada;
 import vista.Ventana;
 
 public class Controlador implements ActionListener {
@@ -29,12 +33,15 @@ public class Controlador implements ActionListener {
 	private ControladorBilleteComprado miControladorBilleteComprado;
 	private ControladorPago miControladorPago;
 	private ControladorDevolucion miControladorDevolucion;
-	
+	private ArrayList<Parada> paradas = new ArrayList<Parada>();
+	private ArrayList<LineaAutobus> lineas = new ArrayList<LineaAutobus>();
+	private Cliente cliente = new Cliente(0, null, null, null, '0', null);
 	
 	//Constructor
 	public Controlador(Ventana miVentana, Modelo miModelo) {
 		this.miVentana = miVentana;
 		this.miModelo = miModelo;
+		
 
 		//miVentana.login.btnLogin.addActionListener(this);
 
