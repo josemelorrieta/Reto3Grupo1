@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import org.apache.commons.codec.digest.DigestUtils;
+
 import modelo.ConexionBD;
 import modelo.ConsultaBD;
 import vista.Ventana;
@@ -20,10 +22,13 @@ public class FuncionesVarias {
 		ConsultaBD miConsulta = new ConsultaBD();
 		Connection con = miConexion.conectarBD();
 		ResultSet rs = miConsulta.hacerConsultaBD(con, "select DNI from cliente where DNI = '" + DNI + "';");
-		 if (rs.last())
+		 if (rs.last()) {
+			 con.close();
 			 return true;
-		 else
-			 return false; 
+		 } else {
+			 con.close();
+			 return false;
+		 }
 	}
 
 	//Este metodo se puede mjorar :P
@@ -39,29 +44,45 @@ public class FuncionesVarias {
 		return paradas.get(1) + " - " + paradas.get(rs.getRow()-1);
 			
 	}
-	
-    public String hash(String stringToHash)  {
-    	final char[] hexa = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
-        try {
-            MessageDigest md = MessageDigest.getInstance("MD5");
-            byte[] bytes = md.digest(stringToHash.getBytes());
-            StringBuilder sb = new StringBuilder(2 * bytes.length);
-            for (int i = 0; i < bytes.length; i++) {
-                int low = (int)(bytes[i] & 0x0f);
-                int high = (int)((bytes[i] & 0xf0) >> 4);
-                sb.append(hexa[high]);
-                sb.append(hexa[low]);
-            }
-            return sb.toString();
-        } catch (NoSuchAlgorithmException e) {
-            //exception handling goes here
-            return null;
-        }
+ 
+	public boolean comprobarPass(String DNI, String pass) throws Exception {
+		ConexionBD miConexion = new ConexionBD();
+		ConsultaBD miConsulta = new ConsultaBD();
+		Connection con = miConexion.conectarBD();
+		String passBD = "";
+		ResultSet rs = miConsulta.hacerConsultaBD(con, "select Contraseña from cliente where DNI = '" + DNI + "';");
+		while(rs.next()) {
+			passBD = rs.getString("Contraseña");
+		}
+		con.close();
+		if(pass.equals(passBD)) 
+			return true;
+		else
+			return false;
+	} 
+    
+	public String accionLogin(String dni, char[] pass) {
+    	String passEncriptada;
+    	// Comprobamos si existe el DNI en la base de datos 
+		try {
+			if(comprobarDNI(dni)) {
+				// Comprobamos la contraseña
+				passEncriptada = DigestUtils.md5Hex(String.valueOf(pass));
+				if(comprobarPass(dni, passEncriptada)) {
+					return "Ok";
+				}
+				else
+					return "Contraseña incorrecta";
+				
+			} else { 
+				return "El DNI introducido no existe";
+			}
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		return "Hubo un error";
     }
-
-
-   
-	
 
 	
 }
