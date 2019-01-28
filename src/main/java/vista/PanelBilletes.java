@@ -3,6 +3,7 @@ package vista;
 import javax.swing.JPanel;
 import java.awt.Color;
 import javax.swing.border.LineBorder;
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import com.jgoodies.forms.factories.DefaultComponentFactory;
@@ -14,7 +15,8 @@ public class PanelBilletes extends JPanel {
 
 	public JButton btnCerrarSesion = new JButton("Cerrar Sesion");
 	public JButton btnComprarBillete = new JButton("Comprar Billete");
-	public JList MostrarBilletes = new JList();
+	public DefaultListModel<String> modeloMostrarBilletes = new DefaultListModel<String>();
+	public JList<String> MostrarBilletes = new JList<String>();
 
 	/** 
 	 * Create the panel.
@@ -34,6 +36,7 @@ public class PanelBilletes extends JPanel {
 	
 		MostrarBilletes.setBounds(211, 125, 668, 403);
 		add(MostrarBilletes);
+		btnCerrarSesion.setName("btnCerrarSesionBilletes");
 
 		btnCerrarSesion.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnCerrarSesion.setBounds(48, 575, 194, 68);

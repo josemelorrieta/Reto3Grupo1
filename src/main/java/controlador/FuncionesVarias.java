@@ -65,7 +65,7 @@ public class FuncionesVarias {
 		for (int i = 0; i<rs.getRow(); i++) {
 			paradas.add(i, rs.getString(i));
 		}
-		return paradas.get(1) + " - " + paradas.get(rs.getRow()-1);
+		return paradas.get(0) + " - " + paradas.get(rs.getRow()-1);
 			
 	}
  

@@ -29,12 +29,16 @@ public class ControladorParadas implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			switch (((JButton) e.getSource()).getName()) {
-				case "btnAtrasParadas": funciones.irDesdeParadasALineas(miVentana);  break;
+				case "btnAtrasParadas": funciones.irDesdeParadasALineas(miVentana); 
+										miVentana.paradas.textFieldMostrarLinea.setText("");
+										break;
 				case "btnSiguienteParadas": funciones.irDesdeParadasAFechas(miVentana);  break;
-				case "btnCancelarParadas": funciones.irDesdeParadasABilletes(miVentana);  break;
+				
+				case "btnCancelarParadas": funciones.irDesdeParadasABilletes(miVentana); 
+										   miVentana.paradas.textFieldMostrarLinea.setText("");
+										   break;
 	
-			}
-			
+			}			
 		}
 
 }

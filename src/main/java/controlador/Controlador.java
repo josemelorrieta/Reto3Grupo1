@@ -2,12 +2,15 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
 import modelo.Cliente;
+import modelo.LineaAutobus;
 import modelo.Modelo;
+import modelo.Parada;
 import vista.Ventana;
 
 public class Controlador {
@@ -32,7 +35,8 @@ public class Controlador {
 	private ControladorBilleteComprado miControladorBilleteComprado;
 	private ControladorPago miControladorPago;
 	private ControladorDevolucion miControladorDevolucion;
-	
+	private ArrayList<Parada> paradas = new ArrayList<Parada>();
+	private ArrayList<LineaAutobus> lineas = new ArrayList<LineaAutobus>();
 	
 	//Constructor
 	public Controlador(Ventana miVentana, Modelo miModelo) {

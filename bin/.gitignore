@@ -1,5 +1,14 @@
+<<<<<<< HEAD
 /controlador/
 /vista/
 /modelo/
 /testsControlador/
 /testsModelo/
+=======
+<<<<<<< HEAD
+/vista/
+=======
+/testsControlador/
+>>>>>>> d70378324d0e5b569f76d41990200441320f7b12
+/controlador/
+>>>>>>> a95adaa06d3d209320c316f2704ffc6241c4ac95

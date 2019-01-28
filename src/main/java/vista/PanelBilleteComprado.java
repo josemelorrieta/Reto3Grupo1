@@ -3,6 +3,7 @@ package vista;
 import javax.swing.JPanel;
 import java.awt.Color;
 import javax.swing.border.LineBorder;
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import java.awt.Font;
 import javax.swing.JLabel;
@@ -15,7 +16,8 @@ public class PanelBilleteComprado extends JPanel {
 	public JButton btnCancelar = new JButton("Cancelar");
 	public JButton btnAtras = new JButton("Atras");
 	public JButton btnSiguiente = new JButton("Siguiente");
-	public JList MostrarBillete = new JList();
+	public DefaultListModel<String> modeloMostrarBilletesComprado = new DefaultListModel<String>();
+	public JList<String> MostrarBilleteComprado = new JList<String>();
 	private final JButton btnBilleteDeIda = new JButton("Billete de Ida");
 	private final JButton btnBilleteDeVuelta = new JButton("Billete de Vuelta");
 
@@ -52,8 +54,8 @@ public class PanelBilleteComprado extends JPanel {
 		add(lblSusBilletes);
 		
 		
-		MostrarBillete.setBounds(166, 192, 643, 351);
-		add(MostrarBillete);
+		MostrarBilleteComprado.setBounds(166, 192, 643, 351);
+		add(MostrarBilleteComprado);
 		
 		JLabel lblNewJgoodiesLabel = DefaultComponentFactory.getInstance().createLabel("COMPRUEBE EL BILLETE");
 		lblNewJgoodiesLabel.setForeground(Color.ORANGE);
