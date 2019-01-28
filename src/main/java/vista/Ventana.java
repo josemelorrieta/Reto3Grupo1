@@ -39,9 +39,10 @@ public class Ventana extends JFrame {
 		setBounds(100, 100, 1100, 700);
 		getContentPane().setLayout(new CardLayout(0, 0));
 		
-		billetes = new PanelBilletes();
-		contentPane.add(billetes);
-		billetes.setLayout(null);
+		pago = new PanelPago();
+		contentPane.add(pago, "name_360122149477200");
+		pago.pagado.setText("0");
+		pago.setLayout(null);
 		
 		saludo = new PanelSaludo();
 		contentPane.add(saludo);
@@ -58,6 +59,10 @@ public class Ventana extends JFrame {
 		registro.setBackground(Color.CYAN);
 		contentPane.add(registro);
 		registro.setLayout(null);
+		
+		billetes = new PanelBilletes();
+		contentPane.add(billetes);
+		billetes.setLayout(null);
 		
 		lineas = new PanelLineas();
 		lineas.btnSiguiente.setSize(234, 68);
@@ -85,10 +90,6 @@ public class Ventana extends JFrame {
 		billeteComprado.btnAtras.setBounds(691, 570, 171, 61);
 		contentPane.add(billeteComprado);
 		billeteComprado.setLayout(null);
-		
-		pago = new PanelPago();
-		contentPane.add(pago);
-		pago.setLayout(null);
 		
 
 		devolucion = new PanelDevolucion();
