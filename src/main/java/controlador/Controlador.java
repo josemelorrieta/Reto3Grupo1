@@ -6,16 +6,19 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
+import modelo.Cliente;
 import modelo.Modelo;
 import vista.Ventana;
 
-public class Controlador implements ActionListener {
+public class Controlador {
 	
 
 	//Declaración e inicialización de variables;
 	private Modelo miModelo;
 	private Ventana miVentana;
 
+	private Cliente cliente = null; 
+	
 	FuncionesVarias funciones = new FuncionesVarias();
 
 
@@ -35,9 +38,6 @@ public class Controlador implements ActionListener {
 	public Controlador(Ventana miVentana, Modelo miModelo) {
 		this.miVentana = miVentana;
 		this.miModelo = miModelo;
-
-		//miVentana.login.btnLogin.addActionListener(this);
-
 		
 		this.miControladorSaludo = new ControladorSaludo(miVentana);
 		this.miControladorRegistro = new ControladorRegistro(miVentana);
@@ -48,31 +48,12 @@ public class Controlador implements ActionListener {
 		this.miControladorBilleteComprado = new ControladorBilleteComprado(miVentana);
 		this.miControladorPago = new ControladorPago(miVentana);
 		this.miControladorDevolucion = new ControladorDevolucion(miVentana);	
-		this.miControladorLogin = new ControladorLogin(miVentana);
+		this.miControladorLogin = new ControladorLogin(miVentana, cliente);
 	
-
-		
 	}
 	
 
 	//Inicio del programa
 
-
-	@Override
-	public void actionPerformed(ActionEvent e) {
-//
-//		if (e.getSource()==miVentana.login.btnLogin) {
-//			try {
-//				if(funciones.comprobarDBI(miVentana.login.TextDni.getText()))
-//					JOptionPane.showMessageDialog(miVentana, "Existe el DNI", "Advertencia",  JOptionPane.INFORMATION_MESSAGE);
-//				else
-//					JOptionPane.showMessageDialog(miVentana, "No existe el DNI", "Advertencia",  JOptionPane.INFORMATION_MESSAGE);
-//			} catch (Exception e1) {
-//				// TODO Auto-generated catch block
-//				e1.printStackTrace();
-//			}
-//		}
-
-	}
 	
 }

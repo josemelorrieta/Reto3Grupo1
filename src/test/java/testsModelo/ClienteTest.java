@@ -8,17 +8,18 @@ import modelo.Cliente;
 
 public class ClienteTest {
 
-	private int dni = 1111111;
+	private String dni = "1111111A";
 	private String nombre = "Perry";
 	private String apellidos = "Mason";
 	private String fechaNacimiento = "1/1/0001";
 	private char sexo = 'v';
 	private String contraseña = "aaaAAA";
-	private Cliente cliente = new Cliente(dni, nombre, apellidos,  fechaNacimiento, sexo, contraseña);
+	private Cliente cliente = new Cliente(dni, nombre, apellidos, fechaNacimiento, sexo);
 	
 	@Test
 	public void testConstructorCliente1() {
-		Cliente clienteTest = new Cliente(dni, nombre, apellidos,  fechaNacimiento, sexo, contraseña);
+		Cliente clienteTest = new Cliente(dni, nombre, apellidos,  fechaNacimiento, sexo);
+		clienteTest.setContraseña(contraseña);
 		assertEquals(dni, clienteTest.getDni());
 		assertEquals(nombre, clienteTest.getNombre());
 		assertEquals(apellidos, clienteTest.getApellidos());
@@ -29,7 +30,8 @@ public class ClienteTest {
 
 	@Test
 	public void testConstructorCliente2() {
-		assertEquals(dni, cliente.getDni(), 1111111);
+		cliente.setContraseña(contraseña);
+		assertEquals(dni, cliente.getDni(), "1111111A");
 		assertEquals(nombre, cliente.getNombre(), "Perry");
 		assertEquals(apellidos, cliente.getApellidos(), "Mason");
 		assertEquals(fechaNacimiento, cliente.getFechaNacimiento(), "1/1/0001");

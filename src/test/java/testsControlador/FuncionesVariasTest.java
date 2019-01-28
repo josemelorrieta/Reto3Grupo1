@@ -9,12 +9,15 @@ import java.sql.ResultSet;
 import org.junit.Test;
 
 import controlador.FuncionesVarias;
+import modelo.Cliente;
 import modelo.ConexionBD;
 import modelo.ConsultaBD;
+import vista.Ventana;
 
 public class FuncionesVariasTest {
 
 	private FuncionesVarias funcionesTest = new FuncionesVarias();
+	private Ventana miVentana = new Ventana();
 	
 	private ConexionBD conexionTest = new ConexionBD();
 	private ConsultaBD consultaTest = new ConsultaBD();
@@ -22,14 +25,17 @@ public class FuncionesVariasTest {
 	
 	private String dniTest = "111111A";
 	private char[] passTest = {'O', 'k'};
+	private String passTestStr = String.valueOf(passTest);
+	
+
+	Cliente clienteTest = new Cliente(dniTest, "Pepe", "El marino", "21/3/1975", 'V');
+
 
 	@Test
 	public void testComprobarDNI() throws Exception {
-		String DNI = "45899844Y";
-		String DNI2 = "45894Y";
-		
-		assertEquals(funcionesTest.comprobarDNI(DNI), true);
-		assertEquals(funcionesTest.comprobarDNI(DNI2), false);
+		clienteTest.setContraseña(passTestStr);
+		assertNotEquals(funcionesTest.comprobarDNI(dniTest, passTest, clienteTest,  miVentana), null);
+		//assertEquals(funcionesTest.comprobarDNI(DNI2), false);
 	}
 
 	
@@ -54,16 +60,5 @@ public class FuncionesVariasTest {
 		
 		assertEquals(funciones.comprobarPass(dniTest, String.valueOf(passTest)), false);
 	}
-	
-	@Test
-	public void accionLoginTest() throws Exception {
-		FuncionesVarias mockFunciones = new FuncionesVarias();
-		
-		mockFunciones = mock(FuncionesVarias.class);
-		when(mockFunciones.comprobarDNI(dniTest)).thenReturn(true);
-		when(mockFunciones.comprobarPass(dniTest, String.valueOf(passTest))).thenReturn(true);
-		
-		System.out.println(mockFunciones.accionLogin(dniTest, passTest));
-		assertEquals(mockFunciones.accionLogin(dniTest, passTest), "Ok");
-	}
+
 }

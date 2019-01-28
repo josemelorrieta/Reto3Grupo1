@@ -27,6 +27,13 @@ public class FuncionesControlador {
 		
 	}
 	
+	public void irDesdeLoginABilletes (Ventana miVentana) {
+		
+		miVentana.billetes.setVisible(true);
+		miVentana.login.setVisible(false);
+		
+	}
+	
 	public void irDesdeRegistroALogin (Ventana miVentana) {
 		
 		miVentana.registro.setVisible(false);
@@ -146,12 +153,5 @@ public class FuncionesControlador {
 		miVentana.despedida.setVisible(true);
 		
 	}
-	
-	
-	
-	
-	
-	
-	
 	
 }

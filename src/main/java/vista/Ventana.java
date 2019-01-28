@@ -37,6 +37,7 @@ public class Ventana extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		setBounds(100, 100, 1100, 700);
+		setLocationRelativeTo(null);
 		getContentPane().setLayout(new CardLayout(0, 0));
 		
 		saludo = new PanelSaludo();
