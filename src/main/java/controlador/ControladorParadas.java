@@ -38,8 +38,8 @@ public class ControladorParadas implements ActionListener {
 										   miVentana.paradas.textFieldMostrarLinea.setText("");
 										   break;
 	
-			}
-			
+			}			
 		}
 
 }
+ 

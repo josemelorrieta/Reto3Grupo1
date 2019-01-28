@@ -80,6 +80,7 @@ public class PanelLogin extends JPanel {
 		add(passwordField);
 		
 		btnLogin = new JButton ("Login");
+		btnLogin.setName("btnLogin");
 		btnLogin.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btnLogin.setBounds(412, 397, 213, 57);
 		add(btnLogin);

@@ -218,7 +218,6 @@ public class PanelPago extends JPanel {
 		lblNewJgoodiesLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewJgoodiesLabel_4.setBounds(20, 94, 1070, 25);
 		add(lblNewJgoodiesLabel_4);
-		
 	
 
 	}

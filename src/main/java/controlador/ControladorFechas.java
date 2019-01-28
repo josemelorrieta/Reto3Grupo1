@@ -56,11 +56,7 @@ public class ControladorFechas implements ActionListener {
 											  miVentana.fechas.textPrecio.setText("");
 											  break;
 				}
-			}
-			
-			
-			
-			
+			}	
 		}
 
 }

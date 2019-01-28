@@ -30,7 +30,6 @@ public class PanelRegistro extends JPanel {
 	public JPasswordField passwordField;
 	public JTextField textFieldFechaNacimiento;
 	
-
 	/**
 	 * Create the panel.
 	 */

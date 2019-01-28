@@ -42,5 +42,4 @@ public class ControladorBilleteComprado implements ActionListener {
 			}
 			
 		}
-
 }

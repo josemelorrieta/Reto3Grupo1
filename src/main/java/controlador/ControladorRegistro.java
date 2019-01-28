@@ -37,12 +37,10 @@ public class ControladorRegistro implements ActionListener {
 										 miVentana.registro.passwordField.setText("");
 										 miVentana.registro.textFieldFechaNacimiento.setText("");
 										 break;
-										
-	
-										 
-									//	 
+
 			}
 			
 		}
 
 }
+ 

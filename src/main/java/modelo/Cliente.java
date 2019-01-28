@@ -5,27 +5,26 @@ import java.sql.ResultSet;
 
 public class Cliente {
 
-	private int dni;
+	private String dni;
 	private String nombre;
 	private String apellidos;
 	private String fechaNacimiento;
 	private char sexo;
 	private String contraseña;
 	
-	public Cliente(int dni,String nombre, String apellidos, String fechaNacimiento, char sexo, String contraseña) {
+	public Cliente(String dni,String nombre, String apellidos, String fechaNacimiento, char sexo) {
 		this.dni = dni;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.fechaNacimiento = fechaNacimiento;
 		this.sexo = sexo;
-		this.contraseña = contraseña;
 	}
 
-	public int getDni() {
+	public String getDni() {
 		return dni;
 	}
 
-	public void setDni(int dni) {
+	public void setDni(String dni) {
 		this.dni = dni;
 	}
 
@@ -83,5 +82,5 @@ public class Cliente {
 		else 
 			return false;
 	}
-	
+
 }
