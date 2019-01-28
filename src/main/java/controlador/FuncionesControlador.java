@@ -6,9 +6,6 @@ import java.text.NumberFormat;
 import java.util.Locale;
 
 import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
 import vista.Ventana;
 
 
@@ -44,7 +41,6 @@ public class FuncionesControlador {
 		
 		miVentana.billetes.setVisible(true);
 		miVentana.login.setVisible(false);
-		
 	}
 	
 	public void irDesdeRegistroALogin (Ventana miVentana) {

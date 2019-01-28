@@ -6,11 +6,6 @@ public class Modelo {
 	// Declaración e inicialización de variables
 	private Controlador miControlador;
 	
-	private String servidor = "";
-	private String baseDatos = "";
-	private String user = "";
-	private String password = "";
-	
 	public Controlador getControlador() {
 		return miControlador;
 	}
