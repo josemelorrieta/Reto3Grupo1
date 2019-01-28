@@ -29,9 +29,15 @@ public class ControladorBilleteComprado implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			switch (((JButton) e.getSource()).getName()) {
-				case "btnAtrasBilleteComprado": funciones.irDesdeBilleteCompradoAFechas(miVentana);  break;
+				case "btnAtrasBilleteComprado": funciones.irDesdeBilleteCompradoAFechas(miVentana);  
+												miVentana.billeteComprado.modeloMostrarBilletesComprado.removeAllElements();
+												break;
+												
 				case "btnSiguienteBilleteComprado": funciones.irDesdeBilleteCompradoAPago(miVentana);  break;
-				case "btnCancelarBilleteComprado": funciones.irDesdeBilleteCompradoABilletes(miVentana);  break;
+				
+				case "btnCancelarBilleteComprado":  funciones.irDesdeBilleteCompradoABilletes(miVentana);  
+													miVentana.billeteComprado.modeloMostrarBilletesComprado.removeAllElements();
+													break;
 	
 			}
 			

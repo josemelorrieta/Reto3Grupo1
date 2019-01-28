@@ -29,9 +29,20 @@ public class ControladorPago implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			switch (((JButton) e.getSource()).getName()) {
-				case "btnAtrasPago": funciones.irDesdePagoABilleteComprado(miVentana);  break;
-				case "btnSiguientePago": funciones.irDesdePagoADevolucion(miVentana);  break;
-				case "btnCancelarPago": funciones.irDesdePagoABilletes(miVentana);  break;
+				case "btnAtrasPago": funciones.irDesdePagoABilleteComprado(miVentana); 
+					miVentana.pago.total.setText("");
+					miVentana.pago.pagado.setText("");
+					miVentana.pago.restante.setText("");
+					break;
+									 
+				case "btnSiguientePago": funciones.irDesdePagoADevolucion(miVentana);  
+					break;
+				
+				case "btnCancelarPago": funciones.irDesdePagoABilletes(miVentana);  
+					miVentana.pago.total.setText("");
+					miVentana.pago.pagado.setText("");
+				    miVentana.pago.restante.setText("");
+					break;
 	
 			}
 			

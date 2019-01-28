@@ -27,8 +27,9 @@ public class PanelRegistro extends JPanel {
 	public JComboBox comboBoxGenero = new JComboBox();
 	public JButton btnCancelar = new JButton("Cancelar");
 	public JButton btnRegistrarse = new JButton("Confirmar");
-	private JPasswordField passwordField;
-	private JTextField textField;
+	public JPasswordField passwordField;
+	public JTextField textFieldFechaNacimiento;
+	
 
 	/**
 	 * Create the panel.
@@ -126,10 +127,10 @@ public class PanelRegistro extends JPanel {
 		lblFechaDeNacimiento.setBounds(180, 396, 219, 30);
 		add(lblFechaDeNacimiento);
 		
-		textField = new JTextField();
-		textField.setBounds(417, 403, 277, 25);
-		add(textField);
-		textField.setColumns(10);
+		textFieldFechaNacimiento = new JTextField();
+		textFieldFechaNacimiento.setBounds(417, 403, 277, 25);
+		add(textFieldFechaNacimiento);
+		textFieldFechaNacimiento.setColumns(10);
 
 	}
 }

@@ -21,7 +21,7 @@ public class PanelFechas extends JPanel {
 	public JButton btnCancelar = new JButton("Cancelar");
 	public JComboBox FechaDeIda = new JComboBox();
 	public JComboBox FechaDeVuelta = new JComboBox();
-	public JRadioButton rdbtnNewRadioButton = new JRadioButton("Comprar billete de vuelta");
+	public JRadioButton btnRadioButton = new JRadioButton("Comprar billete de vuelta");
 	public JTextArea textPrecio = new JTextArea();
 
 
@@ -32,15 +32,13 @@ public class PanelFechas extends JPanel {
 		setBorder(new LineBorder(new Color(0, 0, 0), 4));
 		setBackground(Color.CYAN);
 		setLayout(null);
+		
 		btnAtras.setName("btnAtrasFechas");
-		
-		
 		btnAtras.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnAtras.setBounds(287, 575, 186, 68);
 		add(btnAtras);
+		
 		btnSiguiente.setName("btnSiguienteFechas");
-		
-		
 		btnSiguiente.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnSiguiente.setBounds(858, 575, 194, 68);
 		add(btnSiguiente);
@@ -54,19 +52,22 @@ public class PanelFechas extends JPanel {
 		lblNewJgoodiesLabel.setFont(new Font("Tahoma", Font.PLAIN, 40));
 		lblNewJgoodiesLabel.setBounds(646, 261, 314, 37);
 		add(lblNewJgoodiesLabel);
-		rdbtnNewRadioButton.setBackground(Color.CYAN);
+		btnRadioButton.setName("btnRadioComprarBilleteVuelta");
+		btnRadioButton.setBackground(Color.CYAN);
 		
 		
-		rdbtnNewRadioButton.setHorizontalAlignment(SwingConstants.CENTER);
-		rdbtnNewRadioButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		rdbtnNewRadioButton.setBounds(367, 196, 284, 48);
-		add(rdbtnNewRadioButton);
+		btnRadioButton.setHorizontalAlignment(SwingConstants.CENTER);
+		btnRadioButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnRadioButton.setBounds(367, 196, 284, 48);
+		add(btnRadioButton);
 		
-		
+		FechaDeIda.setForeground(Color.BLACK);
+		FechaDeIda.setBackground(Color.WHITE);
 		FechaDeIda.setBounds(129, 312, 252, 48);
 		add(FechaDeIda);
+		FechaDeVuelta.setEnabled(false);
 		
-		
+		FechaDeVuelta.setBackground(Color.WHITE);		
 		FechaDeVuelta.setBounds(646, 309, 296, 51);
 		add(FechaDeVuelta);
 		
@@ -76,20 +77,19 @@ public class PanelFechas extends JPanel {
 		add(lblPrecio);
 		
 		
-		textPrecio.setBounds(452, 452, 199, 37);
+		textPrecio.setBounds(452, 452, 199, 49);
 		add(textPrecio);
 		
 		JLabel lblNewJgoodiesLabel_1 = DefaultComponentFactory.getInstance().createLabel("SELECCIONE FECHA");
 		lblNewJgoodiesLabel_1.setForeground(Color.ORANGE);
 		lblNewJgoodiesLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewJgoodiesLabel_1.setFont(new Font("Sylfaen", Font.PLAIN, 50));
-		lblNewJgoodiesLabel_1.setBounds(-36, 29, 1080, 68);
+		lblNewJgoodiesLabel_1.setBounds(10, 26, 1080, 68);
 		add(lblNewJgoodiesLabel_1);
 		
 		btnCancelar.setName("btnCancelarFechas");
 		btnCancelar.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnCancelar.setBounds(53, 575, 186, 68);
-		
+		btnCancelar.setBounds(53, 575, 186, 68);	
 		add(btnCancelar);
 
 	}

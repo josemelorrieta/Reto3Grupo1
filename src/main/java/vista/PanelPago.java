@@ -13,6 +13,8 @@ import javax.swing.SwingConstants;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class PanelPago extends JPanel {
 	
@@ -65,6 +67,7 @@ public class PanelPago extends JPanel {
 		btnAtras.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnAtras.setBounds(658, 553, 156, 70);
 		add(btnAtras);
+		btnSiguiente.setEnabled(false);
 		btnSiguiente.setName("btnSiguientePago");
 		
 		
