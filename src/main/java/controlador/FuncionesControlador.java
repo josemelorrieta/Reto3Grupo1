@@ -1,7 +1,10 @@
 package controlador;
 
-import javax.swing.JPanel;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 import vista.Ventana;
 
 public class FuncionesControlador {
@@ -9,7 +12,7 @@ public class FuncionesControlador {
 	public void irDesdeSaludoALogin(Ventana miVentana) {
 		
 		miVentana.saludo.setVisible(false);
-		miVentana.login.setVisible(true);		 
+		miVentana.login.setVisible(true);		  
 		
 	}
 	
@@ -23,6 +26,13 @@ public class FuncionesControlador {
 	public void irDesdeLoginARegistro (Ventana miVentana) {
 		
 		miVentana.registro.setVisible(true);
+		miVentana.login.setVisible(false);
+		
+	}
+	
+	public void irDesdeLoginABilletes (Ventana miVentana) {
+		
+		miVentana.billetes.setVisible(true);
 		miVentana.login.setVisible(false);
 		
 	}
@@ -147,11 +157,11 @@ public class FuncionesControlador {
 		
 	}
 	
-	
-	
-	
-	
-	
-	
+	public void irDesdeBilletesALogin(Ventana miVentana) {
+		
+		miVentana.billetes.setVisible(false);
+		miVentana.login.setVisible(true);
+		
+	}
 	
 }

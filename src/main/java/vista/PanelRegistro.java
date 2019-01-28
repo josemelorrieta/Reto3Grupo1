@@ -27,9 +27,9 @@ public class PanelRegistro extends JPanel {
 	public JComboBox comboBoxGenero = new JComboBox();
 	public JButton btnCancelar = new JButton("Cancelar");
 	public JButton btnRegistrarse = new JButton("Confirmar");
-	private JPasswordField passwordField;
-	private JTextField textField;
-
+	public JPasswordField passwordField;
+	public JTextField textFieldFechaNacimiento;
+	
 	/**
 	 * Create the panel.
 	 */
@@ -44,7 +44,7 @@ public class PanelRegistro extends JPanel {
 		lblNewJgoodiesLabel.setBackground(Color.MAGENTA);
 		lblNewJgoodiesLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewJgoodiesLabel.setFont(new Font("Tahoma", Font.BOLD, 50));
-		lblNewJgoodiesLabel.setBounds(-28, 62, 1080, 49);
+		lblNewJgoodiesLabel.setBounds(-28, 62, 1080, 49); 
 		add(lblNewJgoodiesLabel);
 		
 		JLabel lblNewJgoodiesLabel_1 = DefaultComponentFactory.getInstance().createLabel("DNI:");
@@ -126,10 +126,10 @@ public class PanelRegistro extends JPanel {
 		lblFechaDeNacimiento.setBounds(180, 396, 219, 30);
 		add(lblFechaDeNacimiento);
 		
-		textField = new JTextField();
-		textField.setBounds(417, 403, 277, 25);
-		add(textField);
-		textField.setColumns(10);
+		textFieldFechaNacimiento = new JTextField();
+		textFieldFechaNacimiento.setBounds(417, 403, 277, 25);
+		add(textFieldFechaNacimiento);
+		textFieldFechaNacimiento.setColumns(10);
 
 	}
 }

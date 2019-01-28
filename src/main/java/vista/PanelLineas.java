@@ -23,7 +23,7 @@ public class PanelLineas extends JPanel {
 	public PanelLineas() {
 		setBackground(Color.CYAN);
 		setBorder(new LineBorder(new Color(0, 0, 0), 4));
-		setLayout(null);
+		setLayout(null); 
 		
 		JLabel lblNewJgoodiesLabel = DefaultComponentFactory.getInstance().createLabel("SELECCIONE LA LINEA");
 		lblNewJgoodiesLabel.setForeground(Color.ORANGE);
@@ -45,7 +45,7 @@ public class PanelLineas extends JPanel {
 		add(btnSiguiente);
 		
 		
-		SeleccionarLinea.setBackground(Color.PINK);
+		SeleccionarLinea.setBackground(Color.WHITE);
 		SeleccionarLinea.setForeground(Color.BLACK);
 		SeleccionarLinea.setFont(new Font("Tahoma", Font.PLAIN, 28));
 		SeleccionarLinea.setModel(new DefaultComboBoxModel(new String[] {"\u25CF\tTermibus-Plentzia", "\u25CF\tTermibus-Muskiz", "\u25CF\tTermibus-Balmaseda", "\u25CF\tTermibus-Durango"}));

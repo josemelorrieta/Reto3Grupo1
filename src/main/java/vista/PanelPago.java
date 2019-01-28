@@ -13,6 +13,8 @@ import javax.swing.SwingConstants;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class PanelPago extends JPanel {
 	
@@ -36,7 +38,7 @@ public class PanelPago extends JPanel {
 		public JButton btn020;
 		public JButton btn010;
 		public JButton btn005;
-		public JButton btn002;
+		public JButton btn002; 
 		public JButton btn001;
 
 	/**
@@ -65,6 +67,7 @@ public class PanelPago extends JPanel {
 		btnAtras.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnAtras.setBounds(658, 553, 156, 70);
 		add(btnAtras);
+		btnSiguiente.setEnabled(false);
 		btnSiguiente.setName("btnSiguientePago");
 		
 		
@@ -209,7 +212,6 @@ public class PanelPago extends JPanel {
 		lblNewJgoodiesLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewJgoodiesLabel_4.setBounds(20, 94, 1070, 25);
 		add(lblNewJgoodiesLabel_4);
-		
 	
 
 	}

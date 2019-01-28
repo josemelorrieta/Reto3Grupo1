@@ -37,7 +37,12 @@ public class Ventana extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		setBounds(100, 100, 1100, 700);
+		setLocationRelativeTo(null);
 		getContentPane().setLayout(new CardLayout(0, 0));
+		
+		billetes = new PanelBilletes();
+		contentPane.add(billetes);
+		billetes.setLayout(null);
 		
 		saludo = new PanelSaludo();
 		contentPane.add(saludo);
@@ -55,16 +60,12 @@ public class Ventana extends JFrame {
 		contentPane.add(registro);
 		registro.setLayout(null);
 		
-		billetes = new PanelBilletes();
-		contentPane.add(billetes);
-		billetes.setLayout(null);
-		
 		lineas = new PanelLineas();
 		lineas.btnSiguiente.setSize(234, 68);
 		lineas.btnSiguiente.setLocation(780, 549);
 		lineas.SeleccionarLinea.setBackground(Color.WHITE);
 		contentPane.add(lineas);
-		lineas.setLayout(null);
+		lineas.setLayout(null); 
 		
 		paradas = new PanelParadas();
 		paradas.btnAtras.setLocation(654, 575);
@@ -76,7 +77,7 @@ public class Ventana extends JFrame {
 		fechas.btnAtras.setLocation(662, 575);
 		fechas.FechaDeVuelta.setBackground(Color.WHITE);
 		fechas.FechaDeIda.setBackground(Color.WHITE);
-		fechas.rdbtnNewRadioButton.setBackground(Color.CYAN);
+		fechas.btnRadioButton.setBackground(Color.CYAN);
 		contentPane.add(fechas);
 		fechas.setLayout(null);
 		
@@ -86,6 +87,10 @@ public class Ventana extends JFrame {
 		contentPane.add(billeteComprado);
 		billeteComprado.setLayout(null);
 		
+		pago = new PanelPago();
+		contentPane.add(pago);
+		pago.setLayout(null);
+		
 
 		devolucion = new PanelDevolucion();
 		contentPane.add(devolucion);
@@ -94,10 +99,6 @@ public class Ventana extends JFrame {
 		despedida = new PanelDespedida();
 		contentPane.add(despedida);
 		despedida.setLayout(null);
-		
-		pago = new PanelPago();
-		contentPane.add(pago);
-		pago.setLayout(null);
 		
 	}
 }

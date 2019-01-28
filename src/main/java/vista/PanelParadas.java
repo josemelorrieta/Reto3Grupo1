@@ -12,19 +12,22 @@ import com.jgoodies.forms.factories.DefaultComponentFactory;
 import javax.swing.JComboBox;
 import javax.swing.JTextArea;
 import javax.swing.JList;
+import javax.swing.JTextField;
 
 public class PanelParadas extends JPanel {
+
 
 	
 
 	public JButton btnAtras = new JButton("Atras");
 
 
+
 	public JButton btnSiguiente = new JButton("Siguiente");
 	public JButton btnCancelar = new JButton("Cancelar");
 	public JComboBox ParadaDeOrigen = new JComboBox();
 	public JComboBox ParadaDeDestino = new JComboBox();
-	private final JTextArea textArea = new JTextArea();
+	public JTextField textFieldMostrarLinea;
 
 	/**
 	 * Create the panel.
@@ -53,20 +56,24 @@ public class PanelParadas extends JPanel {
 		lblNewJgoodiesLabel.setFont(new Font("Tahoma", Font.PLAIN, 40));
 		lblNewJgoodiesLabel.setBounds(628, 268, 336, 37);
 		add(lblNewJgoodiesLabel);
+		ParadaDeOrigen.setBackground(Color.WHITE);
 		
 		ParadaDeOrigen.setBounds(131, 322, 336, 49);
 		add(ParadaDeOrigen);
+		ParadaDeDestino.setBackground(Color.WHITE);
 		
 		ParadaDeDestino.setBounds(628, 316, 351, 49);		
 		add(ParadaDeDestino);
-		
-		textArea.setBounds(131, 40, 848, 62);
-		add(textArea);
 		
 	
 		btnCancelar.setName("btnCancelarParadas");
 		btnCancelar.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnCancelar.setBounds(36, 575, 194, 68);
 		add(btnCancelar);
+		
+		textFieldMostrarLinea = new JTextField();
+		textFieldMostrarLinea.setBounds(132, 42, 847, 60);
+		add(textFieldMostrarLinea);
+		textFieldMostrarLinea.setColumns(10);
 	}
 }

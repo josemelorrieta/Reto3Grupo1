@@ -17,7 +17,7 @@ public class ControladorRegistro implements ActionListener {
 	
 	//Constructor
 		public ControladorRegistro (Ventana miVentana) {
-			
+			 
 			this.miVentana = miVentana;
 			
 			miVentana.registro.btnCancelar.addActionListener(this);
@@ -34,11 +34,10 @@ public class ControladorRegistro implements ActionListener {
 										 miVentana.registro.textFieldNombre.setText("");
 										 miVentana.registro.textFieldApellidos.setText("");
 										 miVentana.registro.textFieldNombre.setText(""); 
+										 miVentana.registro.passwordField.setText("");
+										 miVentana.registro.textFieldFechaNacimiento.setText("");
 										 break;
-										
-	
-										 
-									//	 
+
 			}
 			
 		}
