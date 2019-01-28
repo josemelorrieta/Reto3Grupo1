@@ -35,7 +35,7 @@ public class Controlador implements ActionListener {
 	private ControladorDevolucion miControladorDevolucion;
 	private ArrayList<Parada> paradas = new ArrayList<Parada>();
 	private ArrayList<LineaAutobus> lineas = new ArrayList<LineaAutobus>();
-	private Cliente cliente = new Cliente(0, null, null, null, '0', null);
+	
 	
 	//Constructor
 	public Controlador(Ventana miVentana, Modelo miModelo) {
@@ -49,7 +49,7 @@ public class Controlador implements ActionListener {
 		this.miControladorSaludo = new ControladorSaludo(miVentana);
 		this.miControladorRegistro = new ControladorRegistro(miVentana);
 		this.miControladorBilletes = new ControladorBilletes(miVentana);
-		this.miControladorLineas = new ControladorLineas(miVentana);
+		this.miControladorLineas = new ControladorLineas(miVentana, lineas);
 		this.miControladorParadas = new ControladorParadas(miVentana);
 		this.miControladorFechas = new ControladorFechas(miVentana);
 		this.miControladorBilleteComprado = new ControladorBilleteComprado(miVentana);
