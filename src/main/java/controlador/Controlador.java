@@ -19,7 +19,7 @@ public class Controlador {
 	private Modelo miModelo;
 	private Ventana miVentana;
 
-	private Cliente cliente = null; 
+	private Cliente cliente = null;
 	
 	FuncionesVarias funciones = new FuncionesVarias();
 
