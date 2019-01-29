@@ -16,6 +16,7 @@ public class FuncionesControlador {
 	private static NumberFormat formatoMoneda = NumberFormat.getCurrencyInstance(Locale.getDefault());
 	
 	float dineroPagado = 0;
+	float total = 2000;
 	
 	public void cambiarDePanel(JPanel ocultar, JPanel mostrar) { 
 		ocultar.setVisible(false);
@@ -32,7 +33,7 @@ public class FuncionesControlador {
 	public void irDesdeLoginASaludo(Ventana miVentana) {
 		
 		miVentana.saludo.setVisible(true);
-		miVentana.login.setVisible(false);
+		miVentana.login.setVisible(false); 
 		
 	}
 	
@@ -101,8 +102,8 @@ public class FuncionesControlador {
 
 	public void irDesdeFechasABilleteComprado (Ventana miVentana) {
 	
-	miVentana.billeteComprado.setVisible(true);
-	miVentana.fechas.setVisible(false);
+		miVentana.billeteComprado.setVisible(true);
+		miVentana.fechas.setVisible(false);
 	
 	}
 	
@@ -158,7 +159,7 @@ public class FuncionesControlador {
 		
 		miVentana.billetes.setVisible(true);
 		miVentana.pago.setVisible(false);
-		
+	
 	}
 	
 	public void irDesdeDevolucionADespedida (Ventana miVentana) {
@@ -175,15 +176,27 @@ public class FuncionesControlador {
 		
 	}
 	
-	public void SumarRestarDineroPago(JButton boton, Ventana miVentana ) {
-		float valor;
+	public void SumarRestarDineroPago(float valor, Ventana miVentana ) {
+	
+		float restar;
 		
-		valor = Float.valueOf(boton.getText());
+		
 		dineroPagado = dineroPagado + valor;
+		
+		restar = total-dineroPagado;
 
 		miVentana.pago.pagado.setText(formatoMoneda.format(dineroPagado));
-
+		miVentana.pago.total.setText(formatoMoneda.format(total));
+		
+		/*if (dineroPagado==total) {
+			miVentana.pago.total.setText(formatoMoneda.format("0"));
+		}
+		else {
+			miVentana.pago.total.setText(formatoMoneda.format(restar));
+		}*/
 	}
 	
+
+ 
 
 }

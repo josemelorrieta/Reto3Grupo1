@@ -24,7 +24,7 @@ public class ControladorParadas implements ActionListener {
 			miVentana.paradas.btnSiguiente.addActionListener(this);
 			miVentana.paradas.btnCancelar.addActionListener(this);
 			
-		}
+		} 
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -42,4 +42,3 @@ public class ControladorParadas implements ActionListener {
 		}
 
 }
- 

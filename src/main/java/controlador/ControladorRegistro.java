@@ -12,7 +12,7 @@ import vista.Ventana;
 public class ControladorRegistro implements ActionListener {
 	
 	FuncionesControlador funciones = new FuncionesControlador();
-	FuncionesRegistro funcionesRegistro = new FuncionesRegistro();
+//	FuncionesRegistro funcionesRegistro = new FuncionesRegistro();
 	
 	
 	//private Controlador miControlador;
@@ -41,7 +41,9 @@ public class ControladorRegistro implements ActionListener {
 					 miVentana.registro.passwordField.setText("");
 					 miVentana.registro.textFieldFechaNacimiento.setText("");
 					 break;
-				//case "btnRegistro": cliente = funcionesRegistro.registrarNuevoCliete();
+
+//				case "btnRegistro": cliente = funcionesRegistro.registrarNuevoCliete();
+
 			}
 			
 		}

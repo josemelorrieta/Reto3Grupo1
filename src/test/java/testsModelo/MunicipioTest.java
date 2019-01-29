@@ -33,10 +33,11 @@ public class MunicipioTest {
 		assertEquals(codPostal, municipio.getCodPostal());
 	}
 	
-	@Test
+	@Test 
 	public void testParadas() {
 		municipio.setParadas(paradas);
 		assertEquals(paradas, municipio.getParadas());
 	}
 
 }
+ 

@@ -22,7 +22,7 @@ public class ControladorBilletes implements ActionListener {
 			this.miVentana = miVentana;
 			
 			miVentana.billetes.btnComprarBillete.addActionListener(this);
-			miVentana.billetes.btnCerrarSesion.addActionListener(this);			
+			miVentana.billetes.btnCerrarSesion.addActionListener(this);	 		
 	
 			
 		}
@@ -47,12 +47,10 @@ public class ControladorBilletes implements ActionListener {
 										miVentana.billetes.modeloMostrarBilletes.removeAllElements();
 										miVentana.billetes.MostrarBilletes.setModel(miVentana.billetes.modeloMostrarBilletes);
 										break;
-	
+
 			}
 			
 		}
-
-
 
 		
 		

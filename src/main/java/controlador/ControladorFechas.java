@@ -24,8 +24,8 @@ public class ControladorFechas implements ActionListener {
 			miVentana.fechas.btnAtras.addActionListener(this);
 			miVentana.fechas.btnSiguiente.addActionListener(this);
 			miVentana.fechas.btnCancelar.addActionListener(this);
-			miVentana.fechas.btnRadioButton.addActionListener(this);
-			
+			miVentana.fechas.btnRadioButton.addActionListener(this); 
+	
 		}
 
 		@Override

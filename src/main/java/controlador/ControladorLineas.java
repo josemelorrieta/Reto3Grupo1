@@ -23,11 +23,11 @@ public class ControladorLineas implements ActionListener {
 	//Constructor
 		public ControladorLineas (Ventana miVentana, ArrayList<LineaAutobus> lineas) {
 			
-			this.miVentana = miVentana;
+			this.miVentana = miVentana; 
 			
 			miVentana.lineas.btnSiguiente.addActionListener(this);
 			miVentana.lineas.btnCancelar.addActionListener(this);
-			
+	
 		}
 
 		@Override

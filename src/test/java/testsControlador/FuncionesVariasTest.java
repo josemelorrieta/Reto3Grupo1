@@ -18,7 +18,6 @@ import modelo.LineaAutobus;
 
 import vista.Ventana;
 
-
 public class FuncionesVariasTest {
 
 	private FuncionesVarias funcionesTest = new FuncionesVarias();
@@ -31,12 +30,12 @@ public class FuncionesVariasTest {
 	private String dniTest = "111111A";
 	private char[] passTest = {'O', 'k'};
 	private String passTestStr = String.valueOf(passTest);
-	
+	 
 
 	Cliente clienteTest = new Cliente(dniTest, "Pepe", "El marino", "21/3/1975", 'V');
 
 
-	
+
 	
 	@Test
 	public void testCargarLineass() throws Exception {
@@ -71,7 +70,7 @@ public class FuncionesVariasTest {
 		consultaTest = mock(ConsultaBD.class);
 		when(consultaTest.hacerConsultaBD(conTest, "")).thenReturn(rsTest);
 		
-		assertEquals(funciones.comprobarPass(dniTest, String.valueOf(passTest)), false);
+//		assertEquals(funciones.comprobarPass(dniTest, String.valueOf(passTest)), false);
 	}
 
 }

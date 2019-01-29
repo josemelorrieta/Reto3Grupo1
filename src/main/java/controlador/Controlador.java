@@ -14,7 +14,7 @@ import modelo.Parada;
 import vista.Ventana;
 
 public class Controlador {
-	
+  
 	//Declaración e inicialización de variables;
 	private Modelo miModelo;
 	private Ventana miVentana;
@@ -37,7 +37,7 @@ public class Controlador {
 	private ArrayList<LineaAutobus> lineas = new ArrayList<LineaAutobus>();
 
 	//Constructor
-	public Controlador(Ventana miVentana, Modelo miModelo) {
+	public Controlador(Ventana miVentana, Modelo miModelo) { 
 		this.miVentana = miVentana;
 		this.miModelo = miModelo;
 		

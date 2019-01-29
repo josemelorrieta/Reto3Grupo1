@@ -22,7 +22,7 @@ public class LineaAutobus {
 
 	public int[] getCodAutobus() {
 		return codAutobus;
-	}
+	} 
 
 	public void setCodAutobus(int[] codAutobus) {
 		this.codAutobus = codAutobus;
@@ -36,3 +36,4 @@ public class LineaAutobus {
 		this.municipios = municipios;
 	}
 }
+ 

@@ -22,7 +22,7 @@ public class ControladorBilleteComprado implements ActionListener {
 			
 			miVentana.billeteComprado.btnAtras.addActionListener(this);
 			miVentana.billeteComprado.btnSiguiente.addActionListener(this);
-			miVentana.billeteComprado.btnCancelar.addActionListener(this);
+			miVentana.billeteComprado.btnCancelar.addActionListener(this); 
 			
 		}
 
