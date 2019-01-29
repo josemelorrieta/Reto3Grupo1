@@ -27,9 +27,9 @@ public class ClienteTest {
 		assertEquals(sexo, clienteTest.getSexo());
 		assertEquals(contraseña, clienteTest.getContraseña());
 	}
-
+ 
 	@Test
-	public void testConstructorCliente2() { 
+	public void testConstructorCliente2() {  
 		cliente.setContraseña(contraseña);
 		assertEquals(dni, cliente.getDni(), "1111111A");
 		assertEquals(nombre, cliente.getNombre(), "Perry");

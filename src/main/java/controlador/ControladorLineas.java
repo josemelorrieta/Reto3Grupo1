@@ -13,7 +13,8 @@ import vista.Ventana;
 public class ControladorLineas implements ActionListener {
 	
 	FuncionesControlador funciones = new FuncionesControlador();
-	
+	ArrayList<LineaAutobus> lineas;
+	FuncionesVarias funcionesModelo = new FuncionesVarias();
 	
 	//private Controlador miControlador;
 	private Ventana miVentana;
@@ -24,9 +25,12 @@ public class ControladorLineas implements ActionListener {
 		public ControladorLineas (Ventana miVentana, ArrayList<LineaAutobus> lineas) {
 			
 			this.miVentana = miVentana;
+			this.lineas = lineas;
 			
 			miVentana.lineas.btnSiguiente.addActionListener(this);
 			miVentana.lineas.btnCancelar.addActionListener(this);
+			
+			
 			
 		}
 

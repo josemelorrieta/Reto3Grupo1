@@ -14,14 +14,14 @@ import modelo.Parada;
 import vista.Ventana;
 
 public class Controlador {
-	
+  
 	//Declaración e inicialización de variables;
 	private Modelo miModelo;
 	private Ventana miVentana;
 
 	private Cliente cliente = null;
 	
-	FuncionesVarias funciones = new FuncionesVarias(); 
+	FuncionesVarias funciones = new FuncionesVarias();  
 
 	private ControladorSaludo miControladorSaludo;
 	private ControladorLogin miControladorLogin;
@@ -37,7 +37,7 @@ public class Controlador {
 	private ArrayList<LineaAutobus> lineas = new ArrayList<LineaAutobus>();
 
 	//Constructor
-	public Controlador(Ventana miVentana, Modelo miModelo) {
+	public Controlador(Ventana miVentana, Modelo miModelo) { 
 		this.miVentana = miVentana;
 		this.miModelo = miModelo;
 		
@@ -46,7 +46,7 @@ public class Controlador {
 		this.miControladorRegistro = new ControladorRegistro(miVentana, cliente);
 		this.miControladorBilletes = new ControladorBilletes(miVentana);
 		this.miControladorLineas = new ControladorLineas(miVentana, lineas);
-		this.miControladorParadas = new ControladorParadas(miVentana);
+		this.miControladorParadas = new ControladorParadas(miVentana, paradas);
 		this.miControladorFechas = new ControladorFechas(miVentana);
 		this.miControladorBilleteComprado = new ControladorBilleteComprado(miVentana);
 		this.miControladorPago = new ControladorPago(miVentana);

@@ -20,7 +20,7 @@ public class ControladorRegistro implements ActionListener {
 	
 	//private Controlador miControlador;
 	private Ventana miVentana;
-	private Cliente cliente;	
+	private Cliente cliente; 	
 	
 	//Constructor
 		public ControladorRegistro (Ventana miVentana, Cliente cliente) {
@@ -44,6 +44,7 @@ public class ControladorRegistro implements ActionListener {
 					 miVentana.registro.passwordField.setText("");
 					 miVentana.registro.textFieldFechaNacimiento.setText("");
 					 break;
+					 
 				case "btnRegistro": try {
 					if (comprobarCamposRegistro()) {
 						cliente = funcionesRegistro.registrarNuevoCliente();

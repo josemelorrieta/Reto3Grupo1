@@ -32,4 +32,6 @@ public class FuncionesRegistro {
 			return false;
 		}
 	}
+
 }
+ 

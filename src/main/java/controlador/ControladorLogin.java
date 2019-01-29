@@ -14,11 +14,11 @@ public class ControladorLogin implements ActionListener {
 	
 	FuncionesControlador funciones = new FuncionesControlador();
 	FuncionesVarias funcionesVarias = new FuncionesVarias();
-	FuncionesLogin funcionesLogin = new FuncionesLogin();
+//	FuncionesLogin funcionesLogin = new FuncionesLogin();
 		
 	//private Controlador miControlador;
 	private Ventana miVentana;
-	private Cliente cliente;
+	private Cliente cliente; 
 		
 	//Constructor
 		public ControladorLogin(Ventana miVentana, Cliente cliente) { 
@@ -29,23 +29,22 @@ public class ControladorLogin implements ActionListener {
 			miVentana.login.btnAtras.addActionListener(this);
 			miVentana.login.btnRegistrarse.addActionListener(this);
 			miVentana.login.btnLogin.addActionListener(this);
-			
 		}
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			switch (((JButton) e.getSource()).getName()) {
 				case "btnAtrasLogin":   funciones.cambiarDePanel(miVentana.login, miVentana.saludo);
-					resetValoresLogin();
+					resetValoresLogin();  
 					break;
 				case "btnRegistrarseLogin":	funciones.cambiarDePanel(miVentana.login, miVentana.registro);
 					resetValoresLogin();
 					break;
 				case "btnLogin": try {
-						cliente = funcionesLogin.comprobarDNI(miVentana.login.TextDni.getText(), miVentana.login.passwordField.getPassword(), cliente, miVentana);
+//						cliente = funcionesLogin.comprobarDNI(miVentana.login.TextDni.getText(), miVentana.login.passwordField.getPassword(), cliente, miVentana);
 					} catch (Exception e1) {
 						// TODO Auto-generated catch block
-						e1.printStackTrace();
+						e1.printStackTrace(); 
 					}
 					if(cliente != null) 
 						funciones.irDesdeLoginABilletes(miVentana);

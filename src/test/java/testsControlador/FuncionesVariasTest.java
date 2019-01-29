@@ -18,7 +18,6 @@ import modelo.LineaAutobus;
 
 import vista.Ventana;
 
-
 public class FuncionesVariasTest {
 
 	private Ventana miVentana = new Ventana();
@@ -30,10 +29,25 @@ public class FuncionesVariasTest {
 	private String dniTest = "111111A";
 	private char[] passTest = {'O', 'k'};
 	private String passTestStr = String.valueOf(passTest);
-	
+	 
 
 	Cliente clienteTest = new Cliente(dniTest, "Pepe", "El marino", "21/3/1975", 'V');
 
+
+
+	
+	@Test
+	public void testCargarLineass() throws Exception {
+		LineaAutobus lineaTest = new LineaAutobus(null, null, null);
+		int[] rsTest1 = {1001, 1002, 1003};
+		String[] rsTest2 = {"Bilbao", "Leioa", "Berango", "Sopela", "Sopela", "Barrika", "Plentzia"};
+		String codLinea = "L1";
+		funcionesTest.cargarLineass(lineaTest, codLinea);
+		
+		assertEquals(lineaTest.getCodLinea(), "L1");
+		assertArrayEquals(lineaTest.getCodAutobus(), rsTest1);
+		assertArrayEquals(lineaTest.getMunicipios(), rsTest2);
+	}
 
 	@Test
 	public void testComprobarDNI() throws Exception {
@@ -41,29 +55,7 @@ public class FuncionesVariasTest {
 		assertNotEquals(funciones.comprobarDNI(dniTest, passTest, clienteTest,  miVentana), null);
 		//assertEquals(funcionesTest.comprobarDNI(DNI2), false);
 	}
-
-	
-//	@Test
-//	public void testCargarLineas() throws Exception {
-//		System.out.println(funcionesTest.CargarLineas());
-//		Connection con = conexionTest.conectarBD();
-//		ResultSet rs = consultaTest.hacerConsultaBD(con, "select parada.Nombre from parada, linea, `linea-parada` where linea.Cod_Linea = `linea-parada`.Cod_Linea and `linea-parada`.Cod_Parada=parada.Cod_Parada and linea.Cod_Linea = 'L1' order BY sqrt(power(latitud - (SELECT latitud FROM parada WHERE cod_parada = 1), 2)+power(longitud - (SELECT longitud FROM parada WHERE cod_parada = 1), 2));");
-//		System.out.println(rs.getRow());
-//		assertEquals(funcionesTest.CargarLineas(), "Termibus-Bilbao - Asilo Barrika");
-//	}
-//	
-	
-//	@Test
-//	public void testCargarLineas() throws Exception {
-//		ArrayList<LineaAutobus> lineas;
-//		System.out.println(funcionesTest.cargarLineass(lineas));
-//		Connection con = conexionTest.conectarBD();
-//		ResultSet rs = consultaTest.hacerConsultaBD(con, "select poblacion.Nombre from poblacion, `poblacion_parada`, parada, `linea-parada` where `linea-parada`.Cod_Parada = parada.Cod_parada and parada.Cod_Parada = `poblacion_parada`.Cod_Parada and `poblacion_parada`.Cod_Postal = poblacion.Cod_Postal and `linea-parada`.Cod_Linea = 'L1';");
-//		assertEquals(funcionesTest.CargarLineass(lineas), "Bilbao Leioa Berango Sopela Sopela Barrika Plentzia");
-//	}
-	
-	
-	
+		
 	@Test
 	public void comprobarPassTest() throws Exception {
 		conexionTest = mock(ConexionBD.class);
@@ -77,7 +69,7 @@ public class FuncionesVariasTest {
 		consultaTest = mock(ConsultaBD.class);
 		when(consultaTest.hacerConsultaBD(conTest, "")).thenReturn(rsTest);
 		
-		assertEquals(funciones.comprobarPass(dniTest, String.valueOf(passTest)), false);
+//		assertEquals(funciones.comprobarPass(dniTest, String.valueOf(passTest)), false);
 	}
 
 }
