@@ -18,9 +18,6 @@ import modelo.LineaAutobus;
 import vista.Ventana;
 
 public class FuncionesVarias {
-	
-	
-
 
 	public Cliente comprobarDNI(String DNI, char[] pass, Cliente cliente, Ventana miVentana) throws Exception {
 		ConexionBD miConexion = new ConexionBD();
@@ -56,22 +53,6 @@ public class FuncionesVarias {
 		con.close();
 		return cliente;
 	}
-
-	
-
-//	//Este metodo se puede mjorar :P
-//	public String CargarLineas() throws SQLException {
-//		ConexionBD miConexion = new ConexionBD();
-//		ConsultaBD miConsulta = new ConsultaBD();
-//		Connection con = miConexion.conectarBD();
-//		ResultSet rs = miConsulta.hacerConsultaBD(con, "select parada.Nombre from parada, linea, `linea-parada` where linea.Cod_Linea = `linea-parada`.Cod_Linea and `linea-parada`.Cod_Parada=parada.Cod_Parada and linea.Cod_Linea = 'L1' order BY sqrt(power(latitud - (SELECT latitud FROM parada WHERE cod_parada = 1), 2)+power(longitud - (SELECT longitud FROM parada WHERE cod_parada = 1), 2));");
-//		ArrayList<String> paradas = new ArrayList<String>();
-//		for (int i = 0; i<rs.getRow(); i++) {
-//			paradas.add(i, rs.getString(i));
-//		}
-//		return paradas.get(0) + " - " + paradas.get(rs.getRow()-1);
-//			
-//	}
  
 	public boolean comprobarPass(String DNI, String pass) throws Exception {
 		ConexionBD miConexion = new ConexionBD();
@@ -138,7 +119,6 @@ public class FuncionesVarias {
 		return municipios; 	
 	}
 
-	
 	public void cargarLineass (LineaAutobus linea) {
 		ConexionBD miConexion = new ConexionBD();
 		ConsultaBD miConsulta = new ConsultaBD();
@@ -172,9 +152,4 @@ public class FuncionesVarias {
 			System.out.println("Implementar un txt");
 		}
 	}
-	
-	
-
-
-	
 }
