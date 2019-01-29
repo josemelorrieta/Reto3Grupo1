@@ -113,7 +113,7 @@ public class PanelRegistro extends JPanel {
 		
 		
 		comboBoxGenero.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		comboBoxGenero.setModel(new DefaultComboBoxModel(new String[] {"Hombre ", "Mujer"}));
+		comboBoxGenero.setModel(new DefaultComboBoxModel(new String[] {"Hombre", "Mujer"}));
 		comboBoxGenero.setBounds(417, 350, 95, 25);
 		add(comboBoxGenero);
 		

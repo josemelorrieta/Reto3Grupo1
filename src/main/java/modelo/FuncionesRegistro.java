@@ -4,14 +4,16 @@ package modelo;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
+import java.text.ParseException;
 import org.apache.commons.codec.digest.DigestUtils;
 
 public class FuncionesRegistro {
+	public ConexionBD miConexion = new ConexionBD();
+	public ConsultaBD miConsulta = new ConsultaBD();
 	
-	
-	
-	public Cliente registrarNuevoCliente(String dni, String nombre, String apellidos, String sexo, String fechaNacimiento, char[] pass) {
+	public Cliente registrarNuevoCliente(String dni, String nombre, String apellidos, String sexo, String fechaNacimiento, char[] pass) throws SQLException, ParseException {
+		Connection con = miConexion.conectarBD();
+		Cliente cliente;
 		char sexoBD = 0;
 		String passBD = "";
 		String query = "";
@@ -19,13 +21,20 @@ public class FuncionesRegistro {
 		if (sexo == "Hombre")
 			sexoBD = 'V';
 		else
-			sexoBD = 'H';
+			sexoBD = 'M';
 		
-		Cliente cliente = new Cliente(dni, nombre, apellidos, fechaNacimiento, sexoBD);
 		passBD = DigestUtils.md5Hex(String.valueOf(pass));
-		cliente.setContraseña(passBD);
+	
+		query = "INSERT into cliente VALUES ('" + dni + "', '" + nombre + "', '" + apellidos + "', '" + fechaNacimiento + "', '"+ sexoBD + "', '" + passBD + "');";
 		
-		query = "INSERT into cliente VALUES ('" + dni + "', '" + nombre + "', '" + apellidos + "', '" + fechaNacimiento + "', '"+ sexoBD + "0', '" + passBD + "');";
+		if (miConsulta.insertarDatosBD(con, query)) {
+			cliente = new Cliente(dni, nombre, apellidos, fechaNacimiento, sexoBD);
+			passBD = DigestUtils.md5Hex(String.valueOf(pass));
+			cliente.setContraseña(passBD);
+		} else {
+			cliente = null;
+		}
+		con.close();
 		
 		return cliente;
 	}

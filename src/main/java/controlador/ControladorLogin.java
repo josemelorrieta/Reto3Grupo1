@@ -14,7 +14,7 @@ public class ControladorLogin implements ActionListener {
 	
 	FuncionesControlador funciones = new FuncionesControlador();
 	FuncionesVarias funcionesVarias = new FuncionesVarias();
-//	FuncionesLogin funcionesLogin = new FuncionesLogin();
+	FuncionesLogin funcionesLogin = new FuncionesLogin();
 		
 	//private Controlador miControlador;
 	private Ventana miVentana;
@@ -41,9 +41,9 @@ public class ControladorLogin implements ActionListener {
 				case "btnRegistrarseLogin":	funciones.cambiarDePanel(miVentana.login, miVentana.registro);
 					resetValoresLogin();
 					break;
-				case "btnLogin": funciones.cambiarDePanel(miVentana.login, miVentana.billetes);
+				case "btnLogin":
 					try {
-//						cliente = funcionesLogin.comprobarDNI(miVentana.login.TextDni.getText(), miVentana.login.passwordField.getPassword(), cliente, miVentana);
+						cliente = funcionesLogin.comprobarDNI(miVentana.login.TextDni.getText(), miVentana.login.passwordField.getPassword(), cliente, miVentana);
 					} catch (Exception e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace(); 
