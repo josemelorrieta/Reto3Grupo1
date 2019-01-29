@@ -36,25 +36,27 @@ public class FuncionesVariasTest {
 	Cliente clienteTest = new Cliente(dniTest, "Pepe", "El marino", "21/3/1975", 'V');
 
 
-	@Test
-	public void testComprobarDNI() throws Exception {
-		clienteTest.setContraseña(passTestStr);
-		assertNotEquals(funcionesTest.comprobarDNI(dniTest, passTest, clienteTest,  miVentana), null);
-		//assertEquals(funcionesTest.comprobarDNI(DNI2), false);
-	}
+	
 	
 	@Test
 	public void testCargarLineass() throws Exception {
 		LineaAutobus lineaTest = new LineaAutobus(null, null, null);
 		int[] rsTest1 = {1001, 1002, 1003};
 		String[] rsTest2 = {"Bilbao", "Leioa", "Berango", "Sopela", "Sopela", "Barrika", "Plentzia"};
-		funcionesTest.cargarLineass(lineaTest);
+		String codLinea = "L1";
+		funcionesTest.cargarLineass(lineaTest, codLinea);
 		
 		assertEquals(lineaTest.getCodLinea(), "L1");
 		assertArrayEquals(lineaTest.getCodAutobus(), rsTest1);
 		assertArrayEquals(lineaTest.getMunicipios(), rsTest2);
 	}
 
+	@Test
+	public void testComprobarDNI() throws Exception {
+		clienteTest.setContraseña(passTestStr);
+		assertNotEquals(funcionesTest.comprobarDNI(dniTest, passTest, clienteTest,  miVentana), null);
+		//assertEquals(funcionesTest.comprobarDNI(DNI2), false);
+	}
 		
 	@Test
 	public void comprobarPassTest() throws Exception {
