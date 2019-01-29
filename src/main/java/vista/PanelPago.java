@@ -66,7 +66,7 @@ public class PanelPago extends JPanel {
 		
 		btnCancelar.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnCancelar.setBounds(51, 553, 156, 70);
-		add(btnCancelar);
+		add(btnCancelar); 
 		btnAtras.setName("btnAtrasPago");
 		
 		

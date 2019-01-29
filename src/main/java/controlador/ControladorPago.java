@@ -25,7 +25,7 @@ public class ControladorPago implements ActionListener {
 			miVentana.pago.btnCancelar.addActionListener(this);
 			miVentana.pago.btn500.addActionListener(this);
 			miVentana.pago.btn200.addActionListener(this);
-			miVentana.pago.btn100.addActionListener(this);
+			miVentana.pago.btn100.addActionListener(this); 
 			miVentana.pago.btn50.addActionListener(this);
 			miVentana.pago.btn20.addActionListener(this);
 			miVentana.pago.btn10.addActionListener(this);

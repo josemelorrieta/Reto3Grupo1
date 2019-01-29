@@ -16,7 +16,7 @@ public class Modelo {
 	}
 	
 	public void inicializarDatosBD() {
-		ConexionBD con = new ConexionBD();  
+		ConexionBD con = new ConexionBD();   
 		
 
 	}

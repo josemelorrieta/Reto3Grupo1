@@ -34,8 +34,13 @@ public class ControladorLogin implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			switch (((JButton) e.getSource()).getName()) {
+<<<<<<< HEAD
 				case "btnAtrasLogin": funciones.cambiarDePanel(miVentana.login, miVentana.saludo);
 					resetValoresLogin();
+=======
+				case "btnAtrasLogin":   funciones.cambiarDePanel(miVentana.login, miVentana.saludo);
+					resetValoresLogin();  
+>>>>>>> 8805004b2ef86a95025cb76d414e6cea7dad47af
 					break;
 				case "btnRegistrarseLogin": //funciones.irDesdeLoginARegistro(miVentana);
 					funciones.cambiarDePanel(miVentana.login, miVentana.registro);
@@ -46,7 +51,7 @@ public class ControladorLogin implements ActionListener {
 //						cliente = funcionesLogin.comprobarDNI(miVentana.login.TextDni.getText(), miVentana.login.passwordField.getPassword(), cliente, miVentana);
 					} catch (Exception e1) {
 						// TODO Auto-generated catch block
-						e1.printStackTrace();
+						e1.printStackTrace(); 
 					}
 					if(cliente != null) 
 						funciones.cambiarDePanel(miVentana.login, miVentana.billetes);

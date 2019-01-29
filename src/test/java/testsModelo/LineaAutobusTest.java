@@ -24,7 +24,7 @@ public class LineaAutobusTest {
 	}
 
 	@Test
-	public void testCodLinea() {
+	public void testCodLinea() { 
 		lineaAutobus.setCodLinea(codLinea);
 		assertEquals(codLinea, lineaAutobus.getCodLinea());
 	}

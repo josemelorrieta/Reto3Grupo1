@@ -45,7 +45,9 @@ public class ControladorRegistro implements ActionListener {
 				case "btnAtrasRegistro": funciones.cambiarDePanel(miVentana.registro, miVentana.login);
 					 resetear();
 					 break;
+
 //				case "btnRegistro": cliente = funcionesRegistro.registrarNuevoCliete();
+
 			}
 			
 		}

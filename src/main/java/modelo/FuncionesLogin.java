@@ -43,7 +43,7 @@ public class FuncionesLogin {
 			JOptionPane.showMessageDialog(miVentana, "El DNI no existe", "¡Atención!", JOptionPane.WARNING_MESSAGE);
 		}
 		con.close();
-		return cliente;
+		return cliente; 
 	}
 	
 	public boolean comprobarPass(String DNI, String pass) throws Exception {

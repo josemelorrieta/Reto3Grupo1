@@ -22,7 +22,7 @@ public class ControladorBilletes implements ActionListener {
 			this.miVentana = miVentana;
 			
 			miVentana.billetes.btnComprarBillete.addActionListener(this);
-			miVentana.billetes.btnCerrarSesion.addActionListener(this);			
+			miVentana.billetes.btnCerrarSesion.addActionListener(this);	 		
 	
 			
 		}
