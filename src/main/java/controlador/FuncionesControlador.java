@@ -6,6 +6,8 @@ import java.text.NumberFormat;
 import java.util.Locale;
 
 import javax.swing.JButton;
+import javax.swing.JPanel;
+
 import vista.Ventana;
 
 
@@ -14,6 +16,11 @@ public class FuncionesControlador {
 	private static NumberFormat formatoMoneda = NumberFormat.getCurrencyInstance(Locale.getDefault());
 	
 	float dineroPagado = 0;
+	
+	public void cambiarDePanel(JPanel ocultar, JPanel mostrar) { 
+		ocultar.setVisible(false);
+		mostrar.setVisible(false);
+	}
 	
 	public void irDesdeSaludoALogin(Ventana miVentana) {
 		

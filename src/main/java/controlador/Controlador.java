@@ -21,7 +21,7 @@ public class Controlador {
 
 	private Cliente cliente = null;
 	
-	FuncionesVarias funciones = new FuncionesVarias(); 
+	FuncionesVarias funciones = new FuncionesVarias();  
 
 	private ControladorSaludo miControladorSaludo;
 	private ControladorLogin miControladorLogin;
@@ -42,7 +42,7 @@ public class Controlador {
 		this.miModelo = miModelo;
 		
 		this.miControladorSaludo = new ControladorSaludo(miVentana);
-		this.miControladorRegistro = new ControladorRegistro(miVentana);
+		this.miControladorRegistro = new ControladorRegistro(miVentana, cliente);
 		this.miControladorBilletes = new ControladorBilletes(miVentana);
 		this.miControladorLineas = new ControladorLineas(miVentana, lineas);
 		this.miControladorParadas = new ControladorParadas(miVentana);
