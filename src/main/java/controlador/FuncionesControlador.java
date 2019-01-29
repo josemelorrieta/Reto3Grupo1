@@ -18,7 +18,7 @@ public class FuncionesControlador {
 	float dineroPagado = 0;
 	float total = 2000;
 	
-	public void cambiarDePanel(JPanel ocultar, JPanel mostrar) {
+	public void cambiarDePanel(JPanel ocultar, JPanel mostrar) { 
 		ocultar.setVisible(false);
 		mostrar.setVisible(false);
 	}
@@ -197,6 +197,6 @@ public class FuncionesControlador {
 	}
 	
 
-
+ 
 
 }

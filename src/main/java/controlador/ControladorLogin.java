@@ -18,7 +18,7 @@ public class ControladorLogin implements ActionListener {
 		
 	//private Controlador miControlador;
 	private Ventana miVentana;
-	private Cliente cliente;
+	private Cliente cliente; 
 		
 	//Constructor
 		public ControladorLogin(Ventana miVentana, Cliente cliente) { 
@@ -29,7 +29,6 @@ public class ControladorLogin implements ActionListener {
 			miVentana.login.btnAtras.addActionListener(this);
 			miVentana.login.btnRegistrarse.addActionListener(this);
 			miVentana.login.btnLogin.addActionListener(this);
-		
 		}
 
 		@Override

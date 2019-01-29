@@ -15,6 +15,7 @@ import vista.Ventana;
 
 public class FuncionesVarias {
 
+
 	//Este metodo se puede mjorar :P
 	public String CargarLineas() throws SQLException {
 		ConexionBD miConexion = new ConexionBD();
@@ -28,7 +29,7 @@ public class FuncionesVarias {
 		return paradas.get(0) + " - " + paradas.get(rs.getRow()-1);
 		
 	}
-	
+
 	public String[] municipioPorLinea(Connection con) {
 		ConsultaBD miConsulta = new ConsultaBD();
 		String[] municipios = new String[0];
@@ -55,11 +56,11 @@ public class FuncionesVarias {
 	public void cargarLineass (LineaAutobus linea) {
 		ConexionBD miConexion = new ConexionBD();
 		ConsultaBD miConsulta = new ConsultaBD();
-		Connection con = miConexion.conectarBD();
+		Connection con = miConexion.conectarBD(); 
 		int[] buses = new int[0];
 		int[] busesAux;
 		int cont = 0;
-		int codLinea = 0;
+		String codLinea = "";
 		
 		ResultSet rs = miConsulta.hacerConsultaBD(con, "select distinct `linea-parada`.Cod_Linea, `linea_autobus`.Cod_bus from `linea-parada`, `linea_autobus` where `linea-parada`.Cod_Linea = `linea_autobus`.Cod_Linea and `linea_autobus`.Cod_Linea = 'L1';" );
 		try {
@@ -70,7 +71,7 @@ public class FuncionesVarias {
 				}
 				buses = busesAux;
 				buses[cont] = rs.getInt("Cod_bus");
-				codLinea = rs.getInt("Cod_Linea");
+				codLinea = rs.getString("Cod_Linea");
 				cont++;
 			}
 		} catch (SQLException e) {

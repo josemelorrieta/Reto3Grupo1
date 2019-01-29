@@ -14,14 +14,14 @@ import modelo.Parada;
 import vista.Ventana;
 
 public class Controlador {
-
+  
 	//Declaración e inicialización de variables;
 	private Modelo miModelo;
 	private Ventana miVentana;
 
 	private Cliente cliente = null;
 	
-	FuncionesVarias funciones = new FuncionesVarias(); 
+	FuncionesVarias funciones = new FuncionesVarias();  
 
 	private ControladorSaludo miControladorSaludo;
 	private ControladorLogin miControladorLogin;
