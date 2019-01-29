@@ -45,7 +45,7 @@ public class Controlador {
 		this.miControladorRegistro = new ControladorRegistro(miVentana, cliente);
 		this.miControladorBilletes = new ControladorBilletes(miVentana);
 		this.miControladorLineas = new ControladorLineas(miVentana, lineas);
-		this.miControladorParadas = new ControladorParadas(miVentana);
+		this.miControladorParadas = new ControladorParadas(miVentana, lineas, paradas);
 		this.miControladorFechas = new ControladorFechas(miVentana);
 		this.miControladorBilleteComprado = new ControladorBilleteComprado(miVentana);
 		this.miControladorPago = new ControladorPago(miVentana);
