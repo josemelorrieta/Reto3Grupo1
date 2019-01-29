@@ -23,7 +23,7 @@ public class PanelBilleteComprado extends JPanel {
 
 	/**
 	 * Create the panel.
-	 */
+	 */ 
 	public PanelBilleteComprado() {
 		setBorder(new LineBorder(new Color(0, 0, 0), 4));
 		setBackground(Color.CYAN);

@@ -21,9 +21,9 @@ public class ControladorLogin implements ActionListener {
 	private Cliente cliente;
 		
 	//Constructor
-		public ControladorLogin(Ventana miVentana, Cliente cliente) {
+		public ControladorLogin(Ventana miVentana, Cliente cliente) { 
 			
-			this.miVentana = miVentana;
+			this.miVentana = miVentana; 
 			this.cliente = cliente;
 			
 			miVentana.login.btnAtras.addActionListener(this);

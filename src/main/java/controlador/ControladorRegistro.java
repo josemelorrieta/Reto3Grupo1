@@ -21,7 +21,7 @@ public class ControladorRegistro implements ActionListener {
 	
 	//Constructor
 		public ControladorRegistro (Ventana miVentana, Cliente cliente) {
-			
+
 			this.miVentana = miVentana;
 			this.cliente = cliente;
 			

@@ -10,15 +10,17 @@ import modelo.LineaAutobus;
 public class LineaAutobusTest {
 
 	private int codLinea= 01;
-	private int codAutobus = 02;
-	private String municipios = "Muni";
+	private int[] codAutobus;
+	private String[] municipios;
 	private LineaAutobus lineaAutobus = new LineaAutobus(codLinea, codAutobus, municipios);
 	
 	@Test
 	public void testConstructorLineaAutobus2() {
+		
 		assertEquals(codLinea, lineaAutobus.getCodLinea(), 01);
-		assertEquals(codAutobus, lineaAutobus.getCodAutobus(), 02);
-		assertEquals(municipios, lineaAutobus.getMunicipios(), "Muni");
+		assertArrayEquals(codAutobus, lineaAutobus.getCodAutobus());
+		assertArrayEquals(municipios, lineaAutobus.getMunicipios());
+		
 	}
 
 	@Test
@@ -34,7 +36,7 @@ public class LineaAutobusTest {
 	}
 	
 	@Test
-	public void testmunicipios() {
+	public void testMunicipios() {
 		lineaAutobus.setMunicipios(municipios);
 		assertEquals(municipios, lineaAutobus.getMunicipios());
 	}

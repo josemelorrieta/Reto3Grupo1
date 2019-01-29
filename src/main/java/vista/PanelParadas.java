@@ -16,7 +16,13 @@ import javax.swing.JTextField;
 
 public class PanelParadas extends JPanel {
 
+
+	
+
 	public JButton btnAtras = new JButton("Atras");
+
+
+
 	public JButton btnSiguiente = new JButton("Siguiente");
 	public JButton btnCancelar = new JButton("Cancelar");
 	public JComboBox ParadaDeOrigen = new JComboBox();

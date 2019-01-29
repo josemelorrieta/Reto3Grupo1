@@ -3,10 +3,10 @@ package modelo;
 public class LineaAutobus {
 
 	private int codLinea;
-	private int codAutobus;
-	private String municipios;
+	private int[] codAutobus;
+	private String[] municipios;
 	
-	public LineaAutobus(int codLinea, int codAutobus, String municipios) {
+	public LineaAutobus(int codLinea, int[] codAutobus, String[] municipios) {
 		this.codLinea = codLinea;
 		this.codAutobus = codAutobus;
 		this.municipios = municipios;
@@ -20,19 +20,19 @@ public class LineaAutobus {
 		this.codLinea = codLinea;
 	}
 
-	public int getCodAutobus() {
+	public int[] getCodAutobus() {
 		return codAutobus;
 	}
 
-	public void setCodAutobus(int codAutobus) {
+	public void setCodAutobus(int[] codAutobus) {
 		this.codAutobus = codAutobus;
 	}
 
-	public String getMunicipios() {
+	public String[] getMunicipios() {
 		return municipios;
 	}
 
-	public void setMunicipios(String municipios) {
+	public void setMunicipios(String[] municipios) {
 		this.municipios = municipios;
 	}
 }

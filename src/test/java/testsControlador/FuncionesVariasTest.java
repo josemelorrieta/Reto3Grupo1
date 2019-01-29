@@ -5,6 +5,7 @@ import static org.mockito.Mockito.*;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import org.junit.Test;
 
@@ -12,7 +13,11 @@ import controlador.FuncionesVarias;
 import modelo.Cliente;
 import modelo.ConexionBD;
 import modelo.ConsultaBD;
+
+import modelo.LineaAutobus;
+
 import vista.Ventana;
+
 
 public class FuncionesVariasTest {
 
@@ -39,14 +44,26 @@ public class FuncionesVariasTest {
 	}
 
 	
-	@Test
-	public void testCargarLineas() throws Exception {
-		System.out.println(funcionesTest.CargarLineas());
-		Connection con = conexionTest.conectarBD();
-		ResultSet rs = consultaTest.hacerConsultaBD(con, "select parada.Nombre from parada, linea, `linea-parada` where linea.Cod_Linea = `linea-parada`.Cod_Linea and `linea-parada`.Cod_Parada=parada.Cod_Parada and linea.Cod_Linea = 'L1' order BY sqrt(power(latitud - (SELECT latitud FROM parada WHERE cod_parada = 1), 2)+power(longitud - (SELECT longitud FROM parada WHERE cod_parada = 1), 2));");
-		System.out.println(rs.getRow());
-		assertEquals(funcionesTest.CargarLineas(), "Termibus-Bilbao - Asilo Barrika");
-	}
+//	@Test
+//	public void testCargarLineas() throws Exception {
+//		System.out.println(funcionesTest.CargarLineas());
+//		Connection con = conexionTest.conectarBD();
+//		ResultSet rs = consultaTest.hacerConsultaBD(con, "select parada.Nombre from parada, linea, `linea-parada` where linea.Cod_Linea = `linea-parada`.Cod_Linea and `linea-parada`.Cod_Parada=parada.Cod_Parada and linea.Cod_Linea = 'L1' order BY sqrt(power(latitud - (SELECT latitud FROM parada WHERE cod_parada = 1), 2)+power(longitud - (SELECT longitud FROM parada WHERE cod_parada = 1), 2));");
+//		System.out.println(rs.getRow());
+//		assertEquals(funcionesTest.CargarLineas(), "Termibus-Bilbao - Asilo Barrika");
+//	}
+//	
+	
+//	@Test
+//	public void testCargarLineas() throws Exception {
+//		ArrayList<LineaAutobus> lineas;
+//		System.out.println(funcionesTest.cargarLineass(lineas));
+//		Connection con = conexionTest.conectarBD();
+//		ResultSet rs = consultaTest.hacerConsultaBD(con, "select poblacion.Nombre from poblacion, `poblacion_parada`, parada, `linea-parada` where `linea-parada`.Cod_Parada = parada.Cod_parada and parada.Cod_Parada = `poblacion_parada`.Cod_Parada and `poblacion_parada`.Cod_Postal = poblacion.Cod_Postal and `linea-parada`.Cod_Linea = 'L1';");
+//		assertEquals(funcionesTest.CargarLineass(lineas), "Bilbao Leioa Berango Sopela Sopela Barrika Plentzia");
+//	}
+	
+	
 	
 	@Test
 	public void comprobarPassTest() throws Exception {

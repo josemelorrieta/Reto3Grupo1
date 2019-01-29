@@ -29,7 +29,7 @@ public class ClienteTest {
 	}
 
 	@Test
-	public void testConstructorCliente2() {
+	public void testConstructorCliente2() { 
 		cliente.setContraseña(contraseña);
 		assertEquals(dni, cliente.getDni(), "1111111A");
 		assertEquals(nombre, cliente.getNombre(), "Perry");

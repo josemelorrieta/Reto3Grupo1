@@ -44,7 +44,7 @@ public class PanelRegistro extends JPanel {
 		lblNewJgoodiesLabel.setBackground(Color.MAGENTA);
 		lblNewJgoodiesLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewJgoodiesLabel.setFont(new Font("Tahoma", Font.BOLD, 50));
-		lblNewJgoodiesLabel.setBounds(-28, 62, 1080, 49);
+		lblNewJgoodiesLabel.setBounds(-28, 62, 1080, 49); 
 		add(lblNewJgoodiesLabel);
 		
 		JLabel lblNewJgoodiesLabel_1 = DefaultComponentFactory.getInstance().createLabel("DNI:");

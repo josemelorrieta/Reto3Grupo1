@@ -16,7 +16,7 @@ public class ControladorPago implements ActionListener {
 	private Ventana miVentana;
 	
 	//Constructor
-		public ControladorPago (Ventana miVentana) {
+		public ControladorPago (Ventana miVentana) { 
 			
 			this.miVentana = miVentana;
 			

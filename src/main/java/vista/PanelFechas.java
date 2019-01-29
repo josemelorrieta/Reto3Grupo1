@@ -31,7 +31,7 @@ public class PanelFechas extends JPanel {
 	public PanelFechas() {
 		setBorder(new LineBorder(new Color(0, 0, 0), 4));
 		setBackground(Color.CYAN);
-		setLayout(null);
+		setLayout(null); 
 		
 		btnAtras.setName("btnAtrasFechas");
 		btnAtras.setFont(new Font("Tahoma", Font.BOLD, 20));

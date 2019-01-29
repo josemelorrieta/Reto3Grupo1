@@ -11,7 +11,7 @@ import javax.swing.border.LineBorder;
 import java.awt.Color;
 
 
-public class Ventana extends JFrame {
+public class Ventana extends JFrame { 
 
 	private JPanel contentPane;
 
@@ -66,7 +66,7 @@ public class Ventana extends JFrame {
 		lineas.btnSiguiente.setLocation(780, 549);
 		lineas.SeleccionarLinea.setBackground(Color.WHITE);
 		contentPane.add(lineas);
-		lineas.setLayout(null);
+		lineas.setLayout(null); 
 		
 		paradas = new PanelParadas();
 		paradas.btnAtras.setLocation(654, 575);
