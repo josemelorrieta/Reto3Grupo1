@@ -5,6 +5,7 @@ import controlador.Controlador;
 public class Modelo {
 	// Declaración e inicialización de variables
 	private Controlador miControlador;
+
 	
 	public Controlador getControlador() {
 		return miControlador;
