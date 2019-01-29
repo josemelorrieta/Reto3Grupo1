@@ -6,9 +6,6 @@ import java.text.NumberFormat;
 import java.util.Locale;
 
 import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
 import vista.Ventana;
 
 
@@ -18,11 +15,10 @@ public class FuncionesControlador {
 	
 	float dineroPagado = 0;
 	
-	
 	public void irDesdeSaludoALogin(Ventana miVentana) {
 		
 		miVentana.saludo.setVisible(false);
-		miVentana.login.setVisible(true);		  
+		miVentana.login.setVisible(true);		   
 		
 	}
 	
@@ -44,7 +40,6 @@ public class FuncionesControlador {
 		
 		miVentana.billetes.setVisible(true);
 		miVentana.login.setVisible(false);
-		
 	}
 	
 	public void irDesdeRegistroALogin (Ventana miVentana) {

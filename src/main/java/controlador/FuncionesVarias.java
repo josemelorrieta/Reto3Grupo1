@@ -137,7 +137,7 @@ public class FuncionesVarias {
 		}
 		return municipios; 	
 	}
-<<<<<<< HEAD
+
 	
 	public void cargarLineass (LineaAutobus linea) {
 		ConexionBD miConexion = new ConexionBD();
@@ -173,17 +173,8 @@ public class FuncionesVarias {
 		}
 	}
 	
-	public String[] alargarArray(String[] lista) {
-		String [] auxiliar = new String[lista.length+1];
-		for (int i = 0; i < lista.length; i++) {
-			auxiliar[i] = lista[i];
-		}
-		return auxiliar;
-	}
+	
 
 
 	
-=======
-	 
->>>>>>> 87a11c90a03bf1a8dae8e0cf09ac133173bec896
 }

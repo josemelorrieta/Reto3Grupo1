@@ -4,7 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
-import javax.swing.JOptionPane;
 
 import modelo.Cliente;
 import vista.Ventana;
@@ -21,7 +20,7 @@ public class ControladorLogin implements ActionListener {
 	//Constructor
 		public ControladorLogin(Ventana miVentana, Cliente cliente) { 
 			
-			this.miVentana = miVentana;
+			this.miVentana = miVentana; 
 			this.cliente = cliente;
 			
 			miVentana.login.btnAtras.addActionListener(this);
