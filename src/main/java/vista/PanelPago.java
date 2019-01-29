@@ -41,7 +41,7 @@ public class PanelPago extends JPanel {
 		public JButton btn020;
 		public JButton btn010;
 		public JButton btn005;
-		public JButton btn002;
+		public JButton btn002; 
 		public JButton btn001;
 		
 

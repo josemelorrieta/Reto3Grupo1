@@ -11,7 +11,7 @@ import javax.swing.border.LineBorder;
 import java.awt.Color;
 
 
-public class Ventana extends JFrame {
+public class Ventana extends JFrame { 
 
 	private JPanel contentPane;
 
@@ -31,6 +31,7 @@ public class Ventana extends JFrame {
 	 * Create the frame.
 	 */
 	public Ventana() {
+		setTitle("Gesti\u00F3n de Compra de Billetes");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		contentPane = new JPanel();
@@ -39,11 +40,6 @@ public class Ventana extends JFrame {
 		setBounds(100, 100, 1100, 700);
 		setLocationRelativeTo(null);
 		getContentPane().setLayout(new CardLayout(0, 0));
-		
-		pago = new PanelPago();
-		contentPane.add(pago, "name_360122149477200");
-		pago.pagado.setText("0");
-		pago.setLayout(null);
 		
 		saludo = new PanelSaludo();
 		contentPane.add(saludo);
@@ -70,7 +66,7 @@ public class Ventana extends JFrame {
 		lineas.btnSiguiente.setLocation(780, 549);
 		lineas.SeleccionarLinea.setBackground(Color.WHITE);
 		contentPane.add(lineas);
-		lineas.setLayout(null);
+		lineas.setLayout(null); 
 		
 		paradas = new PanelParadas();
 		paradas.btnAtras.setLocation(654, 575);
@@ -85,6 +81,11 @@ public class Ventana extends JFrame {
 		fechas.btnRadioButton.setBackground(Color.CYAN);
 		contentPane.add(fechas);
 		fechas.setLayout(null);
+		
+		pago = new PanelPago();
+		contentPane.add(pago, "name_360122149477200");
+		pago.pagado.setText("0");
+		pago.setLayout(null);
 		
 		billeteComprado = new PanelBilleteComprado();
 		billeteComprado.btnSiguiente.setBounds(889, 570, 165, 61);

@@ -4,9 +4,9 @@ public class Municipio {
 	
 	private String nombre;
 	private int codPostal;
-	private int paradas;
+	private int[] paradas;
 	
-	public Municipio(String nombre, int codPostal, int paradas) {
+	public Municipio(String nombre, int codPostal, int[] paradas) {
 		this.nombre = nombre;
 		this.codPostal = codPostal;
 		this.paradas = paradas;
@@ -28,11 +28,11 @@ public class Municipio {
 		this.codPostal = codPostal;
 	}
 
-	public int getParadas() {
+	public int[] getParadas() {
 		return paradas;
 	}
 
-	public void setParadas(int paradas) {
+	public void setParadas(int[] paradas) {
 		this.paradas = paradas;
 	}
 }

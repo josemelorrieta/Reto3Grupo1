@@ -23,7 +23,7 @@ public class PanelLineas extends JPanel {
 	public PanelLineas() {
 		setBackground(Color.CYAN);
 		setBorder(new LineBorder(new Color(0, 0, 0), 4));
-		setLayout(null);
+		setLayout(null); 
 		
 		JLabel lblNewJgoodiesLabel = DefaultComponentFactory.getInstance().createLabel("SELECCIONE LA LINEA");
 		lblNewJgoodiesLabel.setForeground(Color.ORANGE);

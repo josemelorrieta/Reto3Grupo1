@@ -5,11 +5,7 @@ import controlador.Controlador;
 public class Modelo {
 	// Declaración e inicialización de variables
 	private Controlador miControlador;
-	
-	private String servidor = "";
-	private String baseDatos = "";
-	private String user = "";
-	private String password = "";
+
 	
 	public Controlador getControlador() {
 		return miControlador;
@@ -20,9 +16,9 @@ public class Modelo {
 	}
 	
 	public void inicializarDatosBD() {
-		ConexionBD con = new ConexionBD();
+		ConexionBD con = new ConexionBD(); 
 		
-		
+
 	}
 
 }

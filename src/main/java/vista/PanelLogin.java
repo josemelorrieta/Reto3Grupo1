@@ -23,7 +23,7 @@ import javax.swing.border.BevelBorder;
 
 public class PanelLogin extends JPanel {
 	
-	public JTextField TextDni;
+	public JTextField TextDni; 
 	public JPasswordField passwordField;
 	public JButton btnLogin;
 	public JButton btnAtras;

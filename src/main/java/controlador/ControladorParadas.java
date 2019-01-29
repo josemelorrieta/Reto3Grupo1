@@ -16,7 +16,7 @@ public class ControladorParadas implements ActionListener {
 	private Ventana miVentana;
 	
 	//Constructor
-		public ControladorParadas (Ventana miVentana) {
+		public ControladorParadas (Ventana miVentana) { 
 			
 			this.miVentana = miVentana;
 			
@@ -42,4 +42,3 @@ public class ControladorParadas implements ActionListener {
 		}
 
 }
- 

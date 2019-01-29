@@ -10,7 +10,7 @@ public class Cliente {
 	private String apellidos;
 	private String fechaNacimiento;
 	private char sexo;
-	private String contraseña;
+	private String contraseña; 
 	
 	public Cliente(String dni,String nombre, String apellidos, String fechaNacimiento, char sexo) {
 		this.dni = dni;

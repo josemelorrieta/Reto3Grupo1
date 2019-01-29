@@ -20,7 +20,7 @@ public class PanelBilletes extends JPanel {
 
 	/** 
 	 * Create the panel.
-	 */
+	 */ 
 	public PanelBilletes() {
 		setBorder(new LineBorder(new Color(0, 0, 0), 4));
 		setBackground(Color.CYAN);

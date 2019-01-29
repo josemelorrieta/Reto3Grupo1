@@ -11,14 +11,14 @@ public class MunicipioTest {
 
 	private String nombre = "Shiganshina";
 	private int codPostal = 99;
-	private int paradas = 9;
+	private int[] paradas;
 	private Municipio municipio = new Municipio(nombre, codPostal, paradas);
 	
 	@Test
 	public void testConstructorMunicipio() {
 		assertEquals(nombre, municipio.getNombre(), "Shiganshina");
 		assertEquals(codPostal, municipio.getCodPostal(), 99);
-		assertEquals(paradas, municipio.getParadas(), 9);
+		assertArrayEquals(paradas, municipio.getParadas());
 	}
 	
 	@Test
@@ -40,3 +40,4 @@ public class MunicipioTest {
 	}
 
 }
+ 

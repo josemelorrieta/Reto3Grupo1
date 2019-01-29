@@ -2,9 +2,12 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 
+import modelo.Modelo;
+import modelo.LineaAutobus;
 import vista.Ventana;
 
 public class ControladorLineas implements ActionListener {
@@ -15,14 +18,16 @@ public class ControladorLineas implements ActionListener {
 	//private Controlador miControlador;
 	private Ventana miVentana;
 	
+	
+	
 	//Constructor
-		public ControladorLineas (Ventana miVentana) {
+		public ControladorLineas (Ventana miVentana, ArrayList<LineaAutobus> lineas) {
 			
 			this.miVentana = miVentana;
 			
 			miVentana.lineas.btnSiguiente.addActionListener(this);
 			miVentana.lineas.btnCancelar.addActionListener(this);
-			
+	
 		}
 
 		@Override

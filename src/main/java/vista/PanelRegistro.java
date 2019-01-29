@@ -44,24 +44,24 @@ public class PanelRegistro extends JPanel {
 		lblNewJgoodiesLabel.setBackground(Color.MAGENTA);
 		lblNewJgoodiesLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewJgoodiesLabel.setFont(new Font("Tahoma", Font.BOLD, 50));
-		lblNewJgoodiesLabel.setBounds(-28, 62, 1080, 49);
+		lblNewJgoodiesLabel.setBounds(-28, 62, 1080, 49); 
 		add(lblNewJgoodiesLabel);
 		
 		JLabel lblNewJgoodiesLabel_1 = DefaultComponentFactory.getInstance().createLabel("DNI:");
 		lblNewJgoodiesLabel_1.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblNewJgoodiesLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewJgoodiesLabel_1.setBounds(48, 171, 351, 35);
-		add(lblNewJgoodiesLabel_1);
-		btnCancelar.setName("btnAtrasRegistro");
-		
+		add(lblNewJgoodiesLabel_1);	
 		
 		btnCancelar.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnCancelar.setBounds(48, 575, 194, 68);
+		btnCancelar.setName("btnAtrasRegistro");
 		add(btnCancelar);
 		
 		
 		btnRegistrarse.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnRegistrarse.setBounds(858, 575, 194, 68);
+		btnRegistrarse.setName("btnRegistro");
 		add(btnRegistrarse);
 		
 		JLabel lblNombre = DefaultComponentFactory.getInstance().createLabel("NOMBRE:");

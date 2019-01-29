@@ -16,7 +16,7 @@ public class ControladorPago implements ActionListener {
 	private Ventana miVentana;
 	
 	//Constructor
-		public ControladorPago (Ventana miVentana) {
+		public ControladorPago (Ventana miVentana) { 
 			
 			this.miVentana = miVentana;
 			
@@ -104,9 +104,8 @@ public class ControladorPago implements ActionListener {
 					
 				case "btn001" : funciones.SumarRestarDineroPago(0.01f, miVentana);
 					break;
-	
+
 			}
 			
 		}
-
 }
