@@ -19,7 +19,7 @@ public class FuncionesControlador {
 	
 	public void cambiarDePanel(JPanel ocultar, JPanel mostrar) {
 		ocultar.setVisible(false);
-		mostrar.setVisible(false);
+		mostrar.setVisible(true);
 	}
 	
 	public void irDesdeSaludoALogin(Ventana miVentana) {

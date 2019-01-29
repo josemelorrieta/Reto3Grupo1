@@ -1,9 +1,12 @@
 package controlador;
 
+import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 
 import modelo.Cliente;
 import modelo.FuncionesRegistro;
@@ -41,9 +44,34 @@ public class ControladorRegistro implements ActionListener {
 					 miVentana.registro.passwordField.setText("");
 					 miVentana.registro.textFieldFechaNacimiento.setText("");
 					 break;
-				case "btnRegistro": cliente = funcionesRegistro.registrarNuevoCliete();
+				case "btnRegistro": try {
+					if (comprobarCamposRegistro()) {
+						cliente = funcionesRegistro.registrarNuevoCliente();
+					}
+				} catch (HeadlessException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
 			}
 			
+		}
+		
+		private boolean comprobarCamposRegistro() throws SQLException {
+			if (funcionesRegistro.verificarDNI(miVentana.registro.textFieldDni.getText())) {
+				JOptionPane.showMessageDialog(miVentana, "Ya existe un ususario con ese DNI", "¡Atención!", JOptionPane.WARNING_MESSAGE);
+				return false;
+			} else {
+				if (miVentana.registro.textFieldDni.getText() != "" && miVentana.registro.textFieldNombre.getText() != "" && miVentana.registro.textFieldApellidos.getText()!="" && miVentana.registro.textFieldFechaNacimiento.getText()!="" && miVentana.registro.passwordField.getPassword().length != 0) {
+						return true;
+					} else {
+						JOptionPane.showMessageDialog(miVentana, "¡Debe rellenar todos los campos!", "¡Atención!", JOptionPane.WARNING_MESSAGE);
+						return false;
+					}
+			}
 		}
 
 }

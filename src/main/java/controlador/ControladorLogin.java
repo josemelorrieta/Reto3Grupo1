@@ -38,8 +38,7 @@ public class ControladorLogin implements ActionListener {
 				case "btnAtrasLogin":   funciones.cambiarDePanel(miVentana.login, miVentana.saludo);
 					resetValoresLogin();
 					break;
-				case "btnRegistrarseLogin": //funciones.irDesdeLoginARegistro(miVentana);
-					funciones.cambiarDePanel(miVentana.login, miVentana.registro);
+				case "btnRegistrarseLogin":	funciones.cambiarDePanel(miVentana.login, miVentana.registro);
 					resetValoresLogin();
 					break;
 				case "btnLogin": try {
