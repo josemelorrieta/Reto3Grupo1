@@ -126,7 +126,7 @@ public class FuncionesVarias {
 		int[] buses = new int[0];
 		int[] busesAux;
 		int cont = 0;
-		int codLinea = 0;
+		String codLinea = "";
 		
 		ResultSet rs = miConsulta.hacerConsultaBD(con, "select distinct `linea-parada`.Cod_Linea, `linea_autobus`.Cod_bus from `linea-parada`, `linea_autobus` where `linea-parada`.Cod_Linea = `linea_autobus`.Cod_Linea and `linea_autobus`.Cod_Linea = 'L1';" );
 		try {
@@ -137,7 +137,7 @@ public class FuncionesVarias {
 				}
 				buses = busesAux;
 				buses[cont] = rs.getInt("Cod_bus");
-				codLinea = rs.getInt("Cod_Linea");
+				codLinea = rs.getString("Cod_Linea");
 				cont++;
 			}
 		} catch (SQLException e) {

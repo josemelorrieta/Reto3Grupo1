@@ -2,21 +2,21 @@ package modelo;
 
 public class LineaAutobus {
 
-	private int codLinea;
+	private String codLinea;
 	private int[] codAutobus;
 	private String[] municipios;
 	
-	public LineaAutobus(int codLinea, int[] codAutobus, String[] municipios) {
+	public LineaAutobus(String codLinea, int[] codAutobus, String[] municipios) {
 		this.codLinea = codLinea;
 		this.codAutobus = codAutobus;
 		this.municipios = municipios;
 	}
 
-	public int getCodLinea() {
+	public String getCodLinea() {
 		return codLinea;
 	}
 
-	public void setCodLinea(int codLinea) {
+	public void setCodLinea(String codLinea) {
 		this.codLinea = codLinea;
 	}
 
