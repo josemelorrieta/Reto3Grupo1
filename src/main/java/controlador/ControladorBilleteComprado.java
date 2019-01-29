@@ -25,18 +25,23 @@ public class ControladorBilleteComprado implements ActionListener {
 			miVentana.billeteComprado.btnCancelar.addActionListener(this);
 			
 		}
+		
+		public void resetear() {
+			miVentana.billeteComprado.modeloMostrarBilletesComprado.removeAllElements();
+		}
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			switch (((JButton) e.getSource()).getName()) {
-				case "btnAtrasBilleteComprado": funciones.irDesdeBilleteCompradoAFechas(miVentana);  
-												miVentana.billeteComprado.modeloMostrarBilletesComprado.removeAllElements();
+				case "btnAtrasBilleteComprado": funciones.cambiarDePanel(miVentana.billeteComprado, miVentana.fechas);
+												resetear();
 												break;
 												
-				case "btnSiguienteBilleteComprado": funciones.irDesdeBilleteCompradoAPago(miVentana);  break;
+				case "btnSiguienteBilleteComprado": funciones.cambiarDePanel(miVentana.billeteComprado, miVentana.pago); 
+													break;
 				
-				case "btnCancelarBilleteComprado":  funciones.irDesdeBilleteCompradoABilletes(miVentana);  
-													miVentana.billeteComprado.modeloMostrarBilletesComprado.removeAllElements();
+				case "btnCancelarBilleteComprado":  funciones.cambiarDePanel(miVentana.billeteComprado, miVentana.billetes);
+													resetear();
 													break;
 	
 			}

@@ -41,23 +41,26 @@ public class ControladorPago implements ActionListener {
 			
 			
 		}
+		
+		public void resetear() {
+			miVentana.pago.total.setText("");
+			miVentana.pago.pagado.setText("");
+			miVentana.pago.restante.setText("");
+			
+		}
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			switch (((JButton) e.getSource()).getName()) {
-				case "btnAtrasPago": funciones.irDesdePagoABilleteComprado(miVentana); 
-					miVentana.pago.total.setText("");
-					miVentana.pago.pagado.setText("");
-					miVentana.pago.restante.setText("");
+				case "btnAtrasPago": funciones.cambiarDePanel(miVentana.pago, miVentana.billeteComprado);
+					resetear();
 					break;
 									 
-				case "btnSiguientePago": funciones.irDesdePagoADevolucion(miVentana);  
+				case "btnSiguientePago": funciones.cambiarDePanel(miVentana.pago, miVentana.devolucion); 
 					break;
 				
-				case "btnCancelarPago": funciones.irDesdePagoABilletes(miVentana);  
-					miVentana.pago.total.setText("");
-					miVentana.pago.pagado.setText("");
-				    miVentana.pago.restante.setText("");
+				case "btnCancelarPago": funciones.cambiarDePanel(miVentana.pago, miVentana.billetes);
+					resetear();
 					break;
 
 				case "btn500" : funciones.SumarRestarDineroPago(500, miVentana);

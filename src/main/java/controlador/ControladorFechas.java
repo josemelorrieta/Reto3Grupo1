@@ -2,9 +2,8 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
-import javax.swing.JRadioButton;
+
 
 import vista.Ventana;
 
@@ -27,6 +26,11 @@ public class ControladorFechas implements ActionListener {
 			miVentana.fechas.btnRadioButton.addActionListener(this);
 	
 		}
+		
+		public void resetear() {
+			miVentana.fechas.btnRadioButton.setSelected(false); 
+			  miVentana.fechas.textPrecio.setText("");
+		}
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -43,17 +47,15 @@ public class ControladorFechas implements ActionListener {
 			}
 			else {	
 				switch (((JButton) e.getSource()).getName()) {
-					case "btnAtrasFechas": funciones.irDesdeFechasAParadas(miVentana);
-										   miVentana.fechas.btnRadioButton.setSelected(false); 
-										   miVentana.fechas.textPrecio.setText("");
+					case "btnAtrasFechas": funciones.cambiarDePanel(miVentana.fechas, miVentana.paradas);
+										   resetear();
 										   break;
 										   
-					case "btnSiguienteFechas":  funciones.irDesdeFechasABilleteComprado(miVentana);	
+					case "btnSiguienteFechas":  funciones.cambiarDePanel(miVentana.fechas, miVentana.billeteComprado);
 												break;
 					
-					case "btnCancelarFechas": funciones.irDesdeFechasABilletes(miVentana); 
-											  miVentana.fechas.btnRadioButton.setSelected(false); 
-											  miVentana.fechas.textPrecio.setText("");
+					case "btnCancelarFechas": funciones.cambiarDePanel(miVentana.fechas, miVentana.billetes);
+											  resetear();
 											  break;
 				}
 			}	

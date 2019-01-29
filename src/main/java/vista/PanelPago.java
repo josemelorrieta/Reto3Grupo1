@@ -44,6 +44,8 @@ public class PanelPago extends JPanel {
 		public JButton btn002; 
 		public JButton btn001;
 		
+		public JButton[] arrayBtn= new JButton[15];
+		
 
 	/**
 	 * Create the panel.
@@ -230,6 +232,22 @@ public class PanelPago extends JPanel {
 		btn001.setIcon(new ImageIcon(PanelPago.class.getResource("/imagenes/1centimo.png")));
 		btn001.setBounds(420, 429, 123, 54);
 		add(btn001);
+		
+		arrayBtn[0]=btn500;
+		arrayBtn[1]=btn200;
+		arrayBtn[2]=btn100;
+		arrayBtn[3]=btn50;
+		arrayBtn[4]=btn20;
+		arrayBtn[5]=btn10;
+		arrayBtn[6]=btn5;
+		arrayBtn[7]=btn2;
+		arrayBtn[8]=btn1;
+		arrayBtn[9]=btn050;
+		arrayBtn[10]=btn020;
+		arrayBtn[11]=btn010;
+		arrayBtn[12]=btn005;
+		arrayBtn[13]=btn002;
+		arrayBtn[14]=btn001;
 		
 		
 		

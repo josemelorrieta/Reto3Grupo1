@@ -25,11 +25,13 @@ public class ControladorDevolucion implements ActionListener {
 
 			
 		}
+		
+	
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			switch (((JButton) e.getSource()).getName()) {
-				case "btnSiguienteDevolucion": funciones.irDesdeDevolucionADespedida(miVentana);  break;
+				case "btnSiguienteDevolucion": funciones.cambiarDePanel(miVentana.devolucion, miVentana.despedida); break;
 				
 	
 			}

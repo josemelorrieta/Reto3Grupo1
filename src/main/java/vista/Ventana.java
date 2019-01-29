@@ -82,16 +82,16 @@ public class Ventana extends JFrame {
 		contentPane.add(fechas);
 		fechas.setLayout(null);
 		
-		pago = new PanelPago();
-		contentPane.add(pago, "name_360122149477200");
-		pago.pagado.setText("0");
-		pago.setLayout(null);
-		
 		billeteComprado = new PanelBilleteComprado();
 		billeteComprado.btnSiguiente.setBounds(889, 570, 165, 61);
 		billeteComprado.btnAtras.setBounds(691, 570, 171, 61);
 		contentPane.add(billeteComprado);
 		billeteComprado.setLayout(null);
+		
+		pago = new PanelPago();
+		contentPane.add(pago, "name_360122149477200");
+		pago.pagado.setText("0");
+		pago.setLayout(null);
 		
 
 		devolucion = new PanelDevolucion();

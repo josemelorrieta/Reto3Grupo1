@@ -34,18 +34,21 @@ public class ControladorBilletes implements ActionListener {
 		public void setCliente(Cliente cliente) {
 			this.cliente = cliente;
 		}
+		
+		public void resetear() {
+			  miVentana.billetes.modeloMostrarBilletes.removeAllElements();
+			  miVentana.billetes.MostrarBilletes.setModel(miVentana.billetes.modeloMostrarBilletes);
+		}
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			switch (((JButton) e.getSource()).getName()) {
-				case "btnComprarBilleteBilletes": funciones.irDesdeBilletesALineas(miVentana);
-												  miVentana.billetes.modeloMostrarBilletes.removeAllElements();
-				  								  miVentana.billetes.MostrarBilletes.setModel(miVentana.billetes.modeloMostrarBilletes);
+				case "btnComprarBilleteBilletes": funciones.cambiarDePanel(miVentana.billetes, miVentana.lineas);
+												  resetear();
 											 	  break;
 											 	  
-				case "btnCerrarSesionBilletes": funciones.irDesdeBilletesALogin(miVentana);
-										miVentana.billetes.modeloMostrarBilletes.removeAllElements();
-										miVentana.billetes.MostrarBilletes.setModel(miVentana.billetes.modeloMostrarBilletes);
+				case "btnCerrarSesionBilletes": funciones.cambiarDePanel(miVentana.billetes, miVentana.login);
+										resetear();
 										break;
 
 			}

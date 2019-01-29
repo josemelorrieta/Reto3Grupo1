@@ -29,17 +29,21 @@ public class ControladorRegistro implements ActionListener {
 			miVentana.registro.btnRegistrarse.addActionListener(this);
 			
 		}
+		
+		public void resetear() {
+			 miVentana.registro.textFieldDni.setText(""); 
+			 miVentana.registro.textFieldNombre.setText("");
+			 miVentana.registro.textFieldApellidos.setText("");
+			 miVentana.registro.textFieldNombre.setText(""); 
+			 miVentana.registro.passwordField.setText("");
+			 miVentana.registro.textFieldFechaNacimiento.setText("");
+		}
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			switch (((JButton) e.getSource()).getName()) {
-				case "btnAtrasRegistro": funciones.irDesdeRegistroALogin(miVentana);
-					 miVentana.registro.textFieldDni.setText(""); 
-					 miVentana.registro.textFieldNombre.setText("");
-					 miVentana.registro.textFieldApellidos.setText("");
-					 miVentana.registro.textFieldNombre.setText(""); 
-					 miVentana.registro.passwordField.setText("");
-					 miVentana.registro.textFieldFechaNacimiento.setText("");
+				case "btnAtrasRegistro": funciones.cambiarDePanel(miVentana.registro, miVentana.login);
+					 resetear();
 					 break;
 //				case "btnRegistro": cliente = funcionesRegistro.registrarNuevoCliete();
 			}

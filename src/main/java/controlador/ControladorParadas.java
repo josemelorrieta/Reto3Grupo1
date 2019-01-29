@@ -25,17 +25,23 @@ public class ControladorParadas implements ActionListener {
 			miVentana.paradas.btnCancelar.addActionListener(this);
 			
 		}
+		
+		public void resetear() {
+			miVentana.paradas.textFieldMostrarLinea.setText("");
+		}
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			switch (((JButton) e.getSource()).getName()) {
-				case "btnAtrasParadas": funciones.irDesdeParadasALineas(miVentana); 
-										miVentana.paradas.textFieldMostrarLinea.setText("");
+				case "btnAtrasParadas": funciones.cambiarDePanel(miVentana.paradas, miVentana.lineas);
+										resetear();
 										break;
-				case "btnSiguienteParadas": funciones.irDesdeParadasAFechas(miVentana);  break;
+										
+				case "btnSiguienteParadas": funciones.cambiarDePanel(miVentana.paradas, miVentana.fechas); 
+											break;
 				
-				case "btnCancelarParadas": funciones.irDesdeParadasABilletes(miVentana); 
-										   miVentana.paradas.textFieldMostrarLinea.setText("");
+				case "btnCancelarParadas": funciones.cambiarDePanel(miVentana.paradas, miVentana.billetes);
+										   resetear(); 
 										   break;
 	
 			}			
