@@ -13,19 +13,19 @@ import controlador.FuncionesVarias;
 import modelo.Cliente;
 import modelo.ConexionBD;
 import modelo.ConsultaBD;
-
+import modelo.FuncionesLogin;
 import modelo.LineaAutobus;
 
 import vista.Ventana;
 
 public class FuncionesVariasTest {
 
-	private FuncionesVarias funcionesTest = new FuncionesVarias();
 	private Ventana miVentana = new Ventana();
 	
 	private ConexionBD conexionTest = new ConexionBD();
 	private ConsultaBD consultaTest = new ConsultaBD();
-	private FuncionesVarias funciones = new FuncionesVarias();
+	private FuncionesLogin funciones = new FuncionesLogin();
+	private FuncionesVarias funcionesVarias = new FuncionesVarias();
 	
 	private String dniTest = "111111A";
 	private char[] passTest = {'O', 'k'};
@@ -43,7 +43,7 @@ public class FuncionesVariasTest {
 		int[] rsTest1 = {1001, 1002, 1003};
 		String[] rsTest2 = {"Bilbao", "Leioa", "Berango", "Sopela", "Sopela", "Barrika", "Plentzia"};
 		String codLinea = "L1";
-		funcionesTest.cargarLineass(lineaTest, codLinea);
+		funcionesVarias.cargarLineass(lineaTest, codLinea);
 		
 		assertEquals(lineaTest.getCodLinea(), "L1");
 		assertArrayEquals(lineaTest.getCodAutobus(), rsTest1);
@@ -53,7 +53,7 @@ public class FuncionesVariasTest {
 	@Test
 	public void testComprobarDNI() throws Exception {
 		clienteTest.setContraseña(passTestStr);
-		assertNotEquals(funcionesTest.comprobarDNI(dniTest, passTest, clienteTest,  miVentana), null);
+		assertNotEquals(funciones.comprobarDNI(dniTest, passTest, clienteTest,  miVentana), null);
 		//assertEquals(funcionesTest.comprobarDNI(DNI2), false);
 	}
 		
