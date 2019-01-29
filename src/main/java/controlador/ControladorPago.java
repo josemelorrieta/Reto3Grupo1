@@ -23,6 +23,7 @@ public class ControladorPago implements ActionListener {
 			miVentana.pago.btnAtras.addActionListener(this);
 			miVentana.pago.btnSiguiente.addActionListener(this);
 			miVentana.pago.btnCancelar.addActionListener(this);
+			miVentana.pago.btn500.addActionListener(this);
 			
 		}
 
@@ -42,6 +43,9 @@ public class ControladorPago implements ActionListener {
 					miVentana.pago.total.setText("");
 					miVentana.pago.pagado.setText("");
 				    miVentana.pago.restante.setText("");
+					break;
+					
+				case "btn500" : funciones.SumarRestarDineroPago((JButton) e.getSource(), miVentana);
 					break;
 	
 			}

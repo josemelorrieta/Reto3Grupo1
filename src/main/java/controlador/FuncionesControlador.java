@@ -1,13 +1,23 @@
 package controlador;
 
 
+
+import java.text.NumberFormat;
+import java.util.Locale;
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import vista.Ventana;
 
+
 public class FuncionesControlador {
+	
+	private static NumberFormat formatoMoneda = NumberFormat.getCurrencyInstance(Locale.getDefault());
+	
+	float dineroPagado = 0;
+	
 	
 	public void irDesdeSaludoALogin(Ventana miVentana) {
 		
@@ -119,7 +129,6 @@ public class FuncionesControlador {
 		
 		miVentana.billeteComprado.setVisible(false);
 		miVentana.pago.setVisible(true);
-		
 	}
 	
 	public void irDesdeBilleteCompradoABilletes (Ventana miVentana) {
@@ -164,4 +173,15 @@ public class FuncionesControlador {
 		
 	}
 	
+	public void SumarRestarDineroPago(JButton boton, Ventana miVentana ) {
+		float valor;
+		
+		valor = Float.valueOf(boton.getText());
+		dineroPagado = dineroPagado + valor;
+
+		miVentana.pago.pagado.setText(formatoMoneda.format(dineroPagado));
+
+	}
+	
+
 }

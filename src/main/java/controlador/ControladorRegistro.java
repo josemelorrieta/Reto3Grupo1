@@ -43,3 +43,4 @@ public class ControladorRegistro implements ActionListener {
 		}
 
 }
+ 

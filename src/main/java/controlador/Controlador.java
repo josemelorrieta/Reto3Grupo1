@@ -15,7 +15,6 @@ import vista.Ventana;
 
 public class Controlador {
 	
-
 	//Declaración e inicialización de variables;
 	private Modelo miModelo;
 	private Ventana miVentana;

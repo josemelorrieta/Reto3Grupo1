@@ -13,6 +13,8 @@ import javax.swing.SwingConstants;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -21,10 +23,11 @@ public class PanelPago extends JPanel {
 		public JButton btnCancelar = new JButton("Cancelar");
 		public JButton btnAtras = new JButton("Atras");
 		public JButton btnSiguiente = new JButton("Siguiente");
-		public JTextArea total = new JTextArea();
-		public JTextArea pagado = new JTextArea();
-		public JTextArea restante = new JTextArea();
 		
+		public JTextField total = new JTextField();
+		public JTextField pagado = new JTextField();
+		public JTextField restante = new JTextField();
+	
 		public JButton btn500;
 		public JButton btn200;
 		public JButton btn100;
@@ -92,6 +95,7 @@ public class PanelPago extends JPanel {
 	
 		total.setBounds(795, 206, 186, 30);
 		add(total);
+		pagado.setEditable(false);
 		
 		
 		pagado.setBounds(795, 303, 186, 30);
@@ -138,6 +142,7 @@ public class PanelPago extends JPanel {
 		add(btn20);
 
 		btn500 = new JButton("500");
+		btn500.setName("btn500");
 		btn500.setBackground(Color.GREEN);
 		btn500.setFont(btn500.getFont().deriveFont(0f));
 		btn500.setIcon(new ImageIcon(PanelPago.class.getResource("/imagenes/500euros.jpg")));
@@ -207,7 +212,8 @@ public class PanelPago extends JPanel {
 		btn001.setBounds(420, 429, 123, 54);
 		add(btn001);
 		
-		JLabel lblNewJgoodiesLabel_4 = DefaultComponentFactory.getInstance().createLabel("Haz clic en el boton izquierdo para introducir dinero o haz clic derecho para quitar esa cantidad");
+		
+		JLabel lblNewJgoodiesLabel_4 = DefaultComponentFactory.getInstance().createLabel("Haz clic en los billetes o monedas para introducir el dinero");
 		lblNewJgoodiesLabel_4.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewJgoodiesLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewJgoodiesLabel_4.setBounds(20, 94, 1070, 25);

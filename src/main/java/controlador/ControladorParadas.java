@@ -42,3 +42,4 @@ public class ControladorParadas implements ActionListener {
 		}
 
 }
+ 

@@ -137,6 +137,7 @@ public class FuncionesVarias {
 		}
 		return municipios; 	
 	}
+<<<<<<< HEAD
 	
 	public void cargarLineass (LineaAutobus linea) {
 		ConexionBD miConexion = new ConexionBD();
@@ -182,4 +183,7 @@ public class FuncionesVarias {
 
 
 	
+=======
+	 
+>>>>>>> 87a11c90a03bf1a8dae8e0cf09ac133173bec896
 }
