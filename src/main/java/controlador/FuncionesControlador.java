@@ -17,6 +17,7 @@ public class FuncionesControlador {
 	private static NumberFormat formatoMoneda = NumberFormat.getCurrencyInstance(Locale.getDefault());
 	
 	float dineroPagado = 0;
+	float total = 2000;
 	
 	
 	public void irDesdeSaludoALogin(Ventana miVentana) {
@@ -99,8 +100,8 @@ public class FuncionesControlador {
 
 	public void irDesdeFechasABilleteComprado (Ventana miVentana) {
 	
-	miVentana.billeteComprado.setVisible(true);
-	miVentana.fechas.setVisible(false);
+		miVentana.billeteComprado.setVisible(true);
+		miVentana.fechas.setVisible(false);
 	
 	}
 	
@@ -173,15 +174,27 @@ public class FuncionesControlador {
 		
 	}
 	
-	public void SumarRestarDineroPago(JButton boton, Ventana miVentana ) {
-		float valor;
+	public void SumarRestarDineroPago(float valor, Ventana miVentana ) {
+	
+		float restar;
 		
-		valor = Float.valueOf(boton.getText());
+		
 		dineroPagado = dineroPagado + valor;
+		
+		restar = total-dineroPagado;
 
 		miVentana.pago.pagado.setText(formatoMoneda.format(dineroPagado));
-
+		miVentana.pago.total.setText(formatoMoneda.format(total));
+		
+		/*if (dineroPagado==total) {
+			miVentana.pago.total.setText(formatoMoneda.format("0"));
+		}
+		else {
+			miVentana.pago.total.setText(formatoMoneda.format(restar));
+		}*/
 	}
+	
+
 	
 
 }
