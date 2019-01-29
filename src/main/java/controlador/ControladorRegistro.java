@@ -20,7 +20,8 @@ public class ControladorRegistro implements ActionListener {
 	
 	//private Controlador miControlador;
 	private Ventana miVentana;
-	private Cliente cliente; 	
+	private Cliente cliente;
+	
 	
 	//Constructor
 		public ControladorRegistro (Ventana miVentana, Cliente cliente) {
@@ -51,7 +52,7 @@ public class ControladorRegistro implements ActionListener {
 					 
 				case "btnRegistro": try {
 					if (comprobarCamposRegistro()) {
-						cliente = funcionesRegistro.registrarNuevoCliente();
+						cliente = funcionesRegistro.registrarNuevoCliente(miVentana.registro.textFieldDni.getText(), miVentana.registro.textFieldNombre.getText(), miVentana.registro.textFieldApellidos.getText(), miVentana.registro.comboBoxGenero.getSelectedItem().toString(), miVentana.registro.textFieldFechaNacimiento.getText(), miVentana.registro.passwordField.getPassword());
 					}
 				} catch (HeadlessException e1) {
 					// TODO Auto-generated catch block

@@ -24,7 +24,7 @@ public class PanelRegistro extends JPanel {
 	public JTextField textFieldApellidos;
 	public JTextField textFieldNombre;
 	public JTextField textFieldDni;
-	public JComboBox comboBoxGenero = new JComboBox();
+	public JComboBox<String> comboBoxGenero = new JComboBox<String>();
 	public JButton btnCancelar = new JButton("Cancelar");
 	public JButton btnRegistrarse = new JButton("Confirmar");
 	public JPasswordField passwordField;
