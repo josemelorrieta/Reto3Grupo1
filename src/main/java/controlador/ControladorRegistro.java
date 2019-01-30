@@ -41,7 +41,7 @@ public class ControladorRegistro implements ActionListener {
 			 miVentana.registro.textFieldApellidos.setText("");
 			 miVentana.registro.textFieldNombre.setText(""); 
 			 miVentana.registro.passwordField.setText("");
-			 miVentana.registro.textFieldFechaNacimiento.setText("");
+			 miVentana.registro.dateChooser.setToolTipText("");
 		}
 
 		@Override
@@ -53,7 +53,8 @@ public class ControladorRegistro implements ActionListener {
 					 
 				case "btnRegistro": try {
 					if (comprobarCamposRegistro()) {
-						cliente = funcionesRegistro.registrarNuevoCliente(miVentana.registro.textFieldDni.getText(), miVentana.registro.textFieldNombre.getText(), miVentana.registro.textFieldApellidos.getText(), miVentana.registro.comboBoxGenero.getSelectedItem().toString(), miVentana.registro.textFieldFechaNacimiento.getText(), miVentana.registro.passwordField.getPassword());
+						cliente = funcionesRegistro.registrarNuevoCliente(miVentana.registro.textFieldDni.getText(), miVentana.registro.textFieldNombre.getText(), miVentana.registro.textFieldApellidos.getText(), miVentana.registro.comboBoxGenero.getSelectedItem().toString(), miVentana.registro.dateChooser.getDateFormatString(), miVentana.registro.passwordField.getPassword());
+					
 						if (cliente != null) {
 							funciones.cambiarDePanel(miVentana.registro, miVentana.billetes);
 						} else {
@@ -80,7 +81,7 @@ public class ControladorRegistro implements ActionListener {
 				JOptionPane.showMessageDialog(miVentana, "Ya existe un ususario con ese DNI", "¡Atención!", JOptionPane.WARNING_MESSAGE);
 				return false;
 			} else {
-				if (miVentana.registro.textFieldDni.getText() != "" && miVentana.registro.textFieldNombre.getText() != "" && miVentana.registro.textFieldApellidos.getText()!="" && miVentana.registro.textFieldFechaNacimiento.getText()!="" && miVentana.registro.passwordField.getPassword().length != 0) {
+				if (miVentana.registro.textFieldDni.getText() != "" && miVentana.registro.textFieldNombre.getText() != "" && miVentana.registro.textFieldApellidos.getText()!="" && /*miVentana.registro.textFieldFechaNacimiento.getText()!="" &&*/ miVentana.registro.passwordField.getPassword().length != 0) {
 						return true;
 					} else {
 						JOptionPane.showMessageDialog(miVentana, "¡Debe rellenar todos los campos!", "¡Atención!", JOptionPane.WARNING_MESSAGE);

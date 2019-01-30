@@ -7,6 +7,7 @@ import javax.swing.JLabel;
 import com.jgoodies.forms.factories.DefaultComponentFactory;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JList;
 
@@ -14,7 +15,9 @@ public class PanelDevolucion extends JPanel {
 	
 		public JButton btnSiguiente = new JButton("Siguiente");
 		public JButton btnImprimirTicket= new JButton("Imprimir Ticket");
-		public JList Devolucion = new JList();
+		
+		public DefaultListModel<String> cambios = new DefaultListModel<String>();	
+		public JList<String> Devolucion = new JList<String>();
 
 	/**
 	 * Create the panel.
@@ -35,16 +38,21 @@ public class PanelDevolucion extends JPanel {
 		btnImprimirTicket.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnImprimirTicket.setBounds(39, 577, 213, 65);
 		add(btnImprimirTicket);
-		btnSiguiente.setName("btnSiguienteDevolucion");
 		
 		
+		btnSiguiente.setName("btnSiguienteDevolucion");	
 		btnSiguiente.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnSiguiente.setBounds(858, 575, 194, 68);
 		add(btnSiguiente);
 		
+		cambios=new DefaultListModel();
+		Devolucion = new JList(cambios);
+		Devolucion.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		Devolucion.setBackground(new Color(255, 255, 255));
+		Devolucion.setBounds(367, 103, 282, 263);
+//		PanelDevolucion.add(Devolucion);
 		
-		Devolucion.setBounds(226, 130, 631, 422);
-		add(Devolucion);
+
 
 	}
 

@@ -46,6 +46,7 @@ public class ControladorPago implements ActionListener {
 			miVentana.pago.total.setText("");
 			miVentana.pago.pagado.setText("");
 			miVentana.pago.restante.setText("");
+			funciones.dineroPagado=0;
 			
 		}
 
@@ -56,7 +57,9 @@ public class ControladorPago implements ActionListener {
 					resetear();
 					break;
 									 
-				case "btnSiguientePago": funciones.cambiarDePanel(miVentana.pago, miVentana.devolucion); 
+				case "btnSiguientePago": funciones.cambiarDePanel(miVentana.pago, miVentana.devolucion);
+										 funciones.Cambios(funciones.cambios);
+					resetear();
 					break;
 				
 				case "btnCancelarPago": funciones.cambiarDePanel(miVentana.pago, miVentana.billetes);
