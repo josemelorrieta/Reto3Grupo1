@@ -48,7 +48,6 @@ public class PanelLineas extends JPanel {
 		SeleccionarLinea.setBackground(Color.WHITE);
 		SeleccionarLinea.setForeground(Color.BLACK);
 		SeleccionarLinea.setFont(new Font("Tahoma", Font.PLAIN, 28));
-		SeleccionarLinea.setModel(new DefaultComboBoxModel(new String[] {"\u25CF\tTermibus-Plentzia", "\u25CF\tTermibus-Muskiz", "\u25CF\tTermibus-Balmaseda", "\u25CF\tTermibus-Durango"}));
 		SeleccionarLinea.setBounds(315, 287, 484, 82);
 		add(SeleccionarLinea);
 

@@ -3,6 +3,8 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import modelo.LineaAutobus;
 import vista.Ventana;
@@ -27,7 +29,10 @@ public class ControladorLineas implements ActionListener {
 			miVentana.lineas.btnSiguiente.addActionListener(this);
 			miVentana.lineas.btnCancelar.addActionListener(this);
 			
-			
+			String[] nombreLineas = funcionesModelo.sacarNombresCodLineas("select distinct Nombre from linea;");
+//			String[] codLineas = funcionesModelo.sacarNombresCodLineas("select distinc Cod_linea from `linea_autobus`");
+//			funcionesModelo.cargarLineass(lineas, codLineas);
+			miVentana.lineas.SeleccionarLinea.setModel(new DefaultComboBoxModel(new String[] {"\u25CF\t"+ nombreLineas[0], "\u25CF\t" + nombreLineas[1], "\u25CF\t" + nombreLineas[2], "\u25CF\t" + nombreLineas[3]}));
 			
 		}
 
@@ -35,9 +40,9 @@ public class ControladorLineas implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			switch (((JButton) e.getSource()).getName()) {
 				case "btnSiguienteLineas": funciones.cambiarDePanel(miVentana.lineas, miVentana.paradas); 
-										   break;
+					break;
 				case "btnCancelarLineas": funciones.cambiarDePanel(miVentana.lineas, miVentana.billetes); 
-										  break;
+					break;
 	
 			}
 			
