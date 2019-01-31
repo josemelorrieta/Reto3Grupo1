@@ -5,6 +5,18 @@ import controlador.Controlador;
 public class Modelo {
 	// Declaración e inicialización de variables
 	private Controlador miControlador;
+	public FuncionesLogin misFuncionesLogin;
+	public FuncionesRegistro misFuncionesRegistro;
+	public FuncionesBilletes misFuncionesBilletes;
+	
+	public Cliente cliente = null;
+	public Billete[] billetes = null;
+	
+	public Modelo() {
+		this.misFuncionesLogin = new FuncionesLogin();
+		this.misFuncionesRegistro = new FuncionesRegistro();
+		this.misFuncionesBilletes = new FuncionesBilletes();
+	}
 
 	
 	public Controlador getControlador() {

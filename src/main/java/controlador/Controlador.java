@@ -16,15 +16,13 @@ public class Controlador {
 	//Declaración e inicialización de variables;
 	private Modelo miModelo;
 	private Ventana miVentana;
-
-	private Cliente cliente = null;
 	
 	FuncionesVarias funciones = new FuncionesVarias();  
 
 	private ControladorSaludo miControladorSaludo;
 	private ControladorLogin miControladorLogin;
 	private ControladorRegistro miControladorRegistro;
-	private ControladorBilletes miControladorBilletes;
+	public ControladorBilletes miControladorBilletes;
 	private ControladorLineas miControladorLineas;
 	private ControladorParadas miControladorParadas;
 	private ControladorFechas miControladorFechas;
@@ -40,9 +38,9 @@ public class Controlador {
 		this.miModelo = miModelo;
 		
 		this.miControladorSaludo = new ControladorSaludo(miVentana);	
-		this.miControladorLogin = new ControladorLogin(miVentana, cliente);
-		this.miControladorRegistro = new ControladorRegistro(miVentana, cliente);
-		this.miControladorBilletes = new ControladorBilletes(miVentana);
+		this.miControladorLogin = new ControladorLogin(this, miVentana, miModelo);
+		this.miControladorRegistro = new ControladorRegistro(this, miVentana, miModelo);
+		this.miControladorBilletes = new ControladorBilletes(miVentana, miModelo);
 		this.miControladorLineas = new ControladorLineas(miVentana, lineas);
 		this.miControladorParadas = new ControladorParadas(miVentana, paradas);
 		this.miControladorFechas = new ControladorFechas(miVentana);

@@ -13,11 +13,11 @@ public class Principal {
 		Principal miPrincipal = new Principal();
 		
 		//Inicio del programa
-		miPrincipal.inicar();
+		miPrincipal.iniciar();
 		
 	}
 	
-	public void inicar() {
+	public void iniciar() {
 		// Instanciar clases
 		miVentana = new Ventana();
 		miModelo = new Modelo();
