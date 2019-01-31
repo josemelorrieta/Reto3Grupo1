@@ -15,7 +15,7 @@ public class BilleteTest {
 	private String destino = "La playita";
 	private int codAutobus = 0001;
 	private double precioTrayecto = 1.75;
-	private int dni = 1111111;
+	private String dni = "11111111A";
 	private Billete billete = new Billete(numBillete, fecha, codLinea, origen, destino, codAutobus, precioTrayecto, dni);
 	
 	@Test

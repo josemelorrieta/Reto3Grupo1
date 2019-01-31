@@ -12,7 +12,7 @@ import modelo.LineaAutobus;
 
 public class FuncionesVarias {
 
-	public void cargarLineass (ArrayList<LineaAutobus> lineas, String[] codLinea) {
+	public void cargarLineas (ArrayList<LineaAutobus> lineas, String[] codLinea) {
 		ConexionBD miConexion = new ConexionBD();
 		ConsultaBD miConsulta = new ConsultaBD();
 		Connection con = miConexion.conectarBD(); 
