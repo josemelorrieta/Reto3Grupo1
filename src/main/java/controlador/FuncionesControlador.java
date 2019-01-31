@@ -26,7 +26,7 @@ public class FuncionesControlador {
 	}
 	
 	
-	public void SumarRestarDineroPago(float valor, Ventana miVentana ) {
+	public void SumarDineroPago(float valor, Ventana miVentana ) {
 
 		
 		
@@ -63,11 +63,12 @@ public class FuncionesControlador {
 		
 	}
 	
-	public int[] Cambios(float dinero) {
+	public void Cambios(float dinero , Ventana miVentana) {
 		int euros = (int) dinero;
 		int decimales = Math.round((dinero - euros) * 100);
 		int[] billetesMonedas = {500, 200, 100, 50, 20, 10, 5, 2, 1};
 		int[] cambios = new int[15];
+		String mensajeCambios = "";
 		
 		for (int i = 0, f = 0, fake = 1; i < billetesMonedas.length + fake; i++, f++) {
 			//Mira si tiene que pasar a calcular los decimales
@@ -87,7 +88,57 @@ public class FuncionesControlador {
 			}
 		}
 		
-		return cambios;
+		
+		for(int z=0 ; z < cambios.length ; z++) {
+			
+			if (cambios[z]>0) 
+			{
+				
+				switch (z) {
+				
+					case 0 :  mensajeCambios= "Billetes de 500€: "; break;
+				
+					case 1 :  mensajeCambios= "Billetes de 200€: "; break;
+					
+					case 2 :  mensajeCambios= "Billetes de 100€: "; break;
+						
+					case 3 :  mensajeCambios= "Billetes de 50€: "; break;
+						
+					case 4 :  mensajeCambios= "Billetes de 20€: "; break;
+						
+					case 5 :  mensajeCambios= "Billetes de 10€: "; break;
+						
+					case 6 :  mensajeCambios= "Billetes de 5€: "; break;
+					
+					case 7 :  mensajeCambios= "Moneda de 2€: "; break;
+						
+					case 8 :  mensajeCambios= "Moneda de 1€: "; break;
+						
+					case 9 :  mensajeCambios= "Moneda de 0,50€: "; break;
+					
+					case 10 :  mensajeCambios= "Moneda de 0,20€: "; break;
+					
+					case 11 :  mensajeCambios= "Moneda de 0,10€: "; break;
+					
+					case 12 :  mensajeCambios= "Moneda de 0,05€: "; break;
+					
+					case 13 :  mensajeCambios= "Moneda de 0,02€: "; break;
+					
+					case 14 :  mensajeCambios= "Moneda de 0,01€: "; break;
+				
+						
+				}
+				
+				miVentana.devolucion.cambios.addElement(mensajeCambios + cambios[z]);
+			}
+				
+			
+				
+		}
+			
+			
 	}
+		
+}	
 
-}
+

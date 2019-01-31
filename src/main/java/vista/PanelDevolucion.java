@@ -17,7 +17,9 @@ public class PanelDevolucion extends JPanel {
 		public JButton btnImprimirTicket= new JButton("Imprimir Ticket");
 		
 		public DefaultListModel<String> cambios = new DefaultListModel<String>();	
-		public JList<String> Devolucion = new JList<String>();
+		public JList<String> devolucion = new JList<String>();
+		
+		
 
 	/**
 	 * Create the panel.
@@ -46,11 +48,11 @@ public class PanelDevolucion extends JPanel {
 		add(btnSiguiente);
 		
 		cambios=new DefaultListModel();
-		Devolucion = new JList(cambios);
-		Devolucion.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		Devolucion.setBackground(new Color(255, 255, 255));
-		Devolucion.setBounds(367, 103, 282, 263);
-//		PanelDevolucion.add(Devolucion);
+		devolucion = new JList(cambios);
+		devolucion.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		devolucion.setBackground(new Color(255, 255, 255));
+		devolucion.setBounds(203, 111, 696, 441);
+		add(devolucion);
 		
 
 
