@@ -22,7 +22,8 @@ public class FuncionesVarias {
 		
 		// Cargamos los resulset para todas las lineas (un rs por cada linea que exista)
 		for (int i = 0; i < codLinea.length; i++) {
-			rs[i] = miConsulta.hacerConsultaBD(con, "select distinct `linea-parada`.Cod_Linea, `linea_autobus`.Cod_bus from `linea-parada`, `linea_autobus` where `linea-parada`.Cod_Linea = `linea_autobus`.Cod_Linea and `linea_autobus`.Cod_Linea = '"+codLinea[i]+"';" );
+			rs[i] = miConsulta.hacerConsultaBD(con, "select distinct `linea_parada`.Cod_Linea, `linea_autobus`.Cod_bus from `linea_parada`, `linea_autobus` where `linea_parada`.Cod_Linea = `linea_autobus`.Cod_Linea and `linea_autobus`.Cod_Linea = '" + codLinea[i] +"'; " );
+			//alargar el array de rs 
 		}
 		
 		// Llenamos los arrays auxiliares con el contenido de los rs una vez por cada linea que haya
@@ -81,7 +82,7 @@ public class FuncionesVarias {
 		}
 	}
 	
-	public String[] sacarNombresCodLineas(String select) {
+	public String[] sacarNombresCodLineas(String select, String nombreColumna) {
 		ConexionBD miConexion = new ConexionBD();
 		ConsultaBD miConsulta = new ConsultaBD();
 		Connection con = miConexion.conectarBD(); 
@@ -92,7 +93,7 @@ public class FuncionesVarias {
 		try {
 			while (rs.next()) {
 				nombreLineas = alargarArray(nombreLineas);
-				nombreLineas[cont] = rs.getString("Nombre");
+				nombreLineas[cont] = rs.getString(nombreColumna);
 				cont++;
 			}
 		} catch (SQLException e) {
