@@ -21,6 +21,6 @@ public class ControladorDespedida {
 				miVentana.saludo.setVisible(true);
 			}
 		};
-		timer.schedule(esperar, 5000);
+		timer.schedule(esperar, 3500);
 	}
 }

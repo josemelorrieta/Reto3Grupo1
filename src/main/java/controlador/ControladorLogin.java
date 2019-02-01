@@ -45,10 +45,10 @@ public class ControladorLogin implements ActionListener {
 			switch (((JButton) e.getSource()).getName()) {
 
 				case "btnAtrasLogin":   funciones.cambiarDePanel(miVentana.login, miVentana.saludo);
-					resetValoresLogin();  
+					resetear();  
 					break;
 				case "btnRegistrarseLogin":	funciones.cambiarDePanel(miVentana.login, miVentana.registro);
-					resetValoresLogin();
+					resetear();
 					break;
 				case "btnLogin":
 					try {
@@ -66,12 +66,14 @@ public class ControladorLogin implements ActionListener {
 							// TODO Auto-generated catch block
 							e1.printStackTrace();
 						}
-					}
+					} 
+					resetear();
+				
 					break;				
 			}
 		}
 		
-		public void resetValoresLogin() {
+		public void resetear() {
 			miVentana.login.TextDni.setText(""); 
 			miVentana.login.passwordField.setText("");
 		}

@@ -18,6 +18,8 @@ public class ControladorPago implements ActionListener {
 	private Ventana miVentana;
 	private Modelo miModelo;
 	
+	private int[] arrayCambios=null;
+	
 	//Constructor
 		public ControladorPago (Ventana miVentana, Modelo miModelo) { 
 			
@@ -63,7 +65,8 @@ public class ControladorPago implements ActionListener {
 					break;
 									 
 				case "btnSiguientePago":  controlar.cambiarDePanel(miVentana.pago, miVentana.devolucion);
-									      miModelo.misFuncionesDevolucion.Cambios(miModelo.misFuncionesPago.cambios, miVentana);
+										  arrayCambios =miModelo.misFuncionesDevolucion.cambios(miModelo.misFuncionesPago.cambios);
+									      miModelo.misFuncionesDevolucion.mostrarCambios(miVentana, arrayCambios);
 					resetear();
 					break;
 				

@@ -92,7 +92,7 @@ public class ControladorFechas implements ActionListener {
 										   resetear();
 										   break;
 										   
-					case "btnSiguienteFechas":  //funciones.cambiarDePanel(miVentana.fechas, miVentana.billeteComprado);
+					case "btnSiguienteFechas":  funciones.cambiarDePanel(miVentana.fechas, miVentana.billeteComprado);
 												setFechasDisponibles();
 												break;
 					

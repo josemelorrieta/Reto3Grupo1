@@ -17,12 +17,12 @@ public class FuncionesDevolucion {
 		this.miModelo=miModelo;
 	}
 	
-	public void Cambios(float dinero , Ventana miVentana) {
+	public int[] cambios(float dinero) {
 		int euros = (int) dinero;
 		int decimales = Math.round((dinero - euros) * 100);
 		int[] billetesMonedas = {500, 200, 100, 50, 20, 10, 5, 2, 1};
 		int[] cambios = new int[15];
-		String mensajeCambios = "";
+		
 		
 		for (int i = 0, f = 0, fake = 1; i < billetesMonedas.length + fake; i++, f++) {
 			//Mira si tiene que pasar a calcular los decimales
@@ -41,7 +41,12 @@ public class FuncionesDevolucion {
 				decimales = decimales % billetesMonedas[i];
 			}
 		}
+		return cambios;
+	}
+	
+	public void mostrarCambios(Ventana miVentana, int[] cambios) {
 		
+		String mensajeCambios = "";
 		if (miModelo.misFuncionesPago.total < miModelo.misFuncionesPago.dineroPagado) { 
 			for(int z=0 ; z < cambios.length ; z++) {
 				
@@ -91,6 +96,9 @@ public class FuncionesDevolucion {
 			miVentana.devolucion.cambios.addElement("No hay cambios");
 		}
 		miVentana.devolucion.devolucion.setModel(miVentana.devolucion.cambios);
-	 }
+		
+	}
+}	 
 
-}
+
+	
