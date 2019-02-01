@@ -44,10 +44,9 @@ public class ControladorBilletes implements ActionListener {
 		
 		public void resetear() {
 			miVentana.billetes.modeloMostrarBilletes.removeAllElements();
-			miVentana.billetes.MostrarBilletes.setModel(miVentana.billetes.modeloMostrarBilletes);
 		}
 		
-		public void actualizarBilletes(Billete[] billetes) {
+		public void actualizarBilletes(Billete[] billetes) { 
 			
 			miVentana.billetes.modeloMostrarBilletes.removeAllElements();
 			if (billetes == null) {

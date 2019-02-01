@@ -21,7 +21,7 @@ public class Controlador {
 
 	private ControladorSaludo miControladorSaludo; 
 	private ControladorLogin miControladorLogin;
-	private ControladorRegistro miControladorRegistro;
+	private ControladorRegistro miControladorRegistro; 
 	public ControladorBilletes miControladorBilletes;
 	private ControladorLineas miControladorLineas;
 	private ControladorParadas miControladorParadas;
@@ -29,6 +29,8 @@ public class Controlador {
 	private ControladorBilleteComprado miControladorBilleteComprado;
 	private ControladorPago miControladorPago;
 	private ControladorDevolucion miControladorDevolucion;
+	public ControladorDespedida miControladorDespedida;
+	
 	private ArrayList<Parada> paradas = new ArrayList<Parada>();
 	private ArrayList<LineaAutobus> lineas = new ArrayList<LineaAutobus>();
 
@@ -45,8 +47,10 @@ public class Controlador {
 		this.miControladorParadas = new ControladorParadas(miVentana, paradas, lineas);
 		this.miControladorFechas = new ControladorFechas(miVentana);
 		this.miControladorBilleteComprado = new ControladorBilleteComprado(miVentana);
-		this.miControladorPago = new ControladorPago(miVentana);
-		this.miControladorDevolucion = new ControladorDevolucion(miVentana);
+		this.miControladorPago = new ControladorPago(miVentana, miModelo);
+		this.miControladorDevolucion = new ControladorDevolucion(miVentana, this);
+		this.miControladorDespedida = new ControladorDespedida(miVentana);
+		
 	
 	}
 	

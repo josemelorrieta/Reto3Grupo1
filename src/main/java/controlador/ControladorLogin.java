@@ -20,7 +20,7 @@ public class ControladorLogin implements ActionListener {
 	FuncionesVarias funcionesVarias = new FuncionesVarias();
 	FuncionesLogin funcionesLogin = new FuncionesLogin();
 		
-	private Controlador miControlador;
+	private Controlador miControlador; 
 	private Ventana miVentana;
 	private Modelo miModelo;
 //	private Cliente cliente;
@@ -57,7 +57,7 @@ public class ControladorLogin implements ActionListener {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
-					if(miModelo.cliente != null) 
+					if(miModelo.cliente != null) {
 						funciones.cambiarDePanel(miVentana.login, miVentana.billetes);
 						try {
 							miModelo.billetes = miModelo.misFuncionesBilletes.billetesCliente(miModelo.cliente, miModelo.billetes);
@@ -66,7 +66,8 @@ public class ControladorLogin implements ActionListener {
 							// TODO Auto-generated catch block
 							e1.printStackTrace();
 						}
-						break;
+					}
+					break;				
 			}
 		}
 		

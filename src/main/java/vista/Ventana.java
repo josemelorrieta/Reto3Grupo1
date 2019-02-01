@@ -32,7 +32,7 @@ public class Ventana extends JFrame {
 	 */
 	public Ventana() { 
 		setTitle("Gesti\u00F3n de Compra de Billetes");
-		setResizable(false);
+		setResizable(false); 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -81,8 +81,8 @@ public class Ventana extends JFrame {
 		fechas = new PanelFechas();
 		fechas.btnSiguiente.setBounds(858, 575, 186, 68);
 		fechas.btnAtras.setLocation(662, 575);
-		fechas.FechaDeVuelta.setBackground(Color.WHITE);
-		fechas.FechaDeIda.setBackground(Color.WHITE);
+		fechas.dateVuelta.setBackground(Color.WHITE);
+		fechas.dateIda.setBackground(Color.WHITE);
 		fechas.btnRadioButton.setBackground(Color.CYAN);
 		contentPane.add(fechas);
 		fechas.setLayout(null);

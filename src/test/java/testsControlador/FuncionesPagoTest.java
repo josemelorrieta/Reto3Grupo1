@@ -6,7 +6,7 @@ import static org.mockito.Mockito.when;
 
 import org.junit.Test;
 
-import controlador.FuncionesPago;
+import modelo.FuncionesPago;
 
 public class FuncionesPagoTest {
 
@@ -39,7 +39,7 @@ public class FuncionesPagoTest {
 		int [] cambiosTest = pagoTest.Cambios(dinero);
 		
 		assertEquals(1, cambiosTest[0], 0.0001);
-		assertNotEquals(11f, cambiosTest[0], 0.0001);
+		assertNotEquals(11f, cambiosTest[0], 0.0001); 
 	}
 	
 	@Test

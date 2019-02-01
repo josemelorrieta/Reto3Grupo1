@@ -10,6 +10,8 @@ public class Modelo {
 	public FuncionesLogin misFuncionesLogin;
 	public FuncionesRegistro misFuncionesRegistro;
 	public FuncionesBilletes misFuncionesBilletes;
+	public FuncionesPago misFuncionesPago;
+	public FuncionesDevolucion misFuncionesDevolucion;
 	
 	public Cliente cliente = null;
 	public Billete[] billetes = null;
@@ -19,7 +21,10 @@ public class Modelo {
 	public Modelo() {
 		this.misFuncionesLogin = new FuncionesLogin();
 		this.misFuncionesRegistro = new FuncionesRegistro();
-		this.misFuncionesBilletes = new FuncionesBilletes();
+		this.misFuncionesBilletes = new FuncionesBilletes(); 
+		this.misFuncionesPago = new FuncionesPago();
+		this.misFuncionesDevolucion = new FuncionesDevolucion(this);
+		
 	}
 
 	
