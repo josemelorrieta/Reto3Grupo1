@@ -2,6 +2,7 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.InputMethodEvent;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.text.SimpleDateFormat;
@@ -32,15 +33,7 @@ public class ControladorFechas implements ActionListener {
 			miVentana.fechas.btnSiguiente.addActionListener(this);
 			miVentana.fechas.btnCancelar.addActionListener(this);
 			miVentana.fechas.btnRadioButton.addActionListener(this);
-			miVentana.fechas.dateIda.getDateEditor().addPropertyChangeListener(new PropertyChangeListener() {	        
-					@Override
-					public void propertyChange(PropertyChangeEvent arg0) {
-						// TODO Auto-generated method stub
-						establecerFechasVuelta();
-					}
-					
-				});
-	
+			//miVentana.fechas.dateIda.getDateEditor().inputMethodTextChanged()
 		}
 		
 		public void resetear() {
