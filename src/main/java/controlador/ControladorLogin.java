@@ -20,7 +20,7 @@ public class ControladorLogin implements ActionListener {
 	FuncionesVarias funcionesVarias = new FuncionesVarias();
 	FuncionesLogin funcionesLogin = new FuncionesLogin();
 		
-	private Controlador miControlador;
+	private Controlador miControlador; 
 	private Ventana miVentana;
 	private Modelo miModelo;
 //	private Cliente cliente;

@@ -5,10 +5,10 @@ public class Parada {
 	private int codParada;
 	private String calle;
 	private String nombre;
-	private int coordX;
-	private int coordY;
+	private float coordX;
+	private float coordY;
 	
-	public Parada(int codParada, String calle, String nombre, int coordX, int coordY) {
+	public Parada(int codParada, String calle, String nombre, float coordX, float coordY) {
 		this.codParada = codParada;
 		this.calle = calle;
 		this.nombre = nombre;
@@ -40,19 +40,19 @@ public class Parada {
 		this.nombre = nombre;
 	}
 
-	public int getCoordX() {
+	public float getCoordX() {
 		return coordX;
 	}
 
-	public void setCoordX(int coordX) {
+	public void setCoordX(float coordX) {
 		this.coordX = coordX;
 	}
 
-	public int getCoordY() {
+	public float getCoordY() {
 		return coordY;
 	}
 
-	public void setCoordY(int coordY) {
+	public void setCoordY(float coordY) {
 		this.coordY = coordY;
 	}
 	

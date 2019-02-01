@@ -43,7 +43,7 @@ public class FuncionesPagoTest {
 		int [] cambiosTest = pagoTest.Cambios(dinero);
 		
 		assertEquals(1, cambiosTest[0], 0.0001);
-		assertNotEquals(11f, cambiosTest[0], 0.0001);
+		assertNotEquals(11f, cambiosTest[0], 0.0001); 
 	}
 	
 	@Test

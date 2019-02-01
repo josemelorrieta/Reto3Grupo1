@@ -1,5 +1,7 @@
 package modelo;
 
+import java.util.ArrayList;
+
 import controlador.Controlador;
 
 public class Modelo {
@@ -13,11 +15,13 @@ public class Modelo {
 	
 	public Cliente cliente = null;
 	public Billete[] billetes = null;
+	public ArrayList<LineaAutobus> lineas = null;
+	public ArrayList<Parada> paradas = null;
 	
 	public Modelo() {
 		this.misFuncionesLogin = new FuncionesLogin();
 		this.misFuncionesRegistro = new FuncionesRegistro();
-		this.misFuncionesBilletes = new FuncionesBilletes();
+		this.misFuncionesBilletes = new FuncionesBilletes(); 
 		this.misFuncionesPago = new FuncionesPago();
 		this.misFuncionesDevolucion = new FuncionesDevolucion(this);
 		
