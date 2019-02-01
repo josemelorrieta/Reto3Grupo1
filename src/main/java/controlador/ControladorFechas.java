@@ -27,7 +27,7 @@ public class ControladorFechas implements ActionListener {
 	//Constructor
 		public ControladorFechas (Ventana miVentana) {  
 			
-			this.miVentana = miVentana;
+			this.miVentana = miVentana; 
 			
 			miVentana.fechas.btnAtras.addActionListener(this);
 			miVentana.fechas.btnSiguiente.addActionListener(this);
@@ -85,7 +85,7 @@ public class ControladorFechas implements ActionListener {
 										   resetear();
 										   break;
 										   
-					case "btnSiguienteFechas":  //funciones.cambiarDePanel(miVentana.fechas, miVentana.billeteComprado);
+					case "btnSiguienteFechas":  funciones.cambiarDePanel(miVentana.fechas, miVentana.billeteComprado);
 												setFechasDisponibles();
 												break;
 					

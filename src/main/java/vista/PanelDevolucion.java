@@ -35,7 +35,7 @@ public class PanelDevolucion extends JPanel {
 		lblNewJgoodiesLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewJgoodiesLabel.setFont(new Font("Sylfaen", Font.PLAIN, 50));
 		lblNewJgoodiesLabel.setBounds(10, 52, 1080, 48); 
-		add(lblNewJgoodiesLabel);
+		add(lblNewJgoodiesLabel); 
 		
 		
 		btnImprimirTicket.setFont(new Font("Tahoma", Font.BOLD, 20));

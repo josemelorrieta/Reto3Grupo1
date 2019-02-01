@@ -6,11 +6,15 @@ import static org.mockito.Mockito.when;
 
 import org.junit.Test;
 
+import modelo.FuncionesDevolucion;
 import modelo.FuncionesPago;
+import modelo.Modelo;
 
 public class FuncionesPagoTest {
-
-	 private FuncionesPago pagoTest = new FuncionesPago();
+	
+	private Modelo miModelo = new Modelo();
+	private FuncionesPago pagoTest = new FuncionesPago();
+	private FuncionesDevolucion cambiosTest = new FuncionesDevolucion(miModelo);
 	//private FuncionesPago leerDatosMock = mock(FuncionesPago.class);
 	
 	
@@ -27,7 +31,7 @@ public class FuncionesPagoTest {
 	@Test
 	public void testCambiosMayor500() {
 		float dinero = 523f;
-		int [] cambiosTest = pagoTest.Cambios(dinero);
+		int [] cambiosTest = cambiosTest.(dinero);
 		
 		assertEquals(1, cambiosTest[0], 0.0001);
 		assertNotEquals(11f, cambiosTest[0], 0.0001);
@@ -39,7 +43,7 @@ public class FuncionesPagoTest {
 		int [] cambiosTest = pagoTest.Cambios(dinero);
 		
 		assertEquals(1, cambiosTest[0], 0.0001);
-		assertNotEquals(11f, cambiosTest[0], 0.0001);
+		assertNotEquals(11f, cambiosTest[0], 0.0001); 
 	}
 	
 	@Test

@@ -60,7 +60,7 @@ public class PanelFechas extends JPanel {
 		
 		btnRadioButton.setHorizontalAlignment(SwingConstants.CENTER);
 		btnRadioButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnRadioButton.setBounds(367, 196, 284, 48);
+		btnRadioButton.setBounds(367, 196, 284, 48); 
 		add(btnRadioButton);
 		
 		JLabel lblPrecio = DefaultComponentFactory.getInstance().createLabel("Precio:");

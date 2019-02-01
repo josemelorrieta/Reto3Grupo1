@@ -18,7 +18,7 @@ public class ControladorDevolucion implements ActionListener {
 	
 	//private Controlador miControlador;
 	private Ventana miVentana;
-	private Controlador miControlador;
+	private Controlador miControlador; 
 	
 	//Constructor
 		public ControladorDevolucion (Ventana miVentana, Controlador miControlador) {

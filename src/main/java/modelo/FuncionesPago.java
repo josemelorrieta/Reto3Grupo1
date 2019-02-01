@@ -75,7 +75,7 @@ public class FuncionesPago {
 		boton.setEnabled(false);
 	
 }
-	
+
 	
 	
 

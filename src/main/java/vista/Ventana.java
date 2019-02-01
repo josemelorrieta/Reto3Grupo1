@@ -32,7 +32,7 @@ public class Ventana extends JFrame {
 	 */
 	public Ventana() { 
 		setTitle("Gesti\u00F3n de Compra de Billetes");
-		setResizable(false);
+		setResizable(false); 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
