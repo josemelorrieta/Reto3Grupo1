@@ -5,23 +5,27 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
+import modelo.FuncionesPago;
+import modelo.Modelo;
 import vista.Ventana;
 
 public class ControladorPago implements ActionListener {
 	
-	FuncionesControlador funciones = new FuncionesControlador();
-	
+	//FuncionesPago funciones = new FuncionesPago();
+	FuncionesControlador controlar = new FuncionesControlador();
 	
 	//private Controlador miControlador;
 	private Ventana miVentana;
+	private Modelo miModelo;
 	
 	//Constructor
-		public ControladorPago (Ventana miVentana) { 
+		public ControladorPago (Ventana miVentana, Modelo miModelo) { 
 			
 			this.miVentana = miVentana;
+			this.miModelo = miModelo;
 			
 			miVentana.pago.btnAtras.addActionListener(this);
-			miVentana.pago.btnSiguiente.addActionListener(this);
+			miVentana.pago.btnSiguiente.addActionListener(this); 
 			miVentana.pago.btnCancelar.addActionListener(this);
 			miVentana.pago.btn500.addActionListener(this);
 			miVentana.pago.btn200.addActionListener(this);
@@ -46,69 +50,70 @@ public class ControladorPago implements ActionListener {
 			miVentana.pago.total.setText("");
 			miVentana.pago.pagado.setText("");
 			miVentana.pago.restante.setText("");
-			funciones.dineroPagado=0;
-			
+			miModelo.misFuncionesPago.dineroPagado=0;
+			miModelo.misFuncionesPago.ActBotones(miVentana.pago.arrayBtn);
+					
 		}
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			switch (((JButton) e.getSource()).getName()) {
-				case "btnAtrasPago": funciones.cambiarDePanel(miVentana.pago, miVentana.billeteComprado);
+				case "btnAtrasPago": controlar.cambiarDePanel(miVentana.pago, miVentana.billeteComprado);
 					resetear();
 					break;
 									 
-				case "btnSiguientePago": funciones.cambiarDePanel(miVentana.pago, miVentana.devolucion);
-										 funciones.Cambios(funciones.cambios, miVentana);
+				case "btnSiguientePago":  controlar.cambiarDePanel(miVentana.pago, miVentana.devolucion);
+									      miModelo.misFuncionesDevolucion.Cambios(miModelo.misFuncionesPago.cambios, miVentana);
 					resetear();
 					break;
 				
-				case "btnCancelarPago": funciones.cambiarDePanel(miVentana.pago, miVentana.billetes);
+				case "btnCancelarPago": controlar.cambiarDePanel(miVentana.pago, miVentana.billetes);
 					resetear();
 					break;
 
-				case "btn500" : funciones.SumarDineroPago(500, miVentana);
+				case "btn500" :  miModelo.misFuncionesPago.SumarDineroPago(500, miVentana);
 					break;
 					
-				case "btn200" : funciones.SumarDineroPago(200, miVentana);
+				case "btn200" :  miModelo.misFuncionesPago.SumarDineroPago(200, miVentana);
 					break;
 					
-				case "btn100" : funciones.SumarDineroPago(100, miVentana);
+				case "btn100" :  miModelo.misFuncionesPago.SumarDineroPago(100, miVentana);
 					break;
 				
-				case "btn50" : funciones.SumarDineroPago(50, miVentana);
+				case "btn50" :  miModelo.misFuncionesPago.SumarDineroPago(50, miVentana);
 					break;
 				
-				case "btn20" : funciones.SumarDineroPago(20, miVentana);
+				case "btn20" :  miModelo.misFuncionesPago.SumarDineroPago(20, miVentana);
 					break;
 				
-				case "btn10" : funciones.SumarDineroPago(10, miVentana);
+				case "btn10" :  miModelo.misFuncionesPago.SumarDineroPago(10, miVentana);
 					break;
 				
-				case "btn5" :  funciones.SumarDineroPago(5, miVentana);
+				case "btn5" :   miModelo.misFuncionesPago.SumarDineroPago(5, miVentana);
 					break;
 				
-				case "btn2" : funciones.SumarDineroPago(2, miVentana);
+				case "btn2" :  miModelo.misFuncionesPago.SumarDineroPago(2, miVentana);
 					break;
 				
-				case "btn1" : funciones.SumarDineroPago(1, miVentana);
+				case "btn1" :  miModelo.misFuncionesPago.SumarDineroPago(1, miVentana);
 					break;
 					
-				case "btn050" : funciones.SumarDineroPago(0.5f , miVentana);
+				case "btn050" :  miModelo.misFuncionesPago.SumarDineroPago(0.5f , miVentana);
 					break;
 				
-				case "btn020" : funciones.SumarDineroPago(0.2f, miVentana);
+				case "btn020" :  miModelo.misFuncionesPago.SumarDineroPago(0.2f, miVentana);
 					break;
 				
-				case "btn010" : funciones.SumarDineroPago(0.1f, miVentana);
+				case "btn010" :  miModelo.misFuncionesPago.SumarDineroPago(0.1f, miVentana);
 					break;
 				
-				case "btn005" : funciones.SumarDineroPago(0.05f, miVentana);
+				case "btn005" :  miModelo.misFuncionesPago.SumarDineroPago(0.05f, miVentana);
 					break;
 				
-				case "btn002" : funciones.SumarDineroPago(0.02f, miVentana);
+				case "btn002" :  miModelo.misFuncionesPago.SumarDineroPago(0.02f, miVentana);
 					break;
 					
-				case "btn001" : funciones.SumarDineroPago(0.01f, miVentana);
+				case "btn001" :  miModelo.misFuncionesPago.SumarDineroPago(0.01f, miVentana);
 					break;
 
 			}

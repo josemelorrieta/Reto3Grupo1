@@ -41,7 +41,7 @@ public class ControladorRegistro implements ActionListener {
 			
 			miVentana.registro.btnCancelar.addActionListener(this);
 			miVentana.registro.btnRegistrarse.addActionListener(this);
-			
+			 
 		}
 		
 		public void resetear() {

@@ -27,7 +27,7 @@ public class ControladorLogin implements ActionListener {
 //	private Billete[] billetes;
 		
 	//Constructor
-		public ControladorLogin(Controlador miControlador, Ventana miVentana, Modelo miModelo) { 
+		public ControladorLogin(Controlador miControlador, Ventana miVentana, Modelo miModelo) {  
 			
 			this.miControlador = miControlador;
 			this.miVentana = miVentana;

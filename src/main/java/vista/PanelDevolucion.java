@@ -10,6 +10,7 @@ import javax.swing.SwingConstants;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JList;
+import javax.swing.border.BevelBorder;
 
 public class PanelDevolucion extends JPanel {
 	
@@ -33,7 +34,7 @@ public class PanelDevolucion extends JPanel {
 		lblNewJgoodiesLabel.setForeground(Color.ORANGE);
 		lblNewJgoodiesLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewJgoodiesLabel.setFont(new Font("Sylfaen", Font.PLAIN, 50));
-		lblNewJgoodiesLabel.setBounds(10, 52, 1080, 48);
+		lblNewJgoodiesLabel.setBounds(10, 52, 1080, 48); 
 		add(lblNewJgoodiesLabel);
 		
 		
@@ -49,7 +50,9 @@ public class PanelDevolucion extends JPanel {
 		
 		cambios=new DefaultListModel();
 		devolucion = new JList(cambios);
-		devolucion.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		devolucion.setBorder(new BevelBorder(BevelBorder.LOWERED, Color.GRAY, Color.GRAY, Color.GRAY, Color.GRAY));
+		devolucion.setEnabled(false);
+		devolucion.setFont(new Font("Times New Roman", Font.PLAIN, 30));
 		devolucion.setBackground(new Color(255, 255, 255));
 		devolucion.setBounds(203, 111, 696, 441);
 		add(devolucion);

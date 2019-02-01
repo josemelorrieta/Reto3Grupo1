@@ -6,7 +6,7 @@ import static org.mockito.Mockito.when;
 
 import org.junit.Test;
 
-import controlador.FuncionesPago;
+import modelo.FuncionesPago;
 
 public class FuncionesPagoTest {
 

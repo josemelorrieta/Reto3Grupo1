@@ -24,7 +24,7 @@ public class Billete {
 	}
 
 	public int getNumBillete() {
-		return numBillete;
+		return numBillete; 
 	}
 
 	public void setNumBillete(int numBillete) {

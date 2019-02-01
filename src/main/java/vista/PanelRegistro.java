@@ -37,7 +37,7 @@ public class PanelRegistro extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-
+ 
 	public PanelRegistro() {
 		setBorder(new LineBorder(new Color(0, 0, 0), 4));
 		setBackground(Color.CYAN);

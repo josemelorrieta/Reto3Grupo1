@@ -24,7 +24,7 @@ public class Principal {
 		miControlador = new Controlador(miVentana, miModelo);
 		
 		// Asociaciones entre clases
-		miModelo.setControlador(miControlador);
+		miModelo.setControlador(miControlador); 
 				
 		//Iniciar la ventana
 		miVentana.setVisible(true);
