@@ -14,6 +14,8 @@ import javax.swing.JTextArea;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import com.toedter.calendar.JDateChooser;
+import java.awt.event.InputMethodListener;
+import java.awt.event.InputMethodEvent;
 
 public class PanelFechas extends JPanel { 
 	
@@ -83,6 +85,12 @@ public class PanelFechas extends JPanel {
 		btnCancelar.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnCancelar.setBounds(53, 575, 186, 68);	
 		add(btnCancelar);
+		dateIda.addInputMethodListener(new InputMethodListener() {
+			public void caretPositionChanged(InputMethodEvent arg0) {
+			}
+			public void inputMethodTextChanged(InputMethodEvent arg0) {
+			}
+		});
 		
 		dateIda.setBounds(118, 309, 265, 50);
 		add(dateIda);
