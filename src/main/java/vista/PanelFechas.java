@@ -53,7 +53,7 @@ public class PanelFechas extends JPanel {
 		lblNewJgoodiesLabel.setBounds(646, 261, 314, 37);
 		add(lblNewJgoodiesLabel);
 		btnRadioButton.setName("btnRadioComprarBilleteVuelta");
-		btnRadioButton.setBackground(Color.CYAN);
+		btnRadioButton.setBackground(Color.CYAN); 
 		
 		btnRadioButton.setHorizontalAlignment(SwingConstants.CENTER);
 		btnRadioButton.setFont(new Font("Tahoma", Font.PLAIN, 20));

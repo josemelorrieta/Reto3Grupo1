@@ -1,3 +1,11 @@
+<<<<<<< HEAD
 /modelo/
 /controlador/
 /testsControlador/
+=======
+/controlador/
+/modelo/
+/vista/
+/testsControlador/
+/testsModelo/
+>>>>>>> 0056cf30195d35e5dfb2f321e6196ab8f65a1cc6

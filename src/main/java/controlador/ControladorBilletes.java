@@ -19,7 +19,7 @@ public class ControladorBilletes implements ActionListener {
 	private Modelo miModelo;
 	
 //	private Cliente cliente;
-//	private Billete[] billetes;
+//	private Billete[] billetes; 
 	
 	//Constructor
 		public ControladorBilletes (Ventana miVentana, Modelo miModelo) {  

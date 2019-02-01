@@ -19,7 +19,7 @@ public class Controlador {
 	
 	FuncionesVarias funciones = new FuncionesVarias();  
 
-	private ControladorSaludo miControladorSaludo;
+	private ControladorSaludo miControladorSaludo; 
 	private ControladorLogin miControladorLogin;
 	private ControladorRegistro miControladorRegistro;
 	public ControladorBilletes miControladorBilletes;

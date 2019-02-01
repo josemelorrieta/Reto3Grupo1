@@ -25,7 +25,7 @@ public class BilleteTest {
 		assertEquals(codLinea, billete.getCodLinea(), "L3");
 		assertEquals(origen, billete.getOrigen(), "Mi casa");
 		assertEquals(destino, billete.getDestino(), "La playita");
-		assertEquals(codAutobus, billete.getCodAutobus(), 0001);
+		assertEquals(codAutobus, billete.getCodAutobus(), 0001); 
 		assertEquals(precioTrayecto, billete.getPrecioTrayecto(), 1.75);
 		assertEquals(dni, billete.getDni(), 1111111);
 	}

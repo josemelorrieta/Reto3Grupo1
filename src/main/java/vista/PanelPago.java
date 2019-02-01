@@ -48,7 +48,7 @@ public class PanelPago extends JPanel {
 		
 
 	/**
-	 * Create the panel.
+	 * Create the panel. 
 	 */
 	public PanelPago() {
 		setBorder(new LineBorder(new Color(0, 0, 0), 4));

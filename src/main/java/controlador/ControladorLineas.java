@@ -29,10 +29,12 @@ public class ControladorLineas implements ActionListener {
 			miVentana.lineas.btnSiguiente.addActionListener(this);
 			miVentana.lineas.btnCancelar.addActionListener(this);
 			
-//			String[] nombreLineas = funcionesModelo.sacarNombresCodLineas("select distinct Nombre from linea;");
-//			String[] codLineas = funcionesModelo.sacarNombresCodLineas("select distinc Cod_linea from `linea_autobus`");
+
+			String[] nombreLineas = funcionesModelo.sacarNombresCodLineas("select distinct Nombre from linea;", "Nombre");
+			String[] codLineas = funcionesModelo.sacarNombresCodLineas("select distinct Cod_linea from `linea_autobus`;", "Cod_linea");
 //			funcionesModelo.cargarLineass(lineas, codLineas);
-//			miVentana.lineas.SeleccionarLinea.setModel(new DefaultComboBoxModel(new String[] {"\u25CF\t"+ nombreLineas[0], "\u25CF\t" + nombreLineas[1], "\u25CF\t" + nombreLineas[2], "\u25CF\t" + nombreLineas[3]}));
+			miVentana.lineas.SeleccionarLinea.setModel(new DefaultComboBoxModel(nombreLineas));
+
 			
 		}
 

@@ -30,7 +30,7 @@ public class Modelo {
 
 	public void setControlador(Controlador miControlador) {
 		this.miControlador = miControlador;
-	}
+	} 
 	
 	public void inicializarDatosBD() {
 		ConexionBD con = new ConexionBD();   
