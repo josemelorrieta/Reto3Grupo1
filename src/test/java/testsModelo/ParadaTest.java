@@ -12,8 +12,8 @@ public class ParadaTest {
 	private int codParada = 1;
 	private String calle = "Calle Wallaby, 42, Sidney";
 	private String nombre = "Dentista";
-	private int coordX = 9;
-	private int coordY = 9;
+	private float coordX = 9;
+	private float coordY = 9;
 	
 	private Parada parada = new Parada(codParada, calle, nombre, coordX, coordY);
 	
@@ -48,12 +48,12 @@ public class ParadaTest {
 	@Test
 	public void testCoordX() {
 		parada.setCoordX(coordX);
-		assertEquals(coordX, parada.getCoordX());
+		assertEquals(coordX, parada.getCoordX(), 0.001);
 	}
 	
 	@Test
 	public void testCoordY() {
 		parada.setCoordY(coordY);
-		assertEquals(coordY, parada.getCoordY());
+		assertEquals(coordY, parada.getCoordY(), 0.001);
 	}
 }

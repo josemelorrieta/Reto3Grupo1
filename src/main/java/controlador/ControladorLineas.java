@@ -29,19 +29,15 @@ public class ControladorLineas implements ActionListener {
 			miVentana.lineas.btnSiguiente.addActionListener(this);
 			miVentana.lineas.btnCancelar.addActionListener(this);
 			
-
-			String[] nombreLineas = funcionesModelo.sacarNombresCodLineas("select distinct Nombre from linea;", "Nombre");
-			String[] codLineas = funcionesModelo.sacarNombresCodLineas("select distinct Cod_linea from `linea_autobus`;", "Cod_linea");
-//			funcionesModelo.cargarLineass(lineas, codLineas);
-			miVentana.lineas.SeleccionarLinea.setModel(new DefaultComboBoxModel(nombreLineas));
-
-			
 		}
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			switch (((JButton) e.getSource()).getName()) {
-				case "btnSiguienteLineas": funciones.cambiarDePanel(miVentana.lineas, miVentana.paradas); 
+				case "btnSiguienteLineas": funciones.cambiarDePanel(miVentana.lineas, miVentana.paradas);
+					String[] codLineas = funcionesModelo.consultaColumnaString("select distinct Cod_linea from `linea_autobus`;", "Cod_linea");	
+					//lineas = funcionesModelo.cargarLineas(lineas, codLineas);
+					
 					break;
 				case "btnCancelarLineas": funciones.cambiarDePanel(miVentana.lineas, miVentana.billetes); 
 					break;
