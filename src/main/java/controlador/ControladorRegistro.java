@@ -5,12 +5,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
 import modelo.Cliente;
 import modelo.FuncionesRegistro;
+import modelo.Modelo;
 import vista.Ventana;
 
 public class ControladorRegistro implements ActionListener {
@@ -21,18 +23,25 @@ public class ControladorRegistro implements ActionListener {
 	
 	//private Controlador miControlador;
 	private Ventana miVentana;
+	private Controlador miControlador;
+	private Modelo miModelo;
+
 	private Cliente cliente;
 	
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 	
 	//Constructor
-		public ControladorRegistro (Ventana miVentana, Cliente cliente) {
+		public ControladorRegistro (Controlador miControlador, Ventana miVentana, Modelo miModelo) {
 
 			this.miVentana = miVentana;
-			this.cliente = cliente;
+			this.miControlador = miControlador;
+			this.miModelo = miModelo;
+			
+			this.cliente = miModelo.cliente;
 			
 			miVentana.registro.btnCancelar.addActionListener(this);
 			miVentana.registro.btnRegistrarse.addActionListener(this);
-			
+			 
 		}
 		
 		public void resetear() {
@@ -41,7 +50,7 @@ public class ControladorRegistro implements ActionListener {
 			 miVentana.registro.textFieldApellidos.setText("");
 			 miVentana.registro.textFieldNombre.setText(""); 
 			 miVentana.registro.passwordField.setText("");
-			 miVentana.registro.textFieldFechaNacimiento.setText("");
+			 miVentana.registro.dateChooser.setToolTipText("");
 		}
 
 		@Override
@@ -53,9 +62,10 @@ public class ControladorRegistro implements ActionListener {
 					 
 				case "btnRegistro": try {
 					if (comprobarCamposRegistro()) {
-						cliente = funcionesRegistro.registrarNuevoCliente(miVentana.registro.textFieldDni.getText(), miVentana.registro.textFieldNombre.getText(), miVentana.registro.textFieldApellidos.getText(), miVentana.registro.comboBoxGenero.getSelectedItem().toString(), miVentana.registro.textFieldFechaNacimiento.getText(), miVentana.registro.passwordField.getPassword());
+						cliente = funcionesRegistro.registrarNuevoCliente(miVentana.registro.textFieldDni.getText(), miVentana.registro.textFieldNombre.getText(), miVentana.registro.textFieldApellidos.getText(), miVentana.registro.comboBoxGenero.getSelectedItem().toString(), sdf.format(miVentana.registro.dateChooser.getDate()), miVentana.registro.passwordField.getPassword());
 						if (cliente != null) {
 							funciones.cambiarDePanel(miVentana.registro, miVentana.billetes);
+							miControlador.miControladorBilletes.actualizarBilletes(miModelo.billetes);
 						} else {
 							JOptionPane.showMessageDialog(miVentana, "Hubo un error en el registro", "¡Atención!", JOptionPane.WARNING_MESSAGE);
 						}
@@ -80,7 +90,7 @@ public class ControladorRegistro implements ActionListener {
 				JOptionPane.showMessageDialog(miVentana, "Ya existe un ususario con ese DNI", "¡Atención!", JOptionPane.WARNING_MESSAGE);
 				return false;
 			} else {
-				if (miVentana.registro.textFieldDni.getText() != "" && miVentana.registro.textFieldNombre.getText() != "" && miVentana.registro.textFieldApellidos.getText()!="" && miVentana.registro.textFieldFechaNacimiento.getText()!="" && miVentana.registro.passwordField.getPassword().length != 0) {
+				if (miVentana.registro.textFieldDni.getText() != "" && miVentana.registro.textFieldNombre.getText() != "" && miVentana.registro.textFieldApellidos.getText()!="" && /*miVentana.registro.textFieldFechaNacimiento.getText()!="" &&*/ miVentana.registro.passwordField.getPassword().length != 0) {
 						return true;
 					} else {
 						JOptionPane.showMessageDialog(miVentana, "¡Debe rellenar todos los campos!", "¡Atención!", JOptionPane.WARNING_MESSAGE);

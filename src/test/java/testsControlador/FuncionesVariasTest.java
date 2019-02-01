@@ -39,11 +39,14 @@ public class FuncionesVariasTest {
 	
 	@Test
 	public void testCargarLineass() throws Exception {
-		LineaAutobus lineaTest = new LineaAutobus(null, null, null);
+		ArrayList<LineaAutobus> lineaTest = new ArrayList<LineaAutobus>();
+		lineaTest.add(null);
+		lineaTest.add(null);
+		lineaTest.add(null);
 		int[] rsTest1 = {1001, 1002, 1003};
 		String[] rsTest2 = {"Bilbao", "Leioa", "Berango", "Sopela", "Sopela", "Barrika", "Plentzia"};
 		String codLinea = "L1";
-		funcionesVarias.cargarLineass(lineaTest, codLinea);
+		funcionesVarias.cargarLineas(lineaTest, codLinea);
 		
 		assertEquals(lineaTest.getCodLinea(), "L1");
 		assertArrayEquals(lineaTest.getCodAutobus(), rsTest1);

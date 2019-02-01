@@ -25,9 +25,10 @@ public class ControladorSaludo implements ActionListener {
 		} 
 
 		@Override
-		public void actionPerformed(ActionEvent e) {
+		public void actionPerformed(ActionEvent e) { 
 			switch (((JButton) e.getSource()).getName()) {
-				case "btnSaludo": funciones.cambiarDePanel(miVentana.saludo, miVentana.login); break;
+				case "btnSaludo": funciones.cambiarDePanel(miVentana.saludo, miVentana.login);
+				break;
 			
 			}
 			

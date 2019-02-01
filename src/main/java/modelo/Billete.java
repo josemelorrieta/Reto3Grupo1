@@ -9,9 +9,9 @@ public class Billete {
 	private String destino;
 	private int codAutobus;
 	private double precioTrayecto;
-	private int dni;
+	private String dni;
 	
-	public Billete(int numBillete, String fecha, String codLinea, String origen, String destino, int codAutobus, double precioTrayecto, int dni) {
+	public Billete(int numBillete, String fecha, String codLinea, String origen, String destino, int codAutobus, double precioTrayecto, String dni) {
 		this.numBillete = numBillete;
 		this.fecha = fecha;
 		this.codLinea = codLinea;
@@ -24,7 +24,7 @@ public class Billete {
 	}
 
 	public int getNumBillete() {
-		return numBillete;
+		return numBillete; 
 	}
 
 	public void setNumBillete(int numBillete) {
@@ -79,11 +79,11 @@ public class Billete {
 		this.precioTrayecto = precioTrayecto;
 	}
 
-	public int getDni() {
+	public String getDni() {
 		return dni;
 	}
 
-	public void setDni(int dni) {
+	public void setDni(String dni) {
 		this.dni = dni;
 	}
 }

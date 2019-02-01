@@ -21,7 +21,7 @@ public class ControladorPago implements ActionListener {
 			this.miVentana = miVentana;
 			
 			miVentana.pago.btnAtras.addActionListener(this);
-			miVentana.pago.btnSiguiente.addActionListener(this);
+			miVentana.pago.btnSiguiente.addActionListener(this); 
 			miVentana.pago.btnCancelar.addActionListener(this);
 			miVentana.pago.btn500.addActionListener(this);
 			miVentana.pago.btn200.addActionListener(this);
@@ -46,6 +46,7 @@ public class ControladorPago implements ActionListener {
 			miVentana.pago.total.setText("");
 			miVentana.pago.pagado.setText("");
 			miVentana.pago.restante.setText("");
+			funciones.dineroPagado=0;
 			
 		}
 
@@ -56,56 +57,58 @@ public class ControladorPago implements ActionListener {
 					resetear();
 					break;
 									 
-				case "btnSiguientePago": funciones.cambiarDePanel(miVentana.pago, miVentana.devolucion); 
+				case "btnSiguientePago": funciones.cambiarDePanel(miVentana.pago, miVentana.devolucion);
+										 funciones.Cambios(funciones.cambios, miVentana);
+					resetear();
 					break;
 				
 				case "btnCancelarPago": funciones.cambiarDePanel(miVentana.pago, miVentana.billetes);
 					resetear();
 					break;
 
-				case "btn500" : funciones.SumarRestarDineroPago(500, miVentana);
+				case "btn500" : funciones.SumarDineroPago(500, miVentana);
 					break;
 					
-				case "btn200" : funciones.SumarRestarDineroPago(200, miVentana);
+				case "btn200" : funciones.SumarDineroPago(200, miVentana);
 					break;
 					
-				case "btn100" : funciones.SumarRestarDineroPago(100, miVentana);
+				case "btn100" : funciones.SumarDineroPago(100, miVentana);
 					break;
 				
-				case "btn50" : funciones.SumarRestarDineroPago(50, miVentana);
+				case "btn50" : funciones.SumarDineroPago(50, miVentana);
 					break;
 				
-				case "btn20" : funciones.SumarRestarDineroPago(20, miVentana);
+				case "btn20" : funciones.SumarDineroPago(20, miVentana);
 					break;
 				
-				case "btn10" : funciones.SumarRestarDineroPago(10, miVentana);
+				case "btn10" : funciones.SumarDineroPago(10, miVentana);
 					break;
 				
-				case "btn5" :  funciones.SumarRestarDineroPago(5, miVentana);
+				case "btn5" :  funciones.SumarDineroPago(5, miVentana);
 					break;
 				
-				case "btn2" : funciones.SumarRestarDineroPago(2, miVentana);
+				case "btn2" : funciones.SumarDineroPago(2, miVentana);
 					break;
 				
-				case "btn1" : funciones.SumarRestarDineroPago(1, miVentana);
+				case "btn1" : funciones.SumarDineroPago(1, miVentana);
 					break;
 					
-				case "btn050" : funciones.SumarRestarDineroPago(0.5f , miVentana);
+				case "btn050" : funciones.SumarDineroPago(0.5f , miVentana);
 					break;
 				
-				case "btn020" : funciones.SumarRestarDineroPago(0.2f, miVentana);
+				case "btn020" : funciones.SumarDineroPago(0.2f, miVentana);
 					break;
 				
-				case "btn010" : funciones.SumarRestarDineroPago(0.1f, miVentana);
+				case "btn010" : funciones.SumarDineroPago(0.1f, miVentana);
 					break;
 				
-				case "btn005" : funciones.SumarRestarDineroPago(0.05f, miVentana);
+				case "btn005" : funciones.SumarDineroPago(0.05f, miVentana);
 					break;
 				
-				case "btn002" : funciones.SumarRestarDineroPago(0.02f, miVentana);
+				case "btn002" : funciones.SumarDineroPago(0.02f, miVentana);
 					break;
 					
-				case "btn001" : funciones.SumarRestarDineroPago(0.01f, miVentana);
+				case "btn001" : funciones.SumarDineroPago(0.01f, miVentana);
 					break;
 
 			}

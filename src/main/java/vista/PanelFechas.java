@@ -53,7 +53,7 @@ public class PanelFechas extends JPanel {
 		lblNewJgoodiesLabel.setBounds(646, 261, 314, 37);
 		add(lblNewJgoodiesLabel);
 		btnRadioButton.setName("btnRadioComprarBilleteVuelta");
-		btnRadioButton.setBackground(Color.CYAN);
+		btnRadioButton.setBackground(Color.CYAN); 
 		
 		btnRadioButton.setHorizontalAlignment(SwingConstants.CENTER);
 		btnRadioButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
@@ -74,9 +74,11 @@ public class PanelFechas extends JPanel {
 		lblPrecio.setFont(new Font("Tahoma", Font.PLAIN, 40));
 		lblPrecio.setBounds(316, 452, 138, 37);
 		add(lblPrecio);
+		textPrecio.setEditable(false);
+		textPrecio.setFont(new Font("Monospaced", Font.PLAIN, 20));
 		
 		
-		textPrecio.setBounds(452, 452, 199, 49);
+		textPrecio.setBounds(452, 458, 199, 37);
 		add(textPrecio);
 		
 		JLabel lblNewJgoodiesLabel_1 = DefaultComponentFactory.getInstance().createLabel("SELECCIONE FECHA");

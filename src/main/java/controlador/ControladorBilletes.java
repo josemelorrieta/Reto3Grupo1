@@ -5,7 +5,9 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
+import modelo.Billete;
 import modelo.Cliente;
+import modelo.Modelo;
 import vista.Ventana;
 
 public class ControladorBilletes implements ActionListener {
@@ -14,30 +16,46 @@ public class ControladorBilletes implements ActionListener {
 	
 	//private Controlador miControlador;
 	private Ventana miVentana;
-	private Cliente cliente;
+	private Modelo miModelo;
+	
+//	private Cliente cliente;
+//	private Billete[] billetes; 
 	
 	//Constructor
-		public ControladorBilletes (Ventana miVentana) {  
+		public ControladorBilletes (Ventana miVentana, Modelo miModelo) {  
 			
 			this.miVentana = miVentana;
+			this.miModelo = miModelo;
 			
 			miVentana.billetes.btnComprarBillete.addActionListener(this);
 			miVentana.billetes.btnCerrarSesion.addActionListener(this);	 		
-	
-			
+
 		}
 		
-		public Cliente getCliente() {
-			return cliente;
-		}
-
-		public void setCliente(Cliente cliente) {
-			this.cliente = cliente;
-		}
+//		public Cliente getCliente() {
+//			return cliente;
+//		}
+//
+//		public void setCliente(Cliente cliente) {
+//			this.cliente = cliente;
+//		}
 		
 		public void resetear() {
-			  miVentana.billetes.modeloMostrarBilletes.removeAllElements();
-			  miVentana.billetes.MostrarBilletes.setModel(miVentana.billetes.modeloMostrarBilletes);
+			miVentana.billetes.modeloMostrarBilletes.removeAllElements();
+			miVentana.billetes.MostrarBilletes.setModel(miVentana.billetes.modeloMostrarBilletes);
+		}
+		
+		public void actualizarBilletes(Billete[] billetes) {
+			
+			miVentana.billetes.modeloMostrarBilletes.removeAllElements();
+			if (billetes == null) {
+				miVentana.billetes.modeloMostrarBilletes.addElement("No hay billetes");
+			} else {
+				for (int i=0;i<billetes.length;i++) {
+					miVentana.billetes.modeloMostrarBilletes.addElement(String.format("%40s%40s%15s", billetes[i].getOrigen(), billetes[i].getDestino(), billetes[i].getFecha()));
+				}
+			}
+			miVentana.billetes.MostrarBilletes.setModel(miVentana.billetes.modeloMostrarBilletes);
 		}
 
 		@Override

@@ -24,9 +24,9 @@ public class PanelPago extends JPanel {
 		public JButton btnAtras = new JButton("Atras");
 		public JButton btnSiguiente = new JButton("Siguiente");
 		
-		public JTextField total = new JTextField();
-		public JTextField pagado = new JTextField();
 		public JTextField restante = new JTextField();
+		public JTextField pagado = new JTextField();
+		public JTextField total = new JTextField();
 	
 		public JButton btn500;
 		public JButton btn200;
@@ -48,7 +48,7 @@ public class PanelPago extends JPanel {
 		
 
 	/**
-	 * Create the panel.
+	 * Create the panel. 
 	 */
 	public PanelPago() {
 		setBorder(new LineBorder(new Color(0, 0, 0), 4));
@@ -83,7 +83,7 @@ public class PanelPago extends JPanel {
 		
 		JLabel lblNewJgoodiesLabel_1 = DefaultComponentFactory.getInstance().createLabel("TOTAL:");
 		lblNewJgoodiesLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		lblNewJgoodiesLabel_1.setBounds(672, 199, 127, 47);
+		lblNewJgoodiesLabel_1.setBounds(677, 210, 127, 35);
 		add(lblNewJgoodiesLabel_1);
 		
 		JLabel lblNewJgoodiesLabel_2 = DefaultComponentFactory.getInstance().createLabel("PAGADO:");
@@ -95,22 +95,23 @@ public class PanelPago extends JPanel {
 		lblNewJgoodiesLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		lblNewJgoodiesLabel_3.setBounds(629, 390, 156, 47);
 		add(lblNewJgoodiesLabel_3);		
-		total.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		total.setEditable(false);
+		restante.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		restante.setEditable(false);
 	
-		total.setBounds(795, 206, 186, 30);
-		add(total);
+		restante.setBounds(795, 397, 186, 30);
+		add(restante);
 		pagado.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		pagado.setEditable(false);
 		
 		
 		pagado.setBounds(795, 303, 186, 30);
 		add(pagado);
-		restante.setEditable(false);
+		total.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		total.setEditable(false);
 		
 		
-		restante.setBounds(795, 397, 186, 30);
-		add(restante);
+		total.setBounds(795, 215, 186, 30);
+		add(total);
 		
 
 		btn5 = new JButton("5");

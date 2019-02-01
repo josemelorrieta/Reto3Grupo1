@@ -12,7 +12,7 @@ import modelo.LineaAutobus;
 
 public class FuncionesVarias {
 
-	public void cargarLineass (ArrayList<LineaAutobus> lineas, String[] codLinea) {
+	public void cargarLineas (ArrayList<LineaAutobus> lineas, String[] codLinea) {
 		ConexionBD miConexion = new ConexionBD();
 		ConsultaBD miConsulta = new ConsultaBD();
 		Connection con = miConexion.conectarBD(); 
@@ -32,7 +32,7 @@ public class FuncionesVarias {
 				while (rs[i].next()) {
 					buses = alargarArrayInt(buses);
 					buses[cont] = rs[i].getInt("Cod_bus");
-					codLinea[i] = rs[i].getString("Cod_Linea");
+					codLinea[i] = rs[i].getString("Cod_Linea"); 
 					cont++;
 				}
 			}
