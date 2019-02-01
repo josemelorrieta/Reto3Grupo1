@@ -13,16 +13,17 @@ import javax.swing.JComboBox;
 import javax.swing.JTextArea;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import com.toedter.calendar.JDateChooser;
 
 public class PanelFechas extends JPanel { 
 	
 	public JButton btnAtras = new JButton("Atras");
 	public JButton btnSiguiente = new JButton("Siguiente");
 	public JButton btnCancelar = new JButton("Cancelar");
-	public JComboBox FechaDeIda = new JComboBox();
-	public JComboBox FechaDeVuelta = new JComboBox();
 	public JRadioButton btnRadioButton = new JRadioButton("Comprar billete de vuelta");
 	public JTextArea textPrecio = new JTextArea();
+	public JDateChooser dateIda = new JDateChooser();
+	public JDateChooser dateVuelta = new JDateChooser();
 
 
 	/**
@@ -60,16 +61,6 @@ public class PanelFechas extends JPanel {
 		btnRadioButton.setBounds(367, 196, 284, 48);
 		add(btnRadioButton);
 		
-		FechaDeIda.setForeground(Color.BLACK);
-		FechaDeIda.setBackground(Color.WHITE);
-		FechaDeIda.setBounds(129, 312, 252, 48);
-		add(FechaDeIda);
-		FechaDeVuelta.setEnabled(false);
-		
-		FechaDeVuelta.setBackground(Color.WHITE);		
-		FechaDeVuelta.setBounds(646, 309, 296, 51);
-		add(FechaDeVuelta);
-		
 		JLabel lblPrecio = DefaultComponentFactory.getInstance().createLabel("Precio:");
 		lblPrecio.setFont(new Font("Tahoma", Font.PLAIN, 40));
 		lblPrecio.setBounds(316, 452, 138, 37);
@@ -92,6 +83,13 @@ public class PanelFechas extends JPanel {
 		btnCancelar.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnCancelar.setBounds(53, 575, 186, 68);	
 		add(btnCancelar);
+		
+		dateIda.setBounds(118, 309, 265, 50);
+		add(dateIda);
+
+		dateVuelta.setBounds(656, 309, 265, 50);
+		dateVuelta.setEnabled(false);
+		add(dateVuelta);
 
 	}
 }

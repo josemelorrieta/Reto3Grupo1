@@ -81,8 +81,8 @@ public class Ventana extends JFrame {
 		fechas = new PanelFechas();
 		fechas.btnSiguiente.setBounds(858, 575, 186, 68);
 		fechas.btnAtras.setLocation(662, 575);
-		fechas.FechaDeVuelta.setBackground(Color.WHITE);
-		fechas.FechaDeIda.setBackground(Color.WHITE);
+		fechas.dateVuelta.setBackground(Color.WHITE);
+		fechas.dateIda.setBackground(Color.WHITE);
 		fechas.btnRadioButton.setBackground(Color.CYAN);
 		contentPane.add(fechas);
 		fechas.setLayout(null);
