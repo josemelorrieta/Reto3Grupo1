@@ -16,13 +16,13 @@ import vista.Ventana;
 
 public class ControladorFechas implements ActionListener {
 	
-	FuncionesControlador funciones = new FuncionesControlador();
-	
-	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-	PropertyChangeListener changeListener;
-	
 	//private Controlador miControlador;
 	private Ventana miVentana;
+	
+	FuncionesControlador funciones = new FuncionesControlador();
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+	
+	Date fechaIda = null;
 	
 	//Constructor
 		public ControladorFechas (Ventana miVentana) {  
@@ -33,7 +33,17 @@ public class ControladorFechas implements ActionListener {
 			miVentana.fechas.btnSiguiente.addActionListener(this);
 			miVentana.fechas.btnCancelar.addActionListener(this);
 			miVentana.fechas.btnRadioButton.addActionListener(this);
-			//miVentana.fechas.dateIda.getDateEditor().inputMethodTextChanged()
+			miVentana.fechas.dateIda.getDateEditor().addPropertyChangeListener(new PropertyChangeListener() {
+		    	@Override
+		        public void propertyChange(PropertyChangeEvent e) {
+		    		fechaIda = miVentana.fechas.dateIda.getDate();
+		    		if (fechaIda != null) { 
+		    			miVentana.fechas.dateVuelta.setDate(null);
+		    			establecerFechasVuelta(fechaIda);
+		    		}
+	            }
+	        });
+			miVentana.fechas.add(miVentana.fechas.dateIda);
 		}
 		
 	//Metodo para resetear los valores de la ventana fechas
@@ -58,11 +68,16 @@ public class ControladorFechas implements ActionListener {
 			
 		}
 		
-		public void establecerFechasVuelta() {
+		public void establecerFechasVuelta(Date fechaIda) {
 			//Definicion e inicialización de variables
+			Calendar calendar = Calendar.getInstance();
+			Date fechaLimiteVuelta;
 			
 			//Inicio del programa
-			System.out.println("Entró");
+			calendar.setTime(fechaIda);
+			calendar.add(Calendar.DATE, 3);
+			fechaLimiteVuelta = calendar.getTime();
+			miVentana.fechas.dateVuelta.setSelectableDateRange(fechaIda, fechaLimiteVuelta);
 		}
 		
 		
@@ -76,9 +91,8 @@ public class ControladorFechas implements ActionListener {
 				}
 				else {
 					miVentana.fechas.dateVuelta.setEnabled(false);
+					miVentana.fechas.dateVuelta.setDate(null);
 				}
-				
-			} else if (e.getSource()==miVentana.fechas.dateIda) {
 				
 			} else {	
 				switch (((JButton) e.getSource()).getName()) {
@@ -87,7 +101,6 @@ public class ControladorFechas implements ActionListener {
 										   break;
 										   
 					case "btnSiguienteFechas":  funciones.cambiarDePanel(miVentana.fechas, miVentana.billeteComprado);
-												setFechasDisponibles();
 												break;
 					
 					case "btnCancelarFechas": funciones.cambiarDePanel(miVentana.fechas, miVentana.billetes);

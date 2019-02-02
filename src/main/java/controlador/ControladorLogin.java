@@ -60,6 +60,7 @@ public class ControladorLogin implements ActionListener {
 					}
 					if(miModelo.cliente != null) {
 						funciones.cambiarDePanel(miVentana.login, miVentana.billetes);
+						resetear();
 						try {
 							miModelo.billetes = miModelo.misFuncionesBilletes.billetesCliente(miModelo.cliente, miModelo.billetes);
 							miControlador.miControladorBilletes.actualizarBilletes(miModelo.billetes);
@@ -67,8 +68,7 @@ public class ControladorLogin implements ActionListener {
 							// TODO Auto-generated catch block
 							e1.printStackTrace();
 						}
-					} 
-					resetear();
+					}
 				
 					break;				
 			}
