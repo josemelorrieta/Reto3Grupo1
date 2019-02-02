@@ -18,13 +18,13 @@ public class ControladorParadas implements ActionListener {
 	ArrayList<Parada> paradas;
 	FuncionesVarias funcionesModelo = new FuncionesVarias();
 	
-	//private Controlador miControlador;
+	private Controlador miControlador;
 	private Ventana miVentana;
 	private Modelo miModelo;
 	
 	//Constructor
-		public ControladorParadas (Ventana miVentana,  ArrayList<Parada> paradas, ArrayList<LineaAutobus> lineas) { 
-			
+		public ControladorParadas (Controlador miControlador, Ventana miVentana,  ArrayList<Parada> paradas, ArrayList<LineaAutobus> lineas) { 
+			this.miControlador = miControlador;
 			this.miVentana = miVentana;
 			this.paradas = paradas;
 			
@@ -55,7 +55,10 @@ public class ControladorParadas implements ActionListener {
 					resetear();
 					break;
 										
-				case "btnSiguienteParadas": funciones.cambiarDePanel(miVentana.paradas, miVentana.fechas); 
+				case "btnSiguienteParadas": funciones.cambiarDePanel(miVentana.paradas, miVentana.fechas);
+					miVentana.fechas.dateIda.setDate(null);
+					miVentana.fechas.dateVuelta.setDate(null);
+					miControlador.miControladorFechas.setFechasDisponibles();
 					break;
 				
 				case "btnCancelarParadas": funciones.cambiarDePanel(miVentana.paradas, miVentana.billetes);
