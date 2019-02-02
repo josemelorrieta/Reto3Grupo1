@@ -26,10 +26,11 @@ public class ControladorBilleteComprado implements ActionListener {
 			
 		}
 		
+	//Metodo para resetear los valores de la ventana billetes comprados 
 		public void resetear() {
 			miVentana.billeteComprado.modeloMostrarBilletesComprado.removeAllElements();
 		}
-
+	//Metodo para las llamadas a los botones de la ventana billetes comprados	
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			switch (((JButton) e.getSource()).getName()) {

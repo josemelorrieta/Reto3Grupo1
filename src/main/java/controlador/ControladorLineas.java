@@ -30,7 +30,8 @@ public class ControladorLineas implements ActionListener {
 			miVentana.lineas.btnCancelar.addActionListener(this);
 			
 		}
-
+		
+	//Metodo para las llamadas a los botones de la ventana lineas
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			switch (((JButton) e.getSource()).getName()) {

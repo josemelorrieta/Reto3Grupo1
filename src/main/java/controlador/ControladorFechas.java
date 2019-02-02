@@ -36,6 +36,7 @@ public class ControladorFechas implements ActionListener {
 			//miVentana.fechas.dateIda.getDateEditor().inputMethodTextChanged()
 		}
 		
+	//Metodo para resetear los valores de la ventana fechas
 		public void resetear() {
 			miVentana.fechas.btnRadioButton.setSelected(false); 
 			miVentana.fechas.textPrecio.setText("");

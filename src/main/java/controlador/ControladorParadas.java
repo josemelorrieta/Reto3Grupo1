@@ -43,11 +43,12 @@ public class ControladorParadas implements ActionListener {
 			
 		}
 		
+	//Metodo para resetear los valores de la ventana paradas
 		public void resetear() {
 			miVentana.paradas.textFieldMostrarLinea.setText("");
 		}
 
-
+	//Metodo para las llamadas a los botones de la ventana paradas
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			switch (((JButton) e.getSource()).getName()) {

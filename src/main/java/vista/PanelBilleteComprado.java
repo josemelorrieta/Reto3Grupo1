@@ -34,15 +34,13 @@ public class PanelBilleteComprado extends JPanel {
 		btnCancelar.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnCancelar.setBounds(37, 570, 145, 61);
 		add(btnCancelar);
+		
 		btnAtras.setName("btnAtrasBilleteComprado");
-		
-		
 		btnAtras.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnAtras.setBounds(705, 570, 145, 61);
 		add(btnAtras);
+		
 		btnSiguiente.setName("btnSiguienteBilleteComprado");
-		
-		
 		btnSiguiente.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnSiguiente.setBounds(901, 570, 153, 61);
 		add(btnSiguiente);

@@ -37,15 +37,17 @@ public class ControladorBilletes implements ActionListener {
 //		public Cliente getCliente() {
 //			return cliente;
 //		}
-//
+
 //		public void setCliente(Cliente cliente) {
 //			this.cliente = cliente;
 //		}
-		
+	
+	//Metodo para resetear los valores de la ventana todos los billetes comprados 
 		public void resetear() {
 			miVentana.billetes.modeloMostrarBilletes.removeAllElements();
 		}
-		
+	
+	//Metodo para actualizar y añadir los billetes comprados en la ventana de todos los billetes comprados
 		public void actualizarBilletes(Billete[] billetes) { 
 			
 			miVentana.billetes.modeloMostrarBilletes.removeAllElements();
@@ -58,7 +60,8 @@ public class ControladorBilletes implements ActionListener {
 			}
 			miVentana.billetes.MostrarBilletes.setModel(miVentana.billetes.modeloMostrarBilletes);
 		}
-
+		
+	//Metodo para las llamadas a los botones de la ventana todos los billetes comprados	
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			switch (((JButton) e.getSource()).getName()) {

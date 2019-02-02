@@ -44,6 +44,7 @@ public class ControladorRegistro implements ActionListener {
 			 
 		}
 		
+	//Metodo para resetear los valores de la ventana registro
 		public void resetear() {
 			 miVentana.registro.textFieldDni.setText(""); 
 			 miVentana.registro.textFieldNombre.setText("");
@@ -64,7 +65,9 @@ public class ControladorRegistro implements ActionListener {
 					if (comprobarCamposRegistro()) {
 						cliente = funcionesRegistro.registrarNuevoCliente(miVentana.registro.textFieldDni.getText(), miVentana.registro.textFieldNombre.getText(), miVentana.registro.textFieldApellidos.getText(), miVentana.registro.comboBoxGenero.getSelectedItem().toString(), sdf.format(miVentana.registro.dateChooser.getDate()), miVentana.registro.passwordField.getPassword());
 						if (cliente != null) {
-							funciones.cambiarDePanel(miVentana.registro, miVentana.billetes);
+							funciones.cambiarDePanel(miVentana.registro, miVentana.login);
+							resetear();
+							
 							miControlador.miControladorBilletes.actualizarBilletes(miModelo.billetes);
 						} else {
 							JOptionPane.showMessageDialog(miVentana, "Hubo un error en el registro", "¡Atención!", JOptionPane.WARNING_MESSAGE);
@@ -84,7 +87,8 @@ public class ControladorRegistro implements ActionListener {
 			}
 			
 		}
-		
+	
+	//Comprueba todos los campos de la ventana registro. Avisa de si estan todos los campos rellenos y de si existe ya el dni introducido
 		private boolean comprobarCamposRegistro() throws SQLException {
 			if (funcionesRegistro.verificarDNI(miVentana.registro.textFieldDni.getText())) {
 				JOptionPane.showMessageDialog(miVentana, "Ya existe un ususario con ese DNI", "¡Atención!", JOptionPane.WARNING_MESSAGE);

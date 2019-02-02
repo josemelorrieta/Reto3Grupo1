@@ -47,7 +47,7 @@ public class ControladorPago implements ActionListener {
 			
 			
 		}
-		
+	//Metodo para resetear los valores de la ventana pago	
 		public void resetear() {
 			miVentana.pago.total.setText("");
 			miVentana.pago.pagado.setText("");
@@ -56,7 +56,8 @@ public class ControladorPago implements ActionListener {
 			miModelo.misFuncionesPago.ActBotones(miVentana.pago.arrayBtn);
 					
 		}
-
+		
+	//Metodo para las llamadas a los botones de la ventana pago
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			switch (((JButton) e.getSource()).getName()) {

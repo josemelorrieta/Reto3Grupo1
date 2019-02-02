@@ -23,7 +23,8 @@ public class ControladorSaludo implements ActionListener {
 			miVentana.saludo.btnSaludo.addActionListener(this);
 			 
 		} 
-
+		
+	//Metodo de las llamadas a los botones de la ventana saludo
 		@Override
 		public void actionPerformed(ActionEvent e) { 
 			switch (((JButton) e.getSource()).getName()) {

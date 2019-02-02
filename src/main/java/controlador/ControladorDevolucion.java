@@ -26,20 +26,15 @@ public class ControladorDevolucion implements ActionListener {
 			this.miVentana = miVentana;
 			this.miControlador =miControlador;
 			
-			miVentana.devolucion.btnSiguiente.addActionListener(this);
-
-			
+			miVentana.devolucion.btnSiguiente.addActionListener(this);		
 		}
 		
-		public void  resetear() {
-			
+	//Metodo para resetear los valores de la ventana devolucion	
+		public void  resetear() {		
 			miVentana.devolucion.cambios.removeAllElements();
-		
 		}
 		
-		
-	
-
+	//Metodo para las llamadas a los botones de la ventana devolucion	
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			switch (((JButton) e.getSource()).getName()) {
@@ -47,9 +42,7 @@ public class ControladorDevolucion implements ActionListener {
 											   miControlador.miControladorDespedida.PasarDeDespedidaASaludo();
 											   resetear();
 				break;
-				
-				
-				
+	
 	
 			}
 			

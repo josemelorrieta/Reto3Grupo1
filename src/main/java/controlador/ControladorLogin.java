@@ -39,7 +39,8 @@ public class ControladorLogin implements ActionListener {
 			miVentana.login.btnRegistrarse.addActionListener(this);
 			miVentana.login.btnLogin.addActionListener(this);
 		}
-
+		
+	//Metodo para las llamadas a los botones de la ventana login
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			switch (((JButton) e.getSource()).getName()) {
@@ -73,6 +74,7 @@ public class ControladorLogin implements ActionListener {
 			}
 		}
 		
+	//Metodo para resetear los valores de la ventana login 	
 		public void resetear() {
 			miVentana.login.TextDni.setText(""); 
 			miVentana.login.passwordField.setText("");

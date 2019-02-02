@@ -17,7 +17,10 @@ public class FuncionesDevolucion {
 		this.miModelo=miModelo;
 	}
 	
+ //Metodo para realizar los cambios en las menores monedas y billetes posibles.	
 	public int[] cambios(float dinero) {
+		
+		// Declaracion e inicializacion de variables
 		int euros = (int) dinero;
 		int decimales = Math.round((dinero - euros) * 100);
 		int[] billetesMonedas = {500, 200, 100, 50, 20, 10, 5, 2, 1};
@@ -44,6 +47,7 @@ public class FuncionesDevolucion {
 		return cambios;
 	}
 	
+ //Metodo para mostrar los cambios en la ventana de devolucion 
 	public void mostrarCambios(Ventana miVentana, int[] cambios) {
 		
 		String mensajeCambios = "";

@@ -8,10 +8,13 @@ import vista.Ventana;
 public class ControladorDespedida {
 	private Ventana miVentana;
 	
+    
+ //Constructor
 	public ControladorDespedida(Ventana miVentana) {
 		this.miVentana=miVentana;
 	}
-
+	
+ //Metodo para pasar del la ventana despedida a la de saludo automaticamente (en milisegundos)
 	public void PasarDeDespedidaASaludo() {
 		Timer timer = new Timer();
 		TimerTask esperar = new TimerTask() {
