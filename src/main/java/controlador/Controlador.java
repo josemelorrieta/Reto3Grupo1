@@ -39,8 +39,6 @@ public class Controlador {
 	private ControladorDevolucion miControladorDevolucion;
 	public ControladorDespedida miControladorDespedida;
 	
-	private ArrayList<Parada> paradas = new ArrayList<Parada>();
-	private ArrayList<LineaAutobus> lineas = new ArrayList<LineaAutobus>();
 
 	//Constructor
 	public Controlador(Ventana miVentana, Modelo miModelo) { 
@@ -51,8 +49,8 @@ public class Controlador {
 		this.miControladorLogin = new ControladorLogin(this, miVentana, miModelo);
 		this.miControladorRegistro = new ControladorRegistro(this, miVentana, miModelo);
 		this.miControladorBilletes = new ControladorBilletes(miVentana, miModelo);
-		this.miControladorLineas = new ControladorLineas(miVentana, lineas);
-		this.miControladorParadas = new ControladorParadas(this, miVentana, miModelo, paradas, lineas);
+		this.miControladorLineas = new ControladorLineas(miVentana, miModelo);
+		this.miControladorParadas = new ControladorParadas(this, miVentana, miModelo);
 		this.miControladorFechas = new ControladorFechas(miVentana, miModelo);
 		this.miControladorBilleteComprado = new ControladorBilleteComprado(miVentana);
 		this.miControladorPago = new ControladorPago(miVentana, miModelo);
