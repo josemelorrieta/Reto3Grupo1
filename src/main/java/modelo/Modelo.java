@@ -10,6 +10,7 @@ public class Modelo {
 	public FuncionesLogin misFuncionesLogin;
 	public FuncionesRegistro misFuncionesRegistro;
 	public FuncionesBilletes misFuncionesBilletes;
+	public FuncionesFechas misFuncionesFechas;
 	public FuncionesPago misFuncionesPago;
 	public FuncionesDevolucion misFuncionesDevolucion;
 	
@@ -24,6 +25,7 @@ public class Modelo {
 		this.misFuncionesBilletes = new FuncionesBilletes(); 
 		this.misFuncionesPago = new FuncionesPago();
 		this.misFuncionesDevolucion = new FuncionesDevolucion(this);
+		this.misFuncionesFechas = new FuncionesFechas();
 		
 	}
 

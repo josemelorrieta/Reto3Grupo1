@@ -3,6 +3,7 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Date;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
@@ -22,10 +23,14 @@ public class ControladorParadas implements ActionListener {
 	private Ventana miVentana;
 	private Modelo miModelo;
 	
+	Date fechaHoy = new Date();
+	Date fechaLimite = new Date();
+	
 	//Constructor
-		public ControladorParadas (Controlador miControlador, Ventana miVentana,  ArrayList<Parada> paradas, ArrayList<LineaAutobus> lineas) { 
+		public ControladorParadas (Controlador miControlador, Ventana miVentana, Modelo miModelo,  ArrayList<Parada> paradas, ArrayList<LineaAutobus> lineas) { 
 			this.miControlador = miControlador;
 			this.miVentana = miVentana;
+			this.miModelo = miModelo;
 			this.paradas = paradas;
 			
 			miVentana.paradas.btnAtras.addActionListener(this);
@@ -59,7 +64,8 @@ public class ControladorParadas implements ActionListener {
 				case "btnSiguienteParadas": funciones.cambiarDePanel(miVentana.paradas, miVentana.fechas);
 					miVentana.fechas.dateIda.setDate(null);
 					miVentana.fechas.dateVuelta.setDate(null);
-					miControlador.miControladorFechas.setFechasDisponibles();
+					fechaLimite = miModelo.misFuncionesFechas.setFechasDisponibles(fechaHoy);
+					miVentana.fechas.dateIda.setSelectableDateRange(fechaHoy, fechaLimite);
 					break;
 				
 				case "btnCancelarParadas": funciones.cambiarDePanel(miVentana.paradas, miVentana.billetes);
