@@ -9,6 +9,10 @@ import javax.swing.JButton;
 import modelo.LineaAutobus;
 import vista.Ventana;
 
+/**
+ * Calse que controla el panel que muestra las lineas de autobus
+ *
+ */
 public class ControladorLineas implements ActionListener {
 	
 	FuncionesControlador funciones = new FuncionesControlador();
@@ -20,31 +24,37 @@ public class ControladorLineas implements ActionListener {
 	
 	
 	
-	//Constructor
-		public ControladorLineas (Ventana miVentana, ArrayList<LineaAutobus> lineas) {
-			
-			this.miVentana = miVentana;
-			this.lineas = lineas;
-			
-			miVentana.lineas.btnSiguiente.addActionListener(this);
-			miVentana.lineas.btnCancelar.addActionListener(this);
-			
-		}
+	/**
+	 * Constructor de la clase
+	 * @param miVentana instancia de la ventana principal
+	 * @param lineas instancaia del array con las lineas disponibles
+	 */
+	public ControladorLineas (Ventana miVentana, ArrayList<LineaAutobus> lineas) {
 		
-	//Metodo para las llamadas a los botones de la ventana lineas
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			switch (((JButton) e.getSource()).getName()) {
-				case "btnSiguienteLineas": funciones.cambiarDePanel(miVentana.lineas, miVentana.paradas);
-					String[] codLineas = funcionesModelo.consultaColumnaString("select distinct Cod_linea from `linea_autobus`;", "Cod_linea");	
-					//lineas = funcionesModelo.cargarLineas(lineas, codLineas);
-					
-					break;
-				case "btnCancelarLineas": funciones.cambiarDePanel(miVentana.lineas, miVentana.billetes); 
-					break;
-	
-			}
-			
+		this.miVentana = miVentana;
+		this.lineas = lineas;
+		
+		//Definicion de los listeners de los botones del panel
+		miVentana.lineas.btnSiguiente.addActionListener(this);
+		miVentana.lineas.btnCancelar.addActionListener(this);
+		
+	}
+		
+	/**
+	 * Metodo para las llamadas a los botones de la ventana lineas
+	 */
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		//Accion dependiendo de que boton venga la llamada
+		switch (((JButton) e.getSource()).getName()) {
+			case "btnSiguienteLineas": funciones.cambiarDePanel(miVentana.lineas, miVentana.paradas);
+				String[] codLineas = funcionesModelo.consultaColumnaString("select distinct Cod_linea from `linea_autobus`;", "Cod_linea");	
+				//lineas = funcionesModelo.cargarLineas(lineas, codLineas);
+				
+				break;
+			case "btnCancelarLineas": funciones.cambiarDePanel(miVentana.lineas, miVentana.billetes); 
+				break;
 		}
+	}
 
 }

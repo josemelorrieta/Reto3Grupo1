@@ -1,5 +1,9 @@
 package modelo;
 
+/** 
+ * Clase del objeto parada
+ *
+ */
 public class Parada {
 
 	private int codParada;
@@ -8,6 +12,14 @@ public class Parada {
 	private float coordX;
 	private float coordY;
 	
+	/**
+	 * Constructor de la clase parada
+	 * @param codParada Codigo de la parada
+	 * @param calle Calle en la que esta la parada
+	 * @param nombre Nombre de la parada
+	 * @param coordX Coordenada x de la parada
+	 * @param coordY coordenada y de la parada
+	 */
 	public Parada(int codParada, String calle, String nombre, float coordX, float coordY) {
 		this.codParada = codParada;
 		this.calle = calle;
@@ -16,6 +28,7 @@ public class Parada {
 		this.coordY = coordY;
 	}
 
+	//Getters y setters
 	public int getCodParada() {
 		return codParada;
 	}

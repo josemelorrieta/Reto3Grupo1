@@ -11,6 +11,10 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 
+/** 
+ * Clase del panel de seleccion de linea
+ *
+ */
 public class PanelLineas extends JPanel { 
 	
 	public JButton btnCancelar = new JButton("Cancelar");

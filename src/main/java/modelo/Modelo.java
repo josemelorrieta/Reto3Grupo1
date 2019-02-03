@@ -4,6 +4,10 @@ import java.util.ArrayList;
 
 import controlador.Controlador;
 
+/**
+ * Clase del modelo de la aplicacion. Tiene las instancias a las clases de las funciones que manejan los datos de cada panel
+ *
+ */
 public class Modelo {
 	// Declaración e inicialización de variables
 	private Controlador miControlador;
@@ -19,7 +23,11 @@ public class Modelo {
 	public ArrayList<LineaAutobus> lineas = null;
 	public ArrayList<Parada> paradas = null;
 	
+	/**
+	 * Constructor de la clase
+	 */
 	public Modelo() {
+		//Instacias de todas las clases de las funciones de cada panel
 		this.misFuncionesLogin = new FuncionesLogin();
 		this.misFuncionesRegistro = new FuncionesRegistro();
 		this.misFuncionesBilletes = new FuncionesBilletes(); 
@@ -29,7 +37,7 @@ public class Modelo {
 		
 	}
 
-	
+	//Getters y setters
 	public Controlador getControlador() {
 		return miControlador;
 	}
@@ -37,12 +45,6 @@ public class Modelo {
 	public void setControlador(Controlador miControlador) {
 		this.miControlador = miControlador;
 	} 
-	
-	public void inicializarDatosBD() {
-		ConexionBD con = new ConexionBD();   
-		
-
-	}
 
 }
  

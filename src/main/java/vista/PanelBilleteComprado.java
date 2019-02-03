@@ -11,6 +11,10 @@ import com.jgoodies.forms.factories.DefaultComponentFactory;
 import javax.swing.SwingConstants;
 import javax.swing.JList;
 
+/**
+ * Calse del panel que muestra el resumen del billete comprado
+ *
+ */
 public class PanelBilleteComprado extends JPanel {
 	
 	public JButton btnCancelar = new JButton("Cancelar");

@@ -20,7 +20,10 @@ import javax.swing.JPasswordField;
 import com.toedter.calendar.JCalendar;
 import com.toedter.calendar.JDateChooser;
 
-
+/** 
+ * Clase del panel de registro de un nuevo usuario
+ *
+ */
 public class PanelRegistro extends JPanel {
 	
 	JPanel panelRegistro = new JPanel();

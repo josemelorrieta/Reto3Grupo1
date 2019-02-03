@@ -3,6 +3,10 @@ package modelo;
 import java.sql.Connection;
 import java.sql.ResultSet;
 
+/**
+ * Clase del objeto cliente
+ *
+ */
 public class Cliente {
 
 	private String dni;
@@ -12,6 +16,14 @@ public class Cliente {
 	private char sexo;
 	private String contraseña; 
 	
+	/**
+	 * Constructor del objeto cliente
+	 * @param dni DNI del cliente
+	 * @param nombre Nombre del cliente
+	 * @param apellidos Apellidos del cliente
+	 * @param fechaNacimiento Fecha de nacimiento del cliente
+	 * @param sexo Sexo del cliente. 'V' para hombre, 'M' para mujer
+	 */
 	public Cliente(String dni,String nombre, String apellidos, String fechaNacimiento, char sexo) {
 		this.dni = dni;
 		this.nombre = nombre;
@@ -20,6 +32,7 @@ public class Cliente {
 		this.sexo = sexo;
 	}
 
+	//Getters y setters
 	public String getDni() {
 		return dni;
 	}
@@ -68,6 +81,11 @@ public class Cliente {
 		this.contraseña = contraseña;
 	}
 	
+	/**
+	 * Calse que comprueba si ya existe un cliente a partir de su dni
+	 * @param dni DNI del cliente a comprobar
+	 * @return boolean Devuelve true si existe el cliente y false si no existe
+	 */
 	public boolean existeCliente(String dni) {
 		ConexionBD conexion = new ConexionBD();
 		ConsultaBD consulta = new ConsultaBD();

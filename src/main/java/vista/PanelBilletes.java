@@ -11,6 +11,10 @@ import javax.swing.SwingConstants;
 import java.awt.Font;
 import javax.swing.JList;
 
+/**
+ * Clase del panel que muestra los billetes del cliente logeado
+ *
+ */
 public class PanelBilletes extends JPanel {
 
 	public JButton btnCerrarSesion = new JButton("Cerrar Sesion");

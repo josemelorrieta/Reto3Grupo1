@@ -18,6 +18,10 @@ import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+/** 
+ * Clase del panel de pago
+ *
+ */
 public class PanelPago extends JPanel {
 	
 		public JButton btnCancelar = new JButton("Cancelar");

@@ -1,5 +1,9 @@
 package modelo;
 
+/**
+ * Clase objeto billete
+ *
+ */
 public class Billete {
 	
 	private int numBillete;
@@ -11,6 +15,17 @@ public class Billete {
 	private double precioTrayecto;
 	private String dni;
 	
+	/**
+	 * Constructor del objeto billete
+	 * @param numBillete numero de orden del billete
+	 * @param fecha fecha de compra del billete
+	 * @param codLinea codigo de la linea a la que hace referencia el billete
+	 * @param origen parada de origen del billete
+	 * @param destino parada de destino del billete
+	 * @param codAutobus codigo del autobus que hara el trayecto
+	 * @param precioTrayecto precio del billete
+	 * @param dni identificacion del cliente que ha comprado el billete
+	 */
 	public Billete(int numBillete, String fecha, String codLinea, String origen, String destino, int codAutobus, double precioTrayecto, String dni) {
 		this.numBillete = numBillete;
 		this.fecha = fecha;
@@ -23,6 +38,7 @@ public class Billete {
 		this.dni = dni;
 	}
 
+	//Getters y setters
 	public int getNumBillete() {
 		return numBillete; 
 	}

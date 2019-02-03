@@ -17,6 +17,10 @@ import com.toedter.calendar.JDateChooser;
 import java.awt.event.InputMethodListener;
 import java.awt.event.InputMethodEvent;
 
+/**
+ * Clase del panel de seleccion de fechas para el bilelte
+ *
+ */
 public class PanelFechas extends JPanel { 
 	
 	public JButton btnAtras = new JButton("Atras");

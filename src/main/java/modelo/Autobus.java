@@ -1,5 +1,9 @@
 package modelo;
 
+/**
+ * Clase objeto autobus
+ *
+ */
 public class Autobus {
 
 	private int codAutobus;
@@ -7,6 +11,13 @@ public class Autobus {
 	private float consumo;
 	private String color;
 	
+	/** 
+	 * Constructor del objeto autobus
+	 * @param codAutobus codigo del autobus
+	 * @param plazas plazas totales
+	 * @param consumo consumo de gasoil por kilometro
+	 * @param color color del autobus
+	 */
 	public Autobus(int codAutobus, int plazas, float consumo, String color) {
 		this.codAutobus = codAutobus;
 		this.plazas = plazas;
@@ -14,6 +25,7 @@ public class Autobus {
 		this.color = color;
 	}
 
+	// Getters y setters
 	public int getCodAutobus() {
 		return codAutobus;
 	}

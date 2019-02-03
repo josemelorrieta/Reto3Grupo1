@@ -7,13 +7,24 @@ import javax.swing.JButton;
 import controlador.DatosPrecio;
 import vista.Ventana;
 
+/**
+ * Clase con las funciones del panel de pago
+ *
+ */
 public class FuncionesPago {
 
 	static DatosPrecio datos = new DatosPrecio();
 	
+	/**
+	 * Metodo que calcula el precio segun la distancia del billete
+	 * @param distancia distancia en km entre origen y destino
+	 * @return precio del billete
+	 */
 	public float CalcularPrecio(float distancia) {
+		//Declaracion e inicializacion de variables
 		float precio = 0;
 		
+		//Inicio del programa
 		return precio = (distancia * datos.precioGasolina * datos.beneficio * datos.IVA);
 	}
 	
@@ -24,7 +35,11 @@ public class FuncionesPago {
 	public float restante = 0;
 	public float cambios = 0;
 
-  //Metodo para sumar la cantidad de dinero de los botones de la ventana pago y muestra el total de dinero metido
+	/**
+	 * Metodo para sumar la cantidad de dinero de los botones de la ventana pago y muestra el total de dinero metido
+	 * @param valor cantidad del billete o moneda selecionado por el usuario
+	 * @param miVentana instancia de la ventana principal
+	 */
 	public void SumarDineroPago(float valor, Ventana miVentana ) {
 
 		
@@ -54,32 +69,42 @@ public class FuncionesPago {
 		}
 	}
 	
-  //Para desactivar todos los botones de dinero de la ventana pago
+    /**
+     * Metodo que desactiva todos los botones de dinero de la ventana pago
+     * @param array de botones a desactivar 
+     */
 	public void DesBotones(JButton[] array) {
 		for (int i = 0; i < array.length; i++) {
 			array[i].setEnabled(false);
 		}
 	}
 
-  //Para activar todos los botones de dinero de la ventana pago
+	/**
+	 * Metodo que activa todos los botones de dinero de la ventana pago
+	 * @param array array de botones a activar
+	 */
 	public void ActBotones(JButton[] array) {
 		for (int i = 0; i < array.length; i++) {
 			array[i].setEnabled(true);
 		}
 	}
 	
-  //Activa el boton que desee de las ventanas
+	/**
+	 * Metodo que activa el boton que se desee de las ventanas
+	 * @param boton a activar
+	 */
 	public void ActBotones(JButton boton) {   
 			boton.setEnabled(true);
 		 
 	}
-	//Desactiva el boton que desee de las ventanas
+	
+	/**
+	 * Metodo que desactiva el boton que se desee de las ventanas
+	 * @param boton a desactivar
+	 */
 	public void DesBotones(JButton boton) {   
 		boton.setEnabled(false);
 	
-}
-
-	
-	
+	}
 
 }

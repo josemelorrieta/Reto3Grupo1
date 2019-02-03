@@ -9,9 +9,23 @@ import org.apache.commons.codec.digest.DigestUtils;
 
 import vista.Ventana;
 
+/**
+ * Clase con las funciones del panel de login
+ *
+ */
 public class FuncionesLogin {
 	
+	/**
+	 * Metodo que comprueba el DNI y la contrasena del cliente que quiere logear
+	 * @param DNI DNI del cliente
+	 * @param pass contrasena del cliente
+	 * @param cliente instancia del objeto cliente general de la aplicacion
+	 * @param miVentana instancia de la ventana principal
+	 * @return cliente objeto actualizado al nuevo cliente logeado
+	 * @throws Exception excepcion en caso de error en el acceso a la base de datos
+	 */
 	public Cliente comprobarDNI(String DNI, char[] pass, Cliente cliente, Ventana miVentana) throws Exception {
+		//Declaracion e inicializacion de variables
 		ConexionBD miConexion = new ConexionBD();
 		ConsultaBD miConsulta = new ConsultaBD();
 		Connection con = miConexion.conectarBD();
@@ -23,11 +37,13 @@ public class FuncionesLogin {
 
     	String passEncriptada;
 		
+    	//Inicio del programa
 		ResultSet rs = miConsulta.hacerConsultaBD(con, "select * from cliente where DNI = '" + DNI + "';");
 		int cont = 0;
 		while(rs.next()) {
 			// Comprobamos la contraseña
 			passEncriptada = DigestUtils.md5Hex(String.valueOf(pass));
+			//Si DNI y contrasena coinciden creamos el cliente
 			if(comprobarPass(DNI, passEncriptada)) {
 				nombre = rs.getString("Nombre");
 				apellidos = rs.getString("Apellidos");
@@ -46,11 +62,21 @@ public class FuncionesLogin {
 		return cliente; 
 	}
 	
+	/**
+	 * Metodo que comprueba la contrasena a partir de un DNI
+	 * @param DNI DNI del cliente a comprobar la contrasena
+	 * @param pass Contrasena a comprobar
+	 * @return boolean true si la contrasena y DNi coinciden, false si no
+	 * @throws Exception excepcion en caso de error al acceder a la base de datos
+	 */
 	public boolean comprobarPass(String DNI, String pass) throws Exception {
+		//Declaracion e inicializacion de variables
 		ConexionBD miConexion = new ConexionBD();
 		ConsultaBD miConsulta = new ConsultaBD();
 		Connection con = miConexion.conectarBD();
 		String passBD = "";
+		
+		//Inicio del programa
 		ResultSet rs = miConsulta.hacerConsultaBD(con, "select Contraseña from cliente where DNI = '" + DNI + "';");
 		while(rs.next()) {
 			passBD = rs.getString("Contraseña");

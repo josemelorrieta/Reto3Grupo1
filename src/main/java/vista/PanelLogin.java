@@ -20,7 +20,10 @@ import javax.swing.JPasswordField;
 import javax.swing.border.SoftBevelBorder; 
 import javax.swing.border.BevelBorder;
 
-
+/**
+ * Clase del panel de login
+ *
+ */
 public class PanelLogin extends JPanel {
 	
 	public JTextField TextDni; 

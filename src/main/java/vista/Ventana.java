@@ -10,11 +10,15 @@ import com.jgoodies.forms.factories.DefaultComponentFactory;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
 
-
+/**
+ * Clase de la ventana principarl de la aplicacion
+ *
+ */
 public class Ventana extends JFrame { 
 
 	private JPanel contentPane;
 
+	//Instancias de todos los paneles de la aplicacion
 	public PanelLogin login;
 	public PanelRegistro registro;
 	public PanelLineas lineas;

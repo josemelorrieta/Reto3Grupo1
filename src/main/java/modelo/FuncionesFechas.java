@@ -3,6 +3,10 @@ package modelo;
 import java.util.Calendar;
 import java.util.Date;
 
+/**
+ * Clase con las funciones del panel de fechas del billete
+ *
+ */
 public class FuncionesFechas {
 
 	/**

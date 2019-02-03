@@ -5,8 +5,17 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.BufferedWriter;
 
+/**
+ * Clase para acceso a lectura /escritura de ficheros
+ *
+ */
 public class ConexionFichero {
 	
+	/**
+	 * Lee los datos de conexion a la base de datos de un fichero de texto
+	 * @param datosBD Cadena con la ruta y nombre del fichero de texto
+	 * @return array con los datos extraidos del fichero de texto
+	 */
 	public String[] cogerDatosDeFichero(String datosBD) {
 		String[] datos = new String[4];
 		FileReader fileReader = null;
@@ -44,12 +53,16 @@ public class ConexionFichero {
 		return datos;
 	}
 	
+	/**
+	 * Metodo para escribir los datos del billete a un fichero de texto
+	 * @param datosBillete array con los valores Linea, Origen, Destino, Fecha Ida, Fecha Vuelta, DNI, Nombre, Fecha Nacimiento, Sexo y Fecha de compra
+	 */
 	public void imprimirBillete(String[] datosBillete) {
-		/* datos Billete = "Linea", "Origen", "Destino", "Fecha ida", "Fecha vuelta" , "DNI", "Nombre", "Apellidos", "Fecha nacimiento", "Sexo", "Fecha compra" */
 		FileWriter fichero = null;	
 		BufferedWriter linea = null;
 		
 		try {
+			//generar fichero con el nombre compuesto por el dni y la fecha de ida del billete en la carpeta Temp
 			fichero = new FileWriter("c:/Temp/" + datosBillete[5] + "-" + datosBillete[3].replaceAll("/",  "") + ".txt");
 			linea = new BufferedWriter(fichero);
 			

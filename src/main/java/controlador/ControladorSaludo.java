@@ -8,6 +8,10 @@ import javax.swing.JPanel;
 
 import vista.Ventana;
 
+/**
+ * Clase que controla el panel de saludo
+ *
+ */
 public class ControladorSaludo implements ActionListener {
 	
 	FuncionesControlador funciones = new FuncionesControlador();
@@ -15,24 +19,31 @@ public class ControladorSaludo implements ActionListener {
 	
 	private Ventana miVentana;
 	
-	//Constructor
-		public ControladorSaludo( Ventana miVentana) {
-			
-			this.miVentana = miVentana;
-			
-			miVentana.saludo.btnSaludo.addActionListener(this);
-			 
-		} 
+	/**
+	 * Constructor de la clase
+	 * @param miVentana instancia de la ventana principal
+	 */
+	public ControladorSaludo( Ventana miVentana) {
 		
-	//Metodo de las llamadas a los botones de la ventana saludo
-		@Override
-		public void actionPerformed(ActionEvent e) { 
-			switch (((JButton) e.getSource()).getName()) {
-				case "btnSaludo": funciones.cambiarDePanel(miVentana.saludo, miVentana.login);
-				break;
-			
-			}
-			
+		this.miVentana = miVentana;
+		
+		//Defininicion del listener del boton del panel saludo
+		miVentana.saludo.btnSaludo.addActionListener(this);
+		 
+	} 
+		
+	/**
+	 * Metodo de las llamadas a los botones de la ventana saludo
+	 */
+	@Override
+	public void actionPerformed(ActionEvent e) { 
+		//Accion del boton del panel saludo
+		switch (((JButton) e.getSource()).getName()) {
+			case "btnSaludo": funciones.cambiarDePanel(miVentana.saludo, miVentana.login);
+			break;
+		
 		}
+		
+	}
 
 }

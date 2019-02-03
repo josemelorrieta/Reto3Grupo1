@@ -12,6 +12,10 @@ import javax.swing.JButton;
 import javax.swing.JList;
 import javax.swing.border.BevelBorder;
 
+/**
+ * Clase del panel de devolucion de cambios
+ *
+ */
 public class PanelDevolucion extends JPanel {
 	
 		public JButton btnSiguiente = new JButton("Siguiente");

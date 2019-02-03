@@ -10,15 +10,23 @@ import modelo.LineaAutobus;
 import modelo.Modelo;
 import modelo.Parada;
 import vista.Ventana;
- 
+
+/**
+ * Clase controlador. Se encarga de conectar la clase Modelo de tratamiento de la informacion con la clase Vista que interaccciona con el usuario
+ * Tiene las instancias de todos los controladores de cada uno de los paneles donde se añaden las acciones de cada boton y elemento del panel
+ * 
+ */
+
 public class Controlador {
  
 	//Declaración e inicialización de variables;
+	//Instancias del Modelo y la Vista
 	private Modelo miModelo;
 	private Ventana miVentana;
 	
 	FuncionesVarias funciones = new FuncionesVarias();  
-
+	
+	//Instancias de los controladores de cada panel de la ventana
 	private ControladorSaludo miControladorSaludo; 
 	private ControladorLogin miControladorLogin;
 	private ControladorRegistro miControladorRegistro; 

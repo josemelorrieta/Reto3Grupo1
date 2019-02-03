@@ -7,17 +7,29 @@ import javax.swing.JButton;
 import controlador.DatosPrecio;
 import vista.Ventana;
 
+/**
+ * Calse con las funciones del panel de devolucion de cambios
+ *
+ */
 public class FuncionesDevolucion {
 	private Modelo miModelo;
 
 	NumberFormat formatoMoneda = NumberFormat.getCurrencyInstance(Locale.getDefault());
 	
 //	DatosPrecio datos = new DatosPrecio();
+	/**
+	 * Contrustor de la clase
+	 * @param miModelo instancia del modelo para acceder a las funciones
+	 */
 	public FuncionesDevolucion (Modelo miModelo) {
 		this.miModelo=miModelo;
 	}
 	
- //Metodo para realizar los cambios en las menores monedas y billetes posibles.	
+	/**
+	 * Metodo para realizar los cambios en las menores monedas y billetes posibles.	
+	 * @param dinero cantidad a devolver para calcular las monedas y billetes de la devolucion
+	 * @return array con la cantidad de cada billete o moneda, segun su posicion en el array
+	 */
 	public int[] cambios(float dinero) {
 		
 		// Declaracion e inicializacion de variables
@@ -26,7 +38,7 @@ public class FuncionesDevolucion {
 		int[] billetesMonedas = {500, 200, 100, 50, 20, 10, 5, 2, 1};
 		int[] cambios = new int[15];
 		
-		
+		//Inicio del programa
 		for (int i = 0, f = 0, fake = 1; i < billetesMonedas.length + fake; i++, f++) {
 			//Mira si tiene que pasar a calcular los decimales
 			if (f == 9) {
@@ -47,7 +59,11 @@ public class FuncionesDevolucion {
 		return cambios;
 	}
 	
- //Metodo para mostrar los cambios en la ventana de devolucion 
+	/**
+	 * Metodo para mostrar los cambios en la ventana de devolucion 
+	 * @param miVentana instancia de la ventana principal
+	 * @param cambios array con el numero de cada moneda o billete a devolver segun su posicion en el array
+	 */
 	public void mostrarCambios(Ventana miVentana, int[] cambios) {
 		
 		String mensajeCambios = "";

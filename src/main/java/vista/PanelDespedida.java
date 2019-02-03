@@ -9,6 +9,10 @@ import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 import javax.swing.border.LineBorder;
 
+/**
+ * Clase del panel de despedida
+ *
+ */
 public class PanelDespedida extends JPanel {
 	
 	JPanel panelDespedida = new JPanel();

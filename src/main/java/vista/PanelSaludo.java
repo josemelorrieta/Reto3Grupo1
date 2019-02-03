@@ -13,6 +13,10 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JButton;
 
+/**
+ * Clase del panel de saludo
+ *
+ */
 public class PanelSaludo extends JPanel {
 	
 	JPanel panelSaludo = new JPanel();
