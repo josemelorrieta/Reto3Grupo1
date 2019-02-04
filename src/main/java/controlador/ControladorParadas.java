@@ -20,6 +20,7 @@ import vista.Ventana;
 public class ControladorParadas implements ActionListener {
 	
 	FuncionesControlador funciones = new FuncionesControlador();
+	ArrayList<Parada> paradas;
 	FuncionesVarias funcionesModelo = new FuncionesVarias();
 	
 	private Controlador miControlador;
@@ -37,10 +38,11 @@ public class ControladorParadas implements ActionListener {
 	 * @param paradas instancia del array de paradas del modelo
 	 * @param lineas instancia del array de lineas
 	 */
-	public ControladorParadas (Controlador miControlador, Ventana miVentana, Modelo miModelo) { 
+	public ControladorParadas (Controlador miControlador, Ventana miVentana, Modelo miModelo,  ArrayList<Parada> paradas, ArrayList<LineaAutobus> lineas) { 
 		this.miControlador = miControlador;
 		this.miVentana = miVentana;
 		this.miModelo = miModelo;
+		this.paradas = paradas;
 		
 		//Definicion de los listeners de los botones del panel
 		miVentana.paradas.btnAtras.addActionListener(this);
@@ -48,8 +50,6 @@ public class ControladorParadas implements ActionListener {
 		miVentana.paradas.btnCancelar.addActionListener(this);
 		
 	}
-	
-	
 		
 	/**
 	 * Metodo para resetear los valores de la ventana paradas
@@ -76,10 +76,15 @@ public class ControladorParadas implements ActionListener {
 				//Establecer fechas posibles de compra en tres dias a partir de hoy 
 				fechaLimite = miModelo.misFuncionesFechas.setFechasDisponibles(fechaHoy);
 				miVentana.fechas.dateIda.setSelectableDateRange(fechaHoy, fechaLimite);
+				//Cargamos el origen y el destino en el billete
+				String parada1 = miVentana.paradas.ParadaDeOrigen.getSelectedItem().toString();
+				String parada2 = miVentana.paradas.ParadaDeDestino.getSelectedItem().toString();
+				miModelo.billetes[0].setOrigen(parada1);
+				miModelo.billetes[0].setDestino(parada2);
 				break;
 			
 			case "btnCancelarParadas": funciones.cambiarDePanel(miVentana.paradas, miVentana.billetes);
-				miModelo.paradas = funcionesModelo.cargarParadas(miModelo.paradas, "L1");
+				miModelo.paradas = funcionesModelo.cargarParadas(paradas, "L1");
 				resetear(); 
 				break;
 		}			
