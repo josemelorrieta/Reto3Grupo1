@@ -100,4 +100,57 @@ public class FuncionesFechas {
 		
 		return distancia;
 	}
+	
+	/**
+	 * Metodo que calcula el precio del billete
+	 * @param codAutobus Codigo del autobus asociado al billete
+	 * @param distancia Distancia entre las paradas de origen y destino
+	 * @return precioBillete precio final del billete
+	 * @throws SQLException excepcion en caso de error al conectar a la base de datos
+	 */
+	public double calcularPrecioBillete(int codAutobus, double distancia) throws SQLException {
+		//Declaración e inicialización de variables
+		double precioBillete = 0;
+		float consumo = 0;
+		final float beneficio = 20;
+		
+		//Inicio del programa
+		//Devuleve el consumo del autobus asociado al billete
+		consumo = consumoAutobus(codAutobus);
+		
+		//Calculamos el precio sin beneficio
+		precioBillete = distancia * consumo;
+		//Calculamos el precio con beneficio
+		precioBillete = precioBillete + precioBillete * beneficio / 100;
+		
+		return precioBillete;
+	}
+	
+	/**
+	 * Metodo que devuelve el consumo de un autobus 
+	 * @param codAutobus Codigo del autobus del que se quiere saber su consumo
+	 * @return consumo Consumo del autobus consultado
+	 * @throws SQLException Excepcion en caso de error en el acceso a la base de datos
+	 */
+	public float consumoAutobus(int codAutobus) throws SQLException {
+		//Declaración e inicialización de variables
+		float consumo = 0;
+		
+		ConexionBD miConexion = new ConexionBD();
+		ConsultaBD miConsulta = new ConsultaBD();
+		Connection con = miConexion.conectarBD();
+		
+		//Consulta a la base de datos
+		String query = "SELECT Consumo_km FROM autobus WHERE Cod_bus = " + codAutobus;
+		
+		ResultSet rs = miConsulta.hacerConsultaBD(con, query);
+		
+		//Inicio del programa
+		while(rs.next()) {
+			consumo = rs.getFloat("Consumo_km");
+		}
+		rs.close();
+		
+		return consumo;
+	}
 }
