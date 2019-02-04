@@ -5,7 +5,14 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import javax.swing.JOptionPane;
+
 import org.apache.commons.codec.digest.DigestUtils;
+
+import vista.Ventana;
 
 /**
  * Clase con las funcniones del panel de registro
@@ -14,6 +21,8 @@ import org.apache.commons.codec.digest.DigestUtils;
 public class FuncionesRegistro {
 	public ConexionBD miConexion = new ConexionBD();
 	public ConsultaBD miConsulta = new ConsultaBD();
+	
+	private Ventana miVentana;
 	
 	/**
 	 * Metodo que registra un nuevo cliente a partir de los datos del formulario
@@ -83,6 +92,64 @@ public class FuncionesRegistro {
 			return false;
 		}
 	}
+	
+	/**
+	 * Comprueba todos los campos de la ventana registro. Avisa de si estan todos los campos rellenos y de si existe ya el dni introducido
+	 * @return boolean Si no hay error en los datos del formulario devuelve true, si no devuelve false
+	 * @throws SQLException Excepcion en caso de error al conectar a la base de datos
+	 */
+	public boolean comprobarCamposRegistro(Ventana miVentana) throws SQLException {
 
-}
- 
+		
+		//comprobar si ya existe ese DNI
+		if (verificarDNI(miVentana.registro.textFieldDni.getText())) {
+			JOptionPane.showMessageDialog(miVentana, "Ya existe un ususario con ese DNI", "¡Atención!", JOptionPane.WARNING_MESSAGE);
+			return false;
+		} else {
+			//Validacion de los campos
+			if (miVentana.registro.textFieldDni.getText() != "" && miVentana.registro.textFieldNombre.getText() != "" && miVentana.registro.textFieldApellidos.getText()!="" && miVentana.registro.dateChooser.getDate() != null && miVentana.registro.passwordField.getPassword().length != 0 ) {
+					if(validarNif(miVentana.registro.textFieldDni.getText())) {
+						return true;
+					}
+					else {
+						JOptionPane.showMessageDialog(miVentana, "¡Formato DNI incorrecto!", "¡Atención!", JOptionPane.WARNING_MESSAGE);
+						return false;
+					}
+				} else {
+					JOptionPane.showMessageDialog(miVentana, "¡Debe rellenar todos los campos!", "¡Atención!", JOptionPane.WARNING_MESSAGE);
+					return false;
+				} 
+			}
+		
+		
+		
+	}
+	
+	/**
+	 * Valida el campo del dni.
+	 * @param el dni
+	 * @return si el formato del dni el correcto
+	 */
+	public static boolean validarNif(String nif){
+        boolean correcto=false;
+        Pattern pattern=Pattern.compile("(\\d{1,8})([TRWAGMYFPDXBNJZSQVHLCKEtrwagmyfpdxbnjzsqvhlcke])");
+        Matcher matcher=pattern.matcher(nif);
+        if(matcher.matches()){
+            String letra=matcher.group(2);
+            String letras="TRWAGMYFPDXBNJZSQVHLCKE";
+            int index=Integer.parseInt(matcher.group(1));
+            index=index%23;
+            String reference=letras.substring(index,index+1);
+            if(reference.equalsIgnoreCase(letra)){
+                correcto=true;
+            }else{
+                correcto=false;
+            }
+        }else{
+            correcto=false;
+        }
+        return correcto;
+    }
+}	
+	
+	 

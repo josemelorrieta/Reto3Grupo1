@@ -79,7 +79,7 @@ public class ControladorRegistro implements ActionListener {
 				 
 			case "btnRegistro": try {
 				//Si el formulario esta bien rellenado creamos el cliente y cambiamos a la ventana de billetes
-				if (comprobarCamposRegistro()) {
+				if (funcionesRegistro.comprobarCamposRegistro(miVentana)) {
 					cliente = funcionesRegistro.registrarNuevoCliente(miVentana.registro.textFieldDni.getText(), miVentana.registro.textFieldNombre.getText(), miVentana.registro.textFieldApellidos.getText(), miVentana.registro.comboBoxGenero.getSelectedItem().toString(), sdf.format(miVentana.registro.dateChooser.getDate()), miVentana.registro.passwordField.getPassword());
 					if (cliente != null) {
 						funciones.cambiarDePanel(miVentana.registro, miVentana.login);
@@ -105,26 +105,7 @@ public class ControladorRegistro implements ActionListener {
 		
 	}
 	
-	/**
-	 * Comprueba todos los campos de la ventana registro. Avisa de si estan todos los campos rellenos y de si existe ya el dni introducido
-	 * @return boolean Si no hay error en los datos del formulario devuelve true, si no devuelve false
-	 * @throws SQLException Excepcion en caso de error al conectar a la base de datos
-	 */
-	private boolean comprobarCamposRegistro() throws SQLException {
-		//comprobar si ya existe ese DNI
-		if (funcionesRegistro.verificarDNI(miVentana.registro.textFieldDni.getText())) {
-			JOptionPane.showMessageDialog(miVentana, "Ya existe un ususario con ese DNI", "¡Atención!", JOptionPane.WARNING_MESSAGE);
-			return false;
-		} else {
-			//Validacion de los campos
-			if (miVentana.registro.textFieldDni.getText() != "" && miVentana.registro.textFieldNombre.getText() != "" && miVentana.registro.textFieldApellidos.getText()!="" && miVentana.registro.dateChooser.getDate() != null && miVentana.registro.passwordField.getPassword().length != 0) {
-					return true;
-				} else {
-					JOptionPane.showMessageDialog(miVentana, "¡Debe rellenar todos los campos!", "¡Atención!", JOptionPane.WARNING_MESSAGE);
-					return false;
-				}
-		}
-	}
+	
 
 }
  

@@ -90,7 +90,7 @@ public class ControladorPago implements ActionListener {
 				resetear();
 				break;
 
-			case "btn500" :  miModelo.misFuncionesPago.SumarDineroPago(500, miVentana);
+			case "btn500" :  miModelo.misFuncionesPago.SumarDineroPago(500, miVentana); 
 				break;
 				
 			case "btn200" :  miModelo.misFuncionesPago.SumarDineroPago(200, miVentana);
