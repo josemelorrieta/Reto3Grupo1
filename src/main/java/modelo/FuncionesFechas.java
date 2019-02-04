@@ -26,7 +26,7 @@ public class FuncionesFechas {
 		calendar.setTime(fechaInicio);
 		//Añade tres dias a la fecha de hoy
 		calendar.add(Calendar.DATE, 3);
-		fechaLimite = calendar.getTime();
+		fechaLimite = calendar.getTime(); 
 		
 		return fechaLimite;
 	}
