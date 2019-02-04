@@ -3,15 +3,12 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
-
 import modelo.Billete;
 import modelo.FuncionesBilletes;
 import modelo.LineaAutobus;
 import modelo.Modelo;
-
 import vista.Ventana;
 
 /**
@@ -35,17 +32,27 @@ public class ControladorLineas implements ActionListener {
 	 * @param miVentana instancia de la ventana principal
 	 * @param lineas instancaia del array con las lineas disponibles
 	 */
+
 	public ControladorLineas (Ventana miVentana, ArrayList<LineaAutobus> lineas, Modelo miModelo) {
 		
 		this.miVentana = miVentana;
 		this.lineas = lineas;
 		this.miModelo = miModelo;
 		
+	}
+
+	public ControladorLineas (Ventana miVentana, ArrayList<LineaAutobus> lineas) {
+		
+		this.miVentana = miVentana;
+		this.lineas = lineas;
+
+		
 		//Definicion de los listeners de los botones del panel
 		miVentana.lineas.btnSiguiente.addActionListener(this);
 		miVentana.lineas.btnCancelar.addActionListener(this);
 		
 	}
+
 	
 	//ESTO TIENE QUE IR EN EL MODELO, EN LAS FUNCIONES PARA ESTE PANEL --> REFACTORIZAR
 		public void cargarBotones(String codLinea) {
