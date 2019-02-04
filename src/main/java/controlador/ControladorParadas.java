@@ -50,6 +50,7 @@ public class ControladorParadas implements ActionListener {
 		miVentana.paradas.btnCancelar.addActionListener(this);
 		
 	}
+
 	
 	//ESTO TIENE QUE IR EN EL MODELO, EN LAS FUNCIONES PARA ESTE PANEL --> REFACTORIZAR
 	public void cargarBotones() {
@@ -58,6 +59,7 @@ public class ControladorParadas implements ActionListener {
 		miVentana.paradas.ParadaDeDestino.setModel(new DefaultComboBoxModel(nombreParadas));
 		
 	}
+
 		
 	/**
 	 * Metodo para resetear los valores de la ventana paradas
@@ -84,6 +86,11 @@ public class ControladorParadas implements ActionListener {
 				//Establecer fechas posibles de compra en tres dias a partir de hoy 
 				fechaLimite = miModelo.misFuncionesFechas.setFechasDisponibles(fechaHoy);
 				miVentana.fechas.dateIda.setSelectableDateRange(fechaHoy, fechaLimite);
+				//Cargamos el origen y el destino en el billete
+				String parada1 = miVentana.paradas.ParadaDeOrigen.getSelectedItem().toString();
+				String parada2 = miVentana.paradas.ParadaDeDestino.getSelectedItem().toString();
+				miModelo.billetes[0].setOrigen(parada1);
+				miModelo.billetes[0].setDestino(parada2);
 				break;
 			
 			case "btnCancelarParadas": funciones.cambiarDePanel(miVentana.paradas, miVentana.billetes);
