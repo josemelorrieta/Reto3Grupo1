@@ -39,20 +39,11 @@ public class ControladorLineas implements ActionListener {
 		this.lineas = lineas;
 		this.miModelo = miModelo;
 		
-	}
-
-	public ControladorLineas (Ventana miVentana, ArrayList<LineaAutobus> lineas) {
-		
-		this.miVentana = miVentana;
-		this.lineas = lineas;
-
-		
 		//Definicion de los listeners de los botones del panel
 		miVentana.lineas.btnSiguiente.addActionListener(this);
 		miVentana.lineas.btnCancelar.addActionListener(this);
 		
 	}
-
 	
 	//ESTO TIENE QUE IR EN EL MODELO, EN LAS FUNCIONES PARA ESTE PANEL --> REFACTORIZAR
 		public void cargarBotones(String codLinea) {
@@ -78,7 +69,7 @@ public class ControladorLineas implements ActionListener {
 		switch (((JButton) e.getSource()).getName()) {
 			case "btnSiguienteLineas": funciones.cambiarDePanel(miVentana.lineas, miVentana.paradas);
 				//Cargamos los objetos lineas y los llenamos
-				String[] codLineas = funcionesModelo.consultaColumnaString("select distinct Cod_linea from `linea_autobus`;", "Cod_linea");	
+				String[] codLineas = funcionesModelo.consultaColumnaString("select distinct Cod_linea from `linea_autobus`;", "Cod_linea"); 
 				lineas = funcionesModelo.cargarLineas(lineas, codLineas);
 				//Cargamos los botones de las paradas
 				String nombreLinea = miVentana.lineas.SeleccionarLinea.getSelectedItem().toString();
