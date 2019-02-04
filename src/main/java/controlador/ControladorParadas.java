@@ -20,6 +20,7 @@ import vista.Ventana;
 public class ControladorParadas implements ActionListener {
 	
 	FuncionesControlador funciones = new FuncionesControlador();
+	ArrayList<Parada> paradas;
 	FuncionesVarias funcionesModelo = new FuncionesVarias();
 	
 	private Controlador miControlador;
@@ -37,10 +38,11 @@ public class ControladorParadas implements ActionListener {
 	 * @param paradas instancia del array de paradas del modelo
 	 * @param lineas instancia del array de lineas
 	 */
-	public ControladorParadas (Controlador miControlador, Ventana miVentana, Modelo miModelo) { 
+	public ControladorParadas (Controlador miControlador, Ventana miVentana, Modelo miModelo,  ArrayList<Parada> paradas, ArrayList<LineaAutobus> lineas) { 
 		this.miControlador = miControlador;
 		this.miVentana = miVentana;
 		this.miModelo = miModelo;
+		this.paradas = paradas;
 		
 		//Definicion de los listeners de los botones del panel
 		miVentana.paradas.btnAtras.addActionListener(this);
@@ -49,7 +51,13 @@ public class ControladorParadas implements ActionListener {
 		
 	}
 	
-	
+	//ESTO TIENE QUE IR EN EL MODELO, EN LAS FUNCIONES PARA ESTE PANEL --> REFACTORIZAR
+	public void cargarBotones() {
+		String[] nombreParadas = funcionesModelo.consultaColumnaString("select distinct parada.nombre from parada, `linea_parada` where parada.Cod_Parada = `linea_parada`.`Cod_Parada` and Cod_Linea like 'L1' ;", "nombre");
+		miVentana.paradas.ParadaDeOrigen.setModel(new DefaultComboBoxModel(nombreParadas));
+		miVentana.paradas.ParadaDeDestino.setModel(new DefaultComboBoxModel(nombreParadas));
+		
+	}
 		
 	/**
 	 * Metodo para resetear los valores de la ventana paradas
@@ -79,7 +87,7 @@ public class ControladorParadas implements ActionListener {
 				break;
 			
 			case "btnCancelarParadas": funciones.cambiarDePanel(miVentana.paradas, miVentana.billetes);
-				miModelo.paradas = funcionesModelo.cargarParadas(miModelo.paradas, "L1");
+				miModelo.paradas = funcionesModelo.cargarParadas(paradas, "L1");
 				resetear(); 
 				break;
 		}			
