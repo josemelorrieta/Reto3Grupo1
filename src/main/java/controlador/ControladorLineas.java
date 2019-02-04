@@ -47,7 +47,7 @@ public class ControladorLineas implements ActionListener {
 	
 	//ESTO TIENE QUE IR EN EL MODELO, EN LAS FUNCIONES PARA ESTE PANEL --> REFACTORIZAR
 		public void cargarBotones(String codLinea) {
-			String[] nombreParadas = funcionesModelo.consultaColumnaString("select distinct parada.nombre from parada, `linea_parada` where parada.Cod_Parada = `linea_parada`.`Cod_Parada` and Cod_Linea like '" + codLinea + "' ;", "nombre");
+			String[] nombreParadas = funcionesModelo.consultaColumnaString("select distinct parada.nombre from parada, `linea-parada` where parada.Cod_Parada = `linea-parada`.`Cod_Parada` and Cod_Linea like '" + codLinea + "' ;", "nombre");
 //			int indice = miVentana.paradas.ParadaDeOrigen.getSelectedIndex();
 //			ArrayList<String> paradasAux;
 //			while (nombreParadas[indice] && nombreParadas[indice + 1]) {

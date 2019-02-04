@@ -25,7 +25,7 @@ public class FuncionesVarias {
 		for (int i = 0; i < codsLinea.length; i++) {
 			String codLinea = codsLinea[i];
 			int[] codAutobus = consultaColumnaInt("select autobus.Cod_bus from autobus, `linea_autobus` where autobus.Cod_bus = `linea_autobus`.Cod_bus and Cod_Linea = '" + codLinea + "';", "Cod_bus");
-			String[] municipios = consultaColumnaString("select poblacion.Nombre from poblacion, `poblacion_parada`, parada, `linea_parada` where `linea_parada`.Cod_Parada = parada.Cod_parada and parada.Cod_Parada = `poblacion_parada`.Cod_Parada and `poblacion_parada`.Cod_Postal = poblacion.Cod_Postal and `linea_parada`.Cod_Linea = '" + codLinea + "';", "Nombre");
+			String[] municipios = consultaColumnaString("select poblacion.Nombre from poblacion, `poblacion_parada`, parada, `linea-parada` where `linea-parada`.Cod_Parada = parada.Cod_parada and parada.Cod_Parada = `poblacion_parada`.Cod_Parada and `poblacion_parada`.Cod_Postal = poblacion.Cod_Postal and `linea-parada`.Cod_Linea = '" + codLinea + "';", "Nombre");
 			linea = new LineaAutobus(codLinea, codAutobus, municipios);
 			lineas.add(linea);
 		}
@@ -40,11 +40,11 @@ public class FuncionesVarias {
 	 * @return
 	 */
 	public ArrayList<Parada> cargarParadas(ArrayList<Parada> paradas, String linea) {
-		int[] codParada = consultaColumnaInt("select distinct `linea_parada`.Cod_Parada from parada, `linea_parada` where parada.Cod_Parada = `linea_parada`.`Cod_Parada` and Cod_Linea like '"+linea+"' ;", "Cod_Parada");
-		String[] calle = consultaColumnaString("select calle from parada, `linea_parada` where parada.Cod_Parada = `linea_parada`.`Cod_Parada` and Cod_Linea like '"+linea+"' ;", "calle");
-		String[] nombre = consultaColumnaString("select distinct parada.nombre from parada, `linea_parada` where parada.Cod_Parada = `linea_parada`.`Cod_Parada` and Cod_Linea like '"+linea+"' ;", "nombre");
-		float[] coordX = consultaColumnaFloat("select distinct Latitud from parada, `linea_parada` where parada.Cod_Parada = `linea_parada`.`Cod_Parada` and Cod_Linea like '"+linea+"' ;", "Latitud");
-		float[] coordY = consultaColumnaFloat("select distinct Longitud from parada, `linea_parada` where parada.Cod_Parada = `linea_parada`.`Cod_Parada` and Cod_Linea like '"+linea+"' ;", "Longitud");
+		int[] codParada = consultaColumnaInt("select distinct `linea_parada`.Cod_Parada from parada, `linea-parada` where parada.Cod_Parada = `linea-parada`.`Cod_Parada` and Cod_Linea like '"+linea+"' ;", "Cod_Parada");
+		String[] calle = consultaColumnaString("select calle from parada, `linea-parada` where parada.Cod_Parada = `linea_parada`.`Cod_Parada` and Cod_Linea like '"+linea+"' ;", "calle");
+		String[] nombre = consultaColumnaString("select distinct parada.nombre from parada, `linea-parada` where parada.Cod_Parada = `linea_parada`.`Cod_Parada` and Cod_Linea like '"+linea+"' ;", "nombre");
+		float[] coordX = consultaColumnaFloat("select distinct Latitud from parada, `linea-parada` where parada.Cod_Parada = `linea-parada`.`Cod_Parada` and Cod_Linea like '"+linea+"' ;", "Latitud");
+		float[] coordY = consultaColumnaFloat("select distinct Longitud from parada, `linea-parada` where parada.Cod_Parada = `linea-parada`.`Cod_Parada` and Cod_Linea like '"+linea+"' ;", "Longitud");
 		
 		paradas = crearObjetosParadas(paradas, codParada, calle, nombre, coordX, coordY);
 		
