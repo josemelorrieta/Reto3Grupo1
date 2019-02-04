@@ -66,6 +66,7 @@ public class ControladorLogin implements ActionListener {
 				break;
 			case "btnLogin":
 				try {
+					miModelo.cliente = null;
 					//Comprobar si existe el DNI introducido y si la contraseña es correcta
 					miModelo.cliente = funcionesLogin.comprobarDNI(miVentana.login.TextDni.getText(), miVentana.login.passwordField.getPassword(), miModelo.cliente, miVentana);
 				} catch (Exception e1) {
