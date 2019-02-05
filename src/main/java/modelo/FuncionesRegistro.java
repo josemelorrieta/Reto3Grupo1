@@ -133,8 +133,8 @@ public class FuncionesRegistro {
 	
 	/**
 	 * Valida el campo del DNI.
-	 * @param el DNI
-	 * @return si el formato del DNI el correcto
+	 * @param El DNI.
+	 * @return Comprueba si el formato del DNI es el correcto.
 	 */
 	public boolean validarDNI(String dni){
         boolean correcto=false;
@@ -157,6 +157,11 @@ public class FuncionesRegistro {
         return correcto;
     }
 	
+	/**
+	 * Valida el campo del DNI.
+	 * @param Nombre o Apellido.
+	 * @return Comprueba si es correcto el nombre y apellido ,es decir , comprueba que no ha introducido numeros o caracteres.
+	 */
 	public boolean validarNombreYApellido (String NombreOApellido) {
 		
 		 if (NombreOApellido.matches("^[a-zA-Z]+$"))
