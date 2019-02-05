@@ -108,8 +108,14 @@ public class FuncionesRegistro {
 		} else {
 			//Validacion de los campos
 			if (miVentana.registro.textFieldDni.getText() != "" && miVentana.registro.textFieldNombre.getText() != "" && miVentana.registro.textFieldApellidos.getText()!="" && miVentana.registro.dateChooser.getDate() != null && miVentana.registro.passwordField.getPassword().length != 0 ) {
-					if(validarNif(miVentana.registro.textFieldDni.getText())) {
+					if(validarDNI(miVentana.registro.textFieldDni.getText())) {
+						if(validarNombreYApellido(miVentana.registro.textFieldNombre.getText()) || validarNombreYApellido(miVentana.registro.textFieldApellidos.getText()))
+						{
+							JOptionPane.showMessageDialog(miVentana, "¡Nombre o apellido incorrecto!", "¡Atención!", JOptionPane.WARNING_MESSAGE);
+							return false;
+						} else {
 						return true;
+						}
 					}
 					else {
 						JOptionPane.showMessageDialog(miVentana, "¡Formato DNI incorrecto!", "¡Atención!", JOptionPane.WARNING_MESSAGE);
@@ -126,21 +132,21 @@ public class FuncionesRegistro {
 	}
 	
 	/**
-	 * Valida el campo del dni.
-	 * @param el dni
-	 * @return si el formato del dni el correcto
+	 * Valida el campo del DNI.
+	 * @param el DNI
+	 * @return si el formato del DNI el correcto
 	 */
-	public static boolean validarNif(String nif){
+	public boolean validarDNI(String dni){
         boolean correcto=false;
-        Pattern pattern=Pattern.compile("(\\d{1,8})([TRWAGMYFPDXBNJZSQVHLCKEtrwagmyfpdxbnjzsqvhlcke])");
-        Matcher matcher=pattern.matcher(nif);
+        Pattern pattern=Pattern.compile("(\\d{8})([TRWAGMYFPDXBNJZSQVHLCKE])");
+        Matcher matcher=pattern.matcher(dni);
         if(matcher.matches()){
             String letra=matcher.group(2);
             String letras="TRWAGMYFPDXBNJZSQVHLCKE";
             int index=Integer.parseInt(matcher.group(1));
             index=index%23;
             String reference=letras.substring(index,index+1);
-            if(reference.equalsIgnoreCase(letra)){
+            if(reference.equals(letra)){
                 correcto=true;
             }else{
                 correcto=false;
@@ -150,6 +156,16 @@ public class FuncionesRegistro {
         }
         return correcto;
     }
+	
+	public boolean validarNombreYApellido (String NombreOApellido) {
+		
+		 if (NombreOApellido.matches("^[a-zA-Z]+$"))
+			return false;
+		  else 
+			 return true;
+	}
+	
+	
 }	
 	
 	 

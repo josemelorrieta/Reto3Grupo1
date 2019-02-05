@@ -35,8 +35,40 @@ public class FuncionesRegistroTest {
 		System.out.println(cliente.getSexo());
 	}
 	
+	@Test
 	public void verificarDNITest() {
 		
 	}
+	
+	@Test
+	public void validarDNITest() {	
+		
+		String dni = "12345678Z";	
+		String dni2 = "12345678A";
+		String dni3 = "123a";
+		
+		assertEquals(func.validarDNI(dni), true);		
+		assertEquals(func.validarDNI(dni2), false);
+		assertEquals(func.validarDNI(dni3), false);
+		
+	}
+	
+	@Test
+	public void validarNombreYApellidoTest() {		
+
+		String nombre = "osito";
+		String nombre2 = "123";
+		String apellido = "gominola";
+		String apellido2 = "123";
+		
+		assertEquals(func.validarNombreYApellido(nombre), false);
+		assertEquals(func.validarNombreYApellido(nombre2), true);
+		assertEquals(func.validarNombreYApellido(apellido), false);
+		assertEquals(func.validarNombreYApellido(apellido2), true);
+		
+		
+	}
+
+
 
 }
