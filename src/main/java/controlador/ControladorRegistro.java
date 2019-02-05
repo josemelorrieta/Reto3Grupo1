@@ -86,6 +86,7 @@ public class ControladorRegistro implements ActionListener {
 						resetear();
 						
 						miControlador.miControladorBilletes.actualizarBilletes(miModelo.billetes);
+						
 					} else {
 						JOptionPane.showMessageDialog(miVentana, "Hubo un error en el registro", "¡Atención!", JOptionPane.WARNING_MESSAGE);
 					}

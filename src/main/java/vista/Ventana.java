@@ -68,7 +68,7 @@ public class Ventana extends JFrame {
 		lineas = new PanelLineas();
 		lineas.btnSiguiente.setSize(234, 68);
 		lineas.btnSiguiente.setLocation(780, 549);
-		lineas.SeleccionarLinea.setBackground(Color.WHITE);
+		lineas.listaLineas.setBackground(Color.WHITE);
 		contentPane.add(lineas);
 		lineas.setLayout(null); 
 		

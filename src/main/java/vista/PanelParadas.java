@@ -3,16 +3,16 @@ package vista;
 import java.awt.Color;
 import java.awt.Font;
 
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
 import com.jgoodies.forms.factories.DefaultComponentFactory;
-import javax.swing.JComboBox;
-import javax.swing.JTextArea;
-import javax.swing.JList;
-import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 
 /**
  * Clase del panel de seleccion de origen y destino
@@ -23,9 +23,11 @@ public class PanelParadas extends JPanel {
 	public JButton btnAtras = new JButton("Atras");
 	public JButton btnSiguiente = new JButton("Siguiente");
 	public JButton btnCancelar = new JButton("Cancelar");
-	public JComboBox ParadaDeOrigen = new JComboBox();
-	public JComboBox ParadaDeDestino = new JComboBox();
-	public JTextField textFieldMostrarLinea;
+	public DefaultComboBoxModel<String> modeloOrigen = new DefaultComboBoxModel	<String>();
+	public DefaultComboBoxModel<String> modeloDestino = new DefaultComboBoxModel<String>();
+	public JComboBox<String> ParadaDeOrigen = new JComboBox<String>();
+	public JComboBox<String> ParadaDeDestino = new JComboBox<String>();
+	public JLabel lblMostrarLinea;
 
 	/**
 	 * Create the panel.
@@ -69,9 +71,10 @@ public class PanelParadas extends JPanel {
 		btnCancelar.setBounds(36, 575, 194, 68);
 		add(btnCancelar);
 		
-		textFieldMostrarLinea = new JTextField();
-		textFieldMostrarLinea.setBounds(132, 42, 847, 60);
-		add(textFieldMostrarLinea);
-		textFieldMostrarLinea.setColumns(10);
+		lblMostrarLinea = new JLabel();
+		lblMostrarLinea.setHorizontalAlignment(SwingConstants.CENTER);
+		lblMostrarLinea.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblMostrarLinea.setBounds(132, 42, 847, 60);
+		add(lblMostrarLinea);
 	}
 }

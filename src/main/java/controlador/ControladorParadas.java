@@ -20,8 +20,6 @@ import vista.Ventana;
 public class ControladorParadas implements ActionListener {
 	
 	FuncionesControlador funciones = new FuncionesControlador();
-	ArrayList<Parada> paradas;
-	FuncionesVarias funcionesModelo = new FuncionesVarias();
 	
 	private Controlador miControlador;
 	private Ventana miVentana;
@@ -42,7 +40,6 @@ public class ControladorParadas implements ActionListener {
 		this.miControlador = miControlador;
 		this.miVentana = miVentana;
 		this.miModelo = miModelo;
-		this.paradas = paradas;
 		
 		//Definicion de los listeners de los botones del panel
 		miVentana.paradas.btnAtras.addActionListener(this);
@@ -51,21 +48,11 @@ public class ControladorParadas implements ActionListener {
 		
 	}
 
-	
-	//ESTO TIENE QUE IR EN EL MODELO, EN LAS FUNCIONES PARA ESTE PANEL --> REFACTORIZAR
-	public void cargarBotones() {
-		String[] nombreParadas = funcionesModelo.consultaColumnaString("select distinct parada.nombre from parada, `linea_parada` where parada.Cod_Parada = `linea_parada`.`Cod_Parada` and Cod_Linea like 'L1' ;", "nombre");
-		miVentana.paradas.ParadaDeOrigen.setModel(new DefaultComboBoxModel(nombreParadas));
-		miVentana.paradas.ParadaDeDestino.setModel(new DefaultComboBoxModel(nombreParadas));
-		
-	}
-
-		
 	/**
 	 * Metodo para resetear los valores de la ventana paradas
 	 */
 	public void resetear() {
-		miVentana.paradas.textFieldMostrarLinea.setText("");
+		miVentana.paradas.lblMostrarLinea.setText("");
 	}
 
 	/**
@@ -87,14 +74,12 @@ public class ControladorParadas implements ActionListener {
 				fechaLimite = miModelo.misFuncionesFechas.setFechasDisponibles(fechaHoy);
 				miVentana.fechas.dateIda.setSelectableDateRange(fechaHoy, fechaLimite);
 				//Cargamos el origen y el destino en el billete
-				String parada1 = miVentana.paradas.ParadaDeOrigen.getSelectedItem().toString();
-				String parada2 = miVentana.paradas.ParadaDeDestino.getSelectedItem().toString();
-				miModelo.billetes[0].setOrigen(parada1);
-				miModelo.billetes[0].setDestino(parada2);
+				miModelo.billeteActual.setOrigen(miVentana.paradas.ParadaDeOrigen.getSelectedItem().toString());
+				miModelo.billeteActual.setDestino(miVentana.paradas.ParadaDeDestino.getSelectedItem().toString());
 				break;
 			
 			case "btnCancelarParadas": funciones.cambiarDePanel(miVentana.paradas, miVentana.billetes);
-				miModelo.paradas = funcionesModelo.cargarParadas(paradas, "L1");
+				//miModelo.paradas = funcionesModelo.cargarParadas(paradas, "L1");
 				resetear(); 
 				break;
 		}			

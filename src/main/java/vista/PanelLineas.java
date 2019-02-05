@@ -19,7 +19,8 @@ public class PanelLineas extends JPanel {
 	
 	public JButton btnCancelar = new JButton("Cancelar");
 	public JButton btnSiguiente = new JButton("Siguiente");
-	public JComboBox SeleccionarLinea = new JComboBox();
+	public DefaultComboBoxModel<String> modeloLineas = new DefaultComboBoxModel<String>();
+	public JComboBox<String> listaLineas = new JComboBox<String>();
 
 	/**
 	 * Create the panel.
@@ -49,11 +50,11 @@ public class PanelLineas extends JPanel {
 		add(btnSiguiente);
 		
 		
-		SeleccionarLinea.setBackground(Color.WHITE);
-		SeleccionarLinea.setForeground(Color.BLACK);
-		SeleccionarLinea.setFont(new Font("Tahoma", Font.PLAIN, 28));
-		SeleccionarLinea.setBounds(315, 287, 484, 82);
-		add(SeleccionarLinea);
+		listaLineas.setBackground(Color.WHITE);
+		listaLineas.setForeground(Color.BLACK);
+		listaLineas.setFont(new Font("Tahoma", Font.PLAIN, 28));
+		listaLineas.setBounds(315, 287, 484, 82);
+		add(listaLineas);
 
 	}
 }

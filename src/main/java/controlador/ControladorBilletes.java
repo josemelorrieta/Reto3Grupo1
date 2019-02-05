@@ -17,13 +17,10 @@ import vista.Ventana;
 public class ControladorBilletes implements ActionListener {
 	
 	FuncionesControlador funciones = new FuncionesControlador();
-	FuncionesVarias funcionesModelo = new FuncionesVarias();
 
 	private Ventana miVentana;
 	private Modelo miModelo;
 	
-//	private Cliente cliente;
-//	private Billete[] billetes; 
 	
 	/**
 	 * Constructor de  la clase ControladorBilletes
@@ -40,14 +37,6 @@ public class ControladorBilletes implements ActionListener {
 		miVentana.billetes.btnCerrarSesion.addActionListener(this);	 		
 
 	}
-		
-//		public Cliente getCliente() {
-//			return cliente;
-//		}
-
-//		public void setCliente(Cliente cliente) {
-//			this.cliente = cliente;
-//		}
 	
 	/**
 	 * Metodo para resetear los valores de la ventana todos los billetes comprados 
@@ -86,8 +75,6 @@ public class ControladorBilletes implements ActionListener {
 		//Dependiendo del boton del que venga la accion hacemos lo que corresponda
 		switch (((JButton) e.getSource()).getName()) {
 			case "btnComprarBilleteBilletes": funciones.cambiarDePanel(miVentana.billetes, miVentana.lineas);
-				String[] nombreLineas = funcionesModelo.consultaColumnaString("select distinct Nombre from linea;", "Nombre");
-				miVentana.lineas.SeleccionarLinea.setModel(new DefaultComboBoxModel(nombreLineas));
 				resetear();
 				break;
 										 	  

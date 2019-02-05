@@ -27,8 +27,6 @@ public class ControladorLogin implements ActionListener {
 	private Controlador miControlador; 
 	private Ventana miVentana;
 	private Modelo miModelo;
-//	private Cliente cliente;
-//	private Billete[] billetes;
 		
 	/** 
 	 * Constructor de la clase
@@ -41,10 +39,8 @@ public class ControladorLogin implements ActionListener {
 		this.miControlador = miControlador;
 		this.miVentana = miVentana;
 		this.miModelo = miModelo;
-//			this.cliente = miModelo.cliente;
-//			this.billetes = miModelo.billetes;
 		
-		//Definicnion de los listeners para cada boton
+		//Definicion de los listeners para cada boton
 		miVentana.login.btnAtras.addActionListener(this);
 		miVentana.login.btnRegistrarse.addActionListener(this);
 		miVentana.login.btnLogin.addActionListener(this);
@@ -77,6 +73,20 @@ public class ControladorLogin implements ActionListener {
 				if(miModelo.cliente != null) {
 					funciones.cambiarDePanel(miVentana.login, miVentana.billetes);
 					resetear();
+					//Cargamos array de nombres lineas para mostrar en el siguiente panel
+					try {
+						miModelo.nombreLineas = miModelo.misFuncionesLineas.cargarNombreLineas(miModelo.nombreLineas);
+					} catch (SQLException e2) {
+						// TODO Auto-generated catch block
+						e2.printStackTrace();
+					}
+					//Mostramos array de nombres de lineas en pantalla de lineas
+					miVentana.lineas.modeloLineas.removeAllElements();
+					for(int i=0;i<miModelo.nombreLineas.length;i++) {
+						miVentana.lineas.modeloLineas.addElement(miModelo.nombreLineas[i]);
+					}
+					miVentana.lineas.listaLineas.setModel(miVentana.lineas.modeloLineas);
+					
 					//Cargamos los billetes del cliente logeado
 					try {
 						miModelo.billetes = miModelo.misFuncionesBilletes.billetesCliente(miModelo.cliente, miModelo.billetes);
