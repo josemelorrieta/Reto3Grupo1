@@ -98,21 +98,22 @@ public class FuncionesRegistro {
 	 * @return boolean Si no hay error en los datos del formulario devuelve true, si no devuelve false
 	 * @throws SQLException Excepcion en caso de error al conectar a la base de datos
 	 */
-	public boolean comprobarCamposRegistro(Ventana miVentana) throws SQLException {
+	public boolean comprobarCamposRegistro(String dni, String nombre, String apellido, String fecha, int password) throws SQLException {
 
 		
 		//comprobar si ya existe ese DNI
-		if (verificarDNI(miVentana.registro.textFieldDni.getText())) {
+		if (verificarDNI(dni)) {
 			JOptionPane.showMessageDialog(miVentana, "Ya existe un ususario con ese DNI", "¡Atención!", JOptionPane.WARNING_MESSAGE);
 			return false;
 		} else {
 			//Validacion de los campos
-			if (miVentana.registro.textFieldDni.getText() != "" && miVentana.registro.textFieldNombre.getText() != "" && miVentana.registro.textFieldApellidos.getText()!="" && miVentana.registro.dateChooser.getDate() != null && miVentana.registro.passwordField.getPassword().length != 0 ) {
-					if(validarDNI(miVentana.registro.textFieldDni.getText())) {
-						if(validarNombreYApellido(miVentana.registro.textFieldNombre.getText()) || validarNombreYApellido(miVentana.registro.textFieldApellidos.getText()))
+			if (dni != "" && nombre != "" && apellido !="" && fecha != null && password != 0 ) {
+					if(validarDNI(dni)) {
+						if(validarNombreYApellido(nombre) || validarNombreYApellido(apellido))
 						{
 							JOptionPane.showMessageDialog(miVentana, "¡Nombre o apellido incorrecto!", "¡Atención!", JOptionPane.WARNING_MESSAGE);
 							return false;
+							
 						} else {
 						return true;
 						}
@@ -121,13 +122,11 @@ public class FuncionesRegistro {
 						JOptionPane.showMessageDialog(miVentana, "¡Formato DNI incorrecto!", "¡Atención!", JOptionPane.WARNING_MESSAGE);
 						return false;
 					}
-				} else {
-					JOptionPane.showMessageDialog(miVentana, "¡Debe rellenar todos los campos!", "¡Atención!", JOptionPane.WARNING_MESSAGE);
-					return false;
-				} 
-			}
-		
-		
+			} else {
+				JOptionPane.showMessageDialog(miVentana, "¡Debe rellenar todos los campos!", "¡Atención!", JOptionPane.WARNING_MESSAGE);
+				return false;
+			} 
+		}
 		
 	}
 	
