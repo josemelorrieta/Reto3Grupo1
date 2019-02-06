@@ -164,7 +164,7 @@ public class FuncionesRegistro {
 	 */
 	public boolean validarNombreYApellido (String NombreOApellido) {
 		
-		 if (NombreOApellido.matches("^[a-zA-Z]+$"))
+		 if (NombreOApellido.matches("^[a-zA-ZÑñáéíóúÁÉÍÓÚ ]+$"))
 			return false;
 		  else 
 			 return true;

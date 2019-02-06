@@ -41,7 +41,7 @@ public class FuncionesVariasTest {
 	public void testCargarLineass() throws Exception {
 		ArrayList<LineaAutobus> lineasTest = new ArrayList<LineaAutobus>();
 		String[] codsLinea = {"L1"};
-		lineasTest = funcionesVarias.cargarLineas(lineasTest, codsLinea); 
+		//lineasTest = funcionesVarias.cargarLineas(lineasTest, codsLinea); 
 		lineasTest.add(null);
 		
 		int[] rsTest1 = {1001, 1002, 1003};
