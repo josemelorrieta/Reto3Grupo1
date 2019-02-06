@@ -36,7 +36,12 @@ public class FuncionesRegistroTest {
 	}
 	
 	@Test
-	public void verificarDNITest() {
+	public void verificarDNITest()  throws SQLException {
+		
+		String dni= "79268079M";
+		
+		assertEquals(func.verificarDNI(dni), true);
+		
 		
 	}
 	

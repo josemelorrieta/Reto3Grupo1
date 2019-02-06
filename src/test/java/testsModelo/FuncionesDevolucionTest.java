@@ -1,8 +1,7 @@
-package testsControlador;
+package testsModelo;
 
 import static org.junit.Assert.*;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+
 
 import org.junit.Test;
 
@@ -10,7 +9,7 @@ import modelo.FuncionesDevolucion;
 import modelo.FuncionesPago;
 import modelo.Modelo;
 
-public class FuncionesPagoTest {
+public class FuncionesDevolucionTest {
 	
 	private Modelo miModelo = new Modelo();
 	private FuncionesPago pagoTest = new FuncionesPago();
