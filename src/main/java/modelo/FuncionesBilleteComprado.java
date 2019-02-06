@@ -9,6 +9,8 @@ import java.sql.SQLException;
  *
  */
 public class FuncionesBilleteComprado {
-
+	public void resumenBilleteComprado(Billete billeteIda, Billete billeteVuelta) {
+		
+	}
 
 }

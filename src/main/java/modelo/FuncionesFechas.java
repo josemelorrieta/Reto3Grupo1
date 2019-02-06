@@ -36,29 +36,62 @@ public class FuncionesFechas {
 	 * @param origen Parada de origen
 	 * @param destino Parada de destino
 	 * @return distancia Distancia entre las paradas
-	 * @throws SQLException Excepcion en caso de error al conectar a la base de datos
 	 */
-	public double distanciaRecorrido(String origen, String destino) throws SQLException {
+	public double distanciaRecorrido(String origen, String destino) {
 		//Declaración e inicialización de variables
 		double distancia = 0;
 		//Km por cada grado de latitud/longitud
 		final double kmPorGrado  = 111.195;
+		
+		String codOrigen = nombreParadaACodParada(origen);
+		String codDestino = nombreParadaACodParada(destino);
 	
-		float[] coordenadasOrigen = coordenadasParada(origen);
-		float[] coordenadasDestino = coordenadasParada(destino);
+		float[] coordenadasOrigen = coordenadasParada(codOrigen);
+		float[] coordenadasDestino = coordenadasParada(codDestino);
 		//Inicio del programa
 		distancia = distanciaEntreParadas(coordenadasOrigen, coordenadasDestino) * kmPorGrado;
 		
 		return distancia;
 	}
 	
+	public String nombreParadaACodParada(String parada) {
+		//Declaración e inicialización de variables
+		int codParada = 0;
+		
+		//Creamos la conexion
+		ConexionBD miConexion = new ConexionBD();
+		ConsultaBD miConsulta = new ConsultaBD();
+		
+		Connection con = miConexion.conectarBD();
+		String query= "SELECT Cod_Parada FROM parada WHERE Nombre='" + parada +"'";
+		ResultSet rs = miConsulta.hacerConsultaBD(con, query);
+		
+		//Inicio del programa
+		try {
+			while(rs.next()) {
+				codParada = rs.getInt("Cod_Parada");
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		try {
+			con.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+			
+		return Integer.toString(codParada);
+	}
+	
 	/**
 	 * Metodo que devuelve las coordenadas de una parada
 	 * @param codParada Codigo de la parada de la que se quieren obtener sus coordenadas
 	 * @return coordenadas Array con la latitud y la longitud de las coordenadas de la parada
-	 * @throws SQLException Excepcion en caso de error al conectar a la base de datos
 	 */
-	public float[] coordenadasParada(String codParada) throws SQLException {
+	public float[] coordenadasParada(String codParada) {
 		//Declaración e inicialización de variables
 		float[] coordenadas = {0,0};
 		
@@ -74,12 +107,22 @@ public class FuncionesFechas {
 		ResultSet rs = miConsulta.hacerConsultaBD(con, query);
 		
 		//Inicio del programa
-		while(rs.next()) {
-			//Guardamos en el array la latitud y la longitud
-			coordenadas[0] = rs.getFloat("Latitud");
-			coordenadas[1] = rs.getFloat("Longitud");
+		try {
+			while(rs.next()) {
+				//Guardamos en el array la latitud y la longitud
+				coordenadas[0] = rs.getFloat("Latitud");
+				coordenadas[1] = rs.getFloat("Longitud");
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		con.close();
+		try {
+			con.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		return coordenadas;
 	}
@@ -106,16 +149,13 @@ public class FuncionesFechas {
 	 * @param codAutobus Codigo del autobus asociado al billete
 	 * @param distancia Distancia entre las paradas de origen y destino
 	 * @return precioBillete precio final del billete
-	 * @throws SQLException excepcion en caso de error al conectar a la base de datos
 	 */
-	public double calcularPrecioBillete(int codAutobus, double distancia) throws SQLException {
+	public double calcularPrecioBillete(int codAutobus, double distancia) {
 		//Declaración e inicialización de variables
 		double precioBillete = 0;
 		float consumo = 0;
 		final float beneficio = 20;
 		
-		//Inicio del programa
-		//Devuleve el consumo del autobus asociado al billete
 		consumo = consumoAutobus(codAutobus);
 		
 		//Calculamos el precio sin beneficio
@@ -130,9 +170,8 @@ public class FuncionesFechas {
 	 * Metodo que devuelve el consumo de un autobus 
 	 * @param codAutobus Codigo del autobus del que se quiere saber su consumo
 	 * @return consumo Consumo del autobus consultado
-	 * @throws SQLException Excepcion en caso de error en el acceso a la base de datos
 	 */
-	public float consumoAutobus(int codAutobus) throws SQLException {
+	public float consumoAutobus(int codAutobus) {
 		//Declaración e inicialización de variables
 		float consumo = 0;
 		
@@ -146,11 +185,72 @@ public class FuncionesFechas {
 		ResultSet rs = miConsulta.hacerConsultaBD(con, query);
 		
 		//Inicio del programa
-		while(rs.next()) {
-			consumo = rs.getFloat("Consumo_km");
+		try {
+			while(rs.next()) {
+				consumo = rs.getFloat("Consumo_km");
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		rs.close();
+		try {
+			rs.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		return consumo;
+	}
+	
+	/**
+	 * Metodo que calcula el primer autobus de la linea con plazas libres para ese dia
+	 * @param codLinea String linea asociada al billete
+	 * @param fechaBillete fecha del billete
+	 * @return codAutobus primer autobus asociado a esa linea con plazas libres
+	 */
+	public int buscarAutobus(String codLinea, String fechaBillete ) {
+		//Declaración e inicialización de variables
+		int codAutobus = 0;
+		int plazasBus = 0;
+		
+		ConexionBD miConexion = new ConexionBD();
+		ConsultaBD miConsulta = new ConsultaBD();
+		Connection con = miConexion.conectarBD();
+		
+		//Consulta a la base de datos buscar autobuses por linea
+		String query = "SELECT l.Cod_bus, N_plazas from linea_autobus l, autobus a WHERE Cod_Linea='" + codLinea + "' AND l.Cod_bus=a.Cod_bus ORDER BY l.Cod_bus ASC";
+		
+		ResultSet rs = miConsulta.hacerConsultaBD(con, query);
+		ResultSet rs2;
+				
+		//Inicio del programa
+		try {
+			bucleprimario:
+			while(rs.next()) {
+				codAutobus = rs.getInt("Cod_bus");
+				plazasBus = rs.getInt("N_plazas");
+				//Buscar los billetes existentes para la fecha del billete y cada codigo de autobus
+				query = "SELECT COUNT(*) 'plazasOcupadas' FROM billete WHERE Cod_bus=" + codAutobus + " AND Fecha='" + fechaBillete + "'";
+				rs2 = miConsulta.hacerConsultaBD(con, query);
+				//Comprobar si tiene plazas libres
+				while(rs2.next()) {
+					if(rs2.getInt("plazasOcupadas") < plazasBus) {
+						break bucleprimario;
+					}
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		try {
+			con.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return codAutobus;
 	}
 }

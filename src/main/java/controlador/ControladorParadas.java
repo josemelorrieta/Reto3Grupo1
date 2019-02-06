@@ -31,7 +31,6 @@ public class ControladorParadas implements ActionListener {
 	Date fechaHoy = new Date();
 	Date fechaLimite = new Date();
 	
-	NumberFormat formatoMoneda = NumberFormat.getCurrencyInstance(Locale.getDefault());
 	
 	/**
 	 * Constructor de la clase
@@ -75,20 +74,20 @@ public class ControladorParadas implements ActionListener {
 				resetear();
 				break;
 									
-			case "btnSiguienteParadas": funciones.cambiarDePanel(miVentana.paradas, miVentana.fechas);
+			case "btnSiguienteParadas": 
 				//Borrar las fechas del panel siguiente (nuevo billete)
 				miVentana.fechas.dateIda.setDate(null);
 				miVentana.fechas.dateVuelta.setDate(null);
+				
 				//Establecer fechas posibles de compra en tres dias a partir de hoy 
 				fechaLimite = miModelo.misFuncionesFechas.setFechasDisponibles(fechaHoy);
 				miVentana.fechas.dateIda.setSelectableDateRange(fechaHoy, fechaLimite);
+				
 				//Cargamos el origen y el destino en el billete
-				miModelo.billeteActual.setOrigen(miVentana.paradas.paradaDeOrigen.getSelectedItem().toString());
-				miModelo.billeteActual.setDestino(miVentana.paradas.paradaDeDestino.getSelectedItem().toString());		
-				//Calcular el precio del trayecto y añadirlo al billete
-				double precio = miModelo.misFuncionesParadas.calcularPrecioBillete(miVentana.paradas.paradaDeOrigen.getSelectedItem().toString(), miVentana.paradas.paradaDeDestino.getSelectedItem().toString(), miModelo.paradas);
-				miModelo.billeteActual.setPrecioTrayecto(precio);
-				miVentana.fechas.textPrecio.setText(formatoMoneda.format(precio));
+				miModelo.billeteIda.setOrigen(miVentana.paradas.paradaDeOrigen.getSelectedItem().toString());
+				miModelo.billeteIda.setDestino(miVentana.paradas.paradaDeDestino.getSelectedItem().toString());		
+				
+				funciones.cambiarDePanel(miVentana.paradas, miVentana.fechas);
 				break;
 				
 			case "btnCancelarParadas": funciones.cambiarDePanel(miVentana.paradas, miVentana.billetes);

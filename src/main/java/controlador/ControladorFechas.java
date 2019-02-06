@@ -2,11 +2,14 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 import javax.swing.JButton;
 
@@ -29,6 +32,8 @@ public class ControladorFechas implements ActionListener {
 	Date fechaIda = null;
 	Date fechaLimite = null;
 	
+	NumberFormat formatoMoneda = NumberFormat.getCurrencyInstance(Locale.getDefault());
+	
 	/**
 	 * Constructor de la clase de eleccion de fechas
 	 * @param miVentana instancia de la ventana principal
@@ -47,7 +52,10 @@ public class ControladorFechas implements ActionListener {
 		miVentana.fechas.dateIda.getDateEditor().addPropertyChangeListener(new PropertyChangeListener() {
 	    	@Override
 	        public void propertyChange(PropertyChangeEvent e) {
-	    		actualizarFechaVuelta();
+    			if (e.getPropertyName() == "date" && miVentana.fechas.dateIda.getDate() != null) {
+    				actualizarFechaVuelta();
+    				calcularPrecioBillete();
+    			}
             }
         });
 		miVentana.fechas.add(miVentana.fechas.dateIda);
@@ -81,19 +89,23 @@ public class ControladorFechas implements ActionListener {
 		} else {	
 			switch (((JButton) e.getSource()).getName()) {
 				case "btnAtrasFechas": funciones.cambiarDePanel(miVentana.fechas, miVentana.paradas);
-									   resetear();
-									   break;
+					resetear();
+					break;
 									   
 				case "btnSiguienteFechas":  funciones.cambiarDePanel(miVentana.fechas, miVentana.billeteComprado);
-											break;
+					miModelo.misFuncionesBilleteComprado.resumenBilleteComprado(miModelo.billeteIda, miModelo.billeteVuelta);
+					break;
 				
 				case "btnCancelarFechas": funciones.cambiarDePanel(miVentana.fechas, miVentana.billetes);
-										  resetear();
-										  break;
+					//resetear();
+					break;
 			}
 		}	
 	}
 
+	/**
+	 * Metodo que actualiza el rango de la fecha de vuelta al seleccionar la fecha de ida
+	 */
 	public void actualizarFechaVuelta() {
 		fechaIda = miVentana.fechas.dateIda.getDate();
 		if (fechaIda != null) { 
@@ -101,7 +113,30 @@ public class ControladorFechas implements ActionListener {
 			fechaLimite = miModelo.misFuncionesFechas.setFechasDisponibles(fechaIda);
 			miVentana.fechas.dateVuelta.setSelectableDateRange(fechaIda, fechaLimite);
 		}
-
+		
+	}
+	
+	/**
+	 * Metdodo que calcula el precio del billete con los datos de la compra y actualiza los datos del billete
+	 */
+	public void calcularPrecioBillete() {
+		//Declaración e inicialización de variables
+		double distancia = 0;
+		int codAutobus = 0;
+		double precio = 0;
+		
+		//Inicio del programa
+		//calcular la distancia del recorrido del billete
+		miModelo.billeteIda.setFecha(sdf.format(miVentana.fechas.dateIda.getDate()));
+		distancia = miModelo.misFuncionesFechas.distanciaRecorrido(miVentana.paradas.paradaDeOrigen.getSelectedItem().toString(), miVentana.paradas.paradaDeDestino.getSelectedItem().toString());
+		
 		//Seleccionar autobus disponible para la ida
+		codAutobus = miModelo.misFuncionesFechas.buscarAutobus(miModelo.billeteIda.getCodLinea(), miModelo.billeteIda.getFecha());
+		miModelo.billeteIda.setCodAutobus(codAutobus);
+		
+		//Calcular el precio del billete según distancia y autobus
+		precio = miModelo.misFuncionesFechas.calcularPrecioBillete(codAutobus, distancia);
+		miModelo.billeteIda.setPrecioTrayecto(precio);
+		miVentana.fechas.textPrecio.setText(formatoMoneda.format(precio));
 	}
 }

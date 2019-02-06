@@ -11,7 +11,7 @@ import modelo.Parada;
 public class FuncionesParadasTest {
 
 	private Modelo miModelo = new Modelo();
-	private FuncionesParadas funcionesParadas = new FuncionesParadas(miModelo);
+	private FuncionesParadas funcionesParadas = new FuncionesParadas();
 	
 	@Test
 	public void testCargarParadas() {

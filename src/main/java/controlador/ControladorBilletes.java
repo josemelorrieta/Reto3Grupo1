@@ -75,7 +75,6 @@ public class ControladorBilletes implements ActionListener {
 		//Dependiendo del boton del que venga la accion hacemos lo que corresponda
 		switch (((JButton) e.getSource()).getName()) {
 			case "btnComprarBilleteBilletes": funciones.cambiarDePanel(miVentana.billetes, miVentana.lineas);
-				resetear();
 				break;
 										 	  
 			case "btnCerrarSesionBilletes": funciones.cambiarDePanel(miVentana.billetes, miVentana.login);

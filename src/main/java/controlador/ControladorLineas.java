@@ -70,6 +70,9 @@ public class ControladorLineas implements ActionListener {
 				}
 				//Poner el nombre de la linea en el titulo del panel de paradas
 				miVentana.paradas.lblMostrarLinea.setText(miVentana.lineas.listaLineas.getSelectedItem().toString());
+				//Crear el billete para la compra actual
+				String codLinea = miModelo.misFuncionesParadas.nombreLineaACodLinea(miVentana.lineas.listaLineas.getSelectedItem().toString());
+				miModelo.billeteIda = miModelo.misFuncionesModelo.crearBilleteActual(miModelo, codLinea);
 				break;
 				
 			case "btnCancelarLineas": funciones.cambiarDePanel(miVentana.lineas, miVentana.billetes); 

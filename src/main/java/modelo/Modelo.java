@@ -16,12 +16,14 @@ public class Modelo {
 	public FuncionesLineas misFuncionesLineas;
 	public FuncionesParadas misFuncionesParadas;
 	public FuncionesFechas misFuncionesFechas;
+	public FuncionesBilleteComprado misFuncionesBilleteComprado;
 	public FuncionesPago misFuncionesPago;
 	public FuncionesDevolucion misFuncionesDevolucion;
 	
 	public Cliente cliente = null;
 	public Billete[] billetes = null;
-	public Billete billeteActual = null;
+	public Billete billeteIda = null;
+	public Billete billeteVuelta = null;
 	public LineaAutobus[] lineas = null;
 	public Parada[] paradas = null;
 	public String[] nombreLineas = null;
@@ -38,8 +40,10 @@ public class Modelo {
 		this.misFuncionesRegistro = new FuncionesRegistro();
 		this.misFuncionesBilletes = new FuncionesBilletes();
 		this.misFuncionesLineas = new FuncionesLineas(this);
-		this.misFuncionesParadas = new FuncionesParadas(this);
+		this.misFuncionesParadas = new FuncionesParadas();
 		this.misFuncionesPago = new FuncionesPago();
+		this.misFuncionesFechas = new FuncionesFechas();
+		this.misFuncionesBilleteComprado = new FuncionesBilleteComprado();
 		this.misFuncionesDevolucion = new FuncionesDevolucion(this);
 		this.misFuncionesFechas = new FuncionesFechas();
 		
