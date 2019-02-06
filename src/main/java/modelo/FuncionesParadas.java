@@ -140,4 +140,46 @@ public class FuncionesParadas {
 		
 		return paradasDestino;
 	}
+	
+	public double calcularPrecioBillete (String origen, String destino, Parada[] paradas) {
+		//Declaracion e inicializacion de variables
+		double precio = 0;
+		float latitudOrigen = 0;
+		float longitudOrigen = 0;
+		float latitudDestino = 0;
+		float longitudDestino = 0;
+		double distancia = 0;
+		//Falta calcular el consumo según el autobus
+		final double consumoAutobus = 0.232;
+		
+		//Inicio del programa
+		for (int i=0;i<paradas.length;i++) {
+			if (paradas[i].getNombre() == origen) {
+				latitudOrigen = paradas[i].getCoordX();
+				longitudOrigen = paradas[i].getCoordY();
+			} else if (paradas[i].getNombre() == destino) {
+				latitudDestino = paradas[i].getCoordX();
+				longitudDestino = paradas[i].getCoordY();
+			}
+		}
+		
+		//Calcular la distancia entre origen y destino
+		distancia = distanciaEuclidea(latitudOrigen, longitudOrigen, latitudDestino, longitudDestino);
+		//Pasas a Km
+		distancia = distancia * 111.195;
+		//Precio es distancia por consumo + beneficio 20%
+		precio = distancia * consumoAutobus * 1.2;
+		
+		return precio;
+	}
+	
+	public double distanciaEuclidea (float latitudOrigen, float longitudOrigen, float latitudDestino, float longitudDestino) {
+		//Declaracion e inicializacion de variables
+		double distancia = 0;
+		
+		//Inicio del programa
+		distancia = Math.sqrt((Math.pow((latitudDestino - latitudOrigen), 2)) - (Math.pow((longitudDestino - longitudOrigen), 2)));
+		
+		return distancia;
+	}
 }

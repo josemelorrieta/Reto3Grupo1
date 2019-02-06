@@ -2,8 +2,10 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Locale;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
@@ -28,6 +30,8 @@ public class ControladorParadas implements ActionListener {
 	
 	Date fechaHoy = new Date();
 	Date fechaLimite = new Date();
+	
+	NumberFormat formatoMoneda = NumberFormat.getCurrencyInstance(Locale.getDefault());
 	
 	/**
 	 * Constructor de la clase
@@ -80,11 +84,13 @@ public class ControladorParadas implements ActionListener {
 				miVentana.fechas.dateIda.setSelectableDateRange(fechaHoy, fechaLimite);
 				//Cargamos el origen y el destino en el billete
 				miModelo.billeteActual.setOrigen(miVentana.paradas.paradaDeOrigen.getSelectedItem().toString());
-				miModelo.billeteActual.setDestino(miVentana.paradas.paradaDeDestino.getSelectedItem().toString());
-				break;				
-				//Calcular el precio del trayecto
+				miModelo.billeteActual.setDestino(miVentana.paradas.paradaDeDestino.getSelectedItem().toString());		
+				//Calcular el precio del trayecto y añadirlo al billete
+				double precio = miModelo.misFuncionesParadas.calcularPrecioBillete(miVentana.paradas.paradaDeOrigen.getSelectedItem().toString(), miVentana.paradas.paradaDeDestino.getSelectedItem().toString(), miModelo.paradas);
+				miModelo.billeteActual.setPrecioTrayecto(precio);
+				miVentana.fechas.textPrecio.setText(formatoMoneda.format(precio));
+				break;
 				
-			
 			case "btnCancelarParadas": funciones.cambiarDePanel(miVentana.paradas, miVentana.billetes);
 				//miModelo.paradas = funcionesModelo.cargarParadas(paradas, "L1");
 				resetear(); 
