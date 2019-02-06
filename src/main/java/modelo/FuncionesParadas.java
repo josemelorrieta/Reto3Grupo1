@@ -29,7 +29,7 @@ public class FuncionesParadas {
 		
 		String codLinea = nombreLineaACodLinea(linea);
 		
-		miModelo.billeteActual = miModelo.misFuncionesModelo.crearBilleteActual(miModelo, codLinea);
+		//miModelo.billeteActual = miModelo.misFuncionesModelo.crearBilleteActual(miModelo, codLinea);
 		
 		String query = "SELECT parada.Cod_Parada, Calle, Nombre, Latitud, Longitud FROM parada, `linea-parada` WHERE parada.Cod_Parada=`linea-parada`.Cod_Parada and Cod_Linea='" + codLinea + "'" ;
 		
