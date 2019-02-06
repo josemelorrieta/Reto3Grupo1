@@ -120,4 +120,24 @@ public class FuncionesParadas {
 		return codLinea;
 		
 	}
+	
+	/**
+	 * Metodo que filtra las paradas de destino segun la parada de origen
+	 * @param paradas Array de paradas de la linea
+	 * @param indexOrigen Entero que define el indice de la linea de origen seleccionada
+	 * @param paradasDestino Array de paradas generado para las paradas de destino
+	 * @return
+	 */
+	public Parada[] filtrarParadasDestino(Parada[] paradas, int indexOrigen, Parada[] paradasDestino) {
+		//Declaracion e inicializacion de variables
+		paradasDestino = new Parada[0];
+		
+		//Inicio del programa
+		for (int i=indexOrigen + 1;i<paradas.length;i++) {
+			paradasDestino = incrementarArrayParada(paradasDestino);
+			paradasDestino[paradasDestino.length - 1] = paradas[i];
+		}
+		
+		return paradasDestino;
+	}
 }

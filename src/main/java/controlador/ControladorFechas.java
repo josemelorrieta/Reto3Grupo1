@@ -47,12 +47,7 @@ public class ControladorFechas implements ActionListener {
 		miVentana.fechas.dateIda.getDateEditor().addPropertyChangeListener(new PropertyChangeListener() {
 	    	@Override
 	        public void propertyChange(PropertyChangeEvent e) {
-	    		fechaIda = miVentana.fechas.dateIda.getDate();
-	    		if (fechaIda != null) { 
-	    			miVentana.fechas.dateVuelta.setDate(null);
-	    			fechaLimite = miModelo.misFuncionesFechas.setFechasDisponibles(fechaIda);
-	    			miVentana.fechas.dateVuelta.setSelectableDateRange(fechaIda, fechaLimite);
-	    		}
+	    		actualizarFechaVuelta();
             }
         });
 		miVentana.fechas.add(miVentana.fechas.dateIda);
@@ -99,4 +94,14 @@ public class ControladorFechas implements ActionListener {
 		}	
 	}
 
+	public void actualizarFechaVuelta() {
+		fechaIda = miVentana.fechas.dateIda.getDate();
+		if (fechaIda != null) { 
+			miVentana.fechas.dateVuelta.setDate(null);
+			fechaLimite = miModelo.misFuncionesFechas.setFechasDisponibles(fechaIda);
+			miVentana.fechas.dateVuelta.setSelectableDateRange(fechaIda, fechaLimite);
+		}
+
+		//Seleccionar autobus disponible para la ida
+	}
 }

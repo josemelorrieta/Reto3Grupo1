@@ -58,10 +58,13 @@ public class ControladorLineas implements ActionListener {
 					miVentana.paradas.modeloDestino.removeAllElements();
 					for (int i=0;i<miModelo.paradas.length;i++) {
 						miVentana.paradas.modeloOrigen.addElement(miModelo.paradas[i].getNombre());
-						miVentana.paradas.modeloDestino.addElement(miModelo.paradas[i].getNombre());
+						//Quitamos la primera parada de la lista de destino
+						if(i != 0) {
+							miVentana.paradas.modeloDestino.addElement(miModelo.paradas[i].getNombre());
+						}
 					}
-					miVentana.paradas.ParadaDeOrigen.setModel(miVentana.paradas.modeloOrigen);
-					miVentana.paradas.ParadaDeDestino.setModel(miVentana.paradas.modeloDestino);
+					miVentana.paradas.paradaDeOrigen.setModel(miVentana.paradas.modeloOrigen);
+					miVentana.paradas.paradaDeDestino.setModel(miVentana.paradas.modeloDestino);
 				} else {
 					JOptionPane.showMessageDialog(miVentana, "Hubo un error al cargar las paradas", "¡Atención!", JOptionPane.WARNING_MESSAGE);
 				}
