@@ -22,7 +22,7 @@ public class FuncionesPago {
 	 */
 	public float CalcularPrecio(float distancia) {
 		//Declaracion e inicializacion de variables
-		float precio = 0;
+		float precio = 0; 
 		
 		//Inicio del programa
 		return precio = (distancia * datos.precioGasolina * datos.beneficio * datos.IVA);
