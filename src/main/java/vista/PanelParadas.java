@@ -25,8 +25,8 @@ public class PanelParadas extends JPanel {
 	public JButton btnCancelar = new JButton("Cancelar");
 	public DefaultComboBoxModel<String> modeloOrigen = new DefaultComboBoxModel	<String>();
 	public DefaultComboBoxModel<String> modeloDestino = new DefaultComboBoxModel<String>();
-	public JComboBox<String> ParadaDeOrigen = new JComboBox<String>();
-	public JComboBox<String> ParadaDeDestino = new JComboBox<String>();
+	public JComboBox<String> paradaDeOrigen = new JComboBox<String>();
+	public JComboBox<String> paradaDeDestino = new JComboBox<String>();
 	public JLabel lblMostrarLinea;
 
 	/**
@@ -56,14 +56,17 @@ public class PanelParadas extends JPanel {
 		lblNewJgoodiesLabel.setFont(new Font("Tahoma", Font.PLAIN, 40));
 		lblNewJgoodiesLabel.setBounds(628, 268, 336, 37);
 		add(lblNewJgoodiesLabel);
-		ParadaDeOrigen.setBackground(Color.WHITE);
 		
-		ParadaDeOrigen.setBounds(131, 322, 336, 49);
-		add(ParadaDeOrigen);
-		ParadaDeDestino.setBackground(Color.WHITE);
+		paradaDeOrigen.setBackground(Color.WHITE);
+		paradaDeOrigen.setBounds(131, 322, 336, 49);
+		paradaDeOrigen.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		paradaDeOrigen.setName("paradaDeOrigen");
+		add(paradaDeOrigen);
 		
-		ParadaDeDestino.setBounds(628, 316, 351, 49);		
-		add(ParadaDeDestino);
+		paradaDeDestino.setBackground(Color.WHITE);
+		paradaDeDestino.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		paradaDeDestino.setBounds(628, 316, 351, 49);		
+		add(paradaDeDestino);
 		
 	
 		btnCancelar.setName("btnCancelarParadas");
