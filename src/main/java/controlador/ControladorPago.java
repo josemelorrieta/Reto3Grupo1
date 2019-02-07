@@ -2,6 +2,8 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 import javax.swing.JButton;
 
@@ -23,6 +25,10 @@ public class ControladorPago implements ActionListener {
 	private Modelo miModelo;
 	
 	private int[] arrayCambios=null;
+	public double total;
+	private double pagado = 0;
+	
+	NumberFormat formatoMoneda = NumberFormat.getCurrencyInstance(Locale.getDefault());
 	
 	/**
 	 * Constructor de la clase
@@ -63,8 +69,7 @@ public class ControladorPago implements ActionListener {
 		miVentana.pago.total.setText("");
 		miVentana.pago.pagado.setText("");
 		miVentana.pago.restante.setText("");
-		miModelo.misFuncionesPago.dineroPagado=0;
-		miModelo.misFuncionesPago.ActBotones(miVentana.pago.arrayBtn);
+		actBotones(miVentana.pago.arrayBtn);
 				
 	}
 		
@@ -81,8 +86,12 @@ public class ControladorPago implements ActionListener {
 								 
 			case "btnSiguientePago":  controlar.cambiarDePanel(miVentana.pago, miVentana.devolucion);
 				//Calcular cambios despues del pago
-				arrayCambios = miModelo.misFuncionesDevolucion.cambios(miModelo.misFuncionesPago.cambios);
-			    miModelo.misFuncionesDevolucion.mostrarCambios(miVentana, arrayCambios);
+				if (pagado > total) {
+					arrayCambios = miModelo.misFuncionesDevolucion.cambios(Math.abs(total - pagado));
+				} else {
+					arrayCambios = null;
+				}
+			    mostrarCambios(arrayCambios);
 				resetear();
 				break;
 			
@@ -90,52 +99,178 @@ public class ControladorPago implements ActionListener {
 				resetear();
 				break;
 
-			case "btn500" :  miModelo.misFuncionesPago.SumarDineroPago(500, miVentana); 
+			case "btn500":  
+				pagado = miModelo.misFuncionesPago.sumarDineroPago(500, pagado);
 				break;
 				
-			case "btn200" :  miModelo.misFuncionesPago.SumarDineroPago(200, miVentana);
+			case "btn200":
+				pagado = miModelo.misFuncionesPago.sumarDineroPago(200, pagado);
 				break;
 				
-			case "btn100" :  miModelo.misFuncionesPago.SumarDineroPago(100, miVentana);
+			case "btn100":
+				pagado = miModelo.misFuncionesPago.sumarDineroPago(100, pagado);
 				break;
 			
-			case "btn50" :  miModelo.misFuncionesPago.SumarDineroPago(50, miVentana);
+			case "btn50":
+				pagado = miModelo.misFuncionesPago.sumarDineroPago(50, pagado);
 				break;
 			
-			case "btn20" :  miModelo.misFuncionesPago.SumarDineroPago(20, miVentana);
+			case "btn20":
+				pagado = miModelo.misFuncionesPago.sumarDineroPago(20, pagado);
 				break;
 			
-			case "btn10" :  miModelo.misFuncionesPago.SumarDineroPago(10, miVentana);
+			case "btn10":
+				pagado = miModelo.misFuncionesPago.sumarDineroPago(10, pagado);
 				break;
 			
-			case "btn5" :   miModelo.misFuncionesPago.SumarDineroPago(5, miVentana);
+			case "btn5":
+				pagado = miModelo.misFuncionesPago.sumarDineroPago(5, pagado);
 				break;
 			
-			case "btn2" :  miModelo.misFuncionesPago.SumarDineroPago(2, miVentana);
+			case "btn2":
+				pagado = miModelo.misFuncionesPago.sumarDineroPago(2, pagado);
 				break;
 			
-			case "btn1" :  miModelo.misFuncionesPago.SumarDineroPago(1, miVentana);
+			case "btn1":
+				pagado = miModelo.misFuncionesPago.sumarDineroPago(1, pagado);
 				break;
 				
-			case "btn050" :  miModelo.misFuncionesPago.SumarDineroPago(0.5f , miVentana);
+			case "btn050":
+				pagado = miModelo.misFuncionesPago.sumarDineroPago(0.5f, pagado);
 				break;
 			
-			case "btn020" :  miModelo.misFuncionesPago.SumarDineroPago(0.2f, miVentana);
+			case "btn020":
+				pagado = miModelo.misFuncionesPago.sumarDineroPago(0.2f, pagado);
 				break;
 			
-			case "btn010" :  miModelo.misFuncionesPago.SumarDineroPago(0.1f, miVentana);
+			case "btn010":
+				pagado = miModelo.misFuncionesPago.sumarDineroPago(0.1f, pagado);
 				break;
 			
-			case "btn005" :  miModelo.misFuncionesPago.SumarDineroPago(0.05f, miVentana);
+			case "btn005":
+				pagado = miModelo.misFuncionesPago.sumarDineroPago(0.05f, pagado);
 				break;
 			
-			case "btn002" :  miModelo.misFuncionesPago.SumarDineroPago(0.02f, miVentana);
+			case "btn002":
+				pagado = miModelo.misFuncionesPago.sumarDineroPago(0.02f, pagado);
 				break;
 				
-			case "btn001" :  miModelo.misFuncionesPago.SumarDineroPago(0.01f, miVentana);
+			case "btn001":
+				pagado = miModelo.misFuncionesPago.sumarDineroPago(0.01f, pagado);
 				break;
-
+		}
+		
+		if (pagado >= total) {
+			miVentana.pago.restante.setText(formatoMoneda.format(0));
+			miVentana.pago.pagado.setText(formatoMoneda.format(pagado));
+			desBotones(miVentana.pago.arrayBtn);
+			actBotones(miVentana.pago.btnSiguiente);
+			desBotones(miVentana.pago.btnCancelar);
+			desBotones(miVentana.pago.btnAtras);
+		} else {
+			miVentana.pago.restante.setText(formatoMoneda.format(total - pagado));
+			miVentana.pago.pagado.setText(formatoMoneda.format(pagado));
 		}
 		
 	}
+	
+    /**
+     * Metodo que desactiva todos los botones de dinero de la ventana pago
+     * @param array de botones a desactivar 
+     */
+	public void desBotones(JButton[] array) {
+		for (int i = 0; i < array.length; i++) {
+			array[i].setEnabled(false);
+		}
+	}
+
+	/**
+	 * Metodo que activa todos los botones de dinero de la ventana pago
+	 * @param array array de botones a activar
+	 */
+	public void actBotones(JButton[] array) {
+		for (int i = 0; i < array.length; i++) {
+			array[i].setEnabled(true);
+		}
+	}
+	
+	/**
+	 * Metodo que activa el boton que se desee de las ventanas
+	 * @param boton a activar
+	 */
+	public void actBotones(JButton boton) {   
+			boton.setEnabled(true);
+		 
+	}
+	
+	/**
+	 * Metodo que desactiva el boton que se desee de las ventanas
+	 * @param boton a desactivar
+	 */
+	public void desBotones(JButton boton) {   
+		boton.setEnabled(false);
+	
+	}
+	
+	/**
+	 * Metodo para mostrar los cambios en la ventana de devolucion 
+	 * @param miVentana instancia de la ventana principal
+	 * @param cambios array con el numero de cada moneda o billete a devolver segun su posicion en el array
+	 */
+	public void mostrarCambios(int[] cambios) {
+		//Declaracion e inicializacion de
+		String mensajeCambios = "";
+		
+		//Inicio del programa
+		if (arrayCambios != null) {
+			//Recorremos el array de cambios. Cada posicion es una moneda o billete 500, 200, 100...
+			for(int z=0 ; z < cambios.length ; z++) {
+				//Si la posicion es distinta de cero hay cambios de esa moneda/billete 
+				if (cambios[z]>0) {
+					switch (z) {
+					
+						case 0 :  mensajeCambios= "Billetes de " + (formatoMoneda.format(500)) + ": " ; break;
+					
+						case 1 :  mensajeCambios= "Billetes de " + (formatoMoneda.format(200)) + ": " ; break;
+						
+						case 2 :  mensajeCambios= "Billetes de " + (formatoMoneda.format(100)) + ": " ; break;
+							
+						case 3 :  mensajeCambios= "Billetes de " + (formatoMoneda.format(50)) + ": " ; break;
+							
+						case 4 :  mensajeCambios= "Billetes de " + (formatoMoneda.format(20)) + ": " ; break;
+							
+						case 5 :  mensajeCambios= "Billetes de " + (formatoMoneda.format(10)) + ": " ; break;
+							
+						case 6 :  mensajeCambios= "Billetes de " + (formatoMoneda.format(5)) + ": " ; break;
+						
+						case 7 :  mensajeCambios= "Moneda de " + (formatoMoneda.format(2)) + ": " ; break;
+							
+						case 8 :  mensajeCambios= "Moneda de " + (formatoMoneda.format(1)) + ": " ; break;
+							
+						case 9 :  mensajeCambios= "Moneda de " + (formatoMoneda.format(0.5)) + ": " ; break;
+						
+						case 10 :  mensajeCambios= "Moneda de " + (formatoMoneda.format(0.2)) + ": " ; break;
+						
+						case 11 :  mensajeCambios= "Moneda de " + (formatoMoneda.format(0.1)) + ": " ; break;
+						
+						case 12 :  mensajeCambios= "Moneda de " + (formatoMoneda.format(0.05)) + ": " ; break;
+						
+						case 13 :  mensajeCambios= "Moneda de " + (formatoMoneda.format(0.02)) + ": " ; break;
+						
+						case 14 :  mensajeCambios= "Moneda de " + (formatoMoneda.format(0.01)) + ": " ; break;
+					
+					}
+					//Añadimos la linea al modelo de la lista
+					miVentana.devolucion.cambios.addElement(mensajeCambios + cambios[z]);
+				}
+			}
+		}else {
+			//Si no hay cambios
+			miVentana.devolucion.cambios.addElement("No hay cambios");
+		}
+		//Actualizamos la lista con los datos del modelo
+		miVentana.devolucion.devolucion.setModel(miVentana.devolucion.cambios);
+		
+	}
+
 }

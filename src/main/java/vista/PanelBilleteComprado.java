@@ -52,6 +52,7 @@ public class PanelBilleteComprado extends JPanel {
 		lblSusBilletes.setHorizontalAlignment(SwingConstants.CENTER);
 		lblSusBilletes.setBounds(165, 109, 177, 37);
 		add(lblSusBilletes);
+		listBilleteComprado.setFont(new Font("Tahoma", Font.PLAIN, 22));
 		
 		
 		listBilleteComprado.setBounds(188, 157, 718, 371);

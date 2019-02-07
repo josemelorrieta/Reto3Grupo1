@@ -2,9 +2,10 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 import javax.swing.JButton;
-import javax.swing.JOptionPane;
 
 import modelo.Modelo;
 import vista.Ventana;
@@ -18,9 +19,11 @@ public class ControladorBilleteComprado implements ActionListener {
 	
 	FuncionesControlador funciones = new FuncionesControlador();	
 	
-	//private Controlador miControlador;
+	private Controlador miControlador;
 	private Ventana miVentana;
 	private Modelo miModelo;
+	
+	NumberFormat formatoMoneda = NumberFormat.getCurrencyInstance(Locale.getDefault());
 	
 	/**
 	 * Constructor de la clase ControladorBilleteComprado
@@ -28,8 +31,9 @@ public class ControladorBilleteComprado implements ActionListener {
 	 * 
 	 * @param miVentana Instancia de la ventana de la aplicacion
 	 */
-	public ControladorBilleteComprado (Ventana miVentana, Modelo miModelo) { 
+	public ControladorBilleteComprado (Controlador miControlador, Ventana miVentana, Modelo miModelo) { 
 		
+		this.miControlador = miControlador;
 		this.miVentana = miVentana;
 		this.miModelo = miModelo;
 		
@@ -58,12 +62,15 @@ public class ControladorBilleteComprado implements ActionListener {
 				resetear();
 				break;
 											
-			case "btnSiguienteBilleteComprado": 
-				if (miModelo.misFuncionesBilleteComprado.guardarBilleteBD(miModelo.billeteIda)) {
-					funciones.cambiarDePanel(miVentana.billeteComprado, miVentana.pago);
+			case "btnSiguienteBilleteComprado":
+				if (miModelo.billeteVuelta != null) {
+					miVentana.pago.total.setText(formatoMoneda.format(miModelo.billeteIda.getPrecioTrayecto() + miModelo.billeteVuelta.getPrecioTrayecto()));
+					miControlador.miControladorPago.total = miModelo.billeteIda.getPrecioTrayecto() + miModelo.billeteVuelta.getPrecioTrayecto();
 				} else {
-					JOptionPane.showMessageDialog(miVentana, "Hubo un error al guardar el billete en la Base de Datos", "¡Atencion!", JOptionPane.WARNING_MESSAGE);
-				};
+					miVentana.pago.total.setText(formatoMoneda.format(miModelo.billeteIda.getPrecioTrayecto()));
+					miControlador.miControladorPago.total = miModelo.billeteIda.getPrecioTrayecto();
+				}
+				funciones.cambiarDePanel(miVentana.billeteComprado, miVentana.pago);
 				break;
 			
 			case "btnCancelarBilleteComprado":  funciones.cambiarDePanel(miVentana.billeteComprado, miVentana.billetes);

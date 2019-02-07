@@ -155,14 +155,22 @@ public class FuncionesFechas {
 		double precioBillete = 0;
 		float consumo = 0;
 		final float beneficio = 20;
+		final int iva = 21;
 		
 		consumo = consumoAutobus(codAutobus);
 		
 		//Calculamos el precio sin beneficio
 		precioBillete = distancia * consumo;
+		
 		//Calculamos el precio con beneficio
 		precioBillete = precioBillete + precioBillete * beneficio / 100;
 		
+		//Calculamos el IVA
+		precioBillete = precioBillete + precioBillete * iva / 100;
+		
+		//Redondear el precio del billete a dos decimales
+		precioBillete = Double.valueOf(Math.round(precioBillete * 100)) / 100;
+				
 		return precioBillete;
 	}
 	

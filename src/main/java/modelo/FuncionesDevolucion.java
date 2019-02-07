@@ -1,8 +1,10 @@
 package modelo;
 
+import java.sql.Connection;
 import java.text.NumberFormat;
 import java.util.Locale;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 
 import controlador.DatosPrecio;
 import vista.Ventana;
@@ -30,11 +32,11 @@ public class FuncionesDevolucion {
 	 * @param dinero cantidad a devolver para calcular las monedas y billetes de la devolucion
 	 * @return array con la cantidad de cada billete o moneda, segun su posicion en el array
 	 */
-	public int[] cambios(float dinero) {
+	public int[] cambios(double dinero) {
 		
 		// Declaracion e inicializacion de variables
-		int euros = (int) dinero;
-		int decimales = Math.round((dinero - euros) * 100);
+		int euros = (int) Math.floor(dinero);
+		int decimales = (int) Math.round((dinero - euros) * 100);
 		int[] billetesMonedas = {500, 200, 100, 50, 20, 10, 5, 2, 1};
 		int[] cambios = new int[15];
 		
@@ -59,64 +61,30 @@ public class FuncionesDevolucion {
 		return cambios;
 	}
 	
+	
+	
 	/**
-	 * Metodo para mostrar los cambios en la ventana de devolucion 
-	 * @param miVentana instancia de la ventana principal
-	 * @param cambios array con el numero de cada moneda o billete a devolver segun su posicion en el array
+	 * Metodo que guarda el billete en la base de datos
+	 * @param billete Billete a guardar en la base de datos
+	 * @return true si se guarda con exito, false si hay un error
 	 */
-	public void mostrarCambios(Ventana miVentana, int[] cambios) {
+	public boolean guardarBilleteBD(Billete billete, Modelo miModelo) {
+		//Declaración e inicializacion de variables		
+		ConexionBD miConexion = new ConexionBD();
+		ConsultaBD miConsulta = new ConsultaBD();
+		Connection con = miConexion.conectarBD();
 		
-		String mensajeCambios = "";
-		if (miModelo.misFuncionesPago.total < miModelo.misFuncionesPago.dineroPagado) { 
-			for(int z=0 ; z < cambios.length ; z++) {
-				
-				if (cambios[z]>0) 
-				{
-					
-					switch (z) {
-					
-						case 0 :  mensajeCambios= "Billetes de " + (formatoMoneda.format(500)) + ": " ; break;
-					
-						case 1 :  mensajeCambios= "Billetes de " + (formatoMoneda.format(200)) + ": " ; break;
-						
-						case 2 :  mensajeCambios= "Billetes de " + (formatoMoneda.format(100)) + ": " ; break;
-							
-						case 3 :  mensajeCambios= "Billetes de " + (formatoMoneda.format(50)) + ": " ; break;
-							
-						case 4 :  mensajeCambios= "Billetes de " + (formatoMoneda.format(20)) + ": " ; break;
-							
-						case 5 :  mensajeCambios= "Billetes de " + (formatoMoneda.format(10)) + ": " ; break;
-							
-						case 6 :  mensajeCambios= "Billetes de " + (formatoMoneda.format(5)) + ": " ; break;
-						
-						case 7 :  mensajeCambios= "Moneda de " + (formatoMoneda.format(2)) + ": " ; break;
-							
-						case 8 :  mensajeCambios= "Moneda de " + (formatoMoneda.format(1)) + ": " ; break;
-							
-						case 9 :  mensajeCambios= "Moneda de " + (formatoMoneda.format(0.5)) + ": " ; break;
-						
-						case 10 :  mensajeCambios= "Moneda de " + (formatoMoneda.format(0.2)) + ": " ; break;
-						
-						case 11 :  mensajeCambios= "Moneda de " + (formatoMoneda.format(0.1)) + ": " ; break;
-						
-						case 12 :  mensajeCambios= "Moneda de " + (formatoMoneda.format(0.05)) + ": " ; break;
-						
-						case 13 :  mensajeCambios= "Moneda de " + (formatoMoneda.format(0.02)) + ": " ; break;
-						
-						case 14 :  mensajeCambios= "Moneda de " + (formatoMoneda.format(0.01)) + ": " ; break;
-					
-							
-					}
-					
-					
-					miVentana.devolucion.cambios.addElement(mensajeCambios + cambios[z]);
-				}
-			}
-		}else { 
-			miVentana.devolucion.cambios.addElement("No hay cambios");
+		int codOrigen = Integer.parseInt(miModelo.misFuncionesFechas.nombreParadaACodParada(billete.getOrigen()));
+		int codDestino = Integer.parseInt(miModelo.misFuncionesFechas.nombreParadaACodParada(billete.getDestino()));
+		
+		String query = "INSERT INTO billete (Cod_Billete, Cod_Bus, Cod_Linea, Cod_Parada_Fin, Cod_Parada_Inicio, DNI, Fecha, Hora, NTrayecto, Precio) VALUES (" + billete.getNumBillete() + ", " + billete.getCodAutobus() + ", '" + billete.getCodLinea() + "', " + codDestino + ", " + codOrigen + ", '" + billete.getDni() + "', '" + billete.getFecha() + "', '12:00', 123, " + billete.getPrecioTrayecto() + ")";
+		
+		//Inicio del programa
+		if(miConsulta.insertarDatosBD(con, query)) {
+			return true;
+		} else {
+			return false;
 		}
-		miVentana.devolucion.devolucion.setModel(miVentana.devolucion.cambios);
-		
 	}
 }	 
 

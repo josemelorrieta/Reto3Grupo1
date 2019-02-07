@@ -28,9 +28,9 @@ public class PanelPago extends JPanel {
 		public JButton btnAtras = new JButton("Atras");
 		public JButton btnSiguiente = new JButton("Siguiente");
 		
-		public JTextField restante = new JTextField();
-		public JTextField pagado = new JTextField();
-		public JTextField total = new JTextField();
+		public JLabel restante = new JLabel();
+		public JLabel pagado = new JLabel();
+		public JLabel total = new JLabel();
 	
 		public JButton btn500;
 		public JButton btn200;
@@ -97,24 +97,25 @@ public class PanelPago extends JPanel {
 		
 		JLabel lblNewJgoodiesLabel_3 = DefaultComponentFactory.getInstance().createLabel("RESTANTE:");
 		lblNewJgoodiesLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		lblNewJgoodiesLabel_3.setBounds(629, 390, 156, 47);
+		lblNewJgoodiesLabel_3.setBounds(629, 390, 156, 35);
 		add(lblNewJgoodiesLabel_3);		
-		restante.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		restante.setEditable(false);
+		restante.setHorizontalAlignment(SwingConstants.RIGHT);
+		restante.setFont(new Font("Tahoma", Font.PLAIN, 30));
 	
-		restante.setBounds(795, 397, 186, 30);
+		restante.setBounds(795, 390, 130, 35);
 		add(restante);
-		pagado.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		pagado.setEditable(false);
+		pagado.setHorizontalAlignment(SwingConstants.RIGHT);
+		pagado.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		
 		
-		pagado.setBounds(795, 303, 186, 30);
+		pagado.setBounds(795, 303, 130, 35);
 		add(pagado);
-		total.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		total.setEditable(false);
+		total.setHorizontalAlignment(SwingConstants.RIGHT);
+		total.setToolTipText("");
+		total.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		
 		
-		total.setBounds(795, 215, 186, 30);
+		total.setBounds(795, 210, 130, 35);
 		add(total);
 		
 

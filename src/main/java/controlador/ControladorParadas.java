@@ -78,6 +78,7 @@ public class ControladorParadas implements ActionListener {
 				//Borrar las fechas del panel siguiente (nuevo billete)
 				miVentana.fechas.dateIda.setDate(null);
 				miVentana.fechas.dateVuelta.setDate(null);
+				miVentana.fechas.textPrecio.setText("");
 				
 				//Establecer fechas posibles de compra en tres dias a partir de hoy 
 				fechaLimite = miModelo.misFuncionesFechas.setFechasDisponibles(fechaHoy);

@@ -36,6 +36,7 @@ public class PanelBilletes extends JPanel {
 		lblNewJgoodiesLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewJgoodiesLabel.setBounds(10, 43, 1080, 71);
 		add(lblNewJgoodiesLabel);
+		MostrarBilletes.setFont(new Font("Tahoma", Font.PLAIN, 22));
 		
 	
 		MostrarBilletes.setBounds(211, 125, 668, 403);

@@ -55,8 +55,7 @@ public class PanelDevolucion extends JPanel {
 		cambios=new DefaultListModel();
 		devolucion = new JList(cambios);
 		devolucion.setBorder(new BevelBorder(BevelBorder.LOWERED, Color.GRAY, Color.GRAY, Color.GRAY, Color.GRAY));
-		devolucion.setEnabled(false);
-		devolucion.setFont(new Font("Times New Roman", Font.PLAIN, 30));
+		devolucion.setFont(new Font("Tahoma", Font.PLAIN, 22));
 		devolucion.setBackground(new Color(255, 255, 255));
 		devolucion.setBounds(203, 111, 696, 441);
 		add(devolucion);

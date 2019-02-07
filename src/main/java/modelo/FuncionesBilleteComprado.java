@@ -26,7 +26,7 @@ public class FuncionesBilleteComprado {
 		
 		NumberFormat formatoMoneda = NumberFormat.getCurrencyInstance(Locale.getDefault());
 		
-		String infoBillete = String.format("%-40s%-40s%15s%10s", origenIda, destinoIda, fechaIda, formatoMoneda.format(precioIda));
+		String infoBillete = String.format("%-25s%-25s%10s%10s", origenIda, destinoIda, fechaIda, formatoMoneda.format(precioIda));
 		//Inicio del programa
 		miVentana.billeteComprado.modeloMostrarBilletesComprado.addElement(infoBillete);
 		miVentana.billeteComprado.listBilleteComprado.setModel(miVentana.billeteComprado.modeloMostrarBilletesComprado);
@@ -35,14 +35,6 @@ public class FuncionesBilleteComprado {
 		if (billeteVuelta != null) {
 			
 		}
-	}
-	
-	public boolean guardarBilleteBD(Billete billete) {
-		//Declaración e inicializacion de variables
-		
-		//Inicio del programa
-		
-		return false;
 	}
 
 }

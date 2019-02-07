@@ -16,15 +16,6 @@ public class FuncionesDevolucionTest {
 	private FuncionesDevolucion funcionesTest = new FuncionesDevolucion(miModelo);
 	//private FuncionesPago leerDatosMock = mock(FuncionesPago.class);
 	
-	
-	@Test
-	public void testCalcularPrecio() {
-		float distancia = 5;
-		
-		assertEquals(13.068f, (float)pagoTest.CalcularPrecio(distancia), 0.0001);
-		assertNotEquals(11f, (float)pagoTest.CalcularPrecio(distancia), 0.0001);
-	}
-	
 	// Test de los cambios en los puntos críticos de cada billete/moneda
 	
 	@Test

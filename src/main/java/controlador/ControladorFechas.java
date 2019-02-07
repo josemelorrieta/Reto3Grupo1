@@ -138,7 +138,11 @@ public class ControladorFechas implements ActionListener {
 		//Calcular el precio del billete según distancia y autobus
 		precio = miModelo.misFuncionesFechas.calcularPrecioBillete(codAutobus, distancia);
 		miModelo.billeteIda.setPrecioTrayecto(precio);
-		miVentana.fechas.textPrecio.setText(formatoMoneda.format(precio));
+		if (miModelo.billeteVuelta != null) {
+			miVentana.fechas.textPrecio.setText(formatoMoneda.format(miModelo.billeteIda.getPrecioTrayecto() + miModelo.billeteVuelta.getPrecioTrayecto()));
+		} else {
+			miVentana.fechas.textPrecio.setText(formatoMoneda.format(miModelo.billeteIda.getPrecioTrayecto()));
+		}
 		
 		//Activar el botón siguiente
 		miVentana.fechas.btnSiguiente.setEnabled(true);

@@ -27,6 +27,7 @@ public class Modelo {
 	public LineaAutobus[] lineas = null;
 	public Parada[] paradas = null;
 	public String[] nombreLineas = null;
+	public double precioTotal = 0;
 	
 	/**
 	 * Constructor de la clase

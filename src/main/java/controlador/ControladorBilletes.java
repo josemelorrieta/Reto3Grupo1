@@ -60,7 +60,7 @@ public class ControladorBilletes implements ActionListener {
 				miVentana.billetes.modeloMostrarBilletes.addElement("No hay billetes");
 			} else {
 				for (int i=0;i<billetes.length;i++) {
-					miVentana.billetes.modeloMostrarBilletes.addElement(String.format("%40s%40s%15s", billetes[i].getOrigen(), billetes[i].getDestino(), billetes[i].getFecha()));
+					miVentana.billetes.modeloMostrarBilletes.addElement(String.format("%-30s%-30s%15s", billetes[i].getOrigen(), billetes[i].getDestino(), billetes[i].getFecha()));
 				}
 			}
 			//Se le pasa el modelo a la lista para que los muestre

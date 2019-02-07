@@ -35,10 +35,16 @@ public class ConsultaBD {
 	 * @param con Conexion a la base de datos
 	 * @param query Consulta a realizar de tipo INSERT
 	 * @return boolean true si se ha realizado la insercion con exito, false si no
-	 * @throws SQLException excepcion en caso de error al escribir en la base de datos
 	 */
-	public boolean insertarDatosBD(Connection con, String query) throws SQLException {
-		Statement st = con.createStatement();
+	public boolean insertarDatosBD(Connection con, String query) {
+		Statement st;
+		try {
+			st = con.createStatement();
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+			return false;
+		}
 		
 		try {
 			st.executeUpdate(query);

@@ -2,13 +2,11 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Timer;
-import java.util.TimerTask;
 
-import javax.swing.DefaultListModel;
 import javax.swing.JButton;
-import javax.swing.JPanel;
+import javax.swing.JOptionPane;
 
+import modelo.Modelo;
 import vista.Ventana;
 
 /**
@@ -22,6 +20,7 @@ public class ControladorDevolucion implements ActionListener {
 	//private Controlador miControlador;
 	private Ventana miVentana;
 	private Controlador miControlador; 
+	private Modelo miModelo;
 	
 	/**
 	  * Constructor de la clase
@@ -29,10 +28,11 @@ public class ControladorDevolucion implements ActionListener {
 	  * @param miControlador instancia del coontrolador principal para poder acceder a otros paneles
 	  *
 	  */
-	public ControladorDevolucion (Ventana miVentana, Controlador miControlador) {
+	public ControladorDevolucion (Ventana miVentana, Controlador miControlador, Modelo miModelo) {
 		
 		this.miVentana = miVentana;
-		this.miControlador =miControlador;
+		this.miControlador = miControlador;
+		this.miModelo = miModelo;
 		
 		//Definir los listeners para los botones del panel
 		miVentana.devolucion.btnSiguiente.addActionListener(this);		
@@ -52,12 +52,15 @@ public class ControladorDevolucion implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		//Dependiendo de que boton vienen la accion hacemos lo necesario 
 		switch (((JButton) e.getSource()).getName()) {
-			case "btnSiguienteDevolucion": funciones.cambiarDePanel(miVentana.devolucion, miVentana.despedida);
-										   miControlador.miControladorDespedida.PasarDeDespedidaASaludo();
-										   resetear();
-			break;
-
-
+			case "btnSiguienteDevolucion":
+				if (miModelo.misFuncionesDevolucion.guardarBilleteBD(miModelo.billeteIda, miModelo)) {
+					funciones.cambiarDePanel(miVentana.devolucion, miVentana.despedida);
+					miControlador.miControladorDespedida.PasarDeDespedidaASaludo();
+				} else {
+					JOptionPane.showMessageDialog(miVentana, "Hubo un error al guardar el billete en la Base de Datos", "¡Atencion!", JOptionPane.WARNING_MESSAGE);
+				};
+				resetear();
+				break;
 		}
 		
 	}

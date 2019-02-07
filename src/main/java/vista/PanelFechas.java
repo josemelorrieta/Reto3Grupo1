@@ -16,6 +16,7 @@ import java.awt.event.ActionEvent;
 import com.toedter.calendar.JDateChooser;
 import java.awt.event.InputMethodListener;
 import java.awt.event.InputMethodEvent;
+import javax.swing.JTextField;
 
 /**
  * Clase del panel de seleccion de fechas para el bilelte
@@ -27,7 +28,7 @@ public class PanelFechas extends JPanel {
 	public JButton btnSiguiente = new JButton("Siguiente");
 	public JButton btnCancelar = new JButton("Cancelar");
 	public JRadioButton btnRadioButton = new JRadioButton("Comprar billete de vuelta");
-	public JTextArea textPrecio = new JTextArea();
+	public JLabel textPrecio = new JLabel();
 	public JDateChooser dateIda = new JDateChooser();
 	public JDateChooser dateVuelta = new JDateChooser();
 
@@ -72,11 +73,10 @@ public class PanelFechas extends JPanel {
 		lblPrecio.setFont(new Font("Tahoma", Font.PLAIN, 40));
 		lblPrecio.setBounds(316, 452, 138, 37);
 		add(lblPrecio);
-		textPrecio.setEditable(false);
-		textPrecio.setFont(new Font("Monospaced", Font.PLAIN, 20));
+		textPrecio.setFont(new Font("Tahoma", Font.PLAIN, 40));
 		
 		
-		textPrecio.setBounds(452, 458, 199, 37);
+		textPrecio.setBounds(452, 452, 199, 37);
 		add(textPrecio);
 		
 		JLabel lblNewJgoodiesLabel_1 = DefaultComponentFactory.getInstance().createLabel("SELECCIONE FECHA");
@@ -90,6 +90,7 @@ public class PanelFechas extends JPanel {
 		btnCancelar.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnCancelar.setBounds(53, 575, 186, 68);	
 		add(btnCancelar);
+		dateIda.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		dateIda.addInputMethodListener(new InputMethodListener() {
 			public void caretPositionChanged(InputMethodEvent arg0) {
 			}
@@ -99,6 +100,7 @@ public class PanelFechas extends JPanel {
 		
 		dateIda.setBounds(118, 309, 265, 50);
 		add(dateIda);
+		dateVuelta.setFont(new Font("Tahoma", Font.PLAIN, 18));
 
 		dateVuelta.setBounds(656, 309, 265, 50);
 		dateVuelta.setEnabled(false);
