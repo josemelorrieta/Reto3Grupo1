@@ -1,14 +1,6 @@
 package controlador;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import javax.swing.JButton;
-import javax.swing.JOptionPane;
-import modelo.Cliente;
-import modelo.LineaAutobus;
 import modelo.Modelo;
-import modelo.Parada;
 import vista.Ventana;
 
 /**
@@ -21,10 +13,8 @@ public class Controlador {
  
 	//Declaración e inicialización de variables;
 	//Instancias del Modelo y la Vista
-	private Modelo miModelo;
-	private Ventana miVentana;
-	
-	FuncionesVarias funciones = new FuncionesVarias();  
+	public Modelo miModelo;
+	public Ventana miVentana;
 	
 	//Instancias de los controladores de cada panel de la ventana
 	private ControladorSaludo miControladorSaludo; 
@@ -39,8 +29,6 @@ public class Controlador {
 	private ControladorDevolucion miControladorDevolucion;
 	public ControladorDespedida miControladorDespedida;
 	
-	private ArrayList<Parada> paradas = new ArrayList<Parada>();
-	private ArrayList<LineaAutobus> lineas = new ArrayList<LineaAutobus>();
 
 	//Constructor
 	public Controlador(Ventana miVentana, Modelo miModelo) { 
@@ -52,7 +40,7 @@ public class Controlador {
 		this.miControladorRegistro = new ControladorRegistro(this, miVentana, miModelo);
 		this.miControladorBilletes = new ControladorBilletes(miVentana, miModelo);
 		this.miControladorLineas = new ControladorLineas(miVentana, miModelo);
-		this.miControladorParadas = new ControladorParadas(this, miVentana, miModelo, paradas, lineas);
+		this.miControladorParadas = new ControladorParadas(this, miVentana, miModelo);
 		this.miControladorFechas = new ControladorFechas(miVentana, miModelo);
 		this.miControladorBilleteComprado = new ControladorBilleteComprado(miVentana);
 		this.miControladorPago = new ControladorPago(miVentana, miModelo);
