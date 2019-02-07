@@ -40,7 +40,7 @@ public class ControladorParadas implements ActionListener {
 	 * @param paradas instancia del array de paradas del modelo
 	 * @param lineas instancia del array de lineas
 	 */
-	public ControladorParadas (Controlador miControlador, Ventana miVentana, Modelo miModelo,  ArrayList<Parada> paradas, ArrayList<LineaAutobus> lineas) { 
+	public ControladorParadas (Controlador miControlador, Ventana miVentana, Modelo miModelo) { 
 		this.miControlador = miControlador;
 		this.miVentana = miVentana;
 		this.miModelo = miModelo;

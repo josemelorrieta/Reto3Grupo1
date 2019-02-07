@@ -67,6 +67,7 @@ public class ControladorFechas implements ActionListener {
 	public void resetear() {
 		miVentana.fechas.btnRadioButton.setSelected(false); 
 		miVentana.fechas.textPrecio.setText("");
+		miVentana.fechas.btnSiguiente.setEnabled(false);
 	}
 	
 	/**
@@ -93,7 +94,7 @@ public class ControladorFechas implements ActionListener {
 					break;
 									   
 				case "btnSiguienteFechas":  funciones.cambiarDePanel(miVentana.fechas, miVentana.billeteComprado);
-					miModelo.misFuncionesBilleteComprado.resumenBilleteComprado(miModelo.billeteIda, miModelo.billeteVuelta);
+					miModelo.misFuncionesBilleteComprado.resumenBilleteComprado(miModelo.billeteIda, miModelo.billeteVuelta, miVentana);
 					break;
 				
 				case "btnCancelarFechas": funciones.cambiarDePanel(miVentana.fechas, miVentana.billetes);
@@ -138,5 +139,8 @@ public class ControladorFechas implements ActionListener {
 		precio = miModelo.misFuncionesFechas.calcularPrecioBillete(codAutobus, distancia);
 		miModelo.billeteIda.setPrecioTrayecto(precio);
 		miVentana.fechas.textPrecio.setText(formatoMoneda.format(precio));
+		
+		//Activar el botón siguiente
+		miVentana.fechas.btnSiguiente.setEnabled(true);
 	}
 }

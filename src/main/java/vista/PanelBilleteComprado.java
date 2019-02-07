@@ -21,7 +21,7 @@ public class PanelBilleteComprado extends JPanel {
 	public JButton btnAtras = new JButton("Atras");
 	public JButton btnSiguiente = new JButton("Siguiente");
 	public DefaultListModel<String> modeloMostrarBilletesComprado = new DefaultListModel<String>();
-	public JList<String> MostrarBilleteComprado = new JList<String>();
+	public JList<String> listBilleteComprado = new JList<String>();
 
 	/**
 	 * Create the panel.
@@ -54,8 +54,8 @@ public class PanelBilleteComprado extends JPanel {
 		add(lblSusBilletes);
 		
 		
-		MostrarBilleteComprado.setBounds(188, 157, 718, 371);
-		add(MostrarBilleteComprado);
+		listBilleteComprado.setBounds(188, 157, 718, 371);
+		add(listBilleteComprado);
 		
 		JLabel lblNewJgoodiesLabel = DefaultComponentFactory.getInstance().createLabel("COMPRUEBE EL BILLETE");
 		lblNewJgoodiesLabel.setForeground(Color.ORANGE);

@@ -4,7 +4,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 
+import modelo.Modelo;
 import vista.Ventana;
 
 /**
@@ -14,11 +16,11 @@ import vista.Ventana;
  */
 public class ControladorBilleteComprado implements ActionListener {
 	
-	FuncionesControlador funciones = new FuncionesControlador();
-	
+	FuncionesControlador funciones = new FuncionesControlador();	
 	
 	//private Controlador miControlador;
 	private Ventana miVentana;
+	private Modelo miModelo;
 	
 	/**
 	 * Constructor de la clase ControladorBilleteComprado
@@ -26,9 +28,10 @@ public class ControladorBilleteComprado implements ActionListener {
 	 * 
 	 * @param miVentana Instancia de la ventana de la aplicacion
 	 */
-	public ControladorBilleteComprado (Ventana miVentana) { 
+	public ControladorBilleteComprado (Ventana miVentana, Modelo miModelo) { 
 		
 		this.miVentana = miVentana;
+		this.miModelo = miModelo;
 		
 		// Definicion de los listeners de los botones del panel
 		miVentana.billeteComprado.btnAtras.addActionListener(this);
@@ -52,15 +55,20 @@ public class ControladorBilleteComprado implements ActionListener {
 		//Accion segun el boton que llama al listener
 		switch (((JButton) e.getSource()).getName()) {
 			case "btnAtrasBilleteComprado": funciones.cambiarDePanel(miVentana.billeteComprado, miVentana.fechas);
-											resetear();
-											break;
+				resetear();
+				break;
 											
-			case "btnSiguienteBilleteComprado": funciones.cambiarDePanel(miVentana.billeteComprado, miVentana.pago); 
-												break;
+			case "btnSiguienteBilleteComprado": 
+				if (miModelo.misFuncionesBilleteComprado.guardarBilleteBD(miModelo.billeteIda)) {
+					funciones.cambiarDePanel(miVentana.billeteComprado, miVentana.pago);
+				} else {
+					JOptionPane.showMessageDialog(miVentana, "Hubo un error al guardar el billete en la Base de Datos", "¡Atencion!", JOptionPane.WARNING_MESSAGE);
+				};
+				break;
 			
 			case "btnCancelarBilleteComprado":  funciones.cambiarDePanel(miVentana.billeteComprado, miVentana.billetes);
-												resetear();
-												break;
+				resetear();
+				break;
 		}
 	}
 	

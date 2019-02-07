@@ -48,6 +48,7 @@ public class PanelFechas extends JPanel {
 		btnSiguiente.setName("btnSiguienteFechas");
 		btnSiguiente.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnSiguiente.setBounds(858, 575, 194, 68);
+		btnSiguiente.setEnabled(false);
 		add(btnSiguiente);
 		
 		JLabel lblFechaDeIda = DefaultComponentFactory.getInstance().createLabel("Fecha de Ida:");
