@@ -2,6 +2,8 @@ package testsModelo;
 
 import static org.junit.Assert.*;
 
+import java.sql.SQLException;
+
 import org.junit.Test;
 
 import modelo.Billete;
@@ -26,8 +28,12 @@ public class FuncionesBilleteTest {
 	}
 
 	@Test
-	public void testNombrePareda() {
-		//No se hacer test con conexion a BD 
+	public void testNombrePareda()  throws SQLException {
+		
+		int codParada = 1;
+		String nombreParada = "Termibus-Bilbao";
+		
+		assertEquals(func.nombreParada(codParada), nombreParada);
 	}
 
 }

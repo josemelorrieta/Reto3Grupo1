@@ -1,14 +1,6 @@
 package controlador;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import javax.swing.JButton;
-import javax.swing.JOptionPane;
-import modelo.Cliente;
-import modelo.LineaAutobus;
 import modelo.Modelo;
-import modelo.Parada;
 import vista.Ventana;
 
 /**
@@ -21,10 +13,8 @@ public class Controlador {
  
 	//Declaración e inicialización de variables;
 	//Instancias del Modelo y la Vista
-	private Modelo miModelo;
-	private Ventana miVentana;
-	
-	FuncionesVarias funciones = new FuncionesVarias();  
+	public Modelo miModelo;
+	public Ventana miVentana;
 	
 	//Instancias de los controladores de cada panel de la ventana
 	private ControladorSaludo miControladorSaludo; 

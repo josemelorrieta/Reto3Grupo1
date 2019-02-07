@@ -78,5 +78,18 @@ public class FuncionesFechasTest {
 		
 		assertEquals(func.consumoAutobus(codAutobus), consumo, 0.1);
 	}
+	
+	@Test
+	public void testbuscarAutobus() throws SQLException {
+		int codAutobus = 1001;
+		String codLinea= "L1";
+		String fechaBillete= "2019-02-08";
+		
+		
+		assertEquals(func.buscarAutobus(codLinea, fechaBillete), codAutobus, 40);
+		
+		
+	}
+	
 
 }
