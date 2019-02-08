@@ -18,7 +18,7 @@ import javax.swing.JList;
 public class PanelBilleteComprado extends JPanel {
 	
 	public JButton btnCancelar = new JButton("Cancelar");
-	public JButton btnAtras = new JButton("Atras");
+	public JButton btnAtras = new JButton("Atrás");
 	public JButton btnSiguiente = new JButton("Siguiente");
 	public DefaultListModel<String> modeloMostrarBilletesComprado = new DefaultListModel<String>();
 	public JList<String> listBilleteComprado = new JList<String>();

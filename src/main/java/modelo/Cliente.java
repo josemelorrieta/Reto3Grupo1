@@ -14,7 +14,7 @@ public class Cliente {
 	private String apellidos;
 	private String fechaNacimiento;
 	private char sexo;
-	private String contraseña; 
+	private String contraseña = null; 
 	
 	/**
 	 * Constructor del objeto cliente
@@ -81,24 +81,24 @@ public class Cliente {
 		this.contraseña = contraseña;
 	}
 	
-	/**
-	 * Calse que comprueba si ya existe un cliente a partir de su dni
-	 * @param dni DNI del cliente a comprobar
-	 * @return boolean Devuelve true si existe el cliente y false si no existe
-	 */
-	public boolean existeCliente(String dni) {
-		ConexionBD conexion = new ConexionBD();
-		ConsultaBD consulta = new ConsultaBD();
-		
-		String query = "SELECT * FROM cliente WHERE DNI='" + dni + "'"; 
-		
-		Connection con = conexion.conectarBD();
-		ResultSet resultado = consulta.hacerConsultaBD(con, query);
-		
-		if (resultado != null)
-			return true;
-		else 
-			return false;
-	}
+//	/**
+//	 * Calse que comprueba si ya existe un cliente a partir de su dni
+//	 * @param dni DNI del cliente a comprobar
+//	 * @return boolean Devuelve true si existe el cliente y false si no existe
+//	 */
+//	public boolean existeCliente(String dni) {
+//		ConexionBD conexion = new ConexionBD();
+//		ConsultaBD consulta = new ConsultaBD();
+//		
+//		String query = "SELECT * FROM cliente WHERE DNI='" + dni + "'"; 
+//		
+//		Connection con = conexion.conectarBD();
+//		ResultSet resultado = consulta.hacerConsultaBD(con, query);
+//		
+//		if (resultado != null)
+//			return true;
+//		else 
+//			return false;
+//	}
 
 }
