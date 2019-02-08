@@ -12,6 +12,7 @@ import java.util.Date;
 import java.util.Locale;
 
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 
 import modelo.Modelo;
 import vista.Ventana;
@@ -58,14 +59,24 @@ public class ControladorFechas implements ActionListener {
     			}
             }
         });
-		miVentana.fechas.add(miVentana.fechas.dateIda);
+		//miVentana.fechas.add(miVentana.fechas.dateIda);
+		miVentana.fechas.dateVuelta.getDateEditor().addPropertyChangeListener(new PropertyChangeListener() {
+	    	@Override
+	        public void propertyChange(PropertyChangeEvent e1) {
+    			if (e1.getPropertyName() == "date" && miVentana.fechas.dateVuelta.getDate() != null) {
+    				calcularPrecioBillete();
+    			}
+            }
+        });
 	}
 		
 	/**
 	 * Metodo para resetear los valores de la ventana fechas
 	 */
 	public void resetear() {
-		miVentana.fechas.btnRadioButton.setSelected(false); 
+		miVentana.fechas.btnRadioButton.setSelected(false);
+		miModelo.billeteVuelta = null;
+		miVentana.fechas.dateVuelta.setEnabled(false);
 		miVentana.fechas.textPrecio.setText("");
 		miVentana.fechas.btnSiguiente.setEnabled(false);
 	}
@@ -78,13 +89,24 @@ public class ControladorFechas implements ActionListener {
 		// Si la accion viene del radio button
 		if(e.getSource()==miVentana.fechas.btnRadioButton)
 		{	
-			if(miVentana.fechas.btnRadioButton.isSelected()) 
-			{
-				miVentana.fechas.dateVuelta.setEnabled(true);
-			}
-			else {
-				miVentana.fechas.dateVuelta.setEnabled(false);
-				miVentana.fechas.dateVuelta.setDate(null);
+			if (miVentana.fechas.dateIda.getDate() != null) {
+				if(miVentana.fechas.btnRadioButton.isSelected()) 
+				{
+					miVentana.fechas.dateVuelta.setEnabled(true);
+					//Crear el billete de vuelta para la compra actual
+					String codLinea = miModelo.billeteIda.getCodLinea();
+					miModelo.billeteVuelta = miModelo.misFuncionesModelo.crearBilleteActual(miModelo, codLinea);
+				}
+				else {
+					//Borramos el billete de vuelta
+					miModelo.billeteVuelta = null;
+					calcularPrecioBillete();
+					miVentana.fechas.dateVuelta.setEnabled(false);
+					miVentana.fechas.dateVuelta.setDate(null);
+				}
+			} else {
+				JOptionPane.showMessageDialog(miVentana, "Debe elegir una fecha de ida primero", "¡Atención!", JOptionPane.WARNING_MESSAGE);
+				miVentana.fechas.btnRadioButton.setSelected(false);
 			}
 		//si la accion viene de algun boton
 		} else {	
@@ -93,8 +115,13 @@ public class ControladorFechas implements ActionListener {
 					resetear();
 					break;
 									   
-				case "btnSiguienteFechas":  funciones.cambiarDePanel(miVentana.fechas, miVentana.billeteComprado);
-					miModelo.misFuncionesBilleteComprado.resumenBilleteComprado(miModelo.billeteIda, miModelo.billeteVuelta, miVentana);
+				case "btnSiguienteFechas": 
+					if (miVentana.fechas.btnRadioButton.isSelected() && miVentana.fechas.dateVuelta.getDate() == null) {
+						JOptionPane.showMessageDialog(miVentana, "Falta la fecha de vuelta. Elija una o elija solo ida.", "¡Atención!", JOptionPane.WARNING_MESSAGE);
+					} else {
+						funciones.cambiarDePanel(miVentana.fechas, miVentana.billeteComprado);
+						miModelo.misFuncionesBilleteComprado.resumenBilleteComprado(miModelo.billeteIda, miModelo.billeteVuelta, miVentana);
+					}
 					break;
 				
 				case "btnCancelarFechas": funciones.cambiarDePanel(miVentana.fechas, miVentana.billetes);
@@ -139,6 +166,11 @@ public class ControladorFechas implements ActionListener {
 		precio = miModelo.misFuncionesFechas.calcularPrecioBillete(codAutobus, distancia);
 		miModelo.billeteIda.setPrecioTrayecto(precio);
 		if (miModelo.billeteVuelta != null) {
+			miModelo.billeteVuelta.setPrecioTrayecto(precio);
+			miModelo.billeteVuelta.setFecha(sdf.format(miVentana.fechas.dateVuelta.getDate()));
+			miModelo.billeteVuelta.setCodAutobus(codAutobus);
+			miModelo.billeteVuelta.setOrigen(miModelo.billeteIda.getDestino());
+			miModelo.billeteVuelta.setDestino(miModelo.billeteIda.getOrigen());
 			miVentana.fechas.textPrecio.setText(formatoMoneda.format(miModelo.billeteIda.getPrecioTrayecto() + miModelo.billeteVuelta.getPrecioTrayecto()));
 		} else {
 			miVentana.fechas.textPrecio.setText(formatoMoneda.format(miModelo.billeteIda.getPrecioTrayecto()));

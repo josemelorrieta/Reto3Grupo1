@@ -95,43 +95,5 @@ public class FuncionesModelo {
 		
 		return numeroBillete;
 	}
-	
-	/**
-	 * Metodo que busca que autobus esta libre para seleccionarlo al billete
-	 * @param codLinea String codigo de la linea de autobus
-	 * @return codAutobus Codigo del autobus seleccionado
-	 */
-	public int codigoAutobusLibre(String codLinea) {
-		//Declaración e inicialización de variables
-		int codAutobus = 0;
-		int[] autobusesPorLinea = null;
-		ConexionBD miConexion = new ConexionBD();
-		ConsultaBD miConsulta = new ConsultaBD();
-		Connection con = miConexion.conectarBD();
-		
-		String query = "SELECT Cod_Bus FROM linea_autobus WHERE Cod_Linea = '" + codLinea + "'";
-		
-		//Inicio del programa
-		ResultSet rs = miConsulta.hacerConsultaBD(con, query);
-		autobusesPorLinea = new int[0];
-		
-		//Cargamos los codigos de autobus de la linea
-		try {
-			while(rs.next()) {
-				codAutobus = rs.getInt("Cod_Bus");
-				autobusesPorLinea = incrementarArrayInt(autobusesPorLinea);
-				autobusesPorLinea[autobusesPorLinea.length -1] = codAutobus;
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		//comprobamos las plazas de los autobuses para elegirlo
-		
-		
-		
-		return codAutobus;
-	}
 
 }
