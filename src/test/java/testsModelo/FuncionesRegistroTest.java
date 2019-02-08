@@ -38,7 +38,7 @@ public class FuncionesRegistroTest {
 	@Test
 	public void verificarDNITest()  throws SQLException {
 		
-		String dni= "79268079M";
+		String dni= "78878943G";
 		
 		assertEquals(func.verificarDNI(dni), true);
 		
@@ -103,9 +103,9 @@ public class FuncionesRegistroTest {
 		String fecha7 = null;
 		int password7 = 0;
 		
-		String dni8 = "79268079M";	
-		String nombre8 = "osito";
-		String apellido8 = "gominola";
+		String dni8 = "78878943G";	
+		String nombre8 = "Otilio";
+		String apellido8 = "Ladrillo";
 		String fecha8 = "2000-08-25";
 		int password8 = 123;
 		

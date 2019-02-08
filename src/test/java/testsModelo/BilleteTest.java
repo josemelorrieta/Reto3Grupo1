@@ -15,7 +15,7 @@ public class BilleteTest {
 	private String destino = "La playita";
 	private int codAutobus = 0001;
 	private double precioTrayecto = 1.75;
-	private String dni = "11111111A";
+	private String dni = "12345678Z";
 	private Billete billete = new Billete(numBillete, fecha, codLinea, origen, destino, codAutobus, precioTrayecto, dni);
 	
 	@Test
@@ -27,7 +27,7 @@ public class BilleteTest {
 		assertEquals(destino, billete.getDestino(), "La playita");
 		assertEquals(codAutobus, billete.getCodAutobus(), 0001); 
 		assertEquals(precioTrayecto, billete.getPrecioTrayecto(), 1.75);
-		assertEquals(dni, billete.getDni(), 1111111);
+		assertEquals(dni, billete.getDni(), "12345678Z");
 	}
 
 	@Test

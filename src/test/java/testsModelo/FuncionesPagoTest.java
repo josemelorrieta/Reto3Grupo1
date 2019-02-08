@@ -13,6 +13,11 @@ public class FuncionesPagoTest {
 	@Test
 	public void sumarDineroPagoTest() {
 		
+		double valor = 0;
+		double pagado = 1;
+		
+		assertEquals(func.sumarDineroPago(valor, pagado), 1, 0.01);
+			
 	}
 
 }

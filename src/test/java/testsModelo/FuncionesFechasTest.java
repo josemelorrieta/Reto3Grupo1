@@ -35,8 +35,8 @@ public class FuncionesFechasTest {
 	
 	@Test
 	public void testDistanciaRecorrido() throws SQLException {
-		String codP1 = "1";
-		String codP2 = "8";
+		String codP1 = "Termibus-Bilbao";
+		String codP2 = "Ayuntamiento Plentzia";
 		
 		assertEquals(func.distanciaRecorrido(codP1, codP2), 15.912, 0.1);
 	}
@@ -66,9 +66,9 @@ public class FuncionesFechasTest {
 	public void testCalcularPrecioBillete() throws SQLException {
 		int codAutobus = 1001;
 		double distancia = 10;
-		double precioBillete = 0.32 * 10 * 1.2;
+		double precioBillete = 0.32 * 10 * 1.2 * 1.21;
 		
-		assertEquals(func.calcularPrecioBillete(codAutobus, distancia), precioBillete, 0.1);
+		assertEquals(func.calcularPrecioBillete(codAutobus, distancia), precioBillete, 0.01);
 	}
 	
 	@Test
