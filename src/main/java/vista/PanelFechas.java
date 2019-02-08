@@ -24,7 +24,7 @@ import javax.swing.JTextField;
  */
 public class PanelFechas extends JPanel { 
 	
-	public JButton btnAtras = new JButton("Atras");
+	public JButton btnAtras = new JButton("Atrás");
 	public JButton btnSiguiente = new JButton("Siguiente");
 	public JButton btnCancelar = new JButton("Cancelar");
 	public JRadioButton btnRadioButton = new JRadioButton("Comprar billete de vuelta");
@@ -40,6 +40,10 @@ public class PanelFechas extends JPanel {
 		setBorder(new LineBorder(new Color(0, 0, 0), 4));
 		setBackground(Color.CYAN);
 		setLayout(null); 
+		btnAtras.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
 		
 		btnAtras.setName("btnAtrasFechas");
 		btnAtras.setFont(new Font("Tahoma", Font.BOLD, 20));
