@@ -20,7 +20,7 @@ import javax.swing.SwingConstants;
  */
 public class PanelParadas extends JPanel {
 
-	public JButton btnAtras = new JButton("Atras");
+	public JButton btnAtras = new JButton("Atrás");
 	public JButton btnSiguiente = new JButton("Siguiente");
 	public JButton btnCancelar = new JButton("Cancelar");
 	public DefaultComboBoxModel<String> modeloOrigen = new DefaultComboBoxModel	<String>();
