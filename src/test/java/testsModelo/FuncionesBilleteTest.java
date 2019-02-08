@@ -28,7 +28,7 @@ public class FuncionesBilleteTest {
 	}
 
 	@Test
-	public void testNombrePareda()  throws SQLException {
+	public void testNombreParada()  throws SQLException {
 		
 		int codParada = 1;
 		String nombreParada = "Termibus-Bilbao";

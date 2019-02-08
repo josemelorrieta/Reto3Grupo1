@@ -54,13 +54,13 @@ public class ControladorLineas implements ActionListener {
 				//Cargar las paradas de la linea seleccionada
 				miModelo.paradas = miModelo.misFuncionesParadas.cargarParadas(miModelo.paradas, miVentana.lineas.listaLineas.getSelectedItem().toString());
 				if(miModelo.paradas != null) {
+					//Borramos las listas de paradas de origen y destino. La lista de paradas de destino se actualiza al cambiar las paradas de origen 
 					miVentana.paradas.modeloOrigen.removeAllElements();
-					miVentana.paradas.modeloDestino.removeAllElements();
+				
 					for (int i=0;i<miModelo.paradas.length;i++) {
-						miVentana.paradas.modeloOrigen.addElement(miModelo.paradas[i].getNombre());
-						//Quitamos la primera parada de la lista de destino
-						if(i != 0) {
-							miVentana.paradas.modeloDestino.addElement(miModelo.paradas[i].getNombre());
+						//Quitamos la ultima parada de la lista de paradas de origen
+						if (i != miModelo.paradas.length - 1) {
+							miVentana.paradas.modeloOrigen.addElement(miModelo.paradas[i].getNombre());
 						}
 					}
 					miVentana.paradas.paradaDeOrigen.setModel(miVentana.paradas.modeloOrigen);

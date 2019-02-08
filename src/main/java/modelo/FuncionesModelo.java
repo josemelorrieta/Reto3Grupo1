@@ -131,7 +131,7 @@ public class FuncionesModelo {
 		
 		
 		
-		return codAutobus;
+		return codAutobus; 
 	}
 
 }
