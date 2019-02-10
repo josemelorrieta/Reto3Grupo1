@@ -19,7 +19,7 @@ public class ConexionBD {
 		ConexionFichero datosFichero = new ConexionFichero();
 		
 		//fuichero del que saca los datos de conexion
-		final String NombreFichero = "src/main/java/modelo/datosBD.txt";
+		final String NombreFichero = "datosBD.txt";
 		String[] datos = datosFichero.cogerDatosDeFichero(NombreFichero);
 		
 		// Inicio del programa

@@ -28,7 +28,7 @@ public class PanelDespedida extends JPanel {
 		lblNewJgoodiesLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewJgoodiesLabel.setBackground(Color.RED);
 		lblNewJgoodiesLabel.setBounds(0, 0, 1100, 700);
-		lblNewJgoodiesLabel.setIcon(new ImageIcon(PanelDespedida.class.getResource("/Imagenes/Gracias.png")));
+		lblNewJgoodiesLabel.setIcon(new ImageIcon(PanelDespedida.class.getResource("/imagenes/Gracias.png")));
 		add(lblNewJgoodiesLabel);
 
 	}
