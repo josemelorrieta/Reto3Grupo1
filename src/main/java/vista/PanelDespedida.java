@@ -27,7 +27,7 @@ public class PanelDespedida extends JPanel {
 		
 		JLabel lblNewJgoodiesLabel = DefaultComponentFactory.getInstance().createLabel("");
 		lblNewJgoodiesLabel.setBounds(0, 0, 1100, 701);
-		lblNewJgoodiesLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewJgoodiesLabel.setHorizontalAlignment(SwingConstants.CENTER); 
 		lblNewJgoodiesLabel.setBackground(Color.RED);
 
 		lblNewJgoodiesLabel.setBounds(0, 0, 1100, 700);

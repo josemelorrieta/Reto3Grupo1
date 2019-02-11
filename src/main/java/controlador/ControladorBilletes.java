@@ -3,11 +3,9 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 
 import modelo.Billete;
-import modelo.Modelo;
 import vista.Ventana;
 
 /**
@@ -19,7 +17,7 @@ public class ControladorBilletes implements ActionListener {
 	FuncionesControlador funciones = new FuncionesControlador();
 
 	private Ventana miVentana;
-	private Modelo miModelo;
+	
 	
 	
 	/**
@@ -27,10 +25,10 @@ public class ControladorBilletes implements ActionListener {
 	 * @param miVentana instancia de la ventana principal del programa
 	 * @param miModelo instacia del modelo donde se encuentran las funciones para el panel
 	 */
-	public ControladorBilletes (Ventana miVentana, Modelo miModelo) {  
+	public ControladorBilletes (Ventana miVentana) {  
 		
 		this.miVentana = miVentana;
-		this.miModelo = miModelo;
+		
 		
 		//Define los listeners de los botones del panel
 		miVentana.billetes.btnComprarBillete.addActionListener(this);

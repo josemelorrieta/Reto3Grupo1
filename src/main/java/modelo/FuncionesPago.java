@@ -1,11 +1,6 @@
 package modelo;
 
-import java.text.NumberFormat;
-import java.util.Locale;
-import javax.swing.JButton;
 
-import controlador.DatosPrecio;
-import vista.Ventana;
 
 /**
  * Clase con las funciones del panel de pago

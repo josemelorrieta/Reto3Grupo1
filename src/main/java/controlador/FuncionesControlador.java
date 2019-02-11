@@ -1,11 +1,9 @@
 package controlador;
 
-import java.util.Locale;
 
-import javax.swing.JButton;
 import javax.swing.JPanel;
 
-import vista.Ventana;
+
 
 /**
  * Clase con controla el cambio entre paneles

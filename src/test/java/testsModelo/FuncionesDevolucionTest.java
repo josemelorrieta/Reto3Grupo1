@@ -6,13 +6,11 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import modelo.FuncionesDevolucion;
-import modelo.FuncionesPago;
 import modelo.Modelo;
 
 public class FuncionesDevolucionTest {
 	
 	private Modelo miModelo = new Modelo();
-	private FuncionesPago pagoTest = new FuncionesPago();
 	private FuncionesDevolucion funcionesTest = new FuncionesDevolucion(miModelo);
 	//private FuncionesPago leerDatosMock = mock(FuncionesPago.class);
 	
