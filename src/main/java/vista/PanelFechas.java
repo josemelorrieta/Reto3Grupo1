@@ -11,14 +11,11 @@ import javax.swing.SwingConstants;
 import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JRadioButton;
-import javax.swing.JComboBox;
-import javax.swing.JTextArea;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import com.toedter.calendar.JDateChooser;
 import java.awt.event.InputMethodListener;
 import java.awt.event.InputMethodEvent;
-import javax.swing.JTextField;
 import java.awt.SystemColor;
 
 /**
@@ -26,6 +23,8 @@ import java.awt.SystemColor;
  *
  */
 public class PanelFechas extends JPanel { 
+	
+	private static final long serialVersionUID = 1L;
 	
 	public JButton btnAtras = new JButton("Atrás");
 	public JButton btnSiguiente = new JButton("Siguiente");

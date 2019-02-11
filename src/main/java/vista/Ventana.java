@@ -5,11 +5,8 @@ import java.awt.CardLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
-import com.jgoodies.forms.factories.DefaultComponentFactory;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
-import javax.swing.UIManager;
 import java.awt.SystemColor;
 import java.awt.Font;
 
@@ -18,6 +15,8 @@ import java.awt.Font;
  *
  */
 public class Ventana extends JFrame { 
+
+	private static final long serialVersionUID = 1L;
 
 	private JPanel contentPane;
 

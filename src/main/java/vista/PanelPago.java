@@ -3,20 +3,13 @@ package vista;
 import javax.swing.JPanel;
 import java.awt.Color;
 
-import javax.swing.border.BevelBorder;
 import javax.swing.border.LineBorder;
-import javax.swing.border.SoftBevelBorder;
 import javax.swing.JLabel;
 import com.jgoodies.forms.factories.DefaultComponentFactory;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
-
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 /** 
  * Clase del panel de pago
@@ -24,31 +17,33 @@ import java.awt.event.ActionEvent;
  */
 public class PanelPago extends JPanel {
 	
-		public JButton btnCancelar = new JButton("Cancelar");
-		public JButton btnAtras = new JButton("Atras");
-		public JButton btnSiguiente = new JButton("Siguiente");
-		
-		public JLabel restante = new JLabel();
-		public JLabel pagado = new JLabel();
-		public JLabel total = new JLabel();
+	private static final long serialVersionUID = 1L;
 	
-		public JButton btn500;
-		public JButton btn200;
-		public JButton btn100;
-		public JButton btn50;
-		public JButton btn20;
-		public JButton btn10;
-		public JButton btn5;
-		public JButton btn2;
-		public JButton btn1;
-		public JButton btn050;
-		public JButton btn020;
-		public JButton btn010;
-		public JButton btn005;
-		public JButton btn002; 
-		public JButton btn001;
-		
-		public JButton[] arrayBtn= new JButton[15];
+	public JButton btnCancelar = new JButton("Cancelar");
+	public JButton btnAtras = new JButton("Atras");
+	public JButton btnSiguiente = new JButton("Siguiente");
+	
+	public JLabel restante = new JLabel();
+	public JLabel pagado = new JLabel();
+	public JLabel total = new JLabel();
+
+	public JButton btn500;
+	public JButton btn200;
+	public JButton btn100;
+	public JButton btn50;
+	public JButton btn20;
+	public JButton btn10;
+	public JButton btn5;
+	public JButton btn2;
+	public JButton btn1;
+	public JButton btn050;
+	public JButton btn020;
+	public JButton btn010;
+	public JButton btn005;
+	public JButton btn002; 
+	public JButton btn001;
+	
+	public JButton[] arrayBtn= new JButton[15];
 		
 
 	/**

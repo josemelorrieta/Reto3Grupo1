@@ -1,16 +1,2 @@
-/vista/
-<<<<<<< HEAD
-/Imagenes/
-/controlador/
-=======
-/modelo/
-/controlador/
-/testsControlador/
 /testsModelo/
-<<<<<<< HEAD
-=======
-/Imagenes/
-
->>>>>>> 7b41552b469ffa59f408bd5832dbbc793f4fec00
->>>>>>> 8d5cd12f64e854ba8efcc97b3fc0b2e7749858b8
-/imagenes/
+/controlador/

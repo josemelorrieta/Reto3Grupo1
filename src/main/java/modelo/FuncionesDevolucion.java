@@ -3,18 +3,13 @@ package modelo;
 import java.sql.Connection;
 import java.text.NumberFormat;
 import java.util.Locale;
-import javax.swing.JButton;
-import javax.swing.JOptionPane;
-
-import controlador.DatosPrecio;
-import vista.Ventana;
 
 /**
  * Calse con las funciones del panel de devolucion de cambios
  *
  */
 public class FuncionesDevolucion {
-	private Modelo miModelo;
+	private Modelo miModelo; 
 
 	NumberFormat formatoMoneda = NumberFormat.getCurrencyInstance(Locale.getDefault());
 	
@@ -24,7 +19,7 @@ public class FuncionesDevolucion {
 	 * @param miModelo instancia del modelo para acceder a las funciones
 	 */
 	public FuncionesDevolucion (Modelo miModelo) {
-		this.miModelo=miModelo;
+		this.setMiModelo(miModelo);
 	}
 	
 	/**
@@ -85,6 +80,15 @@ public class FuncionesDevolucion {
 		} else {
 			return false;
 		}
+	}
+
+	//Getters and setters
+	public Modelo getMiModelo() {
+		return miModelo;
+	}
+
+	public void setMiModelo(Modelo miModelo) {
+		this.miModelo = miModelo;
 	}
 }	 
 

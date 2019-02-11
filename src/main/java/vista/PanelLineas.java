@@ -21,6 +21,8 @@ import java.awt.SystemColor;
  */
 public class PanelLineas extends JPanel { 
 	
+	private static final long serialVersionUID = 1L;
+	
 	public JButton btnCancelar = new JButton("Cancelar");
 	public JButton btnSiguiente = new JButton("Siguiente");
 	public DefaultComboBoxModel<String> modeloLineas = new DefaultComboBoxModel<String>();

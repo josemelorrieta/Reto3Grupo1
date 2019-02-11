@@ -36,7 +36,7 @@ public class LineaAutobusTest {
 	@Test
 	public void testMunicipios() {
 		lineaAutobus.setMunicipios(municipios);
-		assertEquals(municipios, lineaAutobus.getMunicipios());
+		assertArrayEquals(municipios, lineaAutobus.getMunicipios());
 	}
 }
   

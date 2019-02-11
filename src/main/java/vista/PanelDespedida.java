@@ -6,7 +6,6 @@ import com.jgoodies.forms.factories.DefaultComponentFactory;
 import javax.swing.ImageIcon;
 import java.awt.Color;
 import javax.swing.SwingConstants;
-import javax.swing.UIManager;
 import javax.swing.border.LineBorder;
 import java.awt.Font;
 
@@ -16,7 +15,10 @@ import java.awt.Font;
  */
 public class PanelDespedida extends JPanel {
 	
+	private static final long serialVersionUID = 1L;
+	
 	JPanel panelDespedida = new JPanel();
+	
 	/**
 	 * Create the panel.
 	 */

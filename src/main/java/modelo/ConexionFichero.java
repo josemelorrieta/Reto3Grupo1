@@ -5,7 +5,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.io.BufferedWriter;
 
 /**
@@ -61,17 +60,18 @@ public class ConexionFichero {
 	 * @param datosBillete array con los valores Linea, Origen, Destino, Fecha Ida, Fecha Vuelta, DNI, Nombre, Fecha Nacimiento, Sexo y Fecha de compra
 	 */
 	public boolean imprimirBillete(Billete billeteIda, Billete billeteVuelta, Cliente cliente) {
+		//Declaracion e inicializacion de variables
 		FileWriter fichero = null;	
 		BufferedWriter linea = null;
 		
 		String sexo = "";
 		double precio = 0;
 		Calendar calendar = Calendar.getInstance();
-		Date fechaAux = new Date();
 
 		SimpleDateFormat sdfOrg = new SimpleDateFormat("yyyy-MM-dd");
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-			
+		
+		//Inicio del programa
 		try {
 			//generar fichero con el nombre compuesto por el dni y la fecha de ida del billete en la carpeta Temp
 			fichero = new FileWriter("C:/Temp/" + billeteIda.getDni() + "-" + billeteIda.getFecha().replaceAll("-",  "") + "-" + billeteIda.getNumBillete() + ".txt");

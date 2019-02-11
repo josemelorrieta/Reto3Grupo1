@@ -16,6 +16,8 @@ import javax.swing.SwingConstants;
  */
 public class PanelBilleteComprado extends JPanel {
 	
+	private static final long serialVersionUID = 1L;
+	
 	public JButton btnCancelar = new JButton("Cancelar");
 	public JButton btnAtras = new JButton("Atrás");
 	public JButton btnSiguiente = new JButton("Siguiente");

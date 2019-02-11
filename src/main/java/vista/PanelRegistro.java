@@ -12,12 +12,10 @@ import javax.swing.border.SoftBevelBorder;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
-import javax.swing.JCheckBox;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JPasswordField;
-import com.toedter.calendar.JCalendar;
 import com.toedter.calendar.JDateChooser;
 
 /** 
@@ -25,6 +23,8 @@ import com.toedter.calendar.JDateChooser;
  *
  */
 public class PanelRegistro extends JPanel {
+	
+	private static final long serialVersionUID = 1L;
 	
 	JPanel panelRegistro = new JPanel();
 	public JTextField textFieldApellidos;
@@ -113,7 +113,7 @@ public class PanelRegistro extends JPanel {
 		
 		
 		comboBoxGenero.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		comboBoxGenero.setModel(new DefaultComboBoxModel(new String[] {"Hombre", "Mujer"}));
+		comboBoxGenero.setModel(new DefaultComboBoxModel<String>(new String[] {"Hombre", "Mujer"}));
 		comboBoxGenero.setBounds(468, 354, 95, 25);
 		add(comboBoxGenero);
 		

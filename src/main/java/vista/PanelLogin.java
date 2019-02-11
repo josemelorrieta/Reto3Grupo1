@@ -2,7 +2,6 @@ package vista;
 
 import java.awt.Font;
 
-import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -12,12 +11,9 @@ import com.jgoodies.forms.factories.DefaultComponentFactory;
 import java.awt.Color;
 import javax.swing.border.LineBorder;
 import java.awt.SystemColor;
-import javax.swing.UIManager;
-import javax.swing.border.TitledBorder;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
-import javax.swing.border.SoftBevelBorder; 
 import javax.swing.border.BevelBorder;
 
 /**
@@ -25,6 +21,8 @@ import javax.swing.border.BevelBorder;
  *
  */
 public class PanelLogin extends JPanel {
+	
+	private static final long serialVersionUID = 1L;
 	
 	public JTextField TextDni; 
 	public JPasswordField passwordField;

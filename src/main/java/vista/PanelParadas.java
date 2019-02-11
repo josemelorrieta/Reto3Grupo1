@@ -8,7 +8,6 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.LineBorder;
 
@@ -22,6 +21,8 @@ import java.awt.SystemColor;
  */
 public class PanelParadas extends JPanel {
 
+	private static final long serialVersionUID = 1L;
+	
 	public JButton btnAtras = new JButton("Atrás");
 	public JButton btnSiguiente = new JButton("Siguiente");
 	public JButton btnCancelar = new JButton("Cancelar");
