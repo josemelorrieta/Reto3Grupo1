@@ -58,12 +58,12 @@ public class PanelFechas extends JPanel {
 		
 		JLabel lblFechaDeIda = DefaultComponentFactory.getInstance().createLabel("Fecha de Ida:");
 		lblFechaDeIda.setFont(new Font("Tahoma", Font.PLAIN, 40));
-		lblFechaDeIda.setBounds(129, 255, 252, 49);
+		lblFechaDeIda.setBounds(118, 263, 252, 49);
 		add(lblFechaDeIda);
 		
 		JLabel lblNewJgoodiesLabel = DefaultComponentFactory.getInstance().createLabel("Fecha de Vuelta:");
 		lblNewJgoodiesLabel.setFont(new Font("Tahoma", Font.PLAIN, 40));
-		lblNewJgoodiesLabel.setBounds(646, 261, 314, 37);
+		lblNewJgoodiesLabel.setBounds(648, 269, 314, 37);
 		add(lblNewJgoodiesLabel);
 		btnRadioButton.setName("btnRadioComprarBilleteVuelta");
 		btnRadioButton.setBackground(Color.CYAN); 
@@ -75,7 +75,7 @@ public class PanelFechas extends JPanel {
 		
 		JLabel lblPrecio = DefaultComponentFactory.getInstance().createLabel("Precio:");
 		lblPrecio.setFont(new Font("Tahoma", Font.PLAIN, 40));
-		lblPrecio.setBounds(316, 452, 138, 37);
+		lblPrecio.setBounds(337, 452, 138, 37);
 		add(lblPrecio);
 		textPrecio.setFont(new Font("Tahoma", Font.PLAIN, 40));
 		
@@ -102,11 +102,11 @@ public class PanelFechas extends JPanel {
 			}
 		});
 		
-		dateIda.setBounds(118, 309, 265, 50);
+		dateIda.setBounds(118, 323, 265, 50);
 		add(dateIda);
 		dateVuelta.setFont(new Font("Tahoma", Font.PLAIN, 18));
 
-		dateVuelta.setBounds(656, 309, 265, 50);
+		dateVuelta.setBounds(650, 323, 265, 50);
 		dateVuelta.setEnabled(false);
 		add(dateVuelta);
 

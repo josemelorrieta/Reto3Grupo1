@@ -37,9 +37,9 @@ public class Controlador {
 		this.miControladorSaludo = new ControladorSaludo(miVentana);	
 		this.miControladorLogin = new ControladorLogin(this, miVentana, miModelo);
 		this.miControladorRegistro = new ControladorRegistro(this, miVentana, miModelo);
-		this.miControladorBilletes = new ControladorBilletes(miVentana, miModelo);
+		this.miControladorBilletes = new ControladorBilletes(miVentana);
 		this.miControladorLineas = new ControladorLineas(miVentana, miModelo);
-		this.miControladorParadas = new ControladorParadas(this, miVentana, miModelo);
+		this.miControladorParadas = new ControladorParadas(miVentana, miModelo);
 		this.miControladorFechas = new ControladorFechas(miVentana, miModelo);
 		this.miControladorBilleteComprado = new ControladorBilleteComprado(this, miVentana, miModelo);
 		this.miControladorPago = new ControladorPago(miVentana, miModelo);

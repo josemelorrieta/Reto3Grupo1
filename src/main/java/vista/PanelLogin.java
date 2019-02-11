@@ -36,64 +36,77 @@ public class PanelLogin extends JPanel {
 	 *
 	 */
 	public PanelLogin() {
-		setBackground(Color.CYAN);
-		setBounds(0, 0, 1090, 690);
+		setBorder(new LineBorder(new Color(0, 0, 0), 4));
+		setBackground(SystemColor.controlHighlight);
+		setBounds(0, 0, 1085, 660);
 		setLayout(null);
 		
 		btnRegistrarse = new JButton("Registrarse");
+		btnRegistrarse.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(255, 248, 220), new Color(255, 248, 220), null, null));
+		btnRegistrarse.setBackground(new Color(248, 248, 255));
 		btnRegistrarse.setName("btnRegistrarseLogin");
 		btnRegistrarse.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnRegistrarse.setBounds(846, 575, 194, 68);
+		btnRegistrarse.setBounds(842, 551, 195, 70);
 		add(btnRegistrarse);
 		
-		
-		
-		JLabel lblNewJgoodiesLabel_1 = DefaultComponentFactory.getInstance().createLabel("");
-		lblNewJgoodiesLabel_1.setForeground(Color.CYAN);
-		lblNewJgoodiesLabel_1.setBackground(Color.GREEN); 
-		lblNewJgoodiesLabel_1.setBounds(305, 142, 441, 359);
-		lblNewJgoodiesLabel_1.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		add(lblNewJgoodiesLabel_1);
-		
-		btnAtras = new JButton("Atras");
+		btnAtras = new JButton("Atrás");
+		btnAtras.setBackground(new Color(248, 248, 255));
+		btnAtras.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(255, 239, 213), new Color(255, 239, 213), null, null));
 		btnAtras.setName("btnAtrasLogin");
 		btnAtras.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnAtras.setBounds(48, 575, 194, 68);
+		btnAtras.setBounds(48, 551, 195, 70);
 		add(btnAtras);
 		
 		JLabel lblNewJgoodiesLabel_3 = DefaultComponentFactory.getInstance().createLabel("DNI:");
-		lblNewJgoodiesLabel_3.setBounds(202, 159, 645, 33);
+		lblNewJgoodiesLabel_3.setBounds(325, 175, 433, 33);
 		add(lblNewJgoodiesLabel_3);
 		lblNewJgoodiesLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewJgoodiesLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		JLabel lblNewJgoodiesLabel = DefaultComponentFactory.getInstance().createLabel("CONTRASE\u00D1A:");
-		lblNewJgoodiesLabel.setBounds(208, 277, 639, 33);
+		lblNewJgoodiesLabel.setBounds(325, 285, 433, 33);
 		add(lblNewJgoodiesLabel);
 		lblNewJgoodiesLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewJgoodiesLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		TextDni = new JTextField();
-		TextDni.setBounds(372, 203, 298, 33);
+		TextDni.setBounds(399, 212, 298, 33);
 		add(TextDni);
 		TextDni.setColumns(10);
 		
 		passwordField = new JPasswordField();
-		passwordField.setBounds(372, 316, 298, 33);
+		passwordField.setBounds(399, 325, 298, 33);
 		add(passwordField);
 		
 		btnLogin = new JButton ("Login");
+		btnLogin.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(255, 248, 220), new Color(255, 248, 220), null, null));
+		btnLogin.setBackground(new Color(248, 248, 255));
 		btnLogin.setName("btnLogin");
-		btnLogin.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnLogin.setBounds(412, 397, 213, 57);
+		btnLogin.setFont(new Font("Tahoma", Font.BOLD, 20));
+		btnLogin.setBounds(439, 406, 213, 57);
 		add(btnLogin);
 		
 		JLabel lblLogin= DefaultComponentFactory.getInstance().createLabel("LOGIN");
-		lblLogin.setForeground(Color.PINK);
+		lblLogin.setBackground(new Color(204, 51, 153));
+		lblLogin.setForeground(new Color(204, 51, 51));
 		lblLogin.setFont(new Font("Tahoma", Font.BOLD, 50));
 		lblLogin.setHorizontalAlignment(SwingConstants.CENTER);
-		lblLogin.setBounds(-21, 73, 1070, 48);
+		lblLogin.setBounds(10, 72, 1070, 48);
 		add(lblLogin);
+		
+		
+		
+		JLabel lblNewJgoodiesLabel_1 = DefaultComponentFactory.getInstance().createLabel("");
+		lblNewJgoodiesLabel_1.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		lblNewJgoodiesLabel_1.setForeground(Color.CYAN);
+		lblNewJgoodiesLabel_1.setBackground(new Color(204, 51, 51)); 
+		lblNewJgoodiesLabel_1.setBounds(322, 144, 440, 360);
+		add(lblNewJgoodiesLabel_1);
+		
+		JLabel lblNewJgoodiesLabel_2 = DefaultComponentFactory.getInstance().createLabel("");
+		lblNewJgoodiesLabel_2.setIcon(new ImageIcon(PanelLogin.class.getResource("/Imagenes/logo-termibus2.jpg")));
+		lblNewJgoodiesLabel_2.setBounds(26, 26, 211, 82);
+		add(lblNewJgoodiesLabel_2);
 		
 	}
 }

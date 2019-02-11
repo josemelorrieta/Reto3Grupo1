@@ -3,8 +3,6 @@ package testsModelo;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
-
-import modelo.Cliente;
 import modelo.LineaAutobus;
 
 public class LineaAutobusTest {

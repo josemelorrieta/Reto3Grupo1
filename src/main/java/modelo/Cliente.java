@@ -1,7 +1,5 @@
 package modelo;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
 
 /**
  * Clase del objeto cliente

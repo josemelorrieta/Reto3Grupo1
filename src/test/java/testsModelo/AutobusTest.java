@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import modelo.Autobus;
-import modelo.LineaAutobus;
+
 
 public class AutobusTest {
 

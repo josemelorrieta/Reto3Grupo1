@@ -9,6 +9,9 @@ import javax.swing.JLabel;
 import com.jgoodies.forms.factories.DefaultComponentFactory;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
+import javax.swing.UIManager;
+import java.awt.SystemColor;
+import java.awt.Font;
 
 /**
  * Clase de la ventana principarl de la aplicacion
@@ -51,7 +54,9 @@ public class Ventana extends JFrame {
 		
 		
 		login = new PanelLogin();
-		login.setBackground(Color.CYAN);
+		login.passwordField.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		login.TextDni.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		login.setBackground(SystemColor.controlHighlight);
 		login.setBorder(new LineBorder(new Color(0, 0, 0), 4));
 		contentPane.add(login);
 		login.setLayout(null);
