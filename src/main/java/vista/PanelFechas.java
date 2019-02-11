@@ -9,6 +9,8 @@ import javax.swing.JLabel;
 import com.jgoodies.forms.factories.DefaultComponentFactory;
 import javax.swing.SwingConstants;
 import java.awt.Font;
+
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JRadioButton;
 import java.awt.event.ActionListener;
@@ -66,37 +68,44 @@ public class PanelFechas extends JPanel {
 		add(btnSiguiente);
 		
 		JLabel lblFechaDeIda = DefaultComponentFactory.getInstance().createLabel("Fecha de Ida:");
-		lblFechaDeIda.setFont(new Font("Tahoma", Font.PLAIN, 40));
-		lblFechaDeIda.setBounds(118, 263, 252, 49);
+		lblFechaDeIda.setForeground(Color.BLACK);
+		lblFechaDeIda.setFont(new Font("Tahoma", Font.PLAIN, 35));
+		lblFechaDeIda.setBounds(135, 263, 252, 49);
 		add(lblFechaDeIda);
 		
 		JLabel lblNewJgoodiesLabel = DefaultComponentFactory.getInstance().createLabel("Fecha de Vuelta:");
-		lblNewJgoodiesLabel.setFont(new Font("Tahoma", Font.PLAIN, 40));
-		lblNewJgoodiesLabel.setBounds(648, 269, 314, 37);
+		lblNewJgoodiesLabel.setForeground(Color.BLACK);
+		lblNewJgoodiesLabel.setFont(new Font("Tahoma", Font.PLAIN, 35));
+		lblNewJgoodiesLabel.setBounds(684, 263, 266, 49);
 		add(lblNewJgoodiesLabel);
 		btnRadioButton.setName("btnRadioComprarBilleteVuelta");
 		btnRadioButton.setBackground(SystemColor.controlHighlight); 
 		
 		btnRadioButton.setHorizontalAlignment(SwingConstants.CENTER);
 		btnRadioButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnRadioButton.setBounds(367, 196, 284, 48); 
+		btnRadioButton.setBounds(6, 195, 1047, 48); 
 		add(btnRadioButton);
 		
 		JLabel lblPrecio = DefaultComponentFactory.getInstance().createLabel("Precio:");
-		lblPrecio.setFont(new Font("Tahoma", Font.PLAIN, 40));
-		lblPrecio.setBounds(337, 452, 138, 37);
+		lblPrecio.setHorizontalAlignment(SwingConstants.CENTER);
+		lblPrecio.setFont(new Font("Tahoma", Font.PLAIN, 35));
+		lblPrecio.setBounds(46, 436, 862, 37);
 		add(lblPrecio);
-		textPrecio.setFont(new Font("Tahoma", Font.PLAIN, 40));
+		
+		textPrecio.setText("");
+		textPrecio.setHorizontalAlignment(SwingConstants.LEFT);
+		textPrecio.setFont(new Font("Times New Roman", Font.PLAIN, 35));
 		
 		
-		textPrecio.setBounds(452, 452, 199, 37);
+		textPrecio.setBounds(537, 442, 140, 31);
 		add(textPrecio);
 		
 		JLabel lblNewJgoodiesLabel_1 = DefaultComponentFactory.getInstance().createLabel("SELECCIONE FECHA");
-		lblNewJgoodiesLabel_1.setForeground(Color.ORANGE);
+		lblNewJgoodiesLabel_1.setForeground(new Color(204, 51, 51));
 		lblNewJgoodiesLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewJgoodiesLabel_1.setFont(new Font("Sylfaen", Font.PLAIN, 50));
-		lblNewJgoodiesLabel_1.setBounds(10, 26, 1080, 68);
+		lblNewJgoodiesLabel_1.setFont(new Font("Tahoma", Font.BOLD, 40));
+		lblNewJgoodiesLabel_1.setBackground(new Color(204, 51, 153));
+		lblNewJgoodiesLabel_1.setBounds(10, 72, 1065, 48);
 		add(lblNewJgoodiesLabel_1);
 		
 		btnCancelar.setName("btnCancelarFechas");
@@ -114,13 +123,18 @@ public class PanelFechas extends JPanel {
 			}
 		});
 		
-		dateIda.setBounds(118, 323, 265, 50);
+		dateIda.setBounds(135, 323, 265, 50);
 		add(dateIda);
 		dateVuelta.setFont(new Font("Tahoma", Font.PLAIN, 18));
 
-		dateVuelta.setBounds(650, 323, 265, 50);
+		dateVuelta.setBounds(685, 323, 265, 50);
 		dateVuelta.setEnabled(false);
 		add(dateVuelta);
+		
+		JLabel lblNewJgoodiesLabel_2 = DefaultComponentFactory.getInstance().createLabel("");
+		lblNewJgoodiesLabel_2.setIcon(new ImageIcon(PanelLogin.class.getResource("/imagenes/logo-termibus2.jpg")));
+		lblNewJgoodiesLabel_2.setBounds(26, 26, 211, 82);
+		add(lblNewJgoodiesLabel_2);
 
 	}
 }

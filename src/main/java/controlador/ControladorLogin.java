@@ -53,7 +53,7 @@ public class ControladorLogin implements ActionListener {
 				miVentana.login.setVisible(true);
 			}
 		};
-		timer.schedule(esperar, 60000);
+		timer.schedule(esperar, 10000000);
 	}
 	
 	/**

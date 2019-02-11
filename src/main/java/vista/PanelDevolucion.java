@@ -8,9 +8,11 @@ import com.jgoodies.forms.factories.DefaultComponentFactory;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JList;
 import javax.swing.border.BevelBorder;
+import java.awt.SystemColor;
 
 /**
  * Clase del panel de devolucion de cambios
@@ -32,26 +34,31 @@ public class PanelDevolucion extends JPanel {
 	 */
 	public PanelDevolucion() {
 		setBorder(new LineBorder(new Color(0, 0, 0), 4));
-		setBackground(Color.CYAN);
+		setBackground(SystemColor.controlHighlight);
 		setLayout(null);
 		
 		JLabel lblNewJgoodiesLabel = DefaultComponentFactory.getInstance().createLabel("DEVOLUCIÓN");
-		lblNewJgoodiesLabel.setForeground(Color.ORANGE);
+		lblNewJgoodiesLabel.setBackground(new Color(204, 51, 153));
+		lblNewJgoodiesLabel.setForeground(new Color(204, 51, 51));
+		lblNewJgoodiesLabel.setFont(new Font("Tahoma", Font.BOLD, 40));
 		lblNewJgoodiesLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewJgoodiesLabel.setFont(new Font("Sylfaen", Font.PLAIN, 50));
-		lblNewJgoodiesLabel.setBounds(10, 52, 1080, 48); 
+		lblNewJgoodiesLabel.setBounds(10, 72, 1065, 48);
 		add(lblNewJgoodiesLabel); 
 		
 		
+		btnImprimirTicket.setBackground(new Color(248, 248, 255));
+		btnImprimirTicket.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(255, 239, 213), new Color(255, 239, 213), null, null));
 		btnImprimirTicket.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnImprimirTicket.setBounds(39, 577, 213, 65);
+		btnImprimirTicket.setBounds(48, 551, 195, 70);
 		btnImprimirTicket.setName("btnImprimirTicket");
 		add(btnImprimirTicket);
 		
 		
 		btnSiguiente.setName("btnSiguienteDevolucion");	
+		btnSiguiente.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(255, 248, 220), new Color(255, 248, 220), null, null));
+		btnSiguiente.setBackground(new Color(248, 248, 255));
 		btnSiguiente.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnSiguiente.setBounds(858, 575, 194, 68);
+		btnSiguiente.setBounds(837, 551, 195, 70);
 		add(btnSiguiente);
 		
 		cambios=new DefaultListModel<String>();
@@ -59,8 +66,13 @@ public class PanelDevolucion extends JPanel {
 		devolucion.setBorder(new BevelBorder(BevelBorder.LOWERED, Color.GRAY, Color.GRAY, Color.GRAY, Color.GRAY));
 		devolucion.setFont(new Font("Tahoma", Font.PLAIN, 22));
 		devolucion.setBackground(new Color(255, 255, 255));
-		devolucion.setBounds(203, 111, 696, 441);
+		devolucion.setBounds(203, 134, 696, 385);
 		add(devolucion);
+		
+		JLabel lblNewJgoodiesLabel_5 = DefaultComponentFactory.getInstance().createLabel("");
+		lblNewJgoodiesLabel_5.setIcon(new ImageIcon(PanelLogin.class.getResource("/imagenes/logo-termibus2.jpg")));
+		lblNewJgoodiesLabel_5.setBounds(26, 26, 211, 82);
+		add(lblNewJgoodiesLabel_5);
 
 	}
 

@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
@@ -57,13 +58,13 @@ public class PanelParadas extends JPanel {
 		add(btnSiguiente);
 
 		JLabel lblParadaDeOrigen = DefaultComponentFactory.getInstance().createLabel("Parada de Origen:");
-		lblParadaDeOrigen.setForeground(new Color(204, 51, 51));
+		lblParadaDeOrigen.setForeground(Color.BLACK);
 		lblParadaDeOrigen.setFont(new Font("Tahoma", Font.PLAIN, 35));
 		lblParadaDeOrigen.setBounds(75, 262, 352, 49);
 		add(lblParadaDeOrigen);
 		
 		JLabel lblNewJgoodiesLabel = DefaultComponentFactory.getInstance().createLabel("Parada de Destino:");
-		lblNewJgoodiesLabel.setForeground(new Color(204, 51, 51));
+		lblNewJgoodiesLabel.setForeground(Color.BLACK);
 		lblNewJgoodiesLabel.setFont(new Font("Tahoma", Font.PLAIN, 35));
 		lblNewJgoodiesLabel.setBounds(565, 262, 336, 49);
 		add(lblNewJgoodiesLabel);
@@ -94,5 +95,10 @@ public class PanelParadas extends JPanel {
 		lblMostrarLinea.setBackground(new Color(204, 51, 153));
 		lblMostrarLinea.setBounds(10, 72, 1065, 48);
 		add(lblMostrarLinea);
+		
+		JLabel lblNewJgoodiesLabel_2 = DefaultComponentFactory.getInstance().createLabel("");
+		lblNewJgoodiesLabel_2.setIcon(new ImageIcon(PanelLogin.class.getResource("/imagenes/logo-termibus2.jpg")));
+		lblNewJgoodiesLabel_2.setBounds(26, 26, 211, 82);
+		add(lblNewJgoodiesLabel_2);
 	}
 }

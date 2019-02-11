@@ -1,5 +1,7 @@
-/testsModelo/
-/controlador/
 /imagenes/
+/controlador/
 /modelo/
+/testsControlador/
+/testsModelo/
+/testsVista/
 /vista/

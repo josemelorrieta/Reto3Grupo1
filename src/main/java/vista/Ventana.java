@@ -61,7 +61,7 @@ public class Ventana extends JFrame {
 		login.setLayout(null);
 		
 		registro = new PanelRegistro();
-		registro.setBackground(Color.CYAN);
+		registro.setBackground(SystemColor.controlHighlight);
 		contentPane.add(registro);
 		registro.setLayout(null);
 		
@@ -93,7 +93,7 @@ public class Ventana extends JFrame {
 		fechas.btnAtras.setLocation(272, 551);
 		fechas.dateVuelta.setBackground(Color.WHITE);
 		fechas.dateIda.setBackground(Color.WHITE);
-		fechas.btnRadioButton.setBackground(Color.CYAN);
+		fechas.btnRadioButton.setBackground(SystemColor.controlHighlight);
 		contentPane.add(fechas);
 		fechas.setLayout(null);
 		

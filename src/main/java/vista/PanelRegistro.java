@@ -15,8 +15,10 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
 import javax.swing.JPasswordField;
 import com.toedter.calendar.JDateChooser;
+import java.awt.SystemColor;
 
 /** 
  * Clase del panel de registro de un nuevo usuario
@@ -43,15 +45,15 @@ public class PanelRegistro extends JPanel {
  
 	public PanelRegistro() {
 		setBorder(new LineBorder(new Color(0, 0, 0), 4));
-		setBackground(Color.CYAN);
+		setBackground(SystemColor.controlHighlight);
 		setLayout(null);
 		
 		JLabel lblNewJgoodiesLabel = DefaultComponentFactory.getInstance().createLabel("REGISTRARSE");
-		lblNewJgoodiesLabel.setForeground(Color.PINK);
-		lblNewJgoodiesLabel.setBackground(Color.MAGENTA);
+		lblNewJgoodiesLabel.setBackground(new Color(204, 51, 153));
+		lblNewJgoodiesLabel.setForeground(new Color(204, 51, 51));
+		lblNewJgoodiesLabel.setFont(new Font("Tahoma", Font.BOLD, 40));
 		lblNewJgoodiesLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewJgoodiesLabel.setFont(new Font("Tahoma", Font.BOLD, 50));
-		lblNewJgoodiesLabel.setBounds(11, 56, 1070, 49); 
+		lblNewJgoodiesLabel.setBounds(10, 72, 1065, 48);
 		add(lblNewJgoodiesLabel);
 		
 		JLabel lblNewJgoodiesLabel_1 = DefaultComponentFactory.getInstance().createLabel("DNI:");
@@ -128,12 +130,16 @@ public class PanelRegistro extends JPanel {
 		
 		
 		JLabel lblNewJgoodiesLabel_3 = DefaultComponentFactory.getInstance().createLabel("");
-		lblNewJgoodiesLabel_3.setBounds(184, 135, 732, 408);
+		lblNewJgoodiesLabel_3.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		lblNewJgoodiesLabel_3.setForeground(Color.CYAN);
+		lblNewJgoodiesLabel_3.setBackground(new Color(204, 51, 51)); 
+		lblNewJgoodiesLabel_3.setBounds(190, 160, 725, 367);
 		add(lblNewJgoodiesLabel_3);
-		lblNewJgoodiesLabel_3.setForeground(Color.GREEN);
-		lblNewJgoodiesLabel_3.setBackground(Color.GREEN);
-		lblNewJgoodiesLabel_3.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		
+		JLabel lblNewJgoodiesLabel_9 = DefaultComponentFactory.getInstance().createLabel("");
+		lblNewJgoodiesLabel_9.setIcon(new ImageIcon(PanelLogin.class.getResource("/imagenes/logo-termibus2.jpg")));
+		lblNewJgoodiesLabel_9.setBounds(26, 26, 211, 82);
+		add(lblNewJgoodiesLabel_9);
 		
 		dateChooser.setBounds(468, 409, 277, 20);
 		add(dateChooser);
