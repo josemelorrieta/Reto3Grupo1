@@ -68,7 +68,7 @@ public class FuncionesDevolucion {
 	 * @param billete Billete a guardar en la base de datos
 	 * @return true si se guarda con exito, false si hay un error
 	 */
-	public boolean guardarBilleteBD(Billete billete, Modelo miModelo) {
+	public boolean guardarBilleteBD(Billete billete, Modelo miModelo, int numTrayecto) {
 		//Declaración e inicializacion de variables		
 		ConexionBD miConexion = new ConexionBD();
 		ConsultaBD miConsulta = new ConsultaBD();
@@ -77,7 +77,7 @@ public class FuncionesDevolucion {
 		int codOrigen = Integer.parseInt(miModelo.misFuncionesFechas.nombreParadaACodParada(billete.getOrigen()));
 		int codDestino = Integer.parseInt(miModelo.misFuncionesFechas.nombreParadaACodParada(billete.getDestino()));
 		
-		String query = "INSERT INTO billete (Cod_Billete, Cod_Bus, Cod_Linea, Cod_Parada_Fin, Cod_Parada_Inicio, DNI, Fecha, Hora, NTrayecto, Precio) VALUES (" + billete.getNumBillete() + ", " + billete.getCodAutobus() + ", '" + billete.getCodLinea() + "', " + codDestino + ", " + codOrigen + ", '" + billete.getDni() + "', '" + billete.getFecha() + "', '12:00', 123, " + billete.getPrecioTrayecto() + ")";
+		String query = "INSERT INTO billete (Cod_Billete, Cod_Bus, Cod_Linea, Cod_Parada_Fin, Cod_Parada_Inicio, DNI, Fecha, Hora, NTrayecto, Precio) VALUES (" + billete.getNumBillete() + ", " + billete.getCodAutobus() + ", '" + billete.getCodLinea() + "', " + codDestino + ", " + codOrigen + ", '" + billete.getDni() + "', '" + billete.getFecha() + "', '12:00', " + numTrayecto + ", " + billete.getPrecioTrayecto() + ")";
 		
 		//Inicio del programa
 		if(miConsulta.insertarDatosBD(con, query)) {

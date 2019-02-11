@@ -33,14 +33,14 @@ public class PanelBilletes extends JPanel {
 		setBorder(new LineBorder(new Color(0, 0, 0), 4));
 		setBackground(SystemColor.controlHighlight);
 		setLayout(null);
-		
+
 		JLabel lblNewJgoodiesLabel_1 = DefaultComponentFactory.getInstance().createLabel("");
 		lblNewJgoodiesLabel_1.setIcon(new ImageIcon(PanelBilletes.class.getResource("/imagenes/logo-termibus2.jpg")));
 		lblNewJgoodiesLabel_1.setBounds(26, 26, 211, 82);
 		add(lblNewJgoodiesLabel_1);
-		MostrarBilletes.setFont(new Font("Tahoma", Font.PLAIN, 22));
 		
-	
+
+		MostrarBilletes.setFont(new Font("Consolas", Font.PLAIN, 22));
 		MostrarBilletes.setBounds(119, 166, 846, 336);
 		add(MostrarBilletes);
 		

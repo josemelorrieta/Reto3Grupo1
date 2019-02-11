@@ -18,11 +18,12 @@ import javax.swing.border.BevelBorder;
  */
 public class PanelDevolucion extends JPanel {
 	
-		public JButton btnSiguiente = new JButton("Siguiente");
-		public JButton btnImprimirTicket= new JButton("Imprimir Ticket");
-		
-		public DefaultListModel<String> cambios = new DefaultListModel<String>();	
-		public JList<String> devolucion = new JList<String>();
+	private static final long serialVersionUID = 1L;
+	public JButton btnSiguiente = new JButton("Siguiente");
+	public JButton btnImprimirTicket= new JButton("Imprimir Ticket");
+	
+	public DefaultListModel<String> cambios = new DefaultListModel<String>();	
+	public JList<String> devolucion = new JList<String>();
 		
 		
 
@@ -44,6 +45,7 @@ public class PanelDevolucion extends JPanel {
 		
 		btnImprimirTicket.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnImprimirTicket.setBounds(39, 577, 213, 65);
+		btnImprimirTicket.setName("btnImprimirTicket");
 		add(btnImprimirTicket);
 		
 		
@@ -52,15 +54,13 @@ public class PanelDevolucion extends JPanel {
 		btnSiguiente.setBounds(858, 575, 194, 68);
 		add(btnSiguiente);
 		
-		cambios=new DefaultListModel();
-		devolucion = new JList(cambios);
+		cambios=new DefaultListModel<String>();
+		devolucion = new JList<String>(cambios);
 		devolucion.setBorder(new BevelBorder(BevelBorder.LOWERED, Color.GRAY, Color.GRAY, Color.GRAY, Color.GRAY));
 		devolucion.setFont(new Font("Tahoma", Font.PLAIN, 22));
 		devolucion.setBackground(new Color(255, 255, 255));
 		devolucion.setBounds(203, 111, 696, 441);
 		add(devolucion);
-		
-
 
 	}
 

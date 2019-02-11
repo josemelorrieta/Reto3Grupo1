@@ -20,6 +20,8 @@ public class Modelo {
 	public FuncionesPago misFuncionesPago;
 	public FuncionesDevolucion misFuncionesDevolucion;
 	
+	public ConexionFichero miConexionFichero;
+	
 	public Cliente cliente = null;
 	public Billete[] billetes = null;
 	public Billete billeteIda = null;
@@ -47,7 +49,7 @@ public class Modelo {
 		this.misFuncionesBilleteComprado = new FuncionesBilleteComprado();
 		this.misFuncionesDevolucion = new FuncionesDevolucion(this);
 		this.misFuncionesFechas = new FuncionesFechas();
-		
+		this.miConexionFichero = new ConexionFichero();
 	}
 
 	//Getters y setters

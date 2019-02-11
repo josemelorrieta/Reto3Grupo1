@@ -74,6 +74,9 @@ public class ControladorBilleteComprado implements ActionListener {
 					miControlador.miControladorPago.total = miModelo.billeteIda.getPrecioTrayecto();
 				}
 				funciones.cambiarDePanel(miVentana.billeteComprado, miVentana.pago);
+				miControlador.miControladorPago.pagado = 0;
+				miVentana.pago.pagado.setText("0");
+				miControlador.miControladorPago.actBotones(miVentana.pago.arrayBtn);
 				break;
 			
 			case "btnCancelarBilleteComprado":  funciones.cambiarDePanel(miVentana.billeteComprado, miVentana.billetes);
