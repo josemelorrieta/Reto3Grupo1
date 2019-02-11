@@ -58,13 +58,13 @@ public class PanelLogin extends JPanel {
 		add(btnAtras);
 		
 		JLabel lblNewJgoodiesLabel_3 = DefaultComponentFactory.getInstance().createLabel("DNI:");
-		lblNewJgoodiesLabel_3.setBounds(325, 175, 440, 33);
+		lblNewJgoodiesLabel_3.setBounds(325, 175, 433, 33);
 		add(lblNewJgoodiesLabel_3);
 		lblNewJgoodiesLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewJgoodiesLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		JLabel lblNewJgoodiesLabel = DefaultComponentFactory.getInstance().createLabel("CONTRASE\u00D1A:");
-		lblNewJgoodiesLabel.setBounds(325, 285, 440, 33);
+		lblNewJgoodiesLabel.setBounds(325, 285, 433, 33);
 		add(lblNewJgoodiesLabel);
 		lblNewJgoodiesLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewJgoodiesLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -102,6 +102,11 @@ public class PanelLogin extends JPanel {
 		lblNewJgoodiesLabel_1.setBackground(new Color(204, 51, 51)); 
 		lblNewJgoodiesLabel_1.setBounds(322, 144, 440, 360);
 		add(lblNewJgoodiesLabel_1);
+		
+		JLabel lblNewJgoodiesLabel_2 = DefaultComponentFactory.getInstance().createLabel("");
+		lblNewJgoodiesLabel_2.setIcon(new ImageIcon(PanelLogin.class.getResource("/Imagenes/logo-termibus2.jpg")));
+		lblNewJgoodiesLabel_2.setBounds(26, 26, 211, 82);
+		add(lblNewJgoodiesLabel_2);
 		
 	}
 }
