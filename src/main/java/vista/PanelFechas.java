@@ -2,6 +2,8 @@ package vista;
 
 import javax.swing.JPanel;
 import java.awt.Color;
+
+import javax.swing.border.BevelBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.JLabel;
 import com.jgoodies.forms.factories.DefaultComponentFactory;
@@ -17,6 +19,7 @@ import com.toedter.calendar.JDateChooser;
 import java.awt.event.InputMethodListener;
 import java.awt.event.InputMethodEvent;
 import javax.swing.JTextField;
+import java.awt.SystemColor;
 
 /**
  * Clase del panel de seleccion de fechas para el bilelte
@@ -38,7 +41,7 @@ public class PanelFechas extends JPanel {
 	 */
 	public PanelFechas() {
 		setBorder(new LineBorder(new Color(0, 0, 0), 4));
-		setBackground(Color.CYAN);
+		setBackground(SystemColor.controlHighlight);
 		setLayout(null); 
 		btnAtras.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -46,13 +49,20 @@ public class PanelFechas extends JPanel {
 		});
 		
 		btnAtras.setName("btnAtrasFechas");
+		btnAtras.setSize(195, 70);
+		btnAtras.setLocation(270, 551);
+		btnAtras.setName("btnAtrasFechas");
 		btnAtras.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnAtras.setBounds(287, 575, 186, 68);
+		btnAtras.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(255, 248, 220), new Color(255, 248, 220), null, null));
+		btnAtras.setBackground(new Color(248, 248, 255));
 		add(btnAtras);
 		
 		btnSiguiente.setName("btnSiguienteFechas");
 		btnSiguiente.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnSiguiente.setBounds(858, 575, 194, 68);
+		btnSiguiente.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(255, 248, 220), new Color(255, 248, 220), null, null));
+		btnSiguiente.setBackground(new Color(248, 248, 255));
+		btnSiguiente.setFont(new Font("Tahoma", Font.BOLD, 20));
+		btnSiguiente.setBounds(837, 551, 195, 70);
 		btnSiguiente.setEnabled(false);
 		add(btnSiguiente);
 		
@@ -66,7 +76,7 @@ public class PanelFechas extends JPanel {
 		lblNewJgoodiesLabel.setBounds(648, 269, 314, 37);
 		add(lblNewJgoodiesLabel);
 		btnRadioButton.setName("btnRadioComprarBilleteVuelta");
-		btnRadioButton.setBackground(Color.CYAN); 
+		btnRadioButton.setBackground(SystemColor.controlHighlight); 
 		
 		btnRadioButton.setHorizontalAlignment(SwingConstants.CENTER);
 		btnRadioButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
@@ -91,9 +101,12 @@ public class PanelFechas extends JPanel {
 		add(lblNewJgoodiesLabel_1);
 		
 		btnCancelar.setName("btnCancelarFechas");
+		btnCancelar.setBackground(new Color(248, 248, 255));
+		btnCancelar.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(255, 239, 213), new Color(255, 239, 213), null, null));
 		btnCancelar.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnCancelar.setBounds(53, 575, 186, 68);	
+		btnCancelar.setBounds(48, 551, 195, 70);	
 		add(btnCancelar);
+		
 		dateIda.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		dateIda.addInputMethodListener(new InputMethodListener() {
 			public void caretPositionChanged(InputMethodEvent arg0) {

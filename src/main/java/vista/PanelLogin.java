@@ -46,13 +46,13 @@ public class PanelLogin extends JPanel {
 		btnRegistrarse.setBackground(new Color(248, 248, 255));
 		btnRegistrarse.setName("btnRegistrarseLogin");
 		btnRegistrarse.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnRegistrarse.setBounds(842, 551, 195, 70);
+		btnRegistrarse.setBounds(837, 551, 195, 70);
 		add(btnRegistrarse);
 		
 		btnAtras = new JButton("Atrás");
+		btnAtras.setName("btnAtrasLogin");
 		btnAtras.setBackground(new Color(248, 248, 255));
 		btnAtras.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(255, 239, 213), new Color(255, 239, 213), null, null));
-		btnAtras.setName("btnAtrasLogin");
 		btnAtras.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnAtras.setBounds(48, 551, 195, 70);
 		add(btnAtras);
@@ -89,9 +89,9 @@ public class PanelLogin extends JPanel {
 		JLabel lblLogin= DefaultComponentFactory.getInstance().createLabel("LOGIN");
 		lblLogin.setBackground(new Color(204, 51, 153));
 		lblLogin.setForeground(new Color(204, 51, 51));
-		lblLogin.setFont(new Font("Tahoma", Font.BOLD, 50));
+		lblLogin.setFont(new Font("Tahoma", Font.BOLD, 40));
 		lblLogin.setHorizontalAlignment(SwingConstants.CENTER);
-		lblLogin.setBounds(10, 72, 1070, 48);
+		lblLogin.setBounds(10, 72, 1065, 48);
 		add(lblLogin);
 		
 		
@@ -104,7 +104,7 @@ public class PanelLogin extends JPanel {
 		add(lblNewJgoodiesLabel_1);
 		
 		JLabel lblNewJgoodiesLabel_2 = DefaultComponentFactory.getInstance().createLabel("");
-		lblNewJgoodiesLabel_2.setIcon(new ImageIcon(PanelLogin.class.getResource("/Imagenes/logo-termibus2.jpg")));
+		lblNewJgoodiesLabel_2.setIcon(new ImageIcon(PanelLogin.class.getResource("/imagenes/logo-termibus2.jpg")));
 		lblNewJgoodiesLabel_2.setBounds(26, 26, 211, 82);
 		add(lblNewJgoodiesLabel_2);
 		

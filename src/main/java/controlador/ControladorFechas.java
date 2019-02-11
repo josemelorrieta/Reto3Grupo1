@@ -127,7 +127,7 @@ public class ControladorFechas implements ActionListener {
 				case "btnCancelarFechas": funciones.cambiarDePanel(miVentana.fechas, miVentana.billetes);
 					//resetear();
 					break;
-			}
+			} 
 		}	
 	}
 
