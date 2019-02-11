@@ -36,14 +36,13 @@ public class PanelSaludo extends JPanel {
 		
 		JLabel lblNewJgoodiesLabel_2 = DefaultComponentFactory.getInstance().createLabel("");
 		lblNewJgoodiesLabel_2.setIcon(new ImageIcon(PanelSaludo.class.getResource("/imagenes/logo-termibus2.jpg")));
-		//lblNewJgoodiesLabel_2.setIcon(new ImageIcon(PanelLogin.class.getResource("/imagenes/logo-termibus2.jpg")));
 		lblNewJgoodiesLabel_2.setBounds(26, 26, 211, 82);
 		add(lblNewJgoodiesLabel_2);
 		
 		lblNewJgoodiesLabel_3 = DefaultComponentFactory.getInstance().createLabel("");
 		lblNewJgoodiesLabel_3.setIcon(new ImageIcon(PanelSaludo.class.getResource("/imagenes/bienvenido3.png")));
 		lblNewJgoodiesLabel_3.setBackground(Color.WHITE);
-		//lblNewJgoodiesLabel_3.setIcon(new ImageIcon(PanelSaludo.class.getResource("/imagenes/bienvenido3.png")));
+		lblNewJgoodiesLabel_3.setIcon(new ImageIcon(PanelSaludo.class.getResource("/imagenes/bienvenido3.png")));
 		lblNewJgoodiesLabel_3.setBounds(97, 121, 890, 347);
 		add(lblNewJgoodiesLabel_3);
 		
