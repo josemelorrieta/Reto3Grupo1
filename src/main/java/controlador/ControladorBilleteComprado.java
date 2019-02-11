@@ -48,7 +48,10 @@ public class ControladorBilleteComprado implements ActionListener {
 	 * Metodo para resetear los valores de la ventana billetes comprados 
 	 */
 		public void resetear() {
-			miVentana.billeteComprado.modeloMostrarBilletesComprado.removeAllElements();
+			miVentana.billeteComprado.txtIda.setText("");
+			miVentana.billeteComprado.txtVuelta.setText("");
+			miVentana.billeteComprado.txtVuelta.setEnabled(false);
+			miVentana.billeteComprado.lblPrecioTotal.setText("");
 		}
 	/**
 	 * Metodo para las llamadas a los botones de la ventana billetes comprados

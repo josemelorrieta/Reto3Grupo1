@@ -10,6 +10,7 @@ import javax.swing.JLabel;
 import com.jgoodies.forms.factories.DefaultComponentFactory;
 import javax.swing.SwingConstants;
 import javax.swing.JList;
+import javax.swing.JTextField;
 
 /**
  * Calse del panel que muestra el resumen del billete comprado
@@ -20,8 +21,9 @@ public class PanelBilleteComprado extends JPanel {
 	public JButton btnCancelar = new JButton("Cancelar");
 	public JButton btnAtras = new JButton("Atrás");
 	public JButton btnSiguiente = new JButton("Siguiente");
-	public DefaultListModel<String> modeloMostrarBilletesComprado = new DefaultListModel<String>();
-	public JList<String> listBilleteComprado = new JList<String>();
+	public JLabel txtIda;
+	public JLabel txtVuelta;
+	public JLabel lblPrecioTotal;
 
 	/**
 	 * Create the panel.
@@ -47,23 +49,54 @@ public class PanelBilleteComprado extends JPanel {
 		btnSiguiente.setBounds(901, 570, 153, 61);
 		add(btnSiguiente);
 		
-		JLabel lblSusBilletes = DefaultComponentFactory.getInstance().createLabel("Su Billete");
-		lblSusBilletes.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		lblSusBilletes.setHorizontalAlignment(SwingConstants.CENTER);
-		lblSusBilletes.setBounds(165, 109, 177, 37);
-		add(lblSusBilletes);
-		listBilleteComprado.setFont(new Font("Tahoma", Font.PLAIN, 22));
-		
-		
-		listBilleteComprado.setBounds(188, 157, 718, 371);
-		add(listBilleteComprado);
-		
 		JLabel lblNewJgoodiesLabel = DefaultComponentFactory.getInstance().createLabel("COMPRUEBE EL BILLETE");
 		lblNewJgoodiesLabel.setForeground(Color.ORANGE);
 		lblNewJgoodiesLabel.setFont(new Font("Sylfaen", Font.PLAIN, 50));
 		lblNewJgoodiesLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewJgoodiesLabel.setBounds(10, 36, 1080, 47);
 		add(lblNewJgoodiesLabel);
+		
+		JLabel lblIda = new JLabel("Billete de Ida");
+		lblIda.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblIda.setBounds(161, 134, 212, 47);
+		add(lblIda);
+		
+		JLabel lblVuelta = new JLabel("Billete de Vuelta");
+		lblVuelta.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblVuelta.setBounds(161, 299, 286, 47);
+		add(lblVuelta);
+		
+		txtIda = new JLabel();
+		txtIda.setOpaque(true);
+		txtIda.setBackground(Color.WHITE);
+		txtIda.setHorizontalAlignment(SwingConstants.CENTER);
+		txtIda.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		txtIda.setBounds(161, 192, 767, 61);
+		add(txtIda);
+		
+		txtVuelta = new JLabel();
+		txtVuelta.setBackground(Color.WHITE);
+		txtVuelta.setOpaque(true);
+		txtVuelta.setHorizontalAlignment(SwingConstants.CENTER);
+		txtVuelta.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		txtVuelta.setBounds(161, 357, 767, 61);
+		add(txtVuelta);
+		
+		JLabel lblPrecio = new JLabel("Precio Total:");
+		lblPrecio.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblPrecio.setBounds(360, 462, 184, 55);
+		add(lblPrecio);
+		
+		lblPrecioTotal = new JLabel("");
+		lblPrecioTotal.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblPrecioTotal.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblPrecioTotal.setBounds(554, 462, 153, 55);
+		add(lblPrecioTotal);
+		
+		JLabel lblIvaIncluido = new JLabel("(IVA incluido)");
+		lblIvaIncluido.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblIvaIncluido.setBounds(717, 478, 298, 34);
+		add(lblIvaIncluido);
 
 	}
 }

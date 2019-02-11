@@ -29,7 +29,9 @@ public class PanelDespedida extends JPanel {
 		lblNewJgoodiesLabel.setBounds(0, 0, 1100, 701);
 		lblNewJgoodiesLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewJgoodiesLabel.setBackground(Color.RED);
-		lblNewJgoodiesLabel.setIcon(new ImageIcon(PanelDespedida.class.getResource("/Imagenes/Gracias.png")));
+
+		lblNewJgoodiesLabel.setBounds(0, 0, 1100, 700);
+		lblNewJgoodiesLabel.setIcon(new ImageIcon(PanelDespedida.class.getResource("/imagenes/Gracias.png")));
 		add(lblNewJgoodiesLabel);
 		
 		JLabel lblNewJgoodiesLabel_1 = DefaultComponentFactory.getInstance().createLabel("SU SESION SE HA CERRADO");

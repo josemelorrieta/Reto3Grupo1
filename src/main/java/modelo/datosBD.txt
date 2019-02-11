@@ -1,4 +1,0 @@
-url: localhost
-database: termibus
-user: hr
-password: PepeJeans

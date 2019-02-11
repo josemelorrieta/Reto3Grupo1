@@ -3,6 +3,7 @@ package controlador;
 import modelo.Modelo;
 import vista.Ventana;
 
+
 /** 
  * Clase princnipal. Contiene el metodo main e instancia el Controlador, la Vista y el Modelo
  *

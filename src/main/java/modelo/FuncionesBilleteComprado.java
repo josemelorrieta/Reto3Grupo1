@@ -26,14 +26,23 @@ public class FuncionesBilleteComprado {
 		
 		NumberFormat formatoMoneda = NumberFormat.getCurrencyInstance(Locale.getDefault());
 		
-		String infoBillete = String.format("%-25s%-25s%10s%10s", origenIda, destinoIda, fechaIda, formatoMoneda.format(precioIda));
-		//Inicio del programa
-		miVentana.billeteComprado.modeloMostrarBilletesComprado.addElement(infoBillete);
-		miVentana.billeteComprado.listBilleteComprado.setModel(miVentana.billeteComprado.modeloMostrarBilletesComprado);
-		
+		String infoBilleteIda = String.format("%-25s%-25s%10s%10s", origenIda, destinoIda, fechaIda, formatoMoneda.format(precioIda));
+		//Inicio del programa		
+		miVentana.billeteComprado.txtIda.setText(infoBilleteIda);
+		miVentana.billeteComprado.lblPrecioTotal.setText(formatoMoneda.format(precioIda));
 		
 		if (billeteVuelta != null) {
+			//Decalracion e inicializacion de variables
+			String fechaVuelta = billeteVuelta.getFecha();
+			String origenVuelta = billeteVuelta.getOrigen();
+			String destinoVuelta = billeteVuelta.getDestino();
+			double precioVuelta = billeteVuelta.getPrecioTrayecto();
 			
+			//Inicio del programa
+			String infoBilleteVuelta = String.format("%-25s%-25s%10s%10s", origenVuelta, destinoVuelta, fechaVuelta, formatoMoneda.format(precioVuelta));
+			miVentana.billeteComprado.txtVuelta.setEnabled(true);
+			miVentana.billeteComprado.txtVuelta.setText(infoBilleteVuelta);
+			miVentana.billeteComprado.lblPrecioTotal.setText(formatoMoneda.format(precioIda + precioVuelta));
 		}
 	}
 

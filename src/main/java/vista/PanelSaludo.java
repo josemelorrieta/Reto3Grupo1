@@ -42,13 +42,13 @@ public class PanelSaludo extends JPanel {
 		add(lblNewJgoodiesLabel);
 		
 		lblNewJgoodiesLabel_1 = DefaultComponentFactory.getInstance().createLabel("New JGoodies label");
-		lblNewJgoodiesLabel_1.setIcon(new ImageIcon(PanelSaludo.class.getResource("/Imagenes/logo-termibus.png")));
+		lblNewJgoodiesLabel_1.setIcon(new ImageIcon(PanelSaludo.class.getResource("/imagenes/logo-termibus.png")));
 		lblNewJgoodiesLabel_1.setBounds(739, 526, 302, 111);
 		add(lblNewJgoodiesLabel_1);
 		
 		lblNewJgoodiesLabel_3 = DefaultComponentFactory.getInstance().createLabel("New JGoodies label");
 		lblNewJgoodiesLabel_3.setBackground(Color.WHITE);
-		lblNewJgoodiesLabel_3.setIcon(new ImageIcon(Ventana.class.getResource("/Imagenes/bienvenido.gif")));
+		lblNewJgoodiesLabel_3.setIcon(new ImageIcon(Ventana.class.getResource("/imagenes/bienvenido.gif")));
 		lblNewJgoodiesLabel_3.setBounds(10, 77, 1064, 347);
 		add(lblNewJgoodiesLabel_3);
 		btnSaludo.setName("btnSaludo");
