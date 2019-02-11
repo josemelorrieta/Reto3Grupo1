@@ -38,28 +38,23 @@ public class PanelLogin extends JPanel {
 	public PanelLogin() {
 		setBorder(new LineBorder(new Color(0, 0, 0), 4));
 		setBackground(SystemColor.controlHighlight);
-		setBounds(0, 0, 1090, 690);
+		setBounds(0, 0, 1085, 660);
 		setLayout(null);
 		
 		btnRegistrarse = new JButton("Registrarse");
+		btnRegistrarse.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(255, 248, 220), new Color(255, 248, 220), null, null));
+		btnRegistrarse.setBackground(new Color(248, 248, 255));
 		btnRegistrarse.setName("btnRegistrarseLogin");
 		btnRegistrarse.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnRegistrarse.setBounds(846, 575, 194, 68);
+		btnRegistrarse.setBounds(842, 551, 195, 70);
 		add(btnRegistrarse);
 		
-		
-		
-		JLabel lblNewJgoodiesLabel_1 = DefaultComponentFactory.getInstance().createLabel("");
-		lblNewJgoodiesLabel_1.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		lblNewJgoodiesLabel_1.setForeground(Color.CYAN);
-		lblNewJgoodiesLabel_1.setBackground(new Color(204, 51, 51)); 
-		lblNewJgoodiesLabel_1.setBounds(325, 144, 440, 360);
-		add(lblNewJgoodiesLabel_1);
-		
 		btnAtras = new JButton("Atrás");
+		btnAtras.setBackground(new Color(248, 248, 255));
+		btnAtras.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(255, 239, 213), new Color(255, 239, 213), null, null));
 		btnAtras.setName("btnAtrasLogin");
 		btnAtras.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnAtras.setBounds(48, 575, 194, 68);
+		btnAtras.setBounds(48, 551, 195, 70);
 		add(btnAtras);
 		
 		JLabel lblNewJgoodiesLabel_3 = DefaultComponentFactory.getInstance().createLabel("DNI:");
@@ -84,8 +79,10 @@ public class PanelLogin extends JPanel {
 		add(passwordField);
 		
 		btnLogin = new JButton ("Login");
+		btnLogin.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(255, 248, 220), new Color(255, 248, 220), null, null));
+		btnLogin.setBackground(new Color(248, 248, 255));
 		btnLogin.setName("btnLogin");
-		btnLogin.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnLogin.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnLogin.setBounds(439, 406, 213, 57);
 		add(btnLogin);
 		
@@ -96,6 +93,15 @@ public class PanelLogin extends JPanel {
 		lblLogin.setHorizontalAlignment(SwingConstants.CENTER);
 		lblLogin.setBounds(10, 72, 1070, 48);
 		add(lblLogin);
+		
+		
+		
+		JLabel lblNewJgoodiesLabel_1 = DefaultComponentFactory.getInstance().createLabel("");
+		lblNewJgoodiesLabel_1.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		lblNewJgoodiesLabel_1.setForeground(Color.CYAN);
+		lblNewJgoodiesLabel_1.setBackground(new Color(204, 51, 51)); 
+		lblNewJgoodiesLabel_1.setBounds(322, 144, 440, 360);
+		add(lblNewJgoodiesLabel_1);
 		
 	}
 }
