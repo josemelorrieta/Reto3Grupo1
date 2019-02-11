@@ -35,7 +35,8 @@ public class ControladorDevolucion implements ActionListener {
 		this.miModelo = miModelo;
 		
 		//Definir los listeners para los botones del panel
-		miVentana.devolucion.btnSiguiente.addActionListener(this);		
+		miVentana.devolucion.btnSiguiente.addActionListener(this);
+		miVentana.devolucion.btnImprimirTicket.addActionListener(this);
 	}
 	
 	/**
@@ -53,14 +54,19 @@ public class ControladorDevolucion implements ActionListener {
 		//Dependiendo de que boton vienen la accion hacemos lo necesario 
 		switch (((JButton) e.getSource()).getName()) {
 			case "btnSiguienteDevolucion":
-				if (miModelo.misFuncionesDevolucion.guardarBilleteBD(miModelo.billeteIda, miModelo)) {
-					funciones.cambiarDePanel(miVentana.devolucion, miVentana.despedida);
-					miControlador.miControladorDespedida.PasarDeDespedidaASaludo();
-				} else {
-					JOptionPane.showMessageDialog(miVentana, "Hubo un error al guardar el billete en la Base de Datos", "¡Atencion!", JOptionPane.WARNING_MESSAGE);
-				};
+				funciones.cambiarDePanel(miVentana.devolucion, miVentana.despedida);
+				miControlador.miControladorDespedida.PasarDeDespedidaASaludo();
 				resetear();
 				break;
+				
+			case "btnImprimirTicket":
+				if (miModelo.miConexionFichero.imprimirBillete(miModelo.billeteIda, miModelo.billeteVuelta, miModelo.cliente)) {
+					JOptionPane.showMessageDialog(miVentana, "Billete guardado correctamete", "Info", JOptionPane.INFORMATION_MESSAGE);
+				} else {
+					JOptionPane.showMessageDialog(miVentana, "Hubo un error al guardar el billete", "¡Atencion!", JOptionPane.WARNING_MESSAGE);
+				}
+				break;
+				
 		}
 		
 	}
