@@ -109,69 +109,8 @@ public class ControladorPago implements ActionListener {
 				resetear();
 				break;
 			
-			case "btnCancelarPago": controlar.cambiarDePanel(miVentana.pago, miVentana.billetes);
-				resetear();
-				break;
-
-			case "btn500":  
-				pagado = miModelo.misFuncionesPago.sumarDineroPago(500, pagado);
-				break;
-				
-			case "btn200":
-				pagado = miModelo.misFuncionesPago.sumarDineroPago(200, pagado);
-				break;
-				
-			case "btn100":
-				pagado = miModelo.misFuncionesPago.sumarDineroPago(100, pagado);
-				break;
-			
-			case "btn50":
-				pagado = miModelo.misFuncionesPago.sumarDineroPago(50, pagado);
-				break;
-			
-			case "btn20":
-				pagado = miModelo.misFuncionesPago.sumarDineroPago(20, pagado);
-				break;
-			
-			case "btn10":
-				pagado = miModelo.misFuncionesPago.sumarDineroPago(10, pagado);
-				break;
-			
-			case "btn5":
-				pagado = miModelo.misFuncionesPago.sumarDineroPago(5, pagado);
-				break;
-			
-			case "btn2":
-				pagado = miModelo.misFuncionesPago.sumarDineroPago(2, pagado);
-				break;
-			
-			case "btn1":
-				pagado = miModelo.misFuncionesPago.sumarDineroPago(1, pagado);
-				break;
-			
-			case "btn050":
-				pagado = miModelo.misFuncionesPago.sumarDineroPago(0.5f, pagado);
-				break;
-			
-			case "btn020":
-				pagado = miModelo.misFuncionesPago.sumarDineroPago(0.2f, pagado);
-				break;
-			
-			case "btn010":
-				pagado = miModelo.misFuncionesPago.sumarDineroPago(0.1f, pagado);
-				break;
-			
-			case "btn005":
-				pagado = miModelo.misFuncionesPago.sumarDineroPago(0.05f, pagado);
-				break;
-			
-			case "btn002":
-				pagado = miModelo.misFuncionesPago.sumarDineroPago(0.02f, pagado);
-				break;
-				
-			case "btn001":
-				pagado = miModelo.misFuncionesPago.sumarDineroPago(0.01f, pagado);
-				break;
+			default: 
+				pagado = miModelo.misFuncionesPago.sumarDineroPago(((JButton) e.getSource()).getName(), pagado);
 		}
 		
 		if (pagado >= total) {

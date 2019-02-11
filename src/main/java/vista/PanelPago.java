@@ -115,7 +115,7 @@ public class PanelPago extends JPanel {
 		
 
 		btn5 = new JButton("5");
-		btn5.setName("btn5");
+		btn5.setName("5");
 		btn5.setBackground(Color.GREEN);
 		btn5.setFont(btn5.getFont().deriveFont(0f));
 		btn5.setIcon(new ImageIcon(PanelPago.class.getResource("/imagenes/5euros.jpg")));
@@ -123,7 +123,7 @@ public class PanelPago extends JPanel {
 		add(btn5);
 
 		btn2 = new JButton("2");
-		btn2.setName("btn2");
+		btn2.setName("2");
 		btn2.setBackground(Color.GREEN);
 		btn2.setFont(btn2.getFont().deriveFont(0f));
 		btn2.setIcon(new ImageIcon(PanelPago.class.getResource("/imagenes/2euros.png")));
@@ -131,7 +131,7 @@ public class PanelPago extends JPanel {
 		add(btn2);
 
 		btn10 = new JButton("10");
-		btn10.setName("btn10");
+		btn10.setName("10");
 		btn10.setBackground(Color.GREEN);
 		btn10.setFont(btn10.getFont().deriveFont(0f));
 		btn10.setIcon(new ImageIcon(PanelPago.class.getResource("/imagenes/10euros.jpg")));
@@ -139,7 +139,7 @@ public class PanelPago extends JPanel {
 		add(btn10);
 
 		btn200 = new JButton("200");
-		btn200.setName("btn200");
+		btn200.setName("200");
 		btn200.setBackground(Color.GREEN);
 		btn200.setFont(btn200.getFont().deriveFont(0f));
 		btn200.setIcon(new ImageIcon(PanelPago.class.getResource("/imagenes/200euros.jpg")));
@@ -147,7 +147,7 @@ public class PanelPago extends JPanel {
 		add(btn200);
 
 		btn20 = new JButton("20");
-		btn20.setName("btn20");
+		btn20.setName("20");
 		btn20.setBackground(Color.GREEN);
 		btn20.setFont(btn20.getFont().deriveFont(0f));
 		btn20.setIcon(new ImageIcon(PanelPago.class.getResource("/imagenes/20euros.jpg")));
@@ -155,7 +155,7 @@ public class PanelPago extends JPanel {
 		add(btn20);
 
 		btn500 = new JButton("500");
-		btn500.setName("btn500");
+		btn500.setName("500");
 		btn500.setBackground(Color.GREEN);
 		btn500.setFont(btn500.getFont().deriveFont(0f));
 		btn500.setIcon(new ImageIcon(PanelPago.class.getResource("/imagenes/500euros.jpg")));
@@ -171,7 +171,7 @@ public class PanelPago extends JPanel {
 		add(btn100);
 
 		btn50 = new JButton("50");
-		btn50.setName("btn50");
+		btn50.setName("50");
 		btn50.setBackground(Color.GREEN);
 		btn50.setFont(btn50.getFont().deriveFont(0f));
 		btn50.setIcon(new ImageIcon(PanelPago.class.getResource("/imagenes/50euros.jpg")));
@@ -179,7 +179,7 @@ public class PanelPago extends JPanel {
 		add(btn50);
 
 		btn1 = new JButton("1");
-		btn1.setName("btn1");
+		btn1.setName("1");
 		btn1.setBackground(Color.GREEN);
 		btn1.setFont(btn1.getFont().deriveFont(0f));
 		btn1.setIcon(new ImageIcon(PanelPago.class.getResource("/imagenes/1euro.png")));
@@ -187,7 +187,7 @@ public class PanelPago extends JPanel {
 		add(btn1);
 
 		btn050 = new JButton("0.50");
-		btn050.setName("btn050");
+		btn050.setName("0.5");
 		btn050.setBackground(Color.GREEN);
 		btn050.setFont(btn050.getFont().deriveFont(0f));
 		btn050.setIcon(new ImageIcon(PanelPago.class.getResource("/imagenes/50centimos.png")));
@@ -195,7 +195,7 @@ public class PanelPago extends JPanel {
 		add(btn050);
 
 		btn020 = new JButton("0.20");
-		btn020.setName("btn020");
+		btn020.setName("0.2");
 		btn020.setBackground(Color.GREEN);
 		btn020.setFont(btn020.getFont().deriveFont(0f));
 		btn020.setIcon(new ImageIcon(PanelPago.class.getResource("/imagenes/20centimos.png")));
@@ -203,7 +203,7 @@ public class PanelPago extends JPanel {
 		add(btn020);
 
 		btn010 = new JButton("0.10");
-		btn010.setName("btn010");
+		btn010.setName("0.1");
 		btn010.setBackground(Color.GREEN);
 		btn010.setFont(btn010.getFont().deriveFont(0f));
 		btn010.setIcon(new ImageIcon(PanelPago.class.getResource("/imagenes/10centimos.png")));
@@ -211,7 +211,7 @@ public class PanelPago extends JPanel {
 		add(btn010);
 
 		btn005 = new JButton("0.05");
-		btn005.setName("btn005");
+		btn005.setName("0.05");
 		btn005.setBackground(Color.GREEN);
 		btn005.setFont(btn005.getFont().deriveFont(0f));
 		btn005.setIcon(new ImageIcon(PanelPago.class.getResource("/imagenes/5centimos.png")));
@@ -219,7 +219,7 @@ public class PanelPago extends JPanel {
 		add(btn005);
 
 		btn002 = new JButton("0.02");
-		btn002.setName("btn002");
+		btn002.setName("0.02");
 		btn002.setBackground(Color.GREEN);
 		btn002.setFont(btn002.getFont().deriveFont(0f));
 		btn002.setIcon(new ImageIcon(PanelPago.class.getResource("/imagenes/2centimos.png")));
@@ -227,7 +227,7 @@ public class PanelPago extends JPanel {
 		add(btn002);
 
 		btn001 = new JButton("0.01");
-		btn001.setName("btn001");
+		btn001.setName("0.01");
 		btn001.setBackground(Color.GREEN);
 		btn001.setFont(btn001.getFont().deriveFont(0f));
 		btn001.setIcon(new ImageIcon(PanelPago.class.getResource("/imagenes/1centimo.png")));
@@ -249,8 +249,6 @@ public class PanelPago extends JPanel {
 		arrayBtn[12]=btn005;
 		arrayBtn[13]=btn002;
 		arrayBtn[14]=btn001;
-		
-		
 		
 		JLabel lblNewJgoodiesLabel_4 = DefaultComponentFactory.getInstance().createLabel("Haz clic en los billetes o monedas para introducir el dinero");
 		lblNewJgoodiesLabel_4.setFont(new Font("Tahoma", Font.PLAIN, 20));
