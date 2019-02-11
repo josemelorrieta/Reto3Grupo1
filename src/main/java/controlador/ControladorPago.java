@@ -6,6 +6,7 @@ import java.text.NumberFormat;
 import java.util.Locale;
 
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 
 import modelo.FuncionesPago;
 import modelo.Modelo;
@@ -24,9 +25,11 @@ public class ControladorPago implements ActionListener {
 	private Ventana miVentana;
 	private Modelo miModelo;
 	
+	FuncionesControlador funciones = new FuncionesControlador();
+	
 	private int[] arrayCambios=null;
 	public double total;
-	private double pagado = 0;
+	public double pagado = 0;
 	
 	NumberFormat formatoMoneda = NumberFormat.getCurrencyInstance(Locale.getDefault());
 	
@@ -84,7 +87,20 @@ public class ControladorPago implements ActionListener {
 				resetear();
 				break;
 								 
-			case "btnSiguientePago":  controlar.cambiarDePanel(miVentana.pago, miVentana.devolucion);
+			case "btnSiguientePago":  
+				if (miModelo.billeteVuelta != null) {
+					if (miModelo.misFuncionesDevolucion.guardarBilleteBD(miModelo.billeteIda, miModelo, 1) && miModelo.misFuncionesDevolucion.guardarBilleteBD(miModelo.billeteVuelta, miModelo, 2)) {
+						funciones.cambiarDePanel(miVentana.pago, miVentana.devolucion);
+					} else {
+					JOptionPane.showMessageDialog(miVentana, "Hubo un error al guardar el billete en la Base de Datos", "¡Atencion!", JOptionPane.WARNING_MESSAGE);
+					}
+				} else {
+					if (miModelo.misFuncionesDevolucion.guardarBilleteBD(miModelo.billeteIda, miModelo, 1)) {
+						funciones.cambiarDePanel(miVentana.pago, miVentana.devolucion);
+					} else {
+						JOptionPane.showMessageDialog(miVentana, "Hubo un error al guardar el billete en la Base de Datos", "¡Atencion!", JOptionPane.WARNING_MESSAGE);
+					}
+				}
 				//Calcular cambios despues del pago
 				if (pagado > total) {
 					arrayCambios = miModelo.misFuncionesDevolucion.cambios(Math.abs(total - pagado));
@@ -134,7 +150,7 @@ public class ControladorPago implements ActionListener {
 			case "btn1":
 				pagado = miModelo.misFuncionesPago.sumarDineroPago(1, pagado);
 				break;
-				
+			
 			case "btn050":
 				pagado = miModelo.misFuncionesPago.sumarDineroPago(0.5f, pagado);
 				break;

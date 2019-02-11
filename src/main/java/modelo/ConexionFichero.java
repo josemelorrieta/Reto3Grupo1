@@ -3,6 +3,9 @@ package modelo;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.io.BufferedWriter;
 
 /**
@@ -57,13 +60,21 @@ public class ConexionFichero {
 	 * Metodo para escribir los datos del billete a un fichero de texto
 	 * @param datosBillete array con los valores Linea, Origen, Destino, Fecha Ida, Fecha Vuelta, DNI, Nombre, Fecha Nacimiento, Sexo y Fecha de compra
 	 */
-	public void imprimirBillete(String[] datosBillete) {
+	public boolean imprimirBillete(Billete billeteIda, Billete billeteVuelta, Cliente cliente) {
 		FileWriter fichero = null;	
 		BufferedWriter linea = null;
 		
+		String sexo = "";
+		double precio = 0;
+		Calendar calendar = Calendar.getInstance();
+		Date fechaAux = new Date();
+
+		SimpleDateFormat sdfOrg = new SimpleDateFormat("yyyy-MM-dd");
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+			
 		try {
 			//generar fichero con el nombre compuesto por el dni y la fecha de ida del billete en la carpeta Temp
-			fichero = new FileWriter("c:/Temp/" + datosBillete[5] + "-" + datosBillete[3].replaceAll("/",  "") + ".txt");
+			fichero = new FileWriter("C:/Temp/" + billeteIda.getDni() + "-" + billeteIda.getFecha().replaceAll("-",  "") + "-" + billeteIda.getNumBillete() + ".txt");
 			linea = new BufferedWriter(fichero);
 			
 			linea.write("BILLETE");
@@ -75,36 +86,50 @@ public class ConexionFichero {
 			linea.newLine();
 			linea.write("------------------");
 			linea.newLine();
-			linea.write("Línea: " + datosBillete[0]);
+			linea.write("Línea: " + billeteIda.getCodLinea());
 			linea.newLine();
-			linea.write("Origen: " + datosBillete[1]);
+			linea.write("Origen: " + billeteIda.getOrigen());
 			linea.newLine();
-			linea.write("Destino: " + datosBillete[2]);
+			linea.write("Destino: " + billeteIda.getDestino());
 			linea.newLine();
-			linea.write("Fecha ida: " + datosBillete[3]);
+			// Cambiamos el formato de fecha de yyyy-MM-dd a dd/MM/yyyy
+			linea.write("Fecha ida: " + sdf.format(sdfOrg.parse(billeteIda.getFecha())));
 			linea.newLine();
-			if (datosBillete[4] != null) {
-				linea.write("Fecha vuelta: " + datosBillete[4]);
+			if (billeteVuelta != null) {
+				// Cambiamos el formato de fecha de yyyy-MM-dd a dd/MM/yyyy
+				linea.write("Fecha vuelta: " + sdf.format(sdfOrg.parse(billeteVuelta.getFecha())));
 				linea.newLine();
+				precio = billeteIda.getPrecioTrayecto() + billeteVuelta.getPrecioTrayecto();
+			} else {
+				precio = billeteIda.getPrecioTrayecto();
 			}
+			linea.write("Precio: " + precio + "€");
+			linea.newLine();
 			linea.newLine();
 			linea.write("DATOS DEL CLIENTE");
 			linea.newLine();
 			linea.write("-----------------");
 			linea.newLine();
-			linea.write("DNI: " + datosBillete[5]);
+			linea.write("DNI: " + billeteIda.getDni());
 			linea.newLine();
-			linea.write("Nombre y Apellidos: " + datosBillete[6] + " " + datosBillete[7]);
+			linea.write("Nombre y Apellidos: " + cliente.getNombre() + " " + cliente.getApellidos());
 			linea.newLine();
-			linea.write("Fecha nacimiento: " + datosBillete[8]);
+			// Cambiamos el formato de fecha de yyyy-MM-dd a dd/MM/yyyy
+			linea.write("Fecha nacimiento: " + sdf.format(sdfOrg.parse(cliente.getFechaNacimiento())));
 			linea.newLine();
-			linea.write("Sexo: " + datosBillete[9]);
+			if (cliente.getSexo() == 'V') {
+				sexo = "Hombre";
+			} else {
+				sexo = "Mujer";
+			}
+			linea.write("Sexo: " + sexo);
 			linea.newLine();
 			linea.newLine();
-			linea.write("Fecha de la compra: " + datosBillete[10]);
+			linea.write("Fecha de la compra: " + sdf.format(calendar.getTime()).replaceAll("-", "/"));
 			linea.flush();
 		} catch (Exception e) {
 			e.printStackTrace();
+			return false;
 		} finally {
 			try {
 				if (fichero != null)
@@ -113,8 +138,10 @@ public class ConexionFichero {
 					linea.close();
 				} catch (Exception e) {
 					e.getStackTrace();
+					return false;
 			}
 		}
+		return true;
 	}
 	
 	

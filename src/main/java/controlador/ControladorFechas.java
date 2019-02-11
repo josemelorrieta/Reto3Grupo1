@@ -40,7 +40,7 @@ public class ControladorFechas implements ActionListener {
 	 * @param miVentana instancia de la ventana principal
 	 * @param miModelo instacia del modelo para poder acceder a las funciones
 	 */
-	public ControladorFechas (Ventana miVentana, Modelo miModelo) {  
+	public ControladorFechas (Ventana miVentana, Modelo miModelo) {
 		
 		this.miVentana = miVentana; 
 		this.miModelo = miModelo;
