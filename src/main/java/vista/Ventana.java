@@ -44,7 +44,7 @@ public class Ventana extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		setBounds(100, 100, 1100, 700);
+		setBounds(100, 100, 1085, 696);
 		setLocationRelativeTo(null);
 		getContentPane().setLayout(new CardLayout(0, 0));
 		
@@ -67,24 +67,31 @@ public class Ventana extends JFrame {
 		registro.setLayout(null);
 		
 		billetes = new PanelBilletes();
+		billetes.setBackground(SystemColor.controlHighlight);
 		contentPane.add(billetes);
 		billetes.setLayout(null);
 		
 		lineas = new PanelLineas();
-		lineas.btnSiguiente.setSize(234, 68);
-		lineas.btnSiguiente.setLocation(780, 549);
+		lineas.listaLineas.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lineas.listaLineas.setBounds(310, 273, 463, 61);
+		lineas.listaLineas.setForeground(Color.BLACK);
+		lineas.btnSiguiente.setSize(195, 70);
+		lineas.btnSiguiente.setLocation(837, 551);
 		lineas.listaLineas.setBackground(Color.WHITE);
 		contentPane.add(lineas);
 		lineas.setLayout(null); 
 		
 		paradas = new PanelParadas();
-		paradas.btnAtras.setLocation(654, 575);
+		paradas.lblMostrarLinea.setBounds(10, 72, 1049, 48);
+		paradas.btnCancelar.setSize(195, 70);
+		paradas.btnCancelar.setLocation(48, 551);
+		paradas.btnAtras.setLocation(272, 551);
 		contentPane.add(paradas);
 		paradas.setLayout(null);
 		
 		fechas = new PanelFechas();
-		fechas.btnSiguiente.setBounds(858, 575, 186, 68);
-		fechas.btnAtras.setLocation(662, 575);
+		fechas.btnSiguiente.setBounds(837, 552, 186, 68);
+		fechas.btnAtras.setLocation(272, 551);
 		fechas.dateVuelta.setBackground(Color.WHITE);
 		fechas.dateIda.setBackground(Color.WHITE);
 		fechas.btnRadioButton.setBackground(Color.CYAN);

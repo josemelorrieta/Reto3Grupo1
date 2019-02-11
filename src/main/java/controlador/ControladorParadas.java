@@ -18,6 +18,7 @@ public class ControladorParadas implements ActionListener {
 	
 	private Ventana miVentana;
 	private Modelo miModelo;
+	private Controlador miControlador;
 	
 	Date fechaHoy = new Date();
 	Date fechaLimite = new Date();
@@ -31,10 +32,11 @@ public class ControladorParadas implements ActionListener {
 	 * @param paradas instancia del array de paradas del modelo
 	 * @param lineas instancia del array de lineas
 	 */
-	public ControladorParadas (Ventana miVentana, Modelo miModelo) { 
+	public ControladorParadas (Ventana miVentana, Modelo miModelo, Controlador miControlador) { 
 		
 		this.miVentana = miVentana;
 		this.miModelo = miModelo;
+		this.miControlador = miControlador;
 		
 		//Definicion de los listeners de los botones del panel
 		miVentana.paradas.btnAtras.addActionListener(this);
@@ -67,6 +69,7 @@ public class ControladorParadas implements ActionListener {
 									
 			case "btnSiguienteParadas": 
 				//Borrar las fechas del panel siguiente (nuevo billete)
+				miControlador.miControladorFechas.resetear();
 				miVentana.fechas.dateIda.setDate(null);
 				miVentana.fechas.dateVuelta.setDate(null);
 				miVentana.fechas.textPrecio.setText("");

@@ -12,6 +12,7 @@ import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JButton;
+import java.awt.SystemColor;
 
 /**
  * Clase del panel de saludo
@@ -31,25 +32,25 @@ public class PanelSaludo extends JPanel {
 		
 		setForeground(Color.WHITE);
 		setBorder(new LineBorder(Color.BLACK, 4));
-		setBackground(Color.WHITE);
+		setBackground(SystemColor.controlHighlight);
 		setLayout(null);
 		
 		JLabel lblNewJgoodiesLabel = DefaultComponentFactory.getInstance().createLabel("(PULSE PARA CONTINUAR)");
 		lblNewJgoodiesLabel.setBackground(Color.WHITE);
 		lblNewJgoodiesLabel.setFont(new Font("Tahoma", Font.ITALIC, 30));
 		lblNewJgoodiesLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewJgoodiesLabel.setBounds(0, 420, 1084, 78);
+		lblNewJgoodiesLabel.setBounds(10, 438, 1080, 78);
 		add(lblNewJgoodiesLabel);
 		
-		lblNewJgoodiesLabel_1 = DefaultComponentFactory.getInstance().createLabel("New JGoodies label");
-		lblNewJgoodiesLabel_1.setIcon(new ImageIcon(PanelSaludo.class.getResource("/imagenes/logo-termibus.png")));
-		lblNewJgoodiesLabel_1.setBounds(739, 526, 302, 111);
-		add(lblNewJgoodiesLabel_1);
+		JLabel lblNewJgoodiesLabel_2 = DefaultComponentFactory.getInstance().createLabel("");
+		lblNewJgoodiesLabel_2.setIcon(new ImageIcon(PanelLogin.class.getResource("/imagenes/logo-termibus2.jpg")));
+		lblNewJgoodiesLabel_2.setBounds(26, 26, 211, 82);
+		add(lblNewJgoodiesLabel_2);
 		
-		lblNewJgoodiesLabel_3 = DefaultComponentFactory.getInstance().createLabel("New JGoodies label");
+		lblNewJgoodiesLabel_3 = DefaultComponentFactory.getInstance().createLabel("");
 		lblNewJgoodiesLabel_3.setBackground(Color.WHITE);
-		lblNewJgoodiesLabel_3.setIcon(new ImageIcon(Ventana.class.getResource("/imagenes/bienvenido.gif")));
-		lblNewJgoodiesLabel_3.setBounds(10, 77, 1064, 347);
+		lblNewJgoodiesLabel_3.setIcon(new ImageIcon(PanelSaludo.class.getResource("/imagenes/bienvenido3.png")));
+		lblNewJgoodiesLabel_3.setBounds(97, 121, 890, 347);
 		add(lblNewJgoodiesLabel_3);
 		btnSaludo.setName("btnSaludo");
 		
