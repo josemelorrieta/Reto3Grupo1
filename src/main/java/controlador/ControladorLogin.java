@@ -3,6 +3,9 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
+import java.util.Timer;
+import java.util.TimerTask;
+
 import javax.swing.JButton;
 import modelo.FuncionesLogin;
 import modelo.Modelo;
@@ -37,6 +40,21 @@ public class ControladorLogin implements ActionListener {
 		miVentana.login.btnAtras.addActionListener(this);
 		miVentana.login.btnRegistrarse.addActionListener(this);
 		miVentana.login.btnLogin.addActionListener(this);
+	}
+	
+	/**
+	 * Método para cerrar sesión automáticamente después de un tiempo
+	 */
+	public void pasarDeBilletesALogin() {
+		Timer timer = new Timer();
+		TimerTask esperar = new TimerTask() {
+			@Override
+			public void run() {
+				miVentana.billetes.setVisible(false);
+				miVentana.login.setVisible(true);
+			}
+		};
+		timer.schedule(esperar, 60000);
 	}
 	
 	/**
@@ -88,6 +106,8 @@ public class ControladorLogin implements ActionListener {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
+					
+					pasarDeBilletesALogin();
 				}
 			
 				break;				
