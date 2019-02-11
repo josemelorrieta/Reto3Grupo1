@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.util.Timer;
 import java.util.TimerTask;
-
 import javax.swing.JButton;
 import modelo.FuncionesLogin;
 import modelo.Modelo;

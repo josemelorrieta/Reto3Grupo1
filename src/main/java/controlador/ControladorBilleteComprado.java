@@ -49,7 +49,7 @@ public class ControladorBilleteComprado implements ActionListener {
 	 */
 		public void resetear() {
 			miVentana.billeteComprado.txtIda.setText("");
-			miVentana.billeteComprado.txtVuelta.setText("");
+			miVentana.billeteComprado.txtVuelta.setText(""); 
 			miVentana.billeteComprado.txtVuelta.setEnabled(false);
 			miVentana.billeteComprado.lblPrecioTotal.setText("");
 		}

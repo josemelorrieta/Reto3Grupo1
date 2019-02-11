@@ -36,7 +36,7 @@ public class ControladorDevolucion implements ActionListener {
 		
 		//Definir los listeners para los botones del panel
 		miVentana.devolucion.btnSiguiente.addActionListener(this);
-		miVentana.devolucion.btnImprimirTicket.addActionListener(this);
+		miVentana.devolucion.btnImprimirTicket.addActionListener(this); 
 	}
 	
 	/**

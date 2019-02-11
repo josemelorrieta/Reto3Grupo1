@@ -2,11 +2,7 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Timer;
-import java.util.TimerTask;
-
 import javax.swing.JButton;
-
 import modelo.Billete;
 import vista.Ventana;
 
@@ -22,13 +18,12 @@ public class ControladorBilletes implements ActionListener {
 	private Ventana miVentana;
 	
 	
-	
 	/**
 	 * Constructor de  la clase ControladorBilletes
 	 * @param miVentana instancia de la ventana principal del programa
 	 * @param miModelo instacia del modelo donde se encuentran las funciones para el panel
 	 */
-	public ControladorBilletes (Ventana miVentana) {  
+	public ControladorBilletes (Ventana miVentana) {   
 		
 		this.miVentana = miVentana;
 		
@@ -39,8 +34,6 @@ public class ControladorBilletes implements ActionListener {
 
 
 	}
-	
-	
 	
 	/**
 	 * Metodo para resetear los valores de la ventana todos los billetes comprados 
