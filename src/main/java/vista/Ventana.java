@@ -10,6 +10,7 @@ import com.jgoodies.forms.factories.DefaultComponentFactory;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
 import javax.swing.UIManager;
+import java.awt.SystemColor;
 
 /**
  * Clase de la ventana principarl de la aplicacion
@@ -52,7 +53,7 @@ public class Ventana extends JFrame {
 		
 		
 		login = new PanelLogin();
-		login.setBackground(UIManager.getColor("menu"));
+		login.setBackground(SystemColor.controlHighlight);
 		login.setBorder(new LineBorder(new Color(0, 0, 0), 4));
 		contentPane.add(login);
 		login.setLayout(null);
