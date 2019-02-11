@@ -36,7 +36,8 @@ public class PanelLogin extends JPanel {
 	 *
 	 */
 	public PanelLogin() {
-		setBackground(Color.CYAN);
+		setBorder(new LineBorder(new Color(0, 0, 0), 4));
+		setBackground(UIManager.getColor("windowText"));
 		setBounds(0, 0, 1090, 690);
 		setLayout(null);
 		
@@ -50,8 +51,8 @@ public class PanelLogin extends JPanel {
 		
 		JLabel lblNewJgoodiesLabel_1 = DefaultComponentFactory.getInstance().createLabel("");
 		lblNewJgoodiesLabel_1.setForeground(Color.CYAN);
-		lblNewJgoodiesLabel_1.setBackground(Color.GREEN); 
-		lblNewJgoodiesLabel_1.setBounds(305, 142, 441, 359);
+		lblNewJgoodiesLabel_1.setBackground(new Color(204, 51, 51)); 
+		lblNewJgoodiesLabel_1.setBounds(335, 142, 440, 360);
 		lblNewJgoodiesLabel_1.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		add(lblNewJgoodiesLabel_1);
 		
@@ -89,10 +90,11 @@ public class PanelLogin extends JPanel {
 		add(btnLogin);
 		
 		JLabel lblLogin= DefaultComponentFactory.getInstance().createLabel("LOGIN");
-		lblLogin.setForeground(Color.PINK);
+		lblLogin.setBackground(new Color(204, 51, 51));
+		lblLogin.setForeground(new Color(204, 51, 51));
 		lblLogin.setFont(new Font("Tahoma", Font.BOLD, 50));
 		lblLogin.setHorizontalAlignment(SwingConstants.CENTER);
-		lblLogin.setBounds(-21, 73, 1070, 48);
+		lblLogin.setBounds(10, 72, 1070, 48);
 		add(lblLogin);
 		
 	}
