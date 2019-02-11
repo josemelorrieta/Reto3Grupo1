@@ -39,7 +39,7 @@ public class PanelBilletes extends JPanel {
 		MostrarBilletes.setFont(new Font("Tahoma", Font.PLAIN, 22));
 		
 	
-		MostrarBilletes.setBounds(211, 125, 668, 403);
+		MostrarBilletes.setBounds(112, 125, 846, 403);
 		add(MostrarBilletes);
 		btnCerrarSesion.setName("btnCerrarSesionBilletes");
 

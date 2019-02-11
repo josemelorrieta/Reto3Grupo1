@@ -56,12 +56,12 @@ public class PanelBilleteComprado extends JPanel {
 		
 		JLabel lblIda = new JLabel("Billete de Ida");
 		lblIda.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		lblIda.setBounds(161, 134, 212, 47);
+		lblIda.setBounds(101, 135, 212, 47);
 		add(lblIda);
 		
 		JLabel lblVuelta = new JLabel("Billete de Vuelta");
 		lblVuelta.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		lblVuelta.setBounds(161, 299, 286, 47);
+		lblVuelta.setBounds(101, 300, 286, 47);
 		add(lblVuelta);
 		
 		txtIda = new JLabel();
@@ -69,7 +69,7 @@ public class PanelBilleteComprado extends JPanel {
 		txtIda.setBackground(Color.WHITE);
 		txtIda.setHorizontalAlignment(SwingConstants.CENTER);
 		txtIda.setFont(new Font("Tahoma", Font.PLAIN, 22));
-		txtIda.setBounds(161, 192, 767, 61);
+		txtIda.setBounds(101, 193, 914, 61);
 		add(txtIda);
 		
 		txtVuelta = new JLabel();
@@ -77,7 +77,7 @@ public class PanelBilleteComprado extends JPanel {
 		txtVuelta.setOpaque(true);
 		txtVuelta.setHorizontalAlignment(SwingConstants.CENTER);
 		txtVuelta.setFont(new Font("Tahoma", Font.PLAIN, 22));
-		txtVuelta.setBounds(161, 357, 767, 61);
+		txtVuelta.setBounds(101, 358, 914, 61);
 		add(txtVuelta);
 		
 		JLabel lblPrecio = new JLabel("Precio Total:");

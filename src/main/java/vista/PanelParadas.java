@@ -49,23 +49,23 @@ public class PanelParadas extends JPanel {
 
 		JLabel lblParadaDeOrigen = DefaultComponentFactory.getInstance().createLabel("Parada de Origen:");
 		lblParadaDeOrigen.setFont(new Font("Tahoma", Font.PLAIN, 40));
-		lblParadaDeOrigen.setBounds(131, 262, 352, 49);
+		lblParadaDeOrigen.setBounds(75, 262, 352, 49);
 		add(lblParadaDeOrigen);
 		
 		JLabel lblNewJgoodiesLabel = DefaultComponentFactory.getInstance().createLabel("Parada de Destino:");
 		lblNewJgoodiesLabel.setFont(new Font("Tahoma", Font.PLAIN, 40));
-		lblNewJgoodiesLabel.setBounds(628, 262, 336, 37);
+		lblNewJgoodiesLabel.setBounds(628, 262, 336, 49);
 		add(lblNewJgoodiesLabel);
 		
 		paradaDeOrigen.setBackground(Color.WHITE);
-		paradaDeOrigen.setBounds(131, 322, 336, 49);
+		paradaDeOrigen.setBounds(75, 322, 352, 49);
 		paradaDeOrigen.setFont(new Font("Tahoma", Font.PLAIN, 22));
 		paradaDeOrigen.setName("paradaDeOrigen");
 		add(paradaDeOrigen);
 		
 		paradaDeDestino.setBackground(Color.WHITE);
 		paradaDeDestino.setFont(new Font("Tahoma", Font.PLAIN, 22));
-		paradaDeDestino.setBounds(628, 322, 336, 49);		
+		paradaDeDestino.setBounds(628, 322, 351, 49);		
 		add(paradaDeDestino);
 		
 	

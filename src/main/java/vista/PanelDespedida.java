@@ -34,7 +34,7 @@ public class PanelDespedida extends JPanel {
 		lblNewJgoodiesLabel.setIcon(new ImageIcon(PanelDespedida.class.getResource("/imagenes/Gracias.png")));
 		add(lblNewJgoodiesLabel);
 		
-		JLabel lblNewJgoodiesLabel_1 = DefaultComponentFactory.getInstance().createLabel("SU SESION SE HA CERRADO");
+		JLabel lblNewJgoodiesLabel_1 = DefaultComponentFactory.getInstance().createLabel("SU SESIÓN SE CERRARÁ");
 		lblNewJgoodiesLabel_1.setForeground(Color.RED);
 		lblNewJgoodiesLabel_1.setFont(new Font("Sitka Subheading", Font.BOLD | Font.ITALIC, 30));
 		lblNewJgoodiesLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
