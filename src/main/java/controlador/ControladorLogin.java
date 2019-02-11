@@ -1,15 +1,9 @@
 package controlador;
 
 import java.awt.event.ActionEvent;
-
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
-
 import javax.swing.JButton;
-
-import modelo.Billete;
-import modelo.Cliente;
-import modelo.FuncionesBilletes;
 import modelo.FuncionesLogin;
 import modelo.Modelo;
 import vista.Ventana;
@@ -21,7 +15,6 @@ import vista.Ventana;
 public class ControladorLogin implements ActionListener {
 	
 	FuncionesControlador funciones = new FuncionesControlador();
-	FuncionesVarias funcionesVarias = new FuncionesVarias();
 	FuncionesLogin funcionesLogin = new FuncionesLogin();
 		
 	private Controlador miControlador; 

@@ -1,3 +1,6 @@
 /imagenes/
 /vista/
 /modelo/
+/controlador/
+/testsModelo/
+/testsControlador/

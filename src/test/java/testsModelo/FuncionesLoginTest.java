@@ -1,19 +1,34 @@
 package testsModelo;
 
 import static org.junit.Assert.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
 
 import org.junit.Test;
 
 import modelo.Cliente;
+import modelo.ConexionBD;
+import modelo.ConsultaBD;
 import modelo.FuncionesLogin;
-import modelo.Modelo;
+
 import vista.Ventana;
 
 public class FuncionesLoginTest {
 
-	Ventana miVentana = new Ventana();
-	Modelo miModelo = new Modelo();
-	FuncionesLogin funcionesLoginTest = new FuncionesLogin();
+	private Ventana miVentana = new Ventana();
+	private FuncionesLogin funcionesLoginTest = new FuncionesLogin();
+	private ConexionBD conexionTest = new ConexionBD();
+	private ConsultaBD consultaTest = new ConsultaBD();
+	
+	private String dniTest = "111111A";
+	private char[] passTest = {'O', 'k'};
+	private String passTestStr = String.valueOf(passTest);
+	 
+
+	Cliente clienteTest = new Cliente(dniTest, "Pepe", "El marino", "21/3/1975", 'V');
 	
 	@Test
 	public void testComprobarDNIyPass() throws Exception {
@@ -27,18 +42,31 @@ public class FuncionesLoginTest {
 		cliente2 = funcionesLoginTest.comprobarDNI("15236985K", contrs2, cliente2, miVentana);
 		cliente3 = funcionesLoginTest.comprobarDNI("11111111K", contrs, cliente3, miVentana);
 		
-//		System.out.println(cliente1.getApellidos());
-//		System.out.println(cliente1.getDni());
-//		System.out.println(cliente1.getFechaNacimiento());
-//		System.out.println(cliente1.getNombre());
-//		System.out.println(cliente1.getSexo());
-//		System.out.println(clienteTest.getApellidos());
-//		System.out.println(clienteTest.getDni());
-//		System.out.println(clienteTest.getFechaNacimiento());
-//		System.out.println(clienteTest.getNombre());
-//		System.out.println(clienteTest.getSexo());
 		assertEquals(cliente1, clienteTest);
 	}
 	
 
+	@Test
+	public void testComprobarDNI() throws Exception {
+		clienteTest.setContraseña(passTestStr);
+		assertNotEquals(funcionesLoginTest.comprobarDNI(dniTest, passTest, clienteTest,  miVentana), null);
+		//assertEquals(funcionesTest.comprobarDNI(DNI2), false);
+	}
+		
+	@Test
+	public void comprobarPassTest() throws Exception {
+		conexionTest = mock(ConexionBD.class);
+		Connection conTest = null;
+		when(conexionTest.conectarBD()).thenReturn(conTest);
+		
+		ResultSet rsMock = mock(ResultSet.class);
+		when(rsMock.next()).thenReturn(true);
+		
+		ResultSet rsTest = null;
+		consultaTest = mock(ConsultaBD.class);
+		when(consultaTest.hacerConsultaBD(conTest, "")).thenReturn(rsTest);
+		
+		assertEquals(funcionesLoginTest.comprobarPass(dniTest, String.valueOf(passTest)), false);
+	}
+	
 }

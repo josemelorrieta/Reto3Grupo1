@@ -3,14 +3,12 @@ package vista;
 import javax.swing.JPanel;
 import java.awt.Color;
 import javax.swing.border.LineBorder;
-import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import java.awt.Font;
 import javax.swing.JLabel;
 import com.jgoodies.forms.factories.DefaultComponentFactory;
 import javax.swing.SwingConstants;
-import javax.swing.JList;
-import javax.swing.JTextField;
+
 
 /**
  * Calse del panel que muestra el resumen del billete comprado

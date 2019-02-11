@@ -5,12 +5,10 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import modelo.FuncionesParadas;
-import modelo.Modelo;
 import modelo.Parada;
 
 public class FuncionesParadasTest {
 
-	private Modelo miModelo = new Modelo();
 	private FuncionesParadas funcionesParadas = new FuncionesParadas();
 	
 	@Test

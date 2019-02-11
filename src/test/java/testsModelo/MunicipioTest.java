@@ -3,8 +3,6 @@ package testsModelo;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
-
-import modelo.Autobus;
 import modelo.Municipio;
 
 public class MunicipioTest {

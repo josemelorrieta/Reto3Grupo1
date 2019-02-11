@@ -2,16 +2,8 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.NumberFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.Locale;
-
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
-import javax.swing.JComboBox;
-
-import modelo.LineaAutobus;
 import modelo.Modelo;
 import modelo.Parada;
 import vista.Ventana;
@@ -24,7 +16,6 @@ public class ControladorParadas implements ActionListener {
 	
 	FuncionesControlador funciones = new FuncionesControlador();
 	
-	private Controlador miControlador;
 	private Ventana miVentana;
 	private Modelo miModelo;
 	
@@ -40,8 +31,8 @@ public class ControladorParadas implements ActionListener {
 	 * @param paradas instancia del array de paradas del modelo
 	 * @param lineas instancia del array de lineas
 	 */
-	public ControladorParadas (Controlador miControlador, Ventana miVentana, Modelo miModelo) { 
-		this.miControlador = miControlador;
+	public ControladorParadas (Ventana miVentana, Modelo miModelo) { 
+		
 		this.miVentana = miVentana;
 		this.miModelo = miModelo;
 		
