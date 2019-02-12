@@ -37,13 +37,15 @@ public class ControladorDevolucion implements ActionListener {
 		//Definir los listeners para los botones del panel
 		miVentana.devolucion.btnSiguiente.addActionListener(this);
 		miVentana.devolucion.btnImprimirTicket.addActionListener(this); 
+		miVentana.devolucion.btnComprarOtroBillete.addActionListener(this); 
 	}
 	
 	/**
 	 * Metodo para resetear los valores de la ventana devolucion	
-	 */
+	 */ 
 	public void  resetear() {		
 		miVentana.devolucion.cambios.removeAllElements();
+	
 	}
 		
 	/**
@@ -56,6 +58,11 @@ public class ControladorDevolucion implements ActionListener {
 			case "btnSiguienteDevolucion":
 				funciones.cambiarDePanel(miVentana.devolucion, miVentana.despedida);
 				miControlador.miControladorDespedida.PasarDeDespedidaASaludo();
+				resetear();
+				break;
+				
+			case "btnComprarOtroBilleteDevolucion":
+				funciones.cambiarDePanel(miVentana.devolucion, miVentana.billetes);
 				resetear();
 				break;
 				

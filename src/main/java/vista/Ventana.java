@@ -98,8 +98,8 @@ public class Ventana extends JFrame {
 		fechas.setLayout(null);
 		
 		billeteComprado = new PanelBilleteComprado();
-		billeteComprado.btnSiguiente.setBounds(889, 570, 165, 61);
-		billeteComprado.btnAtras.setBounds(691, 570, 171, 61);
+		billeteComprado.btnSiguiente.setBounds(837, 551, 195, 70);
+		billeteComprado.btnAtras.setBounds(272, 551, 195, 70);
 		contentPane.add(billeteComprado);
 		billeteComprado.setLayout(null);
 		

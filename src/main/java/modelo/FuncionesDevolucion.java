@@ -32,7 +32,7 @@ public class FuncionesDevolucion {
 		// Declaracion e inicializacion de variables
 		int euros = (int) Math.floor(dinero);
 		int decimales = (int) Math.round((dinero - euros) * 100);
-		int[] billetesMonedas = {500, 200, 100, 50, 20, 10, 5, 2, 1};
+		int[] billetesMonedas = {500, 200, 100, 50, 20, 10, 5, 2, 1}; 
 		int[] cambios = new int[15];
 		
 		//Inicio del programa

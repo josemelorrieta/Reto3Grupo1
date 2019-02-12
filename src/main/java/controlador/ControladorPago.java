@@ -29,6 +29,7 @@ public class ControladorPago implements ActionListener {
 	public double total;
 	public double pagado = 0;
 	
+	
 	NumberFormat formatoMoneda = NumberFormat.getCurrencyInstance(Locale.getDefault());
 	
 	/**
@@ -42,7 +43,6 @@ public class ControladorPago implements ActionListener {
 		this.miModelo = miModelo;
 		
 		//Definicion de los listeners de los botones del panel
-		miVentana.pago.btnAtras.addActionListener(this);
 		miVentana.pago.btnSiguiente.addActionListener(this); 
 		miVentana.pago.btnCancelar.addActionListener(this); 
 		miVentana.pago.btn500.addActionListener(this);
@@ -70,7 +70,8 @@ public class ControladorPago implements ActionListener {
 		miVentana.pago.total.setText("");
 		miVentana.pago.pagado.setText("");
 		miVentana.pago.restante.setText("");
-		actBotones(miVentana.pago.arrayBtn);
+		actBotones(miVentana.pago.arrayBtn); 
+		pagado = 0;
 				
 	}
 		
@@ -81,11 +82,9 @@ public class ControladorPago implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		//Accion dependiendo de que boton venga el evento
 		switch (((JButton) e.getSource()).getName()) {
-			case "btnAtrasPago": controlar.cambiarDePanel(miVentana.pago, miVentana.billeteComprado);
-				resetear();
-				break;
-				
+	
 			case "btnCancelarPago": controlar.cambiarDePanel(miVentana.pago, miVentana.billetes);
+		     	JOptionPane.showMessageDialog(miVentana, "Devolución de dinero introducido", "¡Atencion!", JOptionPane.WARNING_MESSAGE);
 				resetear();
 				break;
 								 
@@ -123,7 +122,7 @@ public class ControladorPago implements ActionListener {
 			desBotones(miVentana.pago.arrayBtn);
 			actBotones(miVentana.pago.btnSiguiente);
 			desBotones(miVentana.pago.btnCancelar);
-			desBotones(miVentana.pago.btnAtras);
+			
 		} else {
 			miVentana.pago.restante.setText(formatoMoneda.format(total - pagado));
 			miVentana.pago.pagado.setText(formatoMoneda.format(pagado));
@@ -181,6 +180,7 @@ public class ControladorPago implements ActionListener {
 		//Inicio del programa
 		if (arrayCambios != null) {
 			//Recorremos el array de cambios. Cada posicion es una moneda o billete 500, 200, 100...
+			miVentana.devolucion.cambios.addElement("Cambios: " + formatoMoneda.format(pagado - total));
 			for(int z=0 ; z < cambios.length ; z++) {
 				//Si la posicion es distinta de cero hay cambios de esa moneda/billete 
 				if (cambios[z]>0) {

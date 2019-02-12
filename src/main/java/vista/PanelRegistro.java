@@ -62,8 +62,10 @@ public class PanelRegistro extends JPanel {
 		lblNewJgoodiesLabel_1.setBounds(100, 195, 351, 35);
 		add(lblNewJgoodiesLabel_1);	
 		
+		btnCancelar.setBackground(new Color(248, 248, 255));
+		btnCancelar.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(255, 239, 213), new Color(255, 239, 213), null, null));
 		btnCancelar.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnCancelar.setBounds(48, 575, 194, 68);
+		btnCancelar.setBounds(48, 551, 195, 70);	
 		btnCancelar.setName("btnAtrasRegistro");
 		add(btnCancelar);
 		

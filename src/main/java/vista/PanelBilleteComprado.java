@@ -100,14 +100,14 @@ public class PanelBilleteComprado extends JPanel {
 		add(lblPrecio);
 		
 		lblPrecioTotal = new JLabel("");
-		lblPrecioTotal.setHorizontalAlignment(SwingConstants.LEFT);
-		lblPrecioTotal.setFont(new Font("Times New Roman", Font.PLAIN, 30));
-		lblPrecioTotal.setBounds(542, 462, 150, 55);
+		lblPrecioTotal.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblPrecioTotal.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblPrecioTotal.setBounds(542, 462, 111, 55);
 		add(lblPrecioTotal);
 		
 		JLabel lblIvaIncluido = new JLabel("(IVA incluido)");
-		lblIvaIncluido.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblIvaIncluido.setBounds(717, 478, 103, 34);
+		lblIvaIncluido.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblIvaIncluido.setBounds(663, 478, 119, 34);
 		add(lblIvaIncluido);
 		
 		JLabel lblNewJgoodiesLabel_2 = DefaultComponentFactory.getInstance().createLabel("");

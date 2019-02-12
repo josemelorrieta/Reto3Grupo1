@@ -94,7 +94,7 @@ public class PanelFechas extends JPanel {
 		
 		textPrecio.setText("");
 		textPrecio.setHorizontalAlignment(SwingConstants.LEFT);
-		textPrecio.setFont(new Font("Times New Roman", Font.PLAIN, 35));
+		textPrecio.setFont(new Font("Tahoma", Font.PLAIN, 35));
 		
 		
 		textPrecio.setBounds(537, 442, 140, 31);
