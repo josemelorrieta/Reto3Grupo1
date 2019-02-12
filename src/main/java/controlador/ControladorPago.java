@@ -200,21 +200,21 @@ public class ControladorPago implements ActionListener {
 							
 						case 6 :  mensajeCambios= "Billetes de " + (formatoMoneda.format(5)) + ": " ; break;
 						
-						case 7 :  mensajeCambios= "Moneda de " + (formatoMoneda.format(2)) + ": " ; break;
+						case 7 :  mensajeCambios= "Monedas de " + (formatoMoneda.format(2)) + ": " ; break;
 							
-						case 8 :  mensajeCambios= "Moneda de " + (formatoMoneda.format(1)) + ": " ; break;
+						case 8 :  mensajeCambios= "Monedas de " + (formatoMoneda.format(1)) + ": " ; break;
 							
-						case 9 :  mensajeCambios= "Moneda de " + (formatoMoneda.format(0.5)) + ": " ; break;
+						case 9 :  mensajeCambios= "Monedas de " + (formatoMoneda.format(0.5)) + ": " ; break;
 						
-						case 10 :  mensajeCambios= "Moneda de " + (formatoMoneda.format(0.2)) + ": " ; break;
+						case 10 :  mensajeCambios= "Monedas de " + (formatoMoneda.format(0.2)) + ": " ; break;
 						
-						case 11 :  mensajeCambios= "Moneda de " + (formatoMoneda.format(0.1)) + ": " ; break;
+						case 11 :  mensajeCambios= "Monedas de " + (formatoMoneda.format(0.1)) + ": " ; break;
 						
-						case 12 :  mensajeCambios= "Moneda de " + (formatoMoneda.format(0.05)) + ": " ; break;
+						case 12 :  mensajeCambios= "Monedas de " + (formatoMoneda.format(0.05)) + ": " ; break;
 						
-						case 13 :  mensajeCambios= "Moneda de " + (formatoMoneda.format(0.02)) + ": " ; break;
+						case 13 :  mensajeCambios= "Monedas de " + (formatoMoneda.format(0.02)) + ": " ; break;
 						
-						case 14 :  mensajeCambios= "Moneda de " + (formatoMoneda.format(0.01)) + ": " ; break;
+						case 14 :  mensajeCambios= "Monedas de " + (formatoMoneda.format(0.01)) + ": " ; break;
 					
 					}
 					//Añadimos la linea al modelo de la lista
