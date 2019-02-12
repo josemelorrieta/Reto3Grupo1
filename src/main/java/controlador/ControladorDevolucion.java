@@ -2,6 +2,7 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
@@ -63,6 +64,15 @@ public class ControladorDevolucion implements ActionListener {
 				
 			case "btnComprarOtroBilleteDevolucion":
 				funciones.cambiarDePanel(miVentana.devolucion, miVentana.billetes);
+				//Mostrar los billetes del cliente antes de volver a la ventana billetes
+				miModelo.billetes = null;
+				try {
+					miModelo.billetes = miModelo.misFuncionesBilletes.billetesCliente(miModelo.cliente, miModelo.billetes);
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				miControlador.miControladorBilletes.actualizarBilletes(miModelo.billetes);
 				resetear();
 				break;
 				

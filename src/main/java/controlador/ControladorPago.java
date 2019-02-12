@@ -2,6 +2,7 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.text.NumberFormat;
 import java.util.Locale;
 import javax.swing.JButton;
@@ -91,6 +92,13 @@ public class ControladorPago implements ActionListener {
 			case "btnSiguientePago":  
 				if (miModelo.billeteVuelta != null) {
 					if (miModelo.misFuncionesDevolucion.guardarBilleteBD(miModelo.billeteIda, miModelo, 1) && miModelo.misFuncionesDevolucion.guardarBilleteBD(miModelo.billeteVuelta, miModelo, 2)) {
+						//Refrescar array de billetes del cliente
+						try {
+							miModelo.billetes = miModelo.misFuncionesBilletes.billetesCliente(miModelo.cliente, miModelo.billetes);
+						} catch (SQLException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
 						funciones.cambiarDePanel(miVentana.pago, miVentana.devolucion);
 					} else {
 					JOptionPane.showMessageDialog(miVentana, "Hubo un error al guardar el billete en la Base de Datos", "¡Atencion!", JOptionPane.WARNING_MESSAGE);

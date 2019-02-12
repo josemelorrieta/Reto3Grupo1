@@ -58,6 +58,7 @@ public class ControladorBilletes implements ActionListener {
 			Date fechaHoy = new Date();
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 			SimpleDateFormat sdfOut = new SimpleDateFormat("dd/MM/yyyy");
+			int cont = 0;
 			
 			//Inicio del programa
 			//Borrar el panel de billetes para refrescarlo
@@ -65,20 +66,23 @@ public class ControladorBilletes implements ActionListener {
 			miVentana.billetes.modeloMostrarBilletes.addElement(String.format("%5s%2s%-50s%-10s", "NUM", " ", "TRAYECTO", "FECHA"));
 			miVentana.billetes.modeloMostrarBilletes.addElement(String.format("%5s%2s%-50s%-10s", "---", " ", "--------", "-----"));
 			//En el caso de que no existan billetes ponemos un mensaje, si existen se muestran los billetes 
-			if (billetes == null) {
-				miVentana.billetes.modeloMostrarBilletes.addElement("No hay billetes");
-			} else {
+			if (billetes != null) {
+				cont = 0;
 				for (int i=0;i<billetes.length;i++) {
 					//Filtrar billetes de fecha posterior a hoy
 					try {
 						if (sdf.parse(billetes[i].getFecha()).compareTo(fechaHoy) >= 0 ) {
 							miVentana.billetes.modeloMostrarBilletes.addElement(String.format("%2s%03d%2s%-50s%10s", " ", billetes[i].getNumBillete(), " ", billetes[i].getOrigen() + " - " + billetes[i].getDestino(), sdfOut.format(sdf.parse(billetes[i].getFecha()))));
+							cont++;
 						}
 					} catch (ParseException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 				}
+			}
+			if (billetes == null || cont == 0) {
+				miVentana.billetes.modeloMostrarBilletes.addElement("   No hay billetes");
 			}
 			//Se le pasa el modelo a la lista para que los muestre
 			miVentana.billetes.MostrarBilletes.setModel(miVentana.billetes.modeloMostrarBilletes);
