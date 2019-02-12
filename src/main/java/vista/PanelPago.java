@@ -74,7 +74,6 @@ public class PanelPago extends JPanel {
 		btnAtras.setName("btnAtrasPago");
 		btnAtras.setSize(195, 70);
 		btnAtras.setLocation(270, 551);
-		btnAtras.setName("btnAtrasFechas");
 		btnAtras.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnAtras.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(255, 248, 220), new Color(255, 248, 220), null, null));
 		btnAtras.setBackground(new Color(248, 248, 255));
@@ -102,22 +101,23 @@ public class PanelPago extends JPanel {
 		lblNewJgoodiesLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 35));
 		lblNewJgoodiesLabel_3.setBounds(629, 390, 185, 35);
 		add(lblNewJgoodiesLabel_3);		
+		
+		
 		restante.setHorizontalAlignment(SwingConstants.RIGHT);
-		restante.setFont(new Font("Tahoma", Font.PLAIN, 30));
-	
-		restante.setBounds(819, 390, 162, 35);
+		restante.setFont(new Font("Tahoma", Font.PLAIN, 30));	
+	    restante.setBounds(819, 390, 162, 35);
 		add(restante);
+		
+		
 		pagado.setHorizontalAlignment(SwingConstants.RIGHT);
 		pagado.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		
-		
 		pagado.setBounds(819, 303, 162, 35);
 		add(pagado);
+		
+		
 		total.setHorizontalAlignment(SwingConstants.RIGHT);
 		total.setToolTipText("");
-		total.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		
-		
+		total.setFont(new Font("Tahoma", Font.PLAIN, 30));	
 		total.setBounds(819, 210, 162, 35);
 		add(total);
 		

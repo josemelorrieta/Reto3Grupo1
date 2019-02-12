@@ -47,7 +47,6 @@ public class PanelBilleteComprado extends JPanel {
 		btnAtras.setName("btnAtrasBilleteComprado");
 		btnAtras.setSize(195, 70);
 		btnAtras.setLocation(270, 551);
-		btnAtras.setName("btnAtrasFechas");
 		btnAtras.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnAtras.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(255, 248, 220), new Color(255, 248, 220), null, null));
 		btnAtras.setBackground(new Color(248, 248, 255));
