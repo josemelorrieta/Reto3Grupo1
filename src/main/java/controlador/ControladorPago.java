@@ -84,6 +84,10 @@ public class ControladorPago implements ActionListener {
 			case "btnAtrasPago": controlar.cambiarDePanel(miVentana.pago, miVentana.billeteComprado);
 				resetear();
 				break;
+				
+			case "btnCancelarPago": controlar.cambiarDePanel(miVentana.pago, miVentana.billetes);
+				resetear();
+				break;
 								 
 			case "btnSiguientePago":  
 				if (miModelo.billeteVuelta != null) {
