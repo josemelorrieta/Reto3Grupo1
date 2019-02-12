@@ -44,7 +44,9 @@ public class ControladorParadas implements ActionListener {
 		miVentana.paradas.btnCancelar.addActionListener(this);
 		miVentana.paradas.paradaDeOrigen.addActionListener (new ActionListener () {
 		    public void actionPerformed(ActionEvent e) {
-		        cambioParadaOrigen();
+		    	if(miVentana.paradas.modeloDestino.getSize() != 0) {
+		    		cambioParadaOrigen();
+		    	}
 		    }
 		});
 	}
@@ -54,6 +56,8 @@ public class ControladorParadas implements ActionListener {
 	 */
 	public void resetear() {
 		miVentana.paradas.lblMostrarLinea.setText("");
+		miVentana.paradas.modeloOrigen.removeAllElements();
+		miVentana.paradas.modeloDestino.removeAllElements();
 	}
 
 	/**

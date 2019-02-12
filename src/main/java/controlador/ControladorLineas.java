@@ -57,6 +57,7 @@ public class ControladorLineas implements ActionListener {
 						if (i != miModelo.paradas.length - 1) {
 							miVentana.paradas.modeloOrigen.addElement(miModelo.paradas[i].getNombre());
 						}
+						//Quitamos de lista de destinos la primera parada
 						if (i != 0) {
 							miVentana.paradas.modeloDestino.addElement(miModelo.paradas[i].getNombre());
 						}
