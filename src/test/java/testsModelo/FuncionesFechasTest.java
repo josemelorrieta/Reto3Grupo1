@@ -12,10 +12,12 @@ import java.util.Date;
 import org.junit.Test;
 
 import modelo.FuncionesFechas;
+import modelo.Modelo;
 
 public class FuncionesFechasTest {
 
-	FuncionesFechas func = new FuncionesFechas();
+	Modelo miModelo = new Modelo();
+	FuncionesFechas func = new FuncionesFechas(miModelo);
 	
 	Date fechaInicio = new Date();
 	Date fechaLimite = new Date();
@@ -50,17 +52,7 @@ public class FuncionesFechasTest {
 		assertEquals(resultado[0], coordenadas[0], 0.1);
 		assertEquals(resultado[1], coordenadas[1], 0.1);		
 	}
-	
-	@Test
-	public void testDistanciaEntreParadas() {
-		//Declaración e inicialización de variables
-		float[] origen = {0f,0f};
-		float[] destino1 = {1f,1f};
-		float[] destino2 = {0f,0f};
-		//Test
-		assertEquals(func.distanciaEntreParadas(origen, destino1), 1.4142, 0.1);
-		assertEquals(func.distanciaEntreParadas(origen, destino2), 0, 0.1);
-	}
+
 	
 	@Test
 	public void testCalcularPrecioBillete() throws SQLException {

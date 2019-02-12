@@ -157,7 +157,7 @@ public class FuncionesParadas {
 		//Ordenar el array mediante el array de distancias por el metodo de la burbuja
     	for (int x = 0; x < distancias.length; x++) {
 	        for (int i = 0; i < distancias.length-x-1; i++) {
-	            if(distancias[i] < distancias[i+1]){
+	            if(distancias[i+1] < distancias[i]){
 	                float tmpDistancia = distancias[i+1];
 	                Parada tmpParada = paradas[i+1];
 	                distancias[i+1] = distancias[i];
