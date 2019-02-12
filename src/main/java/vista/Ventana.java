@@ -16,7 +16,7 @@ import java.awt.Font;
  */
 public class Ventana extends JFrame { 
 
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 12L;
 
 	private JPanel contentPane;
 

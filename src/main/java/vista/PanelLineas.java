@@ -21,7 +21,7 @@ import java.awt.SystemColor;
  */
 public class PanelLineas extends JPanel { 
 	
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 5L;
 	
 	public JButton btnCancelar = new JButton("Cancelar");
 	public JButton btnSiguiente = new JButton("Siguiente");

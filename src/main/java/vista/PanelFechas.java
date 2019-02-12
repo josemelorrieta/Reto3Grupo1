@@ -26,7 +26,7 @@ import java.awt.SystemColor;
  */
 public class PanelFechas extends JPanel { 
 	
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 7L;
 	
 	public JButton btnAtras = new JButton("Atrás");
 	public JButton btnSiguiente = new JButton("Siguiente");
