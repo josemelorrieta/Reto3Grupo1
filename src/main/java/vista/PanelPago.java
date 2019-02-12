@@ -19,7 +19,7 @@ import java.awt.SystemColor;
  */
 public class PanelPago extends JPanel {
 	
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 8L;
 	
 	public JButton btnCancelar = new JButton("Cancelar");
 	public JButton btnAtras = new JButton("Atras");

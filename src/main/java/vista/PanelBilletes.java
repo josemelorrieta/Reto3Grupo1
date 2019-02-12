@@ -21,7 +21,7 @@ import java.awt.SystemColor;
  */
 public class PanelBilletes extends JPanel {
 
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 4L;
 	
 	public JButton btnCerrarSesion = new JButton("Cerrar Sesion");
 	public JButton btnComprarBillete = new JButton("Comprar Billete");

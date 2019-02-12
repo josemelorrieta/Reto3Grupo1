@@ -26,7 +26,7 @@ import java.awt.SystemColor;
  */
 public class PanelRegistro extends JPanel {
 	
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 3L;
 	
 	JPanel panelRegistro = new JPanel();
 	public JTextField textFieldApellidos;

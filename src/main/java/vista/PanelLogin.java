@@ -22,7 +22,7 @@ import javax.swing.border.BevelBorder;
  */
 public class PanelLogin extends JPanel {
 	
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 2L;
 	
 	public JTextField TextDni; 
 	public JPasswordField passwordField;

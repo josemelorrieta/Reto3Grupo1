@@ -15,7 +15,7 @@ import java.awt.Font;
  */
 public class PanelDespedida extends JPanel {
 	
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 11L;
 	
 	JPanel panelDespedida = new JPanel();
 	

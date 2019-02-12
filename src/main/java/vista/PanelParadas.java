@@ -22,7 +22,7 @@ import java.awt.SystemColor;
  */
 public class PanelParadas extends JPanel {
 
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 6L;
 	
 	public JButton btnAtras = new JButton("Atrás");
 	public JButton btnSiguiente = new JButton("Siguiente");

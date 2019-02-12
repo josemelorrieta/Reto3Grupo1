@@ -20,7 +20,7 @@ import java.awt.SystemColor;
  */
 public class PanelBilleteComprado extends JPanel {
 	
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 10L;
 	
 	public JButton btnCancelar = new JButton("Cancelar");
 	public JButton btnAtras = new JButton("Atrás");
