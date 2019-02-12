@@ -11,6 +11,12 @@ import java.util.Date;
  *
  */
 public class FuncionesFechas {
+	
+	Modelo miModelo;
+	
+	public FuncionesFechas(Modelo miModelo) {
+		this.miModelo = miModelo;
+	}
 
 	/**
 	 * Suma tres dias a la fecha recibida por parametro y devuelve la fecha resultante
@@ -49,7 +55,7 @@ public class FuncionesFechas {
 		float[] coordenadasOrigen = coordenadasParada(codOrigen);
 		float[] coordenadasDestino = coordenadasParada(codDestino);
 		//Inicio del programa
-		distancia = distanciaEntreParadas(coordenadasOrigen, coordenadasDestino) * kmPorGrado;
+		distancia = miModelo.misFuncionesModelo.distanciaEntreParadas(coordenadasOrigen, coordenadasDestino) * kmPorGrado;
 		
 		return distancia;
 	}
@@ -125,23 +131,6 @@ public class FuncionesFechas {
 		}
 		
 		return coordenadas;
-	}
-	
-	/**
-	 * Metodo que devuelve la distanca euclidea 
-	 * @param coordP1 Array con la latitud y longitud de la parada de origen
-	 * @param coordP2 Array con la latitud y longitud de la parada de destino
-	 * @return distancia Distancia en grados terrestres entre las dos paradas
-	 */
-	public double distanciaEntreParadas (float[] coordP1, float[] coordP2) {
-		//Declaración e inicialización de variables
-		double distancia = 0;
-		
-		//Inicio del programa
-		//Calcular distancia euclidea RAIZ((x1-x2)^2 + (y1-y2)^2)
-		distancia = Math.sqrt(Math.pow((coordP2[0] - coordP1[0]), 2) + Math.pow((coordP2[1] - coordP1[1]), 2));
-		
-		return distancia;
 	}
 	
 	/**

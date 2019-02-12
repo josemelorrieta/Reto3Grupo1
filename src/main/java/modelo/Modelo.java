@@ -43,12 +43,11 @@ public class Modelo {
 		this.misFuncionesRegistro = new FuncionesRegistro();
 		this.misFuncionesBilletes = new FuncionesBilletes();
 		this.misFuncionesLineas = new FuncionesLineas(this);
-		this.misFuncionesParadas = new FuncionesParadas();
+		this.misFuncionesParadas = new FuncionesParadas(this);
 		this.misFuncionesPago = new FuncionesPago();
-		this.misFuncionesFechas = new FuncionesFechas();
+		this.misFuncionesFechas = new FuncionesFechas(this);
 		this.misFuncionesBilleteComprado = new FuncionesBilleteComprado();
 		this.misFuncionesDevolucion = new FuncionesDevolucion(this);
-		this.misFuncionesFechas = new FuncionesFechas();
 		this.miConexionFichero = new ConexionFichero();
 	}
 

@@ -7,7 +7,6 @@ import java.awt.Color;
 
 import javax.swing.border.BevelBorder;
 import javax.swing.border.LineBorder;
-import javax.swing.border.SoftBevelBorder;
 
 import java.awt.Font;
 import javax.swing.SwingConstants;

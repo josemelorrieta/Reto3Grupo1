@@ -47,6 +47,8 @@ public class ControladorLineas implements ActionListener {
 			case "btnSiguienteLineas": funciones.cambiarDePanel(miVentana.lineas, miVentana.paradas);
 				//Cargar las paradas de la linea seleccionada
 				miModelo.paradas = miModelo.misFuncionesParadas.cargarParadas(miModelo.paradas, miVentana.lineas.listaLineas.getSelectedItem().toString());
+				//Ordenar las paradas segun su distancia a la parada de origen
+				miModelo.paradas = miModelo.misFuncionesParadas.ordenarParadas(miModelo.paradas);
 				if(miModelo.paradas != null) {
 					//Borramos las listas de paradas de origen y destino. La lista de paradas de destino se actualiza al cambiar las paradas de origen 
 					miVentana.paradas.modeloOrigen.removeAllElements();
