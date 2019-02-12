@@ -22,7 +22,6 @@ public class PanelPago extends JPanel {
 	private static final long serialVersionUID = 8L;
 	
 	public JButton btnCancelar = new JButton("Cancelar");
-	public JButton btnAtras = new JButton("Atras");
 	public JButton btnSiguiente = new JButton("Siguiente");
 	
 	public JLabel restante = new JLabel();
@@ -69,15 +68,7 @@ public class PanelPago extends JPanel {
 		btnCancelar.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(255, 239, 213), new Color(255, 239, 213), null, null));
 		btnCancelar.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnCancelar.setBounds(48, 551, 195, 70);
-		add(btnCancelar); 
-		
-		btnAtras.setName("btnAtrasPago");
-		btnAtras.setSize(195, 70);
-		btnAtras.setLocation(270, 551);
-		btnAtras.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnAtras.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(255, 248, 220), new Color(255, 248, 220), null, null));
-		btnAtras.setBackground(new Color(248, 248, 255));
-		add(btnAtras);
+		add(btnCancelar);
 		
 		btnSiguiente.setName("btnSiguientePago");
 		btnSiguiente.setEnabled(false);

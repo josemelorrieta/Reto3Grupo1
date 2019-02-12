@@ -61,12 +61,15 @@ public class PanelRegistro extends JPanel {
 		lblNewJgoodiesLabel_1.setBounds(100, 195, 351, 35);
 		add(lblNewJgoodiesLabel_1);	
 		
+		btnCancelar.setBackground(new Color(248, 248, 255));
+		btnCancelar.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(255, 239, 213), new Color(255, 239, 213), null, null));
 		btnCancelar.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnCancelar.setBounds(48, 575, 194, 68);
+		btnCancelar.setBounds(48, 551, 195, 70);	
 		btnCancelar.setName("btnAtrasRegistro");
 		add(btnCancelar);
 		
-		
+		btnRegistrarse.setBackground(new Color(248, 248, 255));
+		btnRegistrarse.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(255, 239, 213), new Color(255, 239, 213), null, null));
 		btnRegistrarse.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnRegistrarse.setBounds(858, 575, 194, 68);
 		btnRegistrarse.setName("btnRegistro");
@@ -102,7 +105,7 @@ public class PanelRegistro extends JPanel {
 		add(textFieldApellidos);
 		
 		textFieldNombre = new JTextField();
-		textFieldNombre.setColumns(10);
+		textFieldNombre.setColumns(10); 
 		textFieldNombre.setBounds(468, 252, 277, 26);
 		add(textFieldNombre);
 		
@@ -119,7 +122,7 @@ public class PanelRegistro extends JPanel {
 		add(comboBoxGenero);
 		
 		passwordField = new JPasswordField();
-		passwordField.setBounds(468, 455, 277, 25);
+		passwordField.setBounds(468, 455, 277, 26);
 		add(passwordField);
 		
 		JLabel lblFechaDeNacimiento = DefaultComponentFactory.getInstance().createLabel("FECHA DE NACIMIENTO:");
@@ -132,7 +135,7 @@ public class PanelRegistro extends JPanel {
 		lblNewJgoodiesLabel_3.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		lblNewJgoodiesLabel_3.setForeground(Color.CYAN);
 		lblNewJgoodiesLabel_3.setBackground(new Color(204, 51, 51)); 
-		lblNewJgoodiesLabel_3.setBounds(190, 160, 725, 367);
+		lblNewJgoodiesLabel_3.setBounds(180, 160, 737, 367);
 		add(lblNewJgoodiesLabel_3);
 		
 		JLabel lblNewJgoodiesLabel_9 = DefaultComponentFactory.getInstance().createLabel("");
@@ -140,7 +143,7 @@ public class PanelRegistro extends JPanel {
 		lblNewJgoodiesLabel_9.setBounds(26, 26, 211, 82);
 		add(lblNewJgoodiesLabel_9);
 		
-		dateChooser.setBounds(468, 409, 277, 20);
+		dateChooser.setBounds(468, 404, 277, 26);
 		add(dateChooser);
 
 	}

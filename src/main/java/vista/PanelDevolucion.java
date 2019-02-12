@@ -24,6 +24,7 @@ public class PanelDevolucion extends JPanel {
 	
 	public JButton btnSiguiente = new JButton("Siguiente");
 	public JButton btnImprimirTicket= new JButton("Imprimir Ticket");
+	public JButton btnComprarOtroBillete = new JButton("Comprar otro billete");
 	public DefaultListModel<String> cambios = new DefaultListModel<String>();	
 	public JList<String> devolucion = new JList<String>();
 		
@@ -34,7 +35,7 @@ public class PanelDevolucion extends JPanel {
 	 */
 	public PanelDevolucion() {
 		setBorder(new LineBorder(new Color(0, 0, 0), 4));
-		setBackground(SystemColor.controlHighlight);
+		setBackground(SystemColor.controlHighlight); 
 		setLayout(null);
 		
 		JLabel lblNewJgoodiesLabel = DefaultComponentFactory.getInstance().createLabel("DEVOLUCIÓN");
@@ -66,14 +67,21 @@ public class PanelDevolucion extends JPanel {
 		devolucion.setBorder(new BevelBorder(BevelBorder.LOWERED, Color.GRAY, Color.GRAY, Color.GRAY, Color.GRAY));
 		devolucion.setFont(new Font("Tahoma", Font.PLAIN, 22));
 		devolucion.setBackground(new Color(255, 255, 255));
-		devolucion.setBounds(203, 134, 696, 385);
+		devolucion.setBounds(195, 134, 696, 385);
 		add(devolucion);
 		
 		JLabel lblNewJgoodiesLabel_5 = DefaultComponentFactory.getInstance().createLabel("");
 		lblNewJgoodiesLabel_5.setIcon(new ImageIcon(PanelLogin.class.getResource("/imagenes/logo-termibus2.jpg")));
 		lblNewJgoodiesLabel_5.setBounds(26, 26, 211, 82);
 		add(lblNewJgoodiesLabel_5);
+		
+		
+		btnComprarOtroBillete.setName("btnComprarOtroBilleteDevolucion");	
+		btnComprarOtroBillete.setFont(new Font("Tahoma", Font.BOLD, 20));
+		btnComprarOtroBillete.setBounds(425, 551, 235, 70);
+		btnComprarOtroBillete.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(255, 248, 220), new Color(255, 248, 220), null, null));
+		btnComprarOtroBillete.setBackground(new Color(248, 248, 255));
+		add(btnComprarOtroBillete);
 
 	}
-
 }
