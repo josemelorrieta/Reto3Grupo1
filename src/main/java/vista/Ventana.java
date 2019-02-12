@@ -61,6 +61,8 @@ public class Ventana extends JFrame {
 		login.setLayout(null);
 		
 		registro = new PanelRegistro();
+		registro.btnRegistrarse.setSize(195, 70);
+		registro.btnRegistrarse.setLocation(837, 551);
 		registro.setBackground(SystemColor.controlHighlight);
 		contentPane.add(registro);
 		registro.setLayout(null);
