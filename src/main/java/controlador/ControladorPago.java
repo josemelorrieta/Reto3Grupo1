@@ -117,6 +117,7 @@ public class ControladorPago implements ActionListener {
 					arrayCambios = null;
 				}
 			    mostrarCambios(arrayCambios);
+			    desBotones(miVentana.pago.btnSiguiente);
 				resetear();
 				break;
 			
@@ -129,7 +130,6 @@ public class ControladorPago implements ActionListener {
 			miVentana.pago.pagado.setText(formatoMoneda.format(pagado));
 			desBotones(miVentana.pago.arrayBtn);
 			actBotones(miVentana.pago.btnSiguiente);
-			desBotones(miVentana.pago.btnCancelar);
 			
 		} else {
 			miVentana.pago.restante.setText(formatoMoneda.format(total - pagado));
