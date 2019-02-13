@@ -71,12 +71,12 @@ public class PanelParadas extends JPanel {
 		
 		paradaDeOrigen.setBackground(Color.WHITE);
 		paradaDeOrigen.setBounds(75, 322, 417, 49);
-		paradaDeOrigen.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		paradaDeOrigen.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		paradaDeOrigen.setName("paradaDeOrigen");
 		add(paradaDeOrigen);
 		
 		paradaDeDestino.setBackground(Color.WHITE);
-		paradaDeDestino.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		paradaDeDestino.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		paradaDeDestino.setBounds(565, 322, 417, 49);		
 		add(paradaDeDestino);
 		

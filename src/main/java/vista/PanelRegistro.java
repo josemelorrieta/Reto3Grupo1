@@ -100,18 +100,21 @@ public class PanelRegistro extends JPanel {
 		add(lblContrasea);
 		
 		textFieldApellidos = new JTextField();
+		textFieldApellidos.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		textFieldApellidos.setColumns(10);
 		textFieldApellidos.setBounds(468, 300, 277, 26);
 		add(textFieldApellidos);
 		
 		textFieldNombre = new JTextField();
+		textFieldNombre.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		textFieldNombre.setColumns(10); 
 		textFieldNombre.setBounds(468, 252, 277, 26);
 		add(textFieldNombre);
 		
 		textFieldDni = new JTextField();
+		textFieldDni.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		textFieldDni.setColumns(10);
-		textFieldDni.setBounds(468, 203, 277, 26);
+		textFieldDni.setBounds(468, 201, 277, 26);
 		add(textFieldDni);
 		comboBoxGenero.setBackground(Color.WHITE);
 		
@@ -122,7 +125,8 @@ public class PanelRegistro extends JPanel {
 		add(comboBoxGenero);
 		
 		passwordField = new JPasswordField();
-		passwordField.setBounds(468, 455, 277, 26);
+		passwordField.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		passwordField.setBounds(468, 452, 277, 26);
 		add(passwordField);
 		
 		JLabel lblFechaDeNacimiento = DefaultComponentFactory.getInstance().createLabel("FECHA DE NACIMIENTO:");
@@ -132,6 +136,7 @@ public class PanelRegistro extends JPanel {
 		
 		
 		JLabel lblNewJgoodiesLabel_3 = DefaultComponentFactory.getInstance().createLabel("");
+		lblNewJgoodiesLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblNewJgoodiesLabel_3.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		lblNewJgoodiesLabel_3.setForeground(Color.CYAN);
 		lblNewJgoodiesLabel_3.setBackground(new Color(204, 51, 51)); 
