@@ -88,7 +88,7 @@ public class ControladorPago implements ActionListener {
 		     	JOptionPane.showMessageDialog(miVentana, "Devolución de dinero introducido", "¡Atencion!", JOptionPane.WARNING_MESSAGE);
 				resetear();
 				break;
-								 
+								    
 			case "btnSiguientePago":  
 				if (miModelo.billeteVuelta != null) {
 					if (miModelo.misFuncionesDevolucion.guardarBilleteBD(miModelo.billeteIda, miModelo, 1) && miModelo.misFuncionesDevolucion.guardarBilleteBD(miModelo.billeteVuelta, miModelo, 2)) {
@@ -99,12 +99,14 @@ public class ControladorPago implements ActionListener {
 							// TODO Auto-generated catch block
 							e1.printStackTrace();
 						}
+						JOptionPane.showMessageDialog(miVentana, "Su compra ha sido realizada con éxito", "¡Información!", JOptionPane.INFORMATION_MESSAGE);
 						funciones.cambiarDePanel(miVentana.pago, miVentana.devolucion);
 					} else {
 					JOptionPane.showMessageDialog(miVentana, "Hubo un error al guardar el billete en la Base de Datos", "¡Atencion!", JOptionPane.WARNING_MESSAGE);
 					}
 				} else {
 					if (miModelo.misFuncionesDevolucion.guardarBilleteBD(miModelo.billeteIda, miModelo, 1)) {
+						JOptionPane.showMessageDialog(miVentana, "Su compra ha sido realizada con éxito", "¡Información!", JOptionPane.INFORMATION_MESSAGE);
 						funciones.cambiarDePanel(miVentana.pago, miVentana.devolucion);
 					} else {
 						JOptionPane.showMessageDialog(miVentana, "Hubo un error al guardar el billete en la Base de Datos", "¡Atencion!", JOptionPane.WARNING_MESSAGE);
@@ -116,6 +118,7 @@ public class ControladorPago implements ActionListener {
 				} else {
 					arrayCambios = null;
 				}
+				
 			    mostrarCambios(arrayCambios);
 			    desBotones(miVentana.pago.btnSiguiente);
 				resetear();

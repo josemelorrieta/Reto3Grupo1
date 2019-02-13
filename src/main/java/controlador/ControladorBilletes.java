@@ -10,6 +10,8 @@ import java.util.Date;
 
 
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
+
 import modelo.Billete;
 import vista.Ventana;
 
@@ -99,6 +101,7 @@ public class ControladorBilletes implements ActionListener {
 				break;
 										 	  
 			case "btnCerrarSesionBilletes": funciones.cambiarDePanel(miVentana.billetes, miVentana.login);
+			    JOptionPane.showMessageDialog(miVentana, "Su sesión se ha cerrado con éxito", "¡Información!", JOptionPane.INFORMATION_MESSAGE);
 				resetear();
 				break;
 
