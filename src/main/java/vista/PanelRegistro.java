@@ -17,6 +17,8 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JPasswordField;
 import com.toedter.calendar.JDateChooser;
+import com.toedter.calendar.JTextFieldDateEditor;
+
 import java.awt.SystemColor;
 
 /** 
@@ -134,6 +136,16 @@ public class PanelRegistro extends JPanel {
 		lblFechaDeNacimiento.setBounds(232, 399, 219, 30);
 		add(lblFechaDeNacimiento);
 		
+		JLabel lblNewJgoodiesLabel_9 = DefaultComponentFactory.getInstance().createLabel("");
+		lblNewJgoodiesLabel_9.setIcon(new ImageIcon(PanelLogin.class.getResource("/imagenes/logo-termibus2.jpg")));
+		lblNewJgoodiesLabel_9.setBounds(26, 26, 211, 82);
+		add(lblNewJgoodiesLabel_9);
+		
+		JTextFieldDateEditor editorFecha = (JTextFieldDateEditor) dateChooser.getDateEditor();
+		editorFecha.setEditable(false);
+		dateChooser.setBounds(468, 404, 277, 26);
+		add(dateChooser);
+		
 		
 		JLabel lblNewJgoodiesLabel_3 = DefaultComponentFactory.getInstance().createLabel("");
 		lblNewJgoodiesLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 16));
@@ -142,14 +154,6 @@ public class PanelRegistro extends JPanel {
 		lblNewJgoodiesLabel_3.setBackground(new Color(204, 51, 51)); 
 		lblNewJgoodiesLabel_3.setBounds(171, 160, 737, 367);
 		add(lblNewJgoodiesLabel_3);
-		
-		JLabel lblNewJgoodiesLabel_9 = DefaultComponentFactory.getInstance().createLabel("");
-		lblNewJgoodiesLabel_9.setIcon(new ImageIcon(PanelLogin.class.getResource("/imagenes/logo-termibus2.jpg")));
-		lblNewJgoodiesLabel_9.setBounds(26, 26, 211, 82);
-		add(lblNewJgoodiesLabel_9);
-		
-		dateChooser.setBounds(468, 404, 277, 26);
-		add(dateChooser);
 
 	}
 }

@@ -5,8 +5,6 @@ import java.sql.DriverManager;
 
 import javax.swing.JOptionPane;
 
-import vista.Ventana;
-
 /**
  * Clase que crea una nueva conexion a la base de datos
  *
