@@ -74,7 +74,7 @@ public class ConexionFichero {
 		//Inicio del programa
 		try {
 			//generar fichero con el nombre compuesto por el dni y la fecha de ida del billete en la carpeta Temp
-			fichero = new FileWriter("C:/Temp/" + billeteIda.getDni() + "-" + billeteIda.getFecha().replaceAll("-",  "") + "-" + billeteIda.getNumBillete() + ".txt");
+			fichero = new FileWriter("./" + billeteIda.getDni() + "-" + billeteIda.getFecha().replaceAll("-",  "") + "-" + billeteIda.getNumBillete() + ".txt");
 			linea = new BufferedWriter(fichero);
 			
 			linea.write("BILLETE");
