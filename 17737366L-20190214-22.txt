@@ -1,0 +1,19 @@
+BILLETE
+-------
+
+DATOS DEL TRAYECTO
+------------------
+Línea: L1
+Origen: Termibus-Bilbao
+Destino: Metro Leioa
+Fecha ida: 14/02/2019
+Precio: 3.68€
+
+DATOS DEL CLIENTE
+-----------------
+DNI: 17737366L
+Nombre y Apellidos: José Manuel Muñoz
+Fecha nacimiento: 18/04/1973
+Sexo: Hombre
+
+Fecha de la compra: 13/02/2019
