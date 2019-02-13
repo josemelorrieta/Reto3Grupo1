@@ -29,6 +29,7 @@ public class ConexionBD {
 			Class.forName("com.mysql.jdbc.Driver");
 			conexion = DriverManager.getConnection(url, datos[2], datos[3]);
 		} catch (Exception e) {
+			
 			System.out.println(e.getMessage());
 		}
 		return conexion;
