@@ -1,6 +1,7 @@
 package vista;
 
 import javax.swing.JPanel;
+
 import java.awt.Color;
 
 import javax.swing.border.BevelBorder;
@@ -40,7 +41,6 @@ public class PanelBilletes extends JPanel {
 		lblNewJgoodiesLabel_1.setIcon(new ImageIcon(PanelBilletes.class.getResource("/imagenes/logo-termibus2.jpg")));
 		lblNewJgoodiesLabel_1.setBounds(26, 26, 211, 82);
 		add(lblNewJgoodiesLabel_1);
-		
 
 		MostrarBilletes.setFont(new Font("Consolas", Font.PLAIN, 20));
 		MostrarBilletes.setBounds(119, 166, 846, 336);
@@ -67,6 +67,7 @@ public class PanelBilletes extends JPanel {
 		lblNewJgoodiesLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewJgoodiesLabel.setBounds(10, 72, 1065, 48);
 		add(lblNewJgoodiesLabel);
+		;
 
 	}
 }
