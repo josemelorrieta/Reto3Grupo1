@@ -5,6 +5,9 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+
+import javax.swing.JOptionPane;
+
 import java.io.BufferedWriter;
 
 /**
@@ -42,6 +45,7 @@ public class ConexionFichero {
 				}
 			}
 		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, "Hubo un error de los datos de conexión", "¡Atencion!", JOptionPane.ERROR_MESSAGE);
 			System.out.println(e.getMessage());
 		} finally {
 			try {

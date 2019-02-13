@@ -140,7 +140,7 @@ public class PanelRegistro extends JPanel {
 		lblNewJgoodiesLabel_3.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		lblNewJgoodiesLabel_3.setForeground(Color.CYAN);
 		lblNewJgoodiesLabel_3.setBackground(new Color(204, 51, 51)); 
-		lblNewJgoodiesLabel_3.setBounds(180, 160, 737, 367);
+		lblNewJgoodiesLabel_3.setBounds(171, 160, 737, 367);
 		add(lblNewJgoodiesLabel_3);
 		
 		JLabel lblNewJgoodiesLabel_9 = DefaultComponentFactory.getInstance().createLabel("");

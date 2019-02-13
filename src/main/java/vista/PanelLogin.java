@@ -36,7 +36,7 @@ public class PanelLogin extends JPanel {
 	public PanelLogin() {
 		setBorder(new LineBorder(new Color(0, 0, 0), 4));
 		setBackground(SystemColor.controlHighlight);
-		setBounds(0, 0, 1085, 660);
+		setBounds(0, 0, 1084, 660);
 		setLayout(null);
 		
 		btnRegistrarse = new JButton("Registrarse");
@@ -56,24 +56,24 @@ public class PanelLogin extends JPanel {
 		add(btnAtras);
 		
 		JLabel lblNewJgoodiesLabel_3 = DefaultComponentFactory.getInstance().createLabel("DNI:");
-		lblNewJgoodiesLabel_3.setBounds(325, 175, 433, 33);
+		lblNewJgoodiesLabel_3.setBounds(322, 175, 440, 33);
 		add(lblNewJgoodiesLabel_3);
 		lblNewJgoodiesLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewJgoodiesLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		JLabel lblNewJgoodiesLabel = DefaultComponentFactory.getInstance().createLabel("CONTRASE\u00D1A:");
-		lblNewJgoodiesLabel.setBounds(325, 285, 433, 33);
+		lblNewJgoodiesLabel.setBounds(322, 281, 440, 33);
 		add(lblNewJgoodiesLabel);
 		lblNewJgoodiesLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewJgoodiesLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		TextDni = new JTextField();
-		TextDni.setBounds(399, 212, 298, 33);
+		TextDni.setBounds(386, 212, 311, 33);
 		add(TextDni);
 		TextDni.setColumns(10);
 		
 		passwordField = new JPasswordField();
-		passwordField.setBounds(399, 325, 298, 33);
+		passwordField.setBounds(386, 325, 311, 33);
 		add(passwordField);
 		
 		btnLogin = new JButton ("Login");
@@ -81,7 +81,7 @@ public class PanelLogin extends JPanel {
 		btnLogin.setBackground(new Color(248, 248, 255));
 		btnLogin.setName("btnLogin");
 		btnLogin.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnLogin.setBounds(439, 406, 213, 57);
+		btnLogin.setBounds(432, 406, 221, 57);
 		add(btnLogin);
 		
 		JLabel lblLogin= DefaultComponentFactory.getInstance().createLabel("LOGIN");
@@ -98,7 +98,7 @@ public class PanelLogin extends JPanel {
 		lblNewJgoodiesLabel_1.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		lblNewJgoodiesLabel_1.setForeground(Color.CYAN);
 		lblNewJgoodiesLabel_1.setBackground(new Color(204, 51, 51)); 
-		lblNewJgoodiesLabel_1.setBounds(335, 142, 440, 360);
+		lblNewJgoodiesLabel_1.setBounds(322, 142, 440, 360);
 		add(lblNewJgoodiesLabel_1);
 		
 		JLabel lblNewJgoodiesLabel_2 = DefaultComponentFactory.getInstance().createLabel("");
