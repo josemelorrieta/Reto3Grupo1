@@ -111,7 +111,7 @@ public class ControladorPago implements ActionListener {
 					}
 				}
 				//Calcular cambios despues del pago
-				if (pagado > total) {
+				if (pagado >= total) {
 					arrayCambios = miModelo.misFuncionesDevolucion.cambios(Math.abs(total - pagado));
 				} else {
 					arrayCambios = null;
