@@ -68,14 +68,15 @@ public class ControladorBilleteComprado implements ActionListener {
 			case "btnSiguienteBilleteComprado":
 				if (miModelo.billeteVuelta != null) {
 					miVentana.pago.total.setText(formatoMoneda.format(miModelo.billeteIda.getPrecioTrayecto() + miModelo.billeteVuelta.getPrecioTrayecto()));
-					miControlador.miControladorPago.total = miModelo.billeteIda.getPrecioTrayecto() + miModelo.billeteVuelta.getPrecioTrayecto();
+					miControlador.miControladorPago.total = miModelo.billeteIda.getPrecioTrayecto() + miModelo.billeteVuelta.getPrecioTrayecto();				
 				} else {
 					miVentana.pago.total.setText(formatoMoneda.format(miModelo.billeteIda.getPrecioTrayecto()));
 					miControlador.miControladorPago.total = miModelo.billeteIda.getPrecioTrayecto();
 				}
 				funciones.cambiarDePanel(miVentana.billeteComprado, miVentana.pago);
 				miControlador.miControladorPago.pagado = 0;
-				miVentana.pago.pagado.setText("0");
+				miVentana.pago.pagado.setText(formatoMoneda.format(0));
+				miVentana.pago.restante.setText(formatoMoneda.format(miControlador.miControladorPago.total));
 				miControlador.miControladorPago.actBotones(miVentana.pago.arrayBtn);
 				break;
 			
