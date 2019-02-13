@@ -78,7 +78,7 @@ public class FuncionesFechasTest {
 		String fechaBillete= "2019-02-08";
 		
 		
-		assertEquals(func.buscarAutobus(codLinea, fechaBillete), codAutobus, 40);
+		assertEquals(func.buscarAutobus(codLinea, fechaBillete), codAutobus);
 		
 		
 	}
