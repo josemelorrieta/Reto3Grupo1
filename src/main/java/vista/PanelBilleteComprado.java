@@ -82,7 +82,7 @@ public class PanelBilleteComprado extends JPanel {
 		txtIda.setOpaque(true);
 		txtIda.setBackground(Color.WHITE);
 		txtIda.setHorizontalAlignment(SwingConstants.CENTER);
-		txtIda.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		txtIda.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		txtIda.setBounds(101, 207, 914, 61);
 		add(txtIda);
 		
@@ -90,7 +90,7 @@ public class PanelBilleteComprado extends JPanel {
 		txtVuelta.setBackground(Color.WHITE);
 		txtVuelta.setOpaque(true);
 		txtVuelta.setHorizontalAlignment(SwingConstants.CENTER);
-		txtVuelta.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		txtVuelta.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		txtVuelta.setBounds(101, 358, 914, 61);
 		add(txtVuelta);
 		

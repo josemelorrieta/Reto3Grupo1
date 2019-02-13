@@ -42,7 +42,7 @@ public class PanelBilletes extends JPanel {
 		add(lblNewJgoodiesLabel_1);
 		
 
-		MostrarBilletes.setFont(new Font("Consolas", Font.PLAIN, 22));
+		MostrarBilletes.setFont(new Font("Consolas", Font.PLAIN, 20));
 		MostrarBilletes.setBounds(119, 166, 846, 336);
 		add(MostrarBilletes);
 		

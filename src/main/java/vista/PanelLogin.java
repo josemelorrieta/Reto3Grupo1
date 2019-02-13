@@ -98,7 +98,7 @@ public class PanelLogin extends JPanel {
 		lblNewJgoodiesLabel_1.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		lblNewJgoodiesLabel_1.setForeground(Color.CYAN);
 		lblNewJgoodiesLabel_1.setBackground(new Color(204, 51, 51)); 
-		lblNewJgoodiesLabel_1.setBounds(322, 144, 440, 360);
+		lblNewJgoodiesLabel_1.setBounds(335, 142, 440, 360);
 		add(lblNewJgoodiesLabel_1);
 		
 		JLabel lblNewJgoodiesLabel_2 = DefaultComponentFactory.getInstance().createLabel("");
