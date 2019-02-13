@@ -82,6 +82,12 @@ public class PanelDevolucion extends JPanel {
 		btnComprarOtroBillete.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(255, 248, 220), new Color(255, 248, 220), null, null));
 		btnComprarOtroBillete.setBackground(new Color(248, 248, 255));
 		add(btnComprarOtroBillete);
+		
+		JLabel lblNewLabel = new JLabel("Su/s billete/s ha/n sido comprado/s");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 35));
+		lblNewLabel.setBounds(10, 11, 1065, 75);
+		add(lblNewLabel);
 
 	}
 }
