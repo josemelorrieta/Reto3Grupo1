@@ -127,7 +127,7 @@ public class FuncionesRegistroTest {
 	public void testRangoFechasRegistro() {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
 		Calendar calendar = Calendar.getInstance();
-		calendar.add(Calendar.YEAR, -18);
+		calendar.add(Calendar.YEAR, -12);
 		
 		assertEquals(sdf.format(func.rangoFechasRegistro()), sdf.format(calendar.getTime()));
 	}

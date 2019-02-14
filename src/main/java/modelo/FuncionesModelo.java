@@ -8,7 +8,7 @@ public class FuncionesModelo {
 	
 	/**
 	 * Metodo que increnta la longitud de un array de Strings
-	 * @param lineas Array de Strings a incrementar
+	 * @param arrayString Array de Strings a incrementar
 	 * @return aux Array de Strings incrementado
 	 */
 	public String[] incrementarArrayString(String[] arrayString) {
@@ -59,8 +59,8 @@ public class FuncionesModelo {
 	
 	/**
 	 * Metodo que devulve el siguiente numero de billete valido
+	 * 
 	 * @return numeroBillete El siguiente numero de billete valido
-	 * @throws SQLException Excepcion en caso de error al acceder a la base de datos 
 	 */
 	public int siguienteNumeroBillete() {
 		//Declaración e inicialización de variables

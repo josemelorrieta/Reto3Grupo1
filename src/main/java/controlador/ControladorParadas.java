@@ -29,8 +29,6 @@ public class ControladorParadas implements ActionListener {
 	 * @param miControlador instancia del controlador para acceder a otros paneles
 	 * @param miVentana instancia de la ventana principal
 	 * @param miModelo instancia del modelo para acceder a las funciones
-	 * @param paradas instancia del array de paradas del modelo
-	 * @param lineas instancia del array de lineas
 	 */
 	public ControladorParadas (Ventana miVentana, Modelo miModelo, Controlador miControlador) { 
 		

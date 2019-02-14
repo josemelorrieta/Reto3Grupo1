@@ -11,7 +11,7 @@ public class testConexionFichero {
 	@Test
 	public void testCogerDatosDeFicheroTest() {
 		ConexionFichero leerDatosFichero = new ConexionFichero();
-		String ficheroTest = "src/main/java/modelo/datosBD.txt";
+		String ficheroTest = "./datosBD.txt";
 		String ficheroErrorTest = "";
 		String[] datoTest = {"localhost", "termibus", "hr", "PepeJeans"};
 		String[] resultado = leerDatosFichero.cogerDatosDeFichero(ficheroTest);

@@ -61,6 +61,9 @@ public class FuncionesDevolucion {
 	/**
 	 * Metodo que guarda el billete en la base de datos
 	 * @param billete Billete a guardar en la base de datos
+	 * @param miModelo INstancia del modelo de la aplcacion
+	 * @param numTrayecto Entero con el numero de trayecto. 1 para la ida, 2 para la vuelta
+	 * 
 	 * @return true si se guarda con exito, false si hay un error
 	 */
 	public boolean guardarBilleteBD(Billete billete, Modelo miModelo, int numTrayecto) {

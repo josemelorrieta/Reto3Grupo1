@@ -16,7 +16,7 @@ public class Principal {
 	
 	/**
 	 * Metodo main. Inicio del programa
-	 * @param args
+	 * @param args  Argumentos del metodo main
 	 */
 	public static void main(String[] args) {
 		// Declaración e inicialización de variables

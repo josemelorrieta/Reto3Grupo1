@@ -73,7 +73,7 @@ public class FuncionesParadas {
 	
 	/**
 	 * Metodo para incrementar el array de paradas
-	 * @param lineas Array de paradas a incrementar
+	 * @param paradas Array de paradas a incrementar
 	 * @return aux Array de paradas incrementado
 	 */
 	public Parada[] incrementarArrayParada(Parada[] paradas) {
@@ -126,7 +126,7 @@ public class FuncionesParadas {
 	 * @param paradas Array de paradas de la linea
 	 * @param indexOrigen Entero que define el indice de la linea de origen seleccionada
 	 * @param paradasDestino Array de paradas generado para las paradas de destino
-	 * @return
+	 * @return array de paradas con las paradas de destino
 	 */
 	public Parada[] filtrarParadasDestino(Parada[] paradas, int indexOrigen, Parada[] paradasDestino) {
 		//Declaracion e inicializacion de variables

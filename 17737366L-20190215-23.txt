@@ -1,0 +1,20 @@
+BILLETE
+-------
+
+DATOS DEL TRAYECTO
+------------------
+Línea: L3
+Origen: Estacion Renfe La cuadra - Güeñes
+Destino: Estacion Renfe Sodupe - Güeñes
+Fecha ida: 15/02/2019
+Fecha vuelta: 15/02/2019
+Precio: 3.52€
+
+DATOS DEL CLIENTE
+-----------------
+DNI: 17737366L
+Nombre y Apellidos: José Manuel Muñoz
+Fecha nacimiento: 18/04/1973
+Sexo: Hombre
+
+Fecha de la compra: 14/02/2019

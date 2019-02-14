@@ -97,8 +97,16 @@ public class FuncionesRegistro {
 	
 	/**
 	 * Comprueba todos los campos de la ventana registro. Avisa de si estan todos los campos rellenos y de si existe ya el dni introducido
-	 * @return boolean Si no hay error en los datos del formulario devuelve true, si no devuelve false
+	 * @param dni String con el DNI del cliente
+	 * @param nombre String con el nombre del cliente
+	 * @param apellido String con el apellido del cliente
+	 * @param fecha String con la fecha de nacimiento del cliente
+	 * @param password Entero con la longitud de la clave introducida por el usuario
+	 * 
+	 * @return boolean Devuelve true si los camppos del registro son correctos, false si no
+	 * 
 	 * @throws SQLException Excepcion en caso de error al conectar a la base de datos
+	 * 
 	 */
 	public boolean comprobarCamposRegistro(String dni, String nombre, String apellido, String fecha, int password) throws SQLException {
 
@@ -134,8 +142,9 @@ public class FuncionesRegistro {
 	
 	/**
 	 * Valida el campo del DNI.
-	 * @param El DNI.
-	 * @return Comprueba si el formato del DNI es el correcto.
+	 * @param dni El DNI del cliente.
+	 * 
+	 * @return boolean Comprueba si el formato del DNI es el correcto.
 	 */
 	public boolean validarDNI(String dni){
         boolean correcto=false;
@@ -160,7 +169,7 @@ public class FuncionesRegistro {
 	
 	/**
 	 * Valida el campo del DNI.
-	 * @param Nombre o Apellido.
+	 * @param NombreOApellido String con el Nombre o el Apellido.
 	 * @return Comprueba si es correcto el nombre y apellido ,es decir , comprueba que no ha introducido numeros o caracteres.
 	 */
 	public boolean validarNombreYApellido (String NombreOApellido) {
@@ -181,7 +190,7 @@ public class FuncionesRegistro {
 		Calendar calendar = Calendar.getInstance();
 		
 		//Inicio del programa
-		calendar.add(Calendar.YEAR, -18);
+		calendar.add(Calendar.YEAR, -12);
 		//fechaLimite = calendar.getTime();
 		
 		return calendar.getTime();	

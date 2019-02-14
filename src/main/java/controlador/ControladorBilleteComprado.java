@@ -29,7 +29,9 @@ public class ControladorBilleteComprado implements ActionListener {
 	 * Constructor de la clase ControladorBilleteComprado
 	 * Se definen todos lo listener de los botones del panel
 	 * 
+	 * @param miControlador Instancia del controlador de la aplicacion
 	 * @param miVentana Instancia de la ventana de la aplicacion
+	 * @param miModelo Instancia del modelo de la aplicacion
 	 */
 	public ControladorBilleteComprado (Controlador miControlador, Ventana miVentana, Modelo miModelo) { 
 		

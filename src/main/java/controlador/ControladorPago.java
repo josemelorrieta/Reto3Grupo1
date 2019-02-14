@@ -181,7 +181,6 @@ public class ControladorPago implements ActionListener {
 	
 	/**
 	 * Metodo para mostrar los cambios en la ventana de devolucion 
-	 * @param miVentana instancia de la ventana principal
 	 * @param cambios array con el numero de cada moneda o billete a devolver segun su posicion en el array
 	 */
 	public void mostrarCambios(int[] cambios) {

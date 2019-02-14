@@ -27,7 +27,7 @@ public class ControladorDevolucion implements ActionListener {
 	  * Constructor de la clase
 	  * @param miVentana instancia de la ventana principal
 	  * @param miControlador instancia del coontrolador principal para poder acceder a otros paneles
-	  *
+	  * @param miModelo Instancia del modelo de la aplicacion
 	  */
 	public ControladorDevolucion (Ventana miVentana, Controlador miControlador, Modelo miModelo) {
 		

@@ -7,10 +7,12 @@ package modelo;
 public class FuncionesPago {
 	/**
 	 * Metodo para sumar la cantidad de dinero de los botones de la ventana pago y muestra el total de dinero metido
-	 * @param valor cantidad del billete o moneda selecionado por el usuario
-	 * @param miVentana instancia de la ventana principal
+	 * @param valor String con la cantidad del billete o moneda selecionado por el usuario
+	 * @param pagado Double dinero pagado por el cliente
+	 * 
+	 * @return pagado Double con el dinero pagado actualizado
 	 */
-	public double sumarDineroPago(/*double valor*/ String valor, double pagado) {
+	public double sumarDineroPago(String valor, double pagado) {
 		//Declaracion e inicializacion de variables
 
 		//Inicio del programa

@@ -61,7 +61,10 @@ public class ConexionFichero {
 	
 	/**
 	 * Metodo para escribir los datos del billete a un fichero de texto
-	 * @param datosBillete array con los valores Linea, Origen, Destino, Fecha Ida, Fecha Vuelta, DNI, Nombre, Fecha Nacimiento, Sexo y Fecha de compra
+	 * @param billeteIda Billete con los datos del billete de ida
+	 * @param billeteVuelta Billete con los datos del billete de vuelta
+	 * @param cliente Cliente, datos del cliente logeado
+	 * @return boolean devuelve tru si el billete se ha guardado correctamente, false si ha habido algun error
 	 */
 	public boolean imprimirBillete(Billete billeteIda, Billete billeteVuelta, Cliente cliente) {
 		//Declaracion e inicializacion de variables

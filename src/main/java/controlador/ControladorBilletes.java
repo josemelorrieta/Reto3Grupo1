@@ -30,7 +30,6 @@ public class ControladorBilletes implements ActionListener {
 	/**
 	 * Constructor de  la clase ControladorBilletes
 	 * @param miVentana instancia de la ventana principal del programa
-	 * @param miModelo instacia del modelo donde se encuentran las funciones para el panel
 	 */
 	public ControladorBilletes (Ventana miVentana) {   
 		
@@ -65,8 +64,8 @@ public class ControladorBilletes implements ActionListener {
 			//Inicio del programa
 			//Borrar el panel de billetes para refrescarlo
 			miVentana.billetes.modeloMostrarBilletes.removeAllElements();
-			miVentana.billetes.modeloMostrarBilletes.addElement(String.format("%5s%2s%-55s%-10s", "NUM", " ", "TRAYECTO", "FECHA"));
-			miVentana.billetes.modeloMostrarBilletes.addElement(String.format("%5s%2s%-55s%-10s", "---", " ", "--------", "-----"));
+			miVentana.billetes.modeloMostrarBilletes.addElement(String.format("%5s%2s%-58s%-10s", "NUM", " ", "TRAYECTO", "FECHA"));
+			miVentana.billetes.modeloMostrarBilletes.addElement(String.format("%5s%2s%-58s%-10s", "---", " ", "--------", "-----"));
 			//En el caso de que no existan billetes ponemos un mensaje, si existen se muestran los billetes 
 			if (billetes != null) {
 				cont = 0;
@@ -74,7 +73,7 @@ public class ControladorBilletes implements ActionListener {
 					//Filtrar billetes de fecha posterior a hoy
 					try {
 						if (sdf.parse(billetes[i].getFecha()).compareTo(fechaHoy) >= 0 ) {
-							miVentana.billetes.modeloMostrarBilletes.addElement(String.format("%2s%03d%2s%-55s%10s", " ", billetes[i].getNumBillete(), " ", billetes[i].getOrigen() + " - " + billetes[i].getDestino(), sdfOut.format(sdf.parse(billetes[i].getFecha()))));
+							miVentana.billetes.modeloMostrarBilletes.addElement(String.format("%2s%03d%2s%-56.56s%2s%10s", " ", billetes[i].getNumBillete(), " ", billetes[i].getOrigen() + " - " + billetes[i].getDestino(), " ", sdfOut.format(sdf.parse(billetes[i].getFecha()))));
 							cont++;
 						}
 					} catch (ParseException e) {

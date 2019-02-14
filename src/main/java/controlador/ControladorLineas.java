@@ -22,7 +22,7 @@ public class ControladorLineas implements ActionListener {
 	/**
 	 * Constructor de la clase
 	 * @param miVentana instancia de la ventana principal
-	 * @param lineas instancaia del array con las lineas disponibles
+	 * @param miModelo Instancia del modelo de la aplicacion
 	 */
 	public ControladorLineas (Ventana miVentana, Modelo miModelo) {
 		
