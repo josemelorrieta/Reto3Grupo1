@@ -128,7 +128,7 @@ public class ControladorPago implements ActionListener {
 				pagado = miModelo.misFuncionesPago.sumarDineroPago(((JButton) e.getSource()).getName(), pagado);
 		}
 		
-		if (pagado >= total) {
+		if (pagado > total) {
 			miVentana.pago.restante.setText(formatoMoneda.format(0));
 			miVentana.pago.pagado.setText(formatoMoneda.format(pagado));
 			desBotones(miVentana.pago.arrayBtn);

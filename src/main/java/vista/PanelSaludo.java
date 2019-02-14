@@ -34,6 +34,13 @@ public class PanelSaludo extends JPanel {
 		setBackground(SystemColor.controlHighlight);
 		setLayout(null);
 		
+		JLabel lblPoweredBy = DefaultComponentFactory.getInstance().createLabel("POWERED BY");
+		lblPoweredBy.setForeground(new Color(0, 0, 139));
+		lblPoweredBy.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblPoweredBy.setHorizontalAlignment(SwingConstants.CENTER);
+		lblPoweredBy.setBounds(790, 20, 136, 40);
+		add(lblPoweredBy);
+		
 		JLabel lblNewJgoodiesLabel_2 = DefaultComponentFactory.getInstance().createLabel("");
 		lblNewJgoodiesLabel_2.setIcon(new ImageIcon(PanelSaludo.class.getResource("/imagenes/logo-termibus2.jpg")));
 		lblNewJgoodiesLabel_2.setBounds(26, 26, 211, 82);
@@ -55,9 +62,15 @@ public class PanelSaludo extends JPanel {
 		btnSaludo.setName("btnSaludo");
 		
 		
-		btnSaludo.setBounds(-14, -11, 1150, 732);
+		btnSaludo.setBounds(-14, -11, 1114, 732);
 		btnSaludo.setContentAreaFilled(false);
 		add(btnSaludo);
+		
+		JLabel lblNewJgoodiesLabel_4 = DefaultComponentFactory.getInstance().createLabel("");
+		lblNewJgoodiesLabel_4.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblNewJgoodiesLabel_4.setIcon(new ImageIcon(PanelSaludo.class.getResource("/Imagenes/logo.png")));
+		lblNewJgoodiesLabel_4.setBounds(800, 26, 242, 82);
+		add(lblNewJgoodiesLabel_4);
 		
 	}
 }

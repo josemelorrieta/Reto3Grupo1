@@ -1,9 +1,7 @@
 package vista;
 
 import javax.swing.JPanel;
-
 import java.awt.Color;
-
 import javax.swing.border.BevelBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.DefaultListModel;
@@ -29,6 +27,9 @@ public class PanelBilletes extends JPanel {
 	public DefaultListModel<String> modeloMostrarBilletes = new DefaultListModel<String>();
 	public JList<String> MostrarBilletes = new JList<String>();
 
+
+	
+
 	/** 
 	 * Create the panel.
 	 */ 
@@ -44,6 +45,7 @@ public class PanelBilletes extends JPanel {
 
 		MostrarBilletes.setFont(new Font("Consolas", Font.PLAIN, 20));
 		MostrarBilletes.setBounds(119, 166, 846, 336);
+		
 		add(MostrarBilletes);
 		
 		btnCerrarSesion.setName("btnCerrarSesionBilletes");
