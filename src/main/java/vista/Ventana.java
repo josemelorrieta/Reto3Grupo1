@@ -9,6 +9,7 @@ import javax.swing.border.LineBorder;
 import java.awt.Color;
 import java.awt.SystemColor;
 import java.awt.Font;
+import java.awt.Toolkit;
 
 /**
  * Clase de la ventana principarl de la aplicacion
@@ -36,7 +37,8 @@ public class Ventana extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Ventana() { 
+	public Ventana() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Ventana.class.getResource("/Imagenes/icono.png"))); 
 		setTitle("Gesti\u00F3n de Compra de Billetes");
 		setResizable(false); 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
