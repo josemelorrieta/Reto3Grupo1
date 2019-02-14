@@ -1,6 +1,8 @@
 package vista;
 
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+
 import java.awt.Color;
 
 import javax.swing.border.BevelBorder;
@@ -28,6 +30,9 @@ public class PanelBilletes extends JPanel {
 	public DefaultListModel<String> modeloMostrarBilletes = new DefaultListModel<String>();
 	public JList<String> MostrarBilletes = new JList<String>();
 
+
+	
+
 	/** 
 	 * Create the panel.
 	 */ 
@@ -44,6 +49,7 @@ public class PanelBilletes extends JPanel {
 
 		MostrarBilletes.setFont(new Font("Consolas", Font.PLAIN, 20));
 		MostrarBilletes.setBounds(119, 166, 846, 336);
+		
 		add(MostrarBilletes);
 		
 		btnCerrarSesion.setName("btnCerrarSesionBilletes");
