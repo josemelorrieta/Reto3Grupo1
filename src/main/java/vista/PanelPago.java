@@ -46,7 +46,6 @@ public class PanelPago extends JPanel {
 	
 	public JButton[] arrayBtn= new JButton[15];
 		
-
 	/**
 	 * Create the panel. 
 	 */

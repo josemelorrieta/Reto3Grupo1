@@ -165,7 +165,7 @@ public class ControladorFechas implements ActionListener {
 		//Calcular el precio del billete según distancia y autobus
 		precio = miModelo.misFuncionesFechas.calcularPrecioBillete(codAutobus, distancia);
 		miModelo.billeteIda.setPrecioTrayecto(precio);
-		if (miModelo.billeteVuelta != null) {
+		if (miModelo.billeteVuelta != null && miVentana.fechas.dateVuelta.getDate() != null) {
 			miModelo.billeteVuelta.setPrecioTrayecto(precio);
 			miModelo.billeteVuelta.setFecha(sdf.format(miVentana.fechas.dateVuelta.getDate()));
 			miModelo.billeteVuelta.setCodAutobus(codAutobus);

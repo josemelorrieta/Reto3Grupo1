@@ -3,12 +3,14 @@ package modelo;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
+import javax.swing.JOptionPane;
+
 /**
  * Clase que crea una nueva conexion a la base de datos
  *
  */
 public class ConexionBD {
-	
+
 	/**
 	 * Crea una conexion con la base de datos
 	 * @return conexion si todo ha ido bien, null si no
@@ -29,6 +31,9 @@ public class ConexionBD {
 			Class.forName("com.mysql.jdbc.Driver");
 			conexion = DriverManager.getConnection(url, datos[2], datos[3]);
 		} catch (Exception e) {
+
+			JOptionPane.showMessageDialog(null, "Hubo un error de conexión", "¡Atencion!", JOptionPane.ERROR_MESSAGE);
+
 			System.out.println(e.getMessage());
 		}
 		return conexion;

@@ -3,6 +3,10 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 import javax.swing.JButton;
@@ -22,7 +26,10 @@ public class ControladorLogin implements ActionListener {
 	private Controlador miControlador; 
 	private Ventana miVentana;
 	private Modelo miModelo;
-		
+	
+	Date fechaLimite = null;
+	DateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+	
 	/** 
 	 * Constructor de la clase
 	 * @param miControlador instancia del controlador para poder acceder a otros paneles
@@ -68,6 +75,14 @@ public class ControladorLogin implements ActionListener {
 				resetear();  
 				break;
 			case "btnRegistrarseLogin":	funciones.cambiarDePanel(miVentana.login, miVentana.registro);
+				//Seleccionamos las fechas disponible para el registro desde 1900 a hace 18 años (mayoria de edad)
+				fechaLimite = miModelo.misFuncionesRegistro.rangoFechasRegistro(); 
+				try {
+					miVentana.registro.dateChooser.setSelectableDateRange(formato.parse("01-01-1900"), fechaLimite);
+				} catch (ParseException e3) {
+					// TODO Auto-generated catch block
+					e3.printStackTrace();
+				}
 				resetear();
 				break;
 			case "btnLogin":

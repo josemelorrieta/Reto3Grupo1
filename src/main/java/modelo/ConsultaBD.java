@@ -5,6 +5,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import javax.swing.JOptionPane;
+
 /**
  * Clase que realiza consultas y modificaciones en la base de datos
  *
@@ -23,6 +25,7 @@ public class ConsultaBD {
 			Statement st = con.createStatement();
 			rs = st.executeQuery(query);
 		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, "Hubo un error de conexión", "¡Atencion!", JOptionPane.ERROR_MESSAGE);
 			System.out.println(e.getMessage());
 		}
 	
@@ -40,7 +43,7 @@ public class ConsultaBD {
 		try {
 			st = con.createStatement();
 		} catch (SQLException e1) {
-			// TODO Auto-generated catch block
+			JOptionPane.showMessageDialog(null, "Hubo un error de conexión", "¡Atencion!", JOptionPane.ERROR_MESSAGE);
 			e1.printStackTrace();
 			return false;
 		}

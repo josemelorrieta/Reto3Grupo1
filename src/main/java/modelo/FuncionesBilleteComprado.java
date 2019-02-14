@@ -26,7 +26,7 @@ public class FuncionesBilleteComprado {
 		
 		NumberFormat formatoMoneda = NumberFormat.getCurrencyInstance(Locale.getDefault());
 		
-		String infoBilleteIda = String.format("%-25s%-25s%10s%10s", origenIda, destinoIda, fechaIda, formatoMoneda.format(precioIda));
+		String infoBilleteIda = String.format("%-40s%-40s%10s%10s", origenIda, destinoIda, fechaIda, formatoMoneda.format(precioIda));
 		//Inicio del programa		
 		miVentana.billeteComprado.txtIda.setText(infoBilleteIda);
 		miVentana.billeteComprado.lblPrecioTotal.setText(formatoMoneda.format(precioIda));
@@ -39,7 +39,7 @@ public class FuncionesBilleteComprado {
 			double precioVuelta = billeteVuelta.getPrecioTrayecto();
 			
 			//Inicio del programa
-			String infoBilleteVuelta = String.format("%-25s%-25s%10s%10s", origenVuelta, destinoVuelta, fechaVuelta, formatoMoneda.format(precioVuelta));
+			String infoBilleteVuelta = String.format("%-40s%-40s%10s%10s", origenVuelta, destinoVuelta, fechaVuelta, formatoMoneda.format(precioVuelta));
 			miVentana.billeteComprado.txtVuelta.setEnabled(true);
 			miVentana.billeteComprado.txtVuelta.setText(infoBilleteVuelta);
 			miVentana.billeteComprado.lblPrecioTotal.setText(formatoMoneda.format(precioIda + precioVuelta));

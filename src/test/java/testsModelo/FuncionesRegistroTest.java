@@ -1,9 +1,12 @@
 package testsModelo;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 import java.sql.SQLException;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import org.junit.Test;
 
@@ -118,11 +121,16 @@ public class FuncionesRegistroTest {
 		assertEquals(func.comprobarCamposRegistro(dni7, nombre7, apellido7, fecha7, password7), false);
 		assertEquals(func.comprobarCamposRegistro(dni8, nombre8, apellido8, fecha8, password8), false);
 	
-
-		
 	}
 
-	
+	@Test
+	public void testRangoFechasRegistro() {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
+		Calendar calendar = Calendar.getInstance();
+		calendar.add(Calendar.YEAR, -18);
+		
+		assertEquals(sdf.format(func.rangoFechasRegistro()), sdf.format(calendar.getTime()));
+	}
 
 
 

@@ -16,8 +16,8 @@ import javax.swing.JRadioButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import com.toedter.calendar.JDateChooser;
-import java.awt.event.InputMethodListener;
-import java.awt.event.InputMethodEvent;
+import com.toedter.calendar.JTextFieldDateEditor;
+
 import java.awt.SystemColor;
 
 /**
@@ -115,18 +115,15 @@ public class PanelFechas extends JPanel {
 		btnCancelar.setBounds(48, 551, 195, 70);	
 		add(btnCancelar);
 		
+		JTextFieldDateEditor editorFechaIda = (JTextFieldDateEditor) dateIda.getDateEditor();
+		editorFechaIda.setEditable(false);
 		dateIda.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		dateIda.addInputMethodListener(new InputMethodListener() {
-			public void caretPositionChanged(InputMethodEvent arg0) {
-			}
-			public void inputMethodTextChanged(InputMethodEvent arg0) {
-			}
-		});
-		
 		dateIda.setBounds(135, 323, 265, 50);
 		add(dateIda);
+		
+		JTextFieldDateEditor editorFechaVuelta = (JTextFieldDateEditor) dateVuelta.getDateEditor();
+		editorFechaVuelta.setEditable(false);
 		dateVuelta.setFont(new Font("Tahoma", Font.PLAIN, 18));
-
 		dateVuelta.setBounds(685, 323, 265, 50);
 		dateVuelta.setEnabled(false);
 		add(dateVuelta);

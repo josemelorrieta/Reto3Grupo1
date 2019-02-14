@@ -5,6 +5,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -168,7 +170,22 @@ public class FuncionesRegistro {
 		  else 
 			 return true;
 	}
-	
+
+	/**
+	 * Metodo que fija el rango de seleccion de fechas en el registro
+	 * Debe ser mayor de edad y no anterior al 1/1/1900
+	 * @return Date fecha minima de mayoria de edad
+	 */
+	public Date rangoFechasRegistro() {
+		//Declaracion e inicializacion de variables
+		Calendar calendar = Calendar.getInstance();
+		
+		//Inicio del programa
+		calendar.add(Calendar.YEAR, -18);
+		//fechaLimite = calendar.getTime();
+		
+		return calendar.getTime();	
+	}
 	
 }	
 	

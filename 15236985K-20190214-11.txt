@@ -1,0 +1,20 @@
+BILLETE
+-------
+
+DATOS DEL TRAYECTO
+------------------
+Línea: L4
+Origen: Termibus-Bilbao
+Destino: Durango
+Fecha ida: 14/02/2019
+Fecha vuelta: 14/02/2019
+Precio: 19.26€
+
+DATOS DEL CLIENTE
+-----------------
+DNI: 15236985K
+Nombre y Apellidos: Popeye El marino
+Fecha nacimiento: 17/01/1956
+Sexo: Hombre
+
+Fecha de la compra: 13/02/2019

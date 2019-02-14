@@ -2,13 +2,8 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Date;
-import java.util.Observable;
-import java.util.Timer;
-import java.util.TimerTask;
-
 import javax.swing.JButton;
-import javax.swing.JLabel;
+
 
 import vista.Ventana;
 
