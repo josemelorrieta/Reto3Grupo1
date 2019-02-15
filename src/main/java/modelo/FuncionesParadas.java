@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class FuncionesParadas {
 	
 	private Modelo miModelo;
-	
+		
 	/**
 	 * Constructor de la clase
 	 * @param miModelo Instancia del modelo
@@ -152,7 +152,7 @@ public class FuncionesParadas {
 		
 		//Inicio del programa
 		//Creamos un array paralelo de distancias
-		distancias = arrayDistanciasParada(paradas);
+		distancias = arrayDistanciasParada(paradas, miModelo.misFuncionesModelo);
 		
 		//Ordenar el array mediante el array de distancias por el metodo de la burbuja
     	for (int x = 0; x < distancias.length; x++) {
@@ -174,9 +174,11 @@ public class FuncionesParadas {
 	/**
 	 * Metodo que crea un array paralelo al de paradas con las distancias a la parada de origen
 	 * @param paradas Parada[] array de paradas
+	 * @param misFuncionesModelo instancia de la clase Funciones Modelo
+	 * 
 	 * @return distancias float[] array de distancias paralelo al de paradas
 	 */
-	public float[] arrayDistanciasParada(Parada[] paradas) {
+	public float[] arrayDistanciasParada(Parada[] paradas, FuncionesModelo misFuncionesModelo) {
 		//Declaracion e inicializacion de variables
 		float[] distancias = new float[paradas.length];
 		//Coordenadas parada termibus (origen)
@@ -189,10 +191,66 @@ public class FuncionesParadas {
 			coordP2[0] = paradas[i].getCoordX();
 			coordP2[1] = paradas[i].getCoordY();
 			//Calculamos la distancia a la parada de origen Termibus
-			distancias[i] = (float) miModelo.misFuncionesModelo.distanciaEntreParadas(coordP1, coordP2);
+			distancias[i] = (float) misFuncionesModelo.distanciaEntreParadas(coordP1, coordP2);
 		}
 		
 		return distancias;
+	}
+	
+	/**
+	 * Metodo para cargar las paradas de la linea seleccionada ordenadas por distancia a la parada de origen
+	 * @param paradas Array de paradas a cargar
+	 * @param linea String con el nombre de la linea seleccionada
+	 * @return paradas Array rellanado con las paradas de la lineas seleccionada
+	 */
+	//Este metodo no se usa ya que hacemos los calculos en java al no poder testear la SELECT
+	public Parada[] cargarParadasOrdenadas(Parada[] paradas, String linea) {
+		//Declaracion e inicializacion de variables
+		ConexionBD miConexion = new ConexionBD();
+		ConsultaBD miConsulta = new ConsultaBD();
+		Connection con = miConexion.conectarBD();
+		
+		//Buscamos el codigo de la linea a partir de su nombre
+		String codLinea = nombreLineaACodLinea(linea);
+		
+		String query = "SELECT parada.Cod_Parada, Calle, Nombre, Latitud, Longitud FROM parada, `linea-parada` WHERE `linea-parada`.Cod_Linea='" + codLinea + "' AND parada.Cod_Parada = `linea-parada`.Cod_Parada ORDER BY sqrt(power(latitud - (SELECT latitud FROM parada WHERE cod_parada = 1), 2)+power(longitud - (SELECT longitud FROM parada WHERE cod_parada = 1), 2))";
+		
+		//Inicio del programa
+		ResultSet rs = miConsulta.hacerConsultaBD(con, query);
+		paradas = null;
+		paradas = new Parada[0];
+		
+		int codParada =  0;
+		String calle = "";
+		String nombre = "";
+		float latitud = 0;
+		float longitud = 0;
+		
+		try {
+			while(rs.next()) {
+				codParada = rs.getInt("Cod_Parada");
+				calle = rs.getString("Calle");
+				nombre = rs.getString("Nombre");
+				latitud = rs.getFloat("Latitud");
+				longitud = rs.getFloat("Longitud");
+				
+				//Incrementamos el array para meter el nuevo objeto
+				paradas = incrementarArrayParada(paradas);
+				paradas[paradas.length - 1] = new Parada(codParada, calle, nombre, latitud, longitud);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		try {
+			con.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return paradas;
 	}
 	
 }

@@ -101,9 +101,10 @@ public class FuncionesRegistro {
 	 * @param nombre String con el nombre del cliente
 	 * @param apellido String con el apellido del cliente
 	 * @param fecha String con la fecha de nacimiento del cliente
-	 * @param password Entero con la longitud de la clave introducida por el usuario
+	 * @param password array de char con la clave introducida por el usuario
+	 * @param password2 array de char con la segunda clave introducida por el usuario
 	 * 
-	 * @return boolean Devuelve true si los camppos del registro son correctos, false si no
+	 * @return boolean Devuelve true si los campos del registro son correctos, false si no
 	 * 
 	 * @throws SQLException Excepcion en caso de error al conectar a la base de datos
 	 * 

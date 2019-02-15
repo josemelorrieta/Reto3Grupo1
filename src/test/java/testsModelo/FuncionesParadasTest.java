@@ -1,9 +1,11 @@
 package testsModelo;
 
 import static org.junit.Assert.*;
+import static org.mockito.Mockito.*;
 
 import org.junit.Test;
 
+import modelo.FuncionesModelo;
 import modelo.FuncionesParadas;
 import modelo.Modelo;
 import modelo.Parada;
@@ -18,7 +20,6 @@ public class FuncionesParadasTest {
 		Parada[] paradasTest1 = new Parada[0];
 		Parada paradaTest = new Parada(1, "Luis Briñas", "Termibus-Bilbao", 43.2614f, -2.94974f);
 		paradasTest1 = funcionesParadas.cargarParadas(paradasTest1, "Termibus-Plentzia");
-		System.out.println(paradaTest.getCodParada());
 		
 		assertEquals(paradasTest1[0].getCodParada(), paradaTest.getCodParada());
 		assertEquals(paradasTest1[0].getNombre(), paradaTest.getNombre());
@@ -74,14 +75,37 @@ public class FuncionesParadasTest {
 	@Test
 	public void testArrayDistanciasParada() {
 		Parada paradaTest1 = new Parada(1, "Luis Briñas", "Termibus-Bilbao", 43.2614f, -2.94974f);
-		Parada paradaTest2 = new Parada(7, "BI-634", "Asilo Barrika", 43.4055f, -2.96369f);		
+		Parada paradaTest2 = new Parada(7, "BI-634", "Asilo Barrika", 43.4055f, -2.96369f);
+		float[] coordP1 = new float[2];
+		float[] coordP2 = new float[2];
+		
+		coordP1[0] = paradaTest1.getCoordX();
+		coordP1[1] = paradaTest1.getCoordY();
+		coordP2[0] = paradaTest2.getCoordX();
+		coordP2[1] = paradaTest2.getCoordY();
 		
 		Parada[] paradasTest = {paradaTest1, paradaTest2};
 		
-		float[] distanciasTest = funcionesParadas.arrayDistanciasParada(paradasTest);
-		System.out.println(distanciasTest[1]);
-		assertEquals(distanciasTest[0], 0, 0.01);
-		assertEquals(distanciasTest[1], 0.14477386 , 0.00000001);
+		FuncionesModelo funcionesMock = mock(FuncionesModelo.class);
+		when(funcionesMock.distanciaEntreParadas(coordP1, coordP2)).thenReturn(1.0);
+		
+		float[] distanciasTest = funcionesParadas.arrayDistanciasParada(paradasTest, funcionesMock);
+		
+		assertEquals(distanciasTest[1], 1, 0.01);
+	}
+	
+	@Test
+	public void testCargarParadasOrdenadas() {
+		Parada[] paradasTest1 = new Parada[0];
+		Parada paradaTest = new Parada(1, "Luis Briñas", "Termibus-Bilbao", 43.2614f, -2.94974f);
+		paradasTest1 = funcionesParadas.cargarParadasOrdenadas(paradasTest1, "Termibus-Plentzia");
+
+		
+		assertEquals(paradasTest1[0].getCodParada(), paradaTest.getCodParada());
+		assertEquals(paradasTest1[0].getNombre(), paradaTest.getNombre());
+		assertEquals(paradasTest1[0].getCalle(), paradaTest.getCalle());
+		assertEquals(paradasTest1[0].getCoordX(), paradaTest.getCoordX(), 0.000001);
+		assertEquals(paradasTest1[0].getCoordY(), paradaTest.getCoordY(), 0.000001);
 	}
 	
 }
