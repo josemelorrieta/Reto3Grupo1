@@ -68,7 +68,7 @@ public class PanelSaludo extends JPanel {
 		
 		JLabel lblNewJgoodiesLabel_4 = DefaultComponentFactory.getInstance().createLabel("");
 		lblNewJgoodiesLabel_4.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblNewJgoodiesLabel_4.setIcon(new ImageIcon(PanelSaludo.class.getResource("/Imagenes/logo.png")));
+		lblNewJgoodiesLabel_4.setIcon(new ImageIcon(PanelSaludo.class.getResource("/imagenes/logo.png")));
 		lblNewJgoodiesLabel_4.setBounds(800, 26, 242, 82);
 		add(lblNewJgoodiesLabel_4);
 		
