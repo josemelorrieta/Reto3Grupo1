@@ -37,6 +37,7 @@ public class PanelRegistro extends JPanel {
 	public JButton btnCancelar = new JButton("Cancelar");
 	public JButton btnRegistrarse = new JButton("Confirmar");
 	public JPasswordField passwordField;
+	public JPasswordField passwordField2;
 	public JDateChooser dateChooser = new JDateChooser();
 	
 	
@@ -60,7 +61,7 @@ public class PanelRegistro extends JPanel {
 		JLabel lblNewJgoodiesLabel_1 = DefaultComponentFactory.getInstance().createLabel("DNI:");
 		lblNewJgoodiesLabel_1.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblNewJgoodiesLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewJgoodiesLabel_1.setBounds(100, 195, 351, 35);
+		lblNewJgoodiesLabel_1.setBounds(100, 178, 351, 35);
 		add(lblNewJgoodiesLabel_1);	
 		
 		btnCancelar.setBackground(new Color(248, 248, 255));
@@ -80,60 +81,77 @@ public class PanelRegistro extends JPanel {
 		JLabel lblNombre = DefaultComponentFactory.getInstance().createLabel("NOMBRE:");
 		lblNombre.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblNombre.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNombre.setBounds(100, 249, 351, 29);
+		lblNombre.setBounds(110, 231, 351, 29);
 		add(lblNombre);
 		
 		JLabel lblNewJgoodiesLabel_2 = DefaultComponentFactory.getInstance().createLabel("APELLIDOS:");
 		lblNewJgoodiesLabel_2.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblNewJgoodiesLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewJgoodiesLabel_2.setBounds(100, 297, 351, 29);
+		lblNewJgoodiesLabel_2.setBounds(100, 279, 351, 29);
 		add(lblNewJgoodiesLabel_2);
 		
 		JLabel lblSexo = DefaultComponentFactory.getInstance().createLabel("SEXO:");
 		lblSexo.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblSexo.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblSexo.setBounds(100, 353, 351, 25);
+		lblSexo.setBounds(100, 333, 351, 25);
 		add(lblSexo);
 		
 		JLabel lblContrasea = DefaultComponentFactory.getInstance().createLabel("CONTRASE\u00D1A:");
 		lblContrasea.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblContrasea.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblContrasea.setBounds(100, 451, 351, 25);
+		lblContrasea.setBounds(100, 433, 351, 25);
 		add(lblContrasea);
 		
-		textFieldApellidos = new JTextField();
-		textFieldApellidos.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		textFieldApellidos.setColumns(10);
-		textFieldApellidos.setBounds(468, 300, 277, 26);
-		add(textFieldApellidos);
-		
-		textFieldNombre = new JTextField();
-		textFieldNombre.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		textFieldNombre.setColumns(10); 
-		textFieldNombre.setBounds(468, 252, 277, 26);
-		add(textFieldNombre);
+		JLabel lblContrasea2 = DefaultComponentFactory.getInstance().createLabel("CONFIRMAR CONTRASE\u00D1A:");
+		lblContrasea2.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblContrasea2.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblContrasea2.setBounds(100, 483, 351, 25);
+		add(lblContrasea2);
 		
 		textFieldDni = new JTextField();
 		textFieldDni.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		textFieldDni.setColumns(10);
-		textFieldDni.setBounds(468, 201, 277, 26);
+		textFieldDni.setBounds(468, 184, 277, 26);
 		add(textFieldDni);
+
+		textFieldNombre = new JTextField();
+		textFieldNombre.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		textFieldNombre.setColumns(10); 
+		textFieldNombre.setBounds(468, 234, 277, 26);
+		add(textFieldNombre);
+		
+		textFieldApellidos = new JTextField();
+		textFieldApellidos.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		textFieldApellidos.setColumns(10);
+		textFieldApellidos.setBounds(468, 284, 277, 26);
+		add(textFieldApellidos);
+		
+		
 		comboBoxGenero.setBackground(Color.WHITE);
-		
-		
 		comboBoxGenero.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		comboBoxGenero.setModel(new DefaultComboBoxModel<String>(new String[] {"Hombre", "Mujer"}));
-		comboBoxGenero.setBounds(468, 354, 95, 25);
+		comboBoxGenero.setBounds(467, 334, 95, 25);
 		add(comboBoxGenero);
+		
+
+		JTextFieldDateEditor editorFecha = (JTextFieldDateEditor) dateChooser.getDateEditor();
+		editorFecha.setEditable(false);
+		dateChooser.setBounds(468, 384, 277, 26);
+		add(dateChooser);
 		
 		passwordField = new JPasswordField();
 		passwordField.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		passwordField.setBounds(468, 452, 277, 26);
+		passwordField.setBounds(468, 434, 277, 26);
 		add(passwordField);
+		
+		passwordField2 = new JPasswordField();
+		passwordField2.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		passwordField2.setBounds(468, 484, 277, 26);
+		add(passwordField2);
 		
 		JLabel lblFechaDeNacimiento = DefaultComponentFactory.getInstance().createLabel("FECHA DE NACIMIENTO:");
 		lblFechaDeNacimiento.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblFechaDeNacimiento.setBounds(232, 399, 219, 30);
+		lblFechaDeNacimiento.setBounds(232, 380, 219, 30);
 		add(lblFechaDeNacimiento);
 		
 		JLabel lblNewJgoodiesLabel_9 = DefaultComponentFactory.getInstance().createLabel("");
@@ -141,10 +159,6 @@ public class PanelRegistro extends JPanel {
 		lblNewJgoodiesLabel_9.setBounds(26, 26, 211, 82);
 		add(lblNewJgoodiesLabel_9);
 		
-		JTextFieldDateEditor editorFecha = (JTextFieldDateEditor) dateChooser.getDateEditor();
-		editorFecha.setEditable(false);
-		dateChooser.setBounds(468, 404, 277, 26);
-		add(dateChooser);
 		
 		
 		JLabel lblNewJgoodiesLabel_3 = DefaultComponentFactory.getInstance().createLabel("");
@@ -152,7 +166,7 @@ public class PanelRegistro extends JPanel {
 		lblNewJgoodiesLabel_3.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		lblNewJgoodiesLabel_3.setForeground(Color.CYAN);
 		lblNewJgoodiesLabel_3.setBackground(new Color(204, 51, 51)); 
-		lblNewJgoodiesLabel_3.setBounds(171, 160, 737, 367);
+		lblNewJgoodiesLabel_3.setBounds(171, 160, 737, 374);
 		add(lblNewJgoodiesLabel_3);
 
 	}

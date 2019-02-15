@@ -108,22 +108,24 @@ public class FuncionesRegistro {
 	 * @throws SQLException Excepcion en caso de error al conectar a la base de datos
 	 * 
 	 */
-	public boolean comprobarCamposRegistro(String dni, String nombre, String apellido, String fecha, int password) throws SQLException {
+	public boolean comprobarCamposRegistro(String dni, String nombre, String apellido, String fecha, char[] password, char[] password2) throws SQLException {
 
-		
 		//comprobar si ya existe ese DNI
 		if (verificarDNI(dni)) {
 			JOptionPane.showMessageDialog(miVentana, "Ya existe un ususario con ese DNI", "¡Atención!", JOptionPane.WARNING_MESSAGE);
 			return false;
 		} else {
 			//Validacion de los campos
-			if (dni != "" && nombre != "" && apellido !="" && fecha != null && password != 0 ) {
+			if (dni != "" && nombre != "" && apellido !="" && fecha != null && password.length != 0 ) {
 					if(validarDNI(dni)) {
 						if(validarNombreYApellido(nombre) || validarNombreYApellido(apellido))
 						{
 							JOptionPane.showMessageDialog(miVentana, "¡Nombre o apellido incorrecto!", "¡Atención!", JOptionPane.WARNING_MESSAGE);
 							return false;
 							
+						} if (!String.valueOf(password).equals(String.valueOf(password2))) {
+							JOptionPane.showMessageDialog(miVentana, "¡Las contraseñas no coinciden!", "¡Atención!", JOptionPane.WARNING_MESSAGE);
+							return false;
 						} else {
 						return true;
 						}

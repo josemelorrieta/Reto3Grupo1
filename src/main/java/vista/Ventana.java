@@ -38,7 +38,7 @@ public class Ventana extends JFrame {
 	 * Create the frame.
 	 */
 	public Ventana() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage(Ventana.class.getResource("/Imagenes/icono.png"))); 
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Ventana.class.getResource("/imagenes/icono.png"))); 
 		setTitle("Gesti\u00F3n de Compra de Billetes");
 		setResizable(false); 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
