@@ -63,7 +63,8 @@ public class ControladorRegistro implements ActionListener {
 		 miVentana.registro.textFieldApellidos.setText("");
 		 miVentana.registro.textFieldNombre.setText(""); 
 		 miVentana.registro.passwordField.setText("");
-		 miVentana.registro.dateChooser.setToolTipText("");
+		 miVentana.registro.passwordField2.setText("");
+		 miVentana.registro.dateChooser.setCalendar(null);
 	}
 
 	/**
@@ -79,7 +80,7 @@ public class ControladorRegistro implements ActionListener {
 				 
 			case "btnRegistro": try {
 				//Si el formulario esta bien rellenado creamos el cliente y cambiamos a la ventana de billetes
-				if (funcionesRegistro.comprobarCamposRegistro(miVentana.registro.textFieldDni.getText(), miVentana.registro.textFieldNombre.getText(), miVentana.registro.textFieldApellidos.getText(),  miVentana.registro.comboBoxGenero.getSelectedItem().toString(), miVentana.registro.passwordField.getPassword(), miVentana.registro.passwordField2.getPassword())) {
+				if (funcionesRegistro.comprobarCamposRegistro(miVentana.registro.textFieldDni.getText(), miVentana.registro.textFieldNombre.getText(), miVentana.registro.textFieldApellidos.getText(),  miVentana.registro.dateChooser.getDate(), miVentana.registro.passwordField.getPassword(), miVentana.registro.passwordField2.getPassword())) {
 					cliente = funcionesRegistro.registrarNuevoCliente(miVentana.registro.textFieldDni.getText(), miVentana.registro.textFieldNombre.getText(), miVentana.registro.textFieldApellidos.getText(), miVentana.registro.comboBoxGenero.getSelectedItem().toString(), sdf.format(miVentana.registro.dateChooser.getDate()), miVentana.registro.passwordField.getPassword());
 					if (cliente != null) {
 						funciones.cambiarDePanel(miVentana.registro, miVentana.login);

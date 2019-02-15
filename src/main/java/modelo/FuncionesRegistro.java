@@ -109,7 +109,7 @@ public class FuncionesRegistro {
 	 * @throws SQLException Excepcion en caso de error al conectar a la base de datos
 	 * 
 	 */
-	public boolean comprobarCamposRegistro(String dni, String nombre, String apellido, String fecha, char[] password, char[] password2) throws SQLException {
+	public boolean comprobarCamposRegistro(String dni, String nombre, String apellido, Date fecha, char[] password, char[] password2) throws SQLException {
 
 		//comprobar si ya existe ese DNI
 		if (verificarDNI(dni)) {
