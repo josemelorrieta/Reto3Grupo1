@@ -1,0 +1,19 @@
+BILLETE
+-------
+
+DATOS DEL TRAYECTO
+------------------
+Línea: L3
+Origen: Termibus-Bilbao
+Destino: Balmaseda Centro
+Fecha ida: 16/02/2019
+Precio: 13.48€
+
+DATOS DEL CLIENTE
+-----------------
+DNI: 17737366L
+Nombre y Apellidos: José Manuel Muñoz
+Fecha nacimiento: 18/04/1973
+Sexo: Hombre
+
+Fecha de la compra: 15/02/2019
