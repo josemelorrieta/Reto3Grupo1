@@ -1,0 +1,20 @@
+BILLETE
+-------
+
+DATOS DEL TRAYECTO
+------------------
+Línea: L4
+Origen: Amorebieta - Boroa
+Destino: Iurreta
+Fecha ida: 19/02/2019
+Fecha vuelta: 20/02/2019
+Precio: 7.7€
+
+DATOS DEL CLIENTE
+-----------------
+DNI: 17737366L
+Nombre y Apellidos: José Manuel Muñoz
+Fecha nacimiento: 18/04/1973
+Sexo: Hombre
+
+Fecha de la compra: 18/02/2019

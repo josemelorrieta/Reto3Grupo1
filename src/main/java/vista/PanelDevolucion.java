@@ -22,7 +22,7 @@ public class PanelDevolucion extends JPanel {
 	
 	private static final long serialVersionUID = 9L;
 	
-	public JButton btnSiguiente = new JButton("Siguiente");
+	public JButton btnSiguiente = new JButton("Finalizar");
 	public JButton btnImprimirTicket= new JButton("Imprimir Ticket");
 	public JButton btnComprarOtroBillete = new JButton("Comprar otro billete");
 	public DefaultListModel<String> cambios = new DefaultListModel<String>();	
@@ -65,7 +65,7 @@ public class PanelDevolucion extends JPanel {
 		cambios=new DefaultListModel<String>();
 		devolucion = new JList<String>(cambios);
 		devolucion.setBorder(new BevelBorder(BevelBorder.LOWERED, Color.GRAY, Color.GRAY, Color.GRAY, Color.GRAY));
-		devolucion.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		devolucion.setFont(new Font("Consolas", Font.PLAIN, 22));
 		devolucion.setBackground(new Color(255, 255, 255));
 		devolucion.setBounds(195, 134, 696, 385);
 		add(devolucion);

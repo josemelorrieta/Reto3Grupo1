@@ -190,7 +190,8 @@ public class ControladorPago implements ActionListener {
 		//Inicio del programa
 		if (arrayCambios != null) {
 			//Recorremos el array de cambios. Cada posicion es una moneda o billete 500, 200, 100...
-			miVentana.devolucion.cambios.addElement("Cambios: " + formatoMoneda.format(pagado - total));
+			miVentana.devolucion.cambios.addElement(String.format("%2s%-20s%5s", " ", "Cambios totales: ", formatoMoneda.format(pagado - total)));
+			miVentana.devolucion.cambios.addElement(" ");
 			for(int z=0 ; z < cambios.length ; z++) {
 				//Si la posicion es distinta de cero hay cambios de esa moneda/billete 
 				if (cambios[z]>0) {
@@ -228,7 +229,7 @@ public class ControladorPago implements ActionListener {
 					
 					}
 					//Añadimos la linea al modelo de la lista
-					miVentana.devolucion.cambios.addElement(mensajeCambios + cambios[z]);
+					miVentana.devolucion.cambios.addElement(String.format("%2s%-20s%5s", " ", mensajeCambios, cambios[z]));
 				}
 			}
 		}else {
